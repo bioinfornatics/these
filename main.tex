@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt,french,twoside,openright,openbib, draft]{thesis} %draft, final
+\author{Jonathan Mercier}
+\thesisdirector{Claudine Médigue}
+\thesiscodirector{David Vallenet}
+\nationalthesisnumber{\ldots}
+\title{Annotation expertes du métabolismes des génomes prokaryotes}
+\subtitle{de la logique à la biologie\ldots}
+\date{15 Décembre 2016}
+\location{Évry}
+\discipline{Bio-Informatique}
+\doctoralschoolnumber{577}
+\doctoralschool{Structure et dynamique des systèmes vivants}
+
+
+\hypersetup{
+	final       = true,
+    colorlinks  = true,
+    urlcolor    = blue,
+    citecolor   = blue,
+    linkcolor   = MidnightBlue,
+    unicode     = true,
+    linktoc     = section,
+    pdfauthor   = {\@author},
+    pdfkeywords = {biocomputing, biotechnology, software , scientific},
+    pdftitle    = {\@title},
+    pdfsubject  = {Genomic expert annotation}	
+}
+
+
+
+\begin{document}
+    \maketitle
+    
+    \include{remerciement}
+    \thispagestyle{empty}
+    \clearpage
+    
+    \printglossary[type=\acronymtype,title={Abréviations}]
+    \thispagestyle{empty}
+    \cleardoublepage
+    
+    \renewcommand{\contentsname}{Sommaire}
+    \tableofcontents
+    \thispagestyle{empty}
+    
+    \newpage\pagenumbering{arabic}
+    \setcounter{page}{1}
+    \pagestyle{thesisStyle}
+    \mainmatter
+    
+    \include{part_1}
+    \include{part_2}
+    \include{part_3}
+    
+    \cleardoublepage
+    \thispagestyle{empty}
+    \printbibliography
+    \cleardoublepage
+\end{document}
