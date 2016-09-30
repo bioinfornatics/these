@@ -8,11 +8,25 @@
 
 \RequirePackage{fix-cm}
 \RequirePackage{etex} % increase register size
+\RequirePackage{iftex}
+
+\ifPDFTeX
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\else
+\ifXeTeX
+\RequirePackage{xltxtra}
+\RequirePackage{fontspec}
+\else 
+\RequirePackage{luatextra}
+\fi
+\defaultfontfeatures{Ligatures=TeX}
+\fi
 
 \RequirePackage{geometry}
-\RequirePackage[linktocpage,colorlinks=true,unicode]{hyperref}
+\RequirePackage[xetex]{hyperref}
 \RequirePackage{memhfixc}
-\RequirePackage{iftex}
 \RequirePackage{graphicx}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
@@ -41,22 +55,8 @@
 % \replaced[remark={blabla}]{voici comment le dire}{ce qui est mal dit}
 % \deleted[remark={blabla}]{le texte a enlever}
 
-%\RequirePackage{todonotes}
+\RequirePackage{todonotes}
 % \todo[prepend]{mon avis}
-
-\ifPDFTeX
-   \RequirePackage[utf8]{inputenc}
-   \RequirePackage[T1]{fontenc}
-   \RequirePackage{lmodern}
-\else
-   \ifXeTeX
-    \RequirePackage{xltxtra}
-    \RequirePackage{fontspec}
-   \else 
-     \RequirePackage{luatextra}
-   \fi
-   \defaultfontfeatures{Ligatures=TeX}
-\fi
 
 \setlength{\TPHorizModule}{1cm} %controls horizontal movements
 \setlength{\TPVertModule}{1cm}  %controls vertical movements
@@ -97,17 +97,40 @@
 
 % Les commandes permettant de définir la date, le lieu, etc.
 \def\date#1{\def\@date{#1}}
-\def\author#1{\def\@author{#1}}
-\def\title#1{\def\@title{#1}}
-\def\subtitle#1{\def\@subtitle{#1}}
-\def\location#1{\def\@location{#1}}
-\def\thesisdirector#1{\def\@thesisdirector{#1}}
-\def\thesiscodirector#1{\def\@thesiscodirector{#1}}
-\def\discipline#1{\def\@discipline{#1}}
-\def\doctoralschool#1{\def\@doctoralschool{#1}}
-\def\doctoralschoolnumber#1{\def\@doctoralschoolnumber{#1}}
-\def\nationalthesisnumber#1{\def\@nationalthesisnumber{#1}}
+\let\@date\@empty
 
+\def\author#1{\def\@author{#1}}
+\let\@author\@empty
+
+\def\title#1{\def\@title{#1}}
+\let\@title\@empty
+
+\def\keywords#1{\def\@keywords{#1}}
+\let\@keywords\@empty
+
+\def\subtitle#1{\def\@subtitle{#1}}
+\let\@subtitle\@empty
+
+\def\location#1{\def\@location{#1}}
+\let\@location\@empty
+
+\def\thesisdirector#1{\def\@thesisdirector{#1}}
+\let\@thesisdirector\@empty
+
+\def\thesiscodirector#1{\def\@thesiscodirector{#1}}
+\let\@thesiscodirector\@empty
+
+\def\discipline#1{\def\@discipline{#1}}
+\let\@discipline\@empty
+
+\def\doctoralschool#1{\def\@doctoralschool{#1}}
+\let\@doctoralschool\@empty
+
+\def\doctoralschoolnumber#1{\def\@doctoralschoolnumber{#1}}
+\let\@doctoralschoolnumber\@empty
+
+\def\nationalthesisnumber#1{\def\@nationalthesisnumber{#1}}
+\let\@nationalthesisnumber\@empty
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
