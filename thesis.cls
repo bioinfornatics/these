@@ -90,6 +90,7 @@
 \definecolor{marron}{rgb}{0.64,0.16,0.16}
 \definecolor{gris_clair}{rgb}{0.9,0.9,0.9}
 \definecolor{noir}{rgb}{1,1,1}
+\definecolor{bluegray}{HTML}{90C3D4}
 \colorlet{Random1}{cyan}
 \colorlet{Random2}{yellow}
 \colorlet{Random3}{red}
@@ -273,8 +274,8 @@ BoldItalicFont=FiraSans-MediumItalic
 \newarray\dnaletters
 \readarray{dnaletters}{A&C&G&T}
 
-\maxtocdepth{subsection}
-\setsecnumdepth{subsection}
+\maxtocdepth{subsubsection}
+\setsecnumdepth{subsubsection}
 
 
 \setlength{\headheight}{15pt}
@@ -284,6 +285,7 @@ BoldItalicFont=FiraSans-MediumItalic
 \renewcommand{\thesection}{\arabic{section}}
 %\renewcommand{\thesubsection}{\Roman{chapter}.\arabic{section}.\alph{subsection}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
 
 \def\barroman#1{
     \sbox0{#1}\dimen0=\dimexpr\wd0+1pt\relax
@@ -339,8 +341,10 @@ BoldItalicFont=FiraSans-MediumItalic
     
     \setsubsecheadstyle{\normalfont\large}
 }
+
+\setbeforesecskip{1cm}
 \setsecnumformat{\csname #1secnumformat\endcsname}
-\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2.5cm}{3cm}\selectfont\color{gray!20}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-7mm}}
+\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-4mm}}
 \newcommand\subsectionsecnumformat{\thesubsection\quad}
 
 \headstyles{thesisStyle}
@@ -365,14 +369,21 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \titlecontents{section}[3.5cm]
 {\addvspace{1pt}}
-{\contentslabel[\thecontentslabel]{2.4pc}}
+{\contentslabel[\thecontentslabel]{0.5cm}}
 {}
 {\hfill\small \thecontentspage}
 []
 
 \titlecontents{subsection}[4.5cm]
 {\addvspace{1pt}}
-{\contentslabel[\thecontentslabel]{2.4pc}}
+{\contentslabel[\thecontentslabel]{0.5cm}}
+{}
+{\hfill\small \thecontentspage}
+[]
+
+\titlecontents{subsubsection}[5cm]
+{\addvspace{1pt}}
+{\contentslabel[\thecontentslabel]{0.5cm}}
 {}
 {\hfill\small \thecontentspage}
 []
