@@ -11,17 +11,17 @@
 \RequirePackage{iftex}
 
 \ifPDFTeX
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern}
+	\RequirePackage[utf8]{inputenc}
+	\RequirePackage[T1]{fontenc}
+	\RequirePackage{lmodern}
 \else
-\ifXeTeX
-\RequirePackage{xltxtra}
-\RequirePackage{fontspec}
-\else 
-\RequirePackage{luatextra}
-\fi
-\defaultfontfeatures{Ligatures=TeX}
+	\ifXeTeX
+		\RequirePackage{xltxtra}
+		\RequirePackage{fontspec}
+	\else 
+		\RequirePackage{luatextra}
+	\fi
+	\defaultfontfeatures{Ligatures=TeX}
 \fi
 
 \RequirePackage{geometry}
@@ -43,7 +43,8 @@
 \RequirePackage{kpfonts}
 \RequirePackage{arrayjob}
 \RequirePackage{microtype}
-
+\RequirePackage{xargs}                      % Use more than one optional parameter in a new commands
+%\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
 %\let\bibsection\relax
@@ -55,22 +56,29 @@
 % \replaced[remark={blabla}]{voici comment le dire}{ce qui est mal dit}
 % \deleted[remark={blabla}]{le texte a enlever}
 
-\RequirePackage{todonotes}
+\RequirePackage[colorinlistoftodos,prependcaption,obeyFinal,textsize=tiny]{todonotes}
 % \todo[prepend]{mon avis}
+%\newcommand{\note}[1]{\todo[prepend]{#1}}
+\newcommandx{\unsure}[2][1=]{\todo[caption={Incertain},linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[caption={Tournure de phrase à revoir},linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[caption={Info},linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[caption={Amélioration},linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 \setlength{\TPHorizModule}{1cm} %controls horizontal movements
 \setlength{\TPVertModule}{1cm}  %controls vertical movements
 
 \setdefaultlanguage{french}
-% affiche dans la colonne les changements si l'ioption draft est fournie
+% affiche dans la colonne les changements si l'option draft est fournie
 \changemarks
 
 \addbibresource{references.bib}
 
 % Supprime l'hyphenation
-\pretolerance=10000
+\pretolerance=2000
 \tolerance=2000 
 \emergencystretch=10pt
+\raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         Couleurs        %%
