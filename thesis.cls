@@ -32,10 +32,11 @@
 \RequirePackage[framemethod=default]{mdframed}
 \RequirePackage{tikz}
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
+\RequirePackage{pifont} 
 %\RequirePackage{cleveref}
 \RequirePackage{polyglossia}
 \RequirePackage[absolute,overlay]{textpos}
-\RequirePackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
+\RequirePackage[backend=biber, style=authoryear, citestyle=authoryear,natbib=true, sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
@@ -173,6 +174,8 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Utilitaires        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\siecle}[1]{\uppercase\expandafter{\romannumeral #1\relax}$^{eme}$}
 
 \DeclareDocumentCommand{\isOddPage}{mm}{%
 	\strictpagechecktrue%
@@ -420,19 +423,18 @@ BoldItalicFont=FiraSans-MediumItalic
     \fcolorbox{White}{PeachPuff}{
         \parbox{\textwidth}{
             \Huge{\ding{43}} \large{\textbf{Attention}}: \newline
-            \setstretch{1} \normalsize{#1}
-            }
-    }
-}
-
-\newcommand{\note}[1]{
-    \vspace*{1em}
-    \fcolorbox{White}{LightYellow}{
-        \parbox{\textwidth}{
-            \Huge{\ding{46}} \large{\textbf{Note}}: \newline
-            \setstretch{1} \normalsize{#1}
+            \normalsize{#1}
         }
     }
+}
+\newcommand{\note}[1]{
+    \vfill
+    \fcolorbox{White}{LightYellow}{
+        \parbox{0.9\textwidth}{
+            \Huge{\ding{46}} \large{\textbf{Note}}: \newline
+            \normalsize{#1}
+        }
+    }\clearpage
 }
 
 \newcommand{\information}[1]{
@@ -440,7 +442,7 @@ BoldItalicFont=FiraSans-MediumItalic
     \fcolorbox{White}{PaleGreen}{
         \parbox{\textwidth}{
             \Huge{\ding{52}} \large{\textbf{Information}}: \newline
-            \setstretch{1} \normalsize{#1}
+            \normalsize{#1}
         }
     }
 }
@@ -459,7 +461,7 @@ BoldItalicFont=FiraSans-MediumItalic
 
         \fcolorbox{White}{gris_clair}{
             \parbox{\textwidth}{
-                    \setstretch{1} \scriptsize{#1}
+                \setstretch{1.0} \scriptsize{#1}
             }
         }
     \end{minipage}
