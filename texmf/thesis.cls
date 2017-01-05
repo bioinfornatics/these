@@ -37,7 +37,7 @@
 \RequirePackage{pifont} 
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
-\RequirePackage[backend=biber, style=authoryear, citestyle=authoryear,natbib=true, sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,refsegment=chapter,defernumbers=true,style=authoryear,citestyle=authoryear,natbib=true,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
@@ -321,10 +321,18 @@ BoldItalicFont=FiraSans-MediumItalic
 \renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
 \renewcommand{\theparagraph}{-}
 
+\newrobustcmd{\icon}[1]{\includegraphics[height=2cm]{#1}}
+
+\defbibheading{subbibliography}{
+    \clearpage    
+    \section*{\icon{img/references.png}\hspace{1cm}Références} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
+    \markright{\itshape #1}
+}
+
 \makepagestyle{thesisStyle}
 \makeheadfootruleprefix{thesisStyle}{}{\color{MidnightBlue}}
 \makefootrule{thesisStyle}{\textwidth}{\normalrulethickness}{\footruleskip}
-\makeevenfoot{thesisStyle}{\itshape\leftmark}{}{\thepage}
+\makeevenfoot{thesisStyle}{\thepage}{}{\itshape\leftmark}
 \makeoddfoot{thesisStyle}{\itshape\leftmark}{}{\thepage}
 \makepsmarks{thesisStyle}{
   \createmark{chapter}{left}{shownumber}{\@chapapp\ }{.\ }
@@ -413,20 +421,20 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \titlecontents{subsection}[2.5cm]
 {\addvspace{0.5em}}
-{\contentslabel{1cm}}
+{\contentslabel{1cm}~}
 {}
 {\hfill\contentspage}
 
-\titlecontents{subsubsection}[3cm]
+\titlecontents{subsubsection}[3.5cm]
 {}
-{\contentslabel{1.4cm}}
+{\contentslabel{1.4cm}~}
 {}
 {\hfill\contentspage}
 
 
 \titlecontents{paragraph}[3.5cm]
 {}
-{\contentslabel{0.6cm}}
+{\contentslabel{0.6cm}~}
 {}
 {\hfill\contentspage}
 
