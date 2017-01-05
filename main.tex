@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,french,twoside,openright,openbib, final]{thesis} %draft, final
+\documentclass[a4paper,12pt,french,twoside,openleft,openbib, final]{thesis} %draft, final
 \author{Jonathan Mercier}
 \thesisdirector{Claudine Médigue}
 \thesiscodirector{David Vallenet}
@@ -30,32 +30,29 @@
 }
 \makeatother
 
+\includeonly{remerciement,part_1,part_2,part_3}
 
 \begin{document}
     \maketitle
-    
+    \frontmatter
+    \thispagestyle{plain}
     \include{remerciement}
-    \thispagestyle{empty}
-    \clearpage
     
     \printglossary[type=\acronymtype,title={Abréviations}]
-    \thispagestyle{empty}
-    \cleardoublepage
     
     \renewcommand{\contentsname}{Sommaire}
     {
     	\hypersetup{hidelinks}
-	    \tableofcontents
+	    \tableofcontents*
     }
-    \thispagestyle{empty}
     
-    \newpage\pagenumbering{arabic}
-    \setcounter{page}{1}
-    \pagestyle{thesisStyle}
     \mainmatter
+    \pagestyle{thesisStyle}
     
     \include{part_1}
+    
     \include{part_2}
+
     \include{part_3}
     
     \cleardoublepage
