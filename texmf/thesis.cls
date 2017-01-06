@@ -191,6 +191,10 @@ BoldItalicFont=FiraSans-MediumItalic
 %\newfontfamily{\sectionNumberFont}{fonts/Canter-Bold-3D.otf}
 \newfontfamily{\secNumFont}[Path=fonts/,Extension=.ttf]{Oswald-MediumItalic}
 \newfontfamily{\secnameFont}[Path=fonts/,Extension=.otf]{Canter-Bold}
+%\newfontfamily{\handwritingFont}[Path=fonts/,Extension=.otf]{GrandHotel-Regular}
+\newfontfamily{\handwritingFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
+\newfontfamily{\noteFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
+%\newfontfamily{\noteFont}[Path=fonts/,Extension=.otf]{CherrySwash-Regular}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -458,6 +462,8 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Autres commandes        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{typewriter}{\ttfamily\small}{\par}
+
 \newcommand{\warning}[1]{
     \vspace*{1em}
     \begin{tcolorbox}[colframe=PeachPuff, colback=PeachPuff,arc=10pt]
@@ -468,7 +474,8 @@ BoldItalicFont=FiraSans-MediumItalic
 \newcommand{\note}[1]{
    	\vfill
    	\begin{tcolorbox}[colframe=LightYellow, colback=LightYellow,arc=10pt]
-   		\Huge{\ding{46}} \large{\textbf{Note}}:~\normalsize{#1}
+   		\Huge{\ding{46}} \large{\textbf{Note}}:~
+           \noteFont{\small{#1}}\par
    	\end{tcolorbox}
    	\clearpage
 }
@@ -487,7 +494,7 @@ BoldItalicFont=FiraSans-MediumItalic
 \renewcommandx{\citation}[3][3=]{
 	\vspace*{1em}
 	\begin{tcolorbox}[colframe=AntiqueWhite, colback=AntiqueWhite,arc=10pt]
-		\raisebox{-1em}{\fontsize{36pt}{0}\selectfont ``} \emph{#1}  \raisebox{-1em}{\fontsize{36pt}{0}\selectfont ''} \par
+		\raisebox{-1em}{\fontsize{36pt}{0}\selectfont ``} {\handwritingFont{\emph{#1}}}   \raisebox{-1em}{\fontsize{36pt}{0}\selectfont ''} \par
 		\vspace{0.2em}
 		{ \raggedleft \textit{#2} {\tiny#3} \par }
 	\end{tcolorbox}
