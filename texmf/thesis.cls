@@ -37,7 +37,7 @@
 \RequirePackage{pifont} 
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
-\RequirePackage[backend=biber,bibencoding=utf8,refsegment=chapter,defernumbers=true,style=authoryear,citestyle=authoryear,natbib=true,sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,backref=true,refsegment=chapter,defernumbers=true,style=authoryear,citestyle=authoryear,natbib=true,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
@@ -67,6 +67,19 @@
 \newcommandx{\info}[2][1=]{\todo[caption={Info},linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\improvement}[2][1=]{\todo[caption={Amélioration},linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+
+\DeclareCiteCommand{\citeyear}
+{}
+{\bibhyperref{\printfield{year}}}
+{\multicitedelim}
+{}
+
+\DeclareCiteCommand{\citeyearpar}
+{}
+{\mkbibparens{\bibhyperref{\printfield{year}}}}
+{\multicitedelim}
+{}
 
 \setlength{\TPHorizModule}{1cm} %controls horizontal movements
 \setlength{\TPVertModule}{1cm}  %controls vertical movements
@@ -478,7 +491,7 @@ BoldItalicFont=FiraSans-MediumItalic
    		\Huge{\ding{46}} \large{\textbf{Note}}:~
            \noteFont{\small{#1}}\par
    	\end{tcolorbox}
-   	\clearpage
+   	%\clearpage
 }
 
 \newcommand{\information}[1]{
