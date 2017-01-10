@@ -168,7 +168,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Police          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\renewcommand{\baselinestretch}{1.5}
 %\setmainlanguage{french}
 \frenchspacing
 \setotherlanguage{english}
@@ -472,7 +472,8 @@ BoldItalicFont=FiraSans-MediumItalic
     \end{tcolorbox}
 }
 \newcommand{\note}[1]{
-   	\vfill
+   	%\vfill
+   	\vspace*{1em}
    	\begin{tcolorbox}[colframe=LightYellow, colback=LightYellow,arc=10pt]
    		\Huge{\ding{46}} \large{\textbf{Note}}:~
            \noteFont{\small{#1}}\par
@@ -496,7 +497,8 @@ BoldItalicFont=FiraSans-MediumItalic
 	\begin{tcolorbox}[colframe=AntiqueWhite, colback=AntiqueWhite,arc=10pt]
 		\raisebox{-1em}{\fontsize{36pt}{0}\selectfont ``} {\handwritingFont{\emph{#1}}}   \raisebox{-1em}{\fontsize{36pt}{0}\selectfont ''} \par
 		\vspace{0.2em}
-		{ \raggedleft \textit{#2} {\tiny#3} \par }
+		{ \raggedleft \textit{#2}\par }
+		{ \raggedleft {\tiny#3} \par }
 	\end{tcolorbox}
 	\vspace*{1em}
 }
