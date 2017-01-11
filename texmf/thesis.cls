@@ -37,7 +37,8 @@
 \RequirePackage{pifont} 
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
-\RequirePackage[backend=biber,bibencoding=utf8,backref=true,refsegment=chapter,defernumbers=true,style=authoryear,citestyle=authoryear,natbib=true,sorting=none]{biblatex}
+\RequirePackage{notoccite}
+\RequirePackage[backend=biber,bibencoding=utf8,backref=true,refsegment=chapter,defernumbers=true,style=ieee,citestyle=ieee,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
@@ -68,7 +69,9 @@
 \newcommandx{\improvement}[2][1=]{\todo[caption={Amélioration},linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    bibliographie        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \DeclareCiteCommand{\citeyear}
 {}
 {\bibhyperref{\printfield{year}}}
@@ -80,6 +83,10 @@
 {\mkbibparens{\bibhyperref{\printfield{year}}}}
 {\multicitedelim}
 {}
+\renewcommand*{\bibfont}{\small}
+
+
+% Other
 
 \setlength{\TPHorizModule}{1cm} %controls horizontal movements
 \setlength{\TPVertModule}{1cm}  %controls vertical movements
@@ -182,6 +189,7 @@
 %           Police          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\baselinestretch}{1.5}
+%\linespread{1.5}
 %\setmainlanguage{french}
 \frenchspacing
 \setotherlanguage{english}
