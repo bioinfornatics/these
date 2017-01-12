@@ -28,6 +28,7 @@
 \RequirePackage[xetex]{hyperref}
 \RequirePackage{memhfixc}
 \RequirePackage{graphicx}
+\RequirePackage{subcaption}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
 \RequirePackage[skins]{tcolorbox}
@@ -47,7 +48,8 @@
 \RequirePackage{arrayjob}
 \RequirePackage{microtype}
 \RequirePackage{xargs}                      % Use more than one optional parameter in a new commands
-\RequirePackage{romanbar}
+\RequirePackage{romanbar}                % Use more than one optional parameter in a new commands
+\RequirePackage{emptypage}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -210,6 +212,14 @@ BoldItalicFont=FiraSans-MediumItalic
 \newcommand\Circle[1]{
     \tikz[overlay,remember picture] 
     \node[draw=MidnightBlue, fill=MidnightBlue,circle, text=white, text width=18pt,line width=1pt,align=center,yshift=.25cm] {#1};
+}
+
+\newenvironment{shadedfigure}{
+    \begin{figure}[h!]
+        \begin{tcolorbox}[colback=gray,colframe=gray]
+}{
+        \end{tcolorbox}
+    \end{figure}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
