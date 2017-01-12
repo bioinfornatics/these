@@ -69,22 +69,6 @@
 \newcommandx{\improvement}[2][1=]{\todo[caption={Amélioration},linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    bibliographie        %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\DeclareCiteCommand{\citeyear}
-{}
-{\bibhyperref{\printfield{year}}}
-{\multicitedelim}
-{}
-
-\DeclareCiteCommand{\citeyearpar}
-{}
-{\mkbibparens{\bibhyperref{\printfield{year}}}}
-{\multicitedelim}
-{}
-\renewcommand*{\bibfont}{\small}
-
 
 % Other
 
@@ -94,18 +78,6 @@
 \setdefaultlanguage{french}
 % affiche dans la colonne les changements si l'option draft est fournie
 \changemarks
-
-\DeclareCiteCommand{\citetitle}
-{\boolfalse{citetracker}%
-	\boolfalse{pagetracker}%
-	\usebibmacro{prenote}}
-{\ifciteindex
-	{\indexfield{indextitle}}
-	{}%
-	\printtext[bibhyperref]{\printfield[citetitle]{labeltitle}}}
-{\multicitedelim}
-{\usebibmacro{postnote}}
-\addbibresource{references.bib}
 
 % Supprime l'hyphenation
 \pretolerance=5000
@@ -215,6 +187,7 @@ BoldItalicFont=FiraSans-MediumItalic
 %\newfontfamily{\handwritingFont}[Path=fonts/,Extension=.otf]{GrandHotel-Regular}
 \newfontfamily{\handwritingFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
 \newfontfamily{\noteFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
+\newfontfamily{\referenceFont}[Path=fonts/,Extension=.otf]{CherrySwash-Bold}
 %\newfontfamily{\noteFont}[Path=fonts/,Extension=.otf]{CherrySwash-Regular}
 
 
@@ -350,7 +323,7 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \defbibheading{subbibliography}{
     \clearpage    
-    \section*{\icon{img/references.png}\hspace{1cm}Références} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
+    \section*{\icon{img/references.png}\hspace{1cm}\handwritingFont{Références}} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
     \markright{\itshape #1}
 }
 
@@ -479,6 +452,55 @@ BoldItalicFont=FiraSans-MediumItalic
 \let\oldtableofcontents\tableofcontents
 \def\tableofcontents{\@ifstar{\oldtableofcontents*}{\oldtableofcontents*}}
 \makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    bibliographie        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\DeclareCiteCommand{\citeyear}
+{}
+{\bibhyperref{\printfield{year}}}
+{\multicitedelim}
+{}
+
+\DeclareCiteCommand{\citeyearpar}
+{}
+{\mkbibparens{\bibhyperref{\printfield{year}}}}
+{\multicitedelim}
+{}
+
+\renewcommand*{\bibfont}{\footnotesize}
+
+\DefineBibliographyStrings{french}{
+	backrefpage  = {page \adddot},
+	backrefpages = {pages\adddot},
+}
+
+\newcommand{\subbibliography}{
+	\begin{SingleSpace}
+		\setlength\bibitemsep{0.5em}
+		\printbibliography[segment=\therefsegment,heading=subbibliography]
+	\end{SingleSpace}
+}
+
+\DeclareCiteCommand{\citetitle}
+{\boolfalse{citetracker}%
+	\boolfalse{pagetracker}%
+	\usebibmacro{prenote}}
+{\ifciteindex
+	{\indexfield{indextitle}}
+	{}%
+	\printtext[bibhyperref]{\printfield[citetitle]{labeltitle}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+\addbibresource{references.bib}
+
+\defbibheading{subbibliography}{
+	\clearpage    
+	\section*{\icon{img/books.jpg}\hspace{1cm}\referenceFont{\textcolor{MidnightBlue}{Références}}} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
+	\markright{\itshape #1}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Autres commandes        %%
