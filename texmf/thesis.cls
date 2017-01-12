@@ -160,8 +160,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Police          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\baselinestretch}{1.5}
-%\linespread{1.5}
+%\renewcommand{\baselinestretch}{1.5}
+\linespread{1.5}
 %\setmainlanguage{french}
 \frenchspacing
 \setotherlanguage{english}
@@ -217,84 +217,87 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\maketitle{
-    \thispagestyle{empty}
-    
-    \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.1cm}
-    \begin{textblock}{3}(1,0.7)
-        \includegraphics[height=2cm]{img/universite_paris_saclay.png}
-    \end{textblock}
-    
-    %\begin{textblock}{2.5}(8,0.7)
-    %    \includegraphics[height=3cm]{img/universite_paris_sud_2.png}
-    %\end{textblock}
-    
-    \begin{textblock}{3}(15,0.7)
-        \includegraphics[height=3cm]{img/universite_evry_val_essonne.png}
-    \end{textblock}
-    
-    %\begin{textblock}{2}(17,0.7)
-        %\includegraphics[height=2cm]{img/labgem.png} 
-    %\end{textblock}
-    %\vspace{0.2cm}
-    
-    \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50]
-    
-    \begin{center}
-        {\huge \textcolor{psviolet}{THÈSE DE DOCTORAT}}\\
-        {\huge \textcolor{psviolet}{DE L'UNIVERSITÉ PARIS SACLAY}}\\
-        {\Large \textcolor{psviolet}{préparée à }} \\
-        {\Large \textcolor{psviolet}{l'Université d'Évry Val d'Essonne}} \\
-        \vspace{\baselineskip}
-        \vspace{\baselineskip}
-    	{\Large ÉCOLE DOCTORALE N°\@doctoralschoolnumber} \\
-    	{\Large \@doctoralschool}\\
-        \vspace{\baselineskip}
-        {\Large Spécialité de doctorat : Sciences de la Vie et de la Santé } \\
-    	{\Large Discipline : \@discipline}\\
-        \vspace{\baselineskip}
-        \vspace{\baselineskip}
-        {\Large Par}\\
-        \vspace{\baselineskip}
-        \vspace{\baselineskip}
-        {\Huge{\textbf{\@author}}}\\
-        \vspace{\baselineskip}
-        \vspace{\baselineskip}
-        {\huge\textbf{\@title}}\\
-    \end{center}
-    
-    \begin{flushright}
-		{\bfseries{\@subtitle}}
-        \vspace{\baselineskip}
-    \end{flushright}
-    
-    
-    \begin{center}
-        {\large Numéro national de thèse: \@nationalthesisnumber}\\
-        \vspace{\baselineskip}
-    \end{center}
-    
-    \begin{flushleft}
-        {\large \textbf{Thèse présenté et soutenue à \@location le \@date}}\\
-        \vspace{\baselineskip}
-        \vspace{\baselineskip}
-        \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
-        	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{DR (CNRS)} \\
-        	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{CR (CEA)} \\
-        	                                                        &                         &\\
-        	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
-        	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{..... (......)} \\
-        	\footnotesize{Rapporteurs} :                            & .......                 & \footnotesize{..... (......)} \\
-                                                                    & .......                 & \footnotesize{..... (......)} \\
-            \footnotesize{Examinateurs} :                           & .......                 & \footnotesize{..... (......)} \\
-                                                                    & .......                 & \footnotesize{..... (......)} \\
-        	\footnotesize{Invités} :                                & .......                 & \footnotesize{..... (......)} \\
-        \end{tabular}
-    \end{flushleft}
-    
-    
-    \end{mdframed}
-    \clearpage
-    \restoregeometry
+    \begin{SingleSpace}
+        \thispagestyle{empty}
+        
+        \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.1cm}
+        \begin{textblock}{3}(1,0.7)
+            \includegraphics[height=2cm]{img/universite_paris_saclay.png}
+        \end{textblock}
+        
+        %\begin{textblock}{2.5}(8,0.7)
+        %    \includegraphics[height=3cm]{img/universite_paris_sud_2.png}
+        %\end{textblock}
+        
+        \begin{textblock}{3}(15,0.7)
+            \includegraphics[height=3cm]{img/universite_evry_val_essonne.png}
+        \end{textblock}
+        
+        %\begin{textblock}{2}(17,0.7)
+            %\includegraphics[height=2cm]{img/labgem.png} 
+        %\end{textblock}
+        %\vspace{0.2cm}
+        
+        \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50]
+        
+        \begin{center}
+            {\huge \textcolor{psviolet}{THÈSE DE DOCTORAT}}\\
+            {\huge \textcolor{psviolet}{DE L'UNIVERSITÉ PARIS SACLAY}}\\
+            {\Large \textcolor{psviolet}{préparée à }} \\
+            {\Large \textcolor{psviolet}{l'Université d'Évry Val d'Essonne}} \\
+            \vspace{\baselineskip}
+            \vspace{\baselineskip}
+        	{\Large ÉCOLE DOCTORALE N°\@doctoralschoolnumber} \\
+        	{\Large \@doctoralschool}\\
+            \vspace{\baselineskip}
+            {\Large Spécialité de doctorat : Sciences de la Vie et de la Santé } \\
+        	{\Large Discipline : \@discipline}\\
+            \vspace{\baselineskip}
+            \vspace{\baselineskip}
+            {\Large Par}\\
+            \vspace{\baselineskip}
+            \vspace{\baselineskip}
+            {\Huge{\textbf{\@author}}}\\
+            \vspace{\baselineskip}
+            \vspace{\baselineskip}
+            {\huge\textbf{\@title}}\\
+        \end{center}
+        
+        \begin{flushright}
+    		{\bfseries{\@subtitle}}
+            \vspace{\baselineskip}
+        \end{flushright}
+        
+        
+        \begin{center}
+            {\large Numéro national de thèse: \@nationalthesisnumber}\\
+            \vspace{\baselineskip}
+        \end{center}
+        
+        \begin{flushleft}
+            {\large \textbf{Thèse présenté et soutenue à \@location le \@date}}\\
+            \vspace{\baselineskip}
+            \vspace{\baselineskip}
+            \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
+            	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{DR (CNRS)} \\
+            	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{CR (CEA)} \\
+            	                                                        &                         &\\
+            	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
+            	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{..... (......)} \\
+            	\footnotesize{Rapporteurs} :                            & .......                 & \footnotesize{..... (......)} \\
+                                                                        & .......                 & \footnotesize{..... (......)} \\
+                \footnotesize{Examinateurs} :                           & .......                 & \footnotesize{..... (......)} \\
+                                                                        & .......                 & \footnotesize{..... (......)} \\
+            	\footnotesize{Invités} :                                & .......                 & \footnotesize{..... (......)} \\
+            \end{tabular}
+        \end{flushleft}
+        
+        
+        \end{mdframed}
+        \clearpage
+        \restoregeometry
+        
+    \end{SingleSpace}
 }
 
 
