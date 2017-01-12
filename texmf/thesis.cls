@@ -214,14 +214,6 @@ BoldItalicFont=FiraSans-MediumItalic
     \node[draw=MidnightBlue, fill=MidnightBlue,circle, text=white, text width=18pt,line width=1pt,align=center,yshift=.25cm] {#1};
 }
 
-\newenvironment{shadedfigure}{
-    \begin{figure}[h!]
-        \begin{tcolorbox}[colback=gray,colframe=gray]
-}{
-        \end{tcolorbox}
-    \end{figure}
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Page de garde      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -571,4 +563,12 @@ BoldItalicFont=FiraSans-MediumItalic
             }
         }
     \end{minipage}
+}
+
+\newenvironment{shadedfigure}{
+\begin{figure}[h!]
+	\begin{tcolorbox}[colback=gris_clair,colframe=gris_clair,coltext=white]
+}{
+	\end{tcolorbox}
+\end{figure}
 }
