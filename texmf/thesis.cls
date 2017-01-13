@@ -50,6 +50,7 @@
 \RequirePackage{xargs}                      % Use more than one optional parameter in a new commands
 \RequirePackage{romanbar}                % Use more than one optional parameter in a new commands
 \RequirePackage{emptypage}
+\RequirePackage{needspace}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -189,6 +190,7 @@ BoldItalicFont=FiraSans-MediumItalic
 %\newfontfamily{\handwritingFont}[Path=fonts/,Extension=.otf]{GrandHotel-Regular}
 \newfontfamily{\handwritingFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
 \newfontfamily{\noteFont}[Path=fonts/,Extension=.ttf]{IndieFlower}
+\newfontfamily{\greekFont}[Path=fonts/,Extension=.otf]{GFSArtemisiaIt}
 \newfontfamily{\referenceFont}[Path=fonts/,Extension=.otf]{CherrySwash-Bold}
 %\newfontfamily{\noteFont}[Path=fonts/,Extension=.otf]{CherrySwash-Regular}
 
@@ -388,7 +390,17 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \headstyles{thesisStyle}
 
-% sommaire style
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mise en forme des figures %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mise en forme du sommaire %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 
 \renewcommand\chapternumberline[1]{
@@ -528,6 +540,7 @@ BoldItalicFont=FiraSans-MediumItalic
            \noteFont{\small{#1}}\par
        \end{SingleSpace}
    	\end{tcolorbox}
+   \needspace{5\baselineskip}
    	%\clearpage
 }
 
@@ -553,6 +566,7 @@ BoldItalicFont=FiraSans-MediumItalic
 		\end{SingleSpace}
 	\end{tcolorbox}
 	\vspace*{1em}
+    \needspace{5\baselineskip}
 }
 
 
