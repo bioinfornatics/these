@@ -523,8 +523,10 @@ BoldItalicFont=FiraSans-MediumItalic
    	%\vfill
    	\vspace*{1em}
    	\begin{tcolorbox}[colframe=LightYellow, colback=LightYellow,arc=10pt]
+   		\begin{SingleSpace}
    		\Huge{\ding{46}} \large{\textbf{Note}}:~
            \noteFont{\small{#1}}\par
+       \end{SingleSpace}
    	\end{tcolorbox}
    	%\clearpage
 }
@@ -543,10 +545,12 @@ BoldItalicFont=FiraSans-MediumItalic
 \renewcommandx{\citation}[3][3=]{
 	\vspace*{1em}
 	\begin{tcolorbox}[colframe=AntiqueWhite, colback=AntiqueWhite,arc=10pt]
-		\raisebox{-1em}{\fontsize{36pt}{0}\selectfont ``} {\handwritingFont{\emph{#1}}}   \raisebox{-1em}{\fontsize{36pt}{0}\selectfont ''} \par
-		\vspace{0.2em}
-		{ \raggedleft \textit{#2}\par }
-		{ \raggedleft {\tiny#3} \par }
+		\begin{SingleSpace}
+			\raisebox{-1em}{\fontsize{36pt}{0}\selectfont ``} {\handwritingFont{\emph{#1}}}   \raisebox{-1em}{\fontsize{36pt}{0}\selectfont ''} \par
+			\vspace{0.2em}
+			{ \raggedleft \textit{#2}\par }
+			{ \raggedleft {\tiny#3} \par }
+		\end{SingleSpace}
 	\end{tcolorbox}
 	\vspace*{1em}
 }
