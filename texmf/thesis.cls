@@ -1,8 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}
 
+\newif\ifuniv
+    \univtrue
+
+\DeclareOption{univ}{\univtrue}
 % Based on the memoir class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
+
+\ifuniv
+    \PassOptionsToClass{a4paper,12pt}{memoir}
+\else
+    \PassOptionsToClass{a5+paper,10pt}{memoir}
+\fi
+
 \ProcessOptions
 \LoadClass{memoir}
 
@@ -23,7 +34,6 @@
 	\fi
 	\defaultfontfeatures{Ligatures=TeX}
 \fi
-
 \RequirePackage{geometry}
 \RequirePackage[xetex]{hyperref}
 \RequirePackage{memhfixc}
@@ -199,7 +209,7 @@ BoldItalicFont=FiraSans-MediumItalic
 %%      Utilitaires        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\siecle}[1]{\uppercase\expandafter{\romannumeral #1\relax}$^{eme}$}
+\newcommand{\siecle}[1]{\uppercase\expandafter{\romannumeral #1\relax}$^{eme}$ siècle}
 
 \DeclareDocumentCommand{\isOddPage}{mm}{%
 	\strictpagechecktrue%
@@ -530,6 +540,7 @@ BoldItalicFont=FiraSans-MediumItalic
         \Huge{\ding{43}} \large{\textbf{Attention}}: \newline
         \normalsize{#1}
     \end{tcolorbox}
+    \needspace{5\baselineskip}
 }
 \newcommand{\note}[1]{
    	%\vfill
@@ -552,6 +563,7 @@ BoldItalicFont=FiraSans-MediumItalic
             \normalsize{#1}
         }
     }
+    \needspace{5\baselineskip}
 }
 
 % citation arg1 => citation arg 2 => auteur

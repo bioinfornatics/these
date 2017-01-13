@@ -493,6 +493,7 @@
 \newcommand*{\stockaiii}{\stockheight=420mm \stockwidth=297mm}
 \newcommand*{\stockaiv} {\stockheight=297mm \stockwidth=210mm}
 \newcommand*{\stockav}  {\stockheight=210mm \stockwidth=148mm}
+\newcommand*{\stockavplus}  {\stockheight=240mm \stockwidth=170mm}
 \newcommand*{\stockavi} {\stockheight=148mm \stockwidth=105mm}
 
 \newcommand*{\stockbo}  {\stockheight=1414mm \stockwidth=1000mm}
@@ -553,6 +554,7 @@
 \DeclareOption{a3paper}{\stockaiii}
 \DeclareOption{a4paper}{\stockaiv}
 \DeclareOption{a5paper}{\stockav}
+\DeclareOption{a5+paper}{\stockavplus}
 \DeclareOption{a6paper}{\stockavi}
 \DeclareOption{b0paper}{\stockbo}
 \DeclareOption{b1paper}{\stockbi}
