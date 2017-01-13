@@ -1,19 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}
-
-\newif\ifuniv
-    \univtrue
-
-\DeclareOption{univ}{\univtrue}
 % Based on the memoir class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
-
-\ifuniv
-    \PassOptionsToClass{a4paper,12pt}{memoir}
-\else
-    \PassOptionsToClass{a5+paper,10pt}{memoir}
-\fi
-
 \ProcessOptions
 \LoadClass{memoir}
 
