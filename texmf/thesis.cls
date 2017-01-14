@@ -1,9 +1,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}
 % Based on the memoir class
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
-\ProcessOptions
+\newif\ifthesis@univ
+
+\DeclareOption{univ}{%
+	\thesis@univtrue
+	\PassOptionsToClass{a4paper,12pt,twoside,openright,openbib,final}{memoir}
+}
+
+\DeclareOption{nouniv}{%
+	\thesis@univfalse
+	\PassOptionsToClass{10pt,twoside,openright,openbib,final}{memoir}
+}
+
+%% What to do, if an unknown option is entered?
+\DeclareOption*{%
+	\PassOptionsToClass{\CurrentOption}{memoir}}
+
+\ExecuteOptions{univ} %default is univ
+\ProcessOptions\relax
+
+% Based on the memoir class
 \LoadClass{memoir}
+
+\ifthesis@univ
+	% \typeout{Foo!} % print to stdout
+\else
+	% \\typeout{NoFoo!} % print to stdout
+	\setstocksize{240mm}{160mm}
+	\settrimmedsize{\stockheight}{\stockwidth}{*}
+\fi
 
 \RequirePackage{fix-cm}
 \RequirePackage{etex} % increase register size
@@ -219,6 +245,8 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\maketitle{
+	
+	\ifthesis@univ
     \begin{SingleSpace}
         \thispagestyle{empty}
         
@@ -300,6 +328,7 @@ BoldItalicFont=FiraSans-MediumItalic
         \restoregeometry
         
     \end{SingleSpace}
+	\fi
 }
 
 
@@ -411,6 +440,7 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \newcommand\coloredBox[1]%
 {
+	\needspace{2\baselineskip}
 	\begin{tcolorbox}[colframe=mediumelectricblue, colback=mediumelectricblue,fontupper=\color{white}, left=2em]
 		\contentslabel{0.5cm}~#1\hfill\contentspage
 	\end{tcolorbox}
@@ -590,3 +620,4 @@ BoldItalicFont=FiraSans-MediumItalic
 	\end{tcolorbox}
 \end{figure}
 }
+\endinput
