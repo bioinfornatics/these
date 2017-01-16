@@ -403,8 +403,12 @@ BoldItalicFont=FiraSans-MediumItalic
 \makeheadstyles{thesisStyle}{
     \chapterstyle{thesisStyle}
     
-    %\setbeforesecskip{\onelineskip}
-    \setsecheadstyle{\normalfont\Huge}
+    \ifthesis@univ
+	    %\setbeforesecskip{\onelineskip}
+	    \setsecheadstyle{\normalfont\Huge}
+    \else 
+	    \setsecheadstyle{\normalfont\Large}
+    \fi
     \setaftersecskip{2\onelineskip}
     
     \setsubsecheadstyle{\normalfont\large}
@@ -412,7 +416,11 @@ BoldItalicFont=FiraSans-MediumItalic
 
 \setbeforesecskip{1cm}
 \setsecnumformat{\csname #1secnumformat\endcsname}
-\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
+\ifthesis@univ
+	\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
+\else 
+	\newcommand\sectionsecnumformat{{\secNumFont\fontsize{1.5cm}{3cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
+\fi
 \newcommand\subsectionsecnumformat{\thesubsection\quad}
 
 \headstyles{thesisStyle}
@@ -558,7 +566,7 @@ BoldItalicFont=FiraSans-MediumItalic
         \Huge{\ding{43}} \large{\textbf{Attention}}: \newline
         \normalsize{#1}
     \end{tcolorbox}
-    \needspace{5\baselineskip}
+    \needspace{3\baselineskip}
 }
 \newcommand{\note}[1]{
    	%\vfill
@@ -569,7 +577,7 @@ BoldItalicFont=FiraSans-MediumItalic
            \noteFont{\small{#1}}\par
        \end{SingleSpace}
    	\end{tcolorbox}
-   \needspace{5\baselineskip}
+   \needspace{3\baselineskip}
    	%\clearpage
 }
 
@@ -581,7 +589,7 @@ BoldItalicFont=FiraSans-MediumItalic
             \normalsize{#1}
         }
     }
-    \needspace{5\baselineskip}
+    \needspace{3\baselineskip}
 }
 
 % citation arg1 => citation arg 2 => auteur
@@ -596,7 +604,7 @@ BoldItalicFont=FiraSans-MediumItalic
 		\end{SingleSpace}
 	\end{tcolorbox}
 	\vspace*{1em}
-    \needspace{5\baselineskip}
+    \needspace{3\baselineskip}
 }
 
 
