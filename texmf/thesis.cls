@@ -305,7 +305,7 @@ BoldItalicFont=FiraSans-MediumItalic
         \end{center}
         
         \begin{flushleft}
-            {\large \textbf{Thèse présenté et soutenue à \@location le \@date}}\\
+            {\large \textbf{Thèse présentée et soutenue à \@location le \@date}}\\
             \vspace{\baselineskip}
             \vspace{\baselineskip}
             \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
