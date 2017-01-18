@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="119.99999mm"
+   height="42.120087mm"
+   viewBox="0 0 119.99999 42.120087"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="lysine-oxoglutarate_reductase.svg"
+   inkscape:version="0.92.0 r"
+   inkscape:export-filename="/home/jmercier/Documents/these/img/lysine-oxoglutarate_reductase.pdf.png"
+   inkscape:export-xdpi="1200"
+   inkscape:export-ydpi="1200">
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4555">
+      <path
+         style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#ffff00;stroke-width:0.13229166;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path4557"
+         sodipodi:type="arc"
+         sodipodi:cx="89.268021"
+         sodipodi:cy="162.02888"
+         sodipodi:rx="47.841248"
+         sodipodi:ry="42.495857"
+         sodipodi:start="0"
+         sodipodi:end="5.8167758"
+         d="m 137.10927,162.02888 a 47.841248,42.495857 0 0 1 -42.275478,42.2073 47.841248,42.495857 0 0 1 -52.111994,-32.38664 47.841248,42.495857 0 0 1 30.150232,-49.74291 47.841248,42.495857 0 0 1 59.12725,20.81262 l -42.731259,19.10963 z"
+         clip-path="none" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4559">
+      <path
+         style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#ffff00;stroke-width:0.13229166;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path4561"
+         sodipodi:type="arc"
+         sodipodi:cx="-119.06562"
+         sodipodi:cy="141.58145"
+         sodipodi:rx="47.841251"
+         sodipodi:ry="42.495857"
+         sodipodi:start="0"
+         sodipodi:end="5.8167758"
+         d="m -71.224369,141.58145 a 47.841251,42.495857 0 0 1 -42.275481,42.2073 47.841251,42.495857 0 0 1 -52.112,-32.38665 47.841251,42.495857 0 0 1 30.15024,-49.74291 47.841251,42.495857 0 0 1 59.127251,20.81263 l -42.731261,19.10963 z"
+         clip-path="none"
+         transform="rotate(-68.916166)" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="312.94797"
+     inkscape:cy="58.024189"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.44979586,-68.91505)">
+    <path
+       style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:0.0592364;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       clip-path="none"
+       d="m 18.349768,78.478107 a 14.289087,14.289087 0 0 0 -0.932571,0.03305 14.289087,14.289087 0 0 1 1.151346,-0.0222 14.289087,14.289087 0 0 0 -0.218775,-0.01085 z m -0.997193,0.03527 a 14.289087,14.289087 0 0 0 -0.659039,0.07893 14.289087,14.289087 0 0 1 0.659039,-0.07893 z m 2.277781,0.02861 a 14.289087,14.289087 0 0 1 0.70319,0.09151 14.289087,14.289087 0 0 0 -0.70319,-0.09151 z M 15.944965,78.68307 A 14.289087,14.289087 0 0 0 4.060795,92.76708 14.289087,14.289087 0 0 0 18.349768,107.0563 14.289087,14.289087 0 0 0 31.63882,97.980941 L 18.349768,92.76708 Z m 2.404803,14.08401 h 14.28895 A 14.289087,14.289087 0 0 0 23.636143,79.50465 Z m 2.692394,-14.026541 a 14.289087,14.289087 0 0 1 0.694556,0.162046 14.289087,14.289087 0 0 0 -0.694556,-0.162046 z m 1.387632,0.339139 a 14.289087,14.289087 0 0 1 0.671619,0.229627 14.289087,14.289087 0 0 0 -0.671619,-0.229627 z m 10.147021,14.9268 a 14.289087,14.289087 0 0 1 -0.0883,0.709849 14.289087,14.289087 0 0 0 0.0883,-0.709849 z m -0.194853,1.414765 a 14.289087,14.289087 0 0 1 -0.158836,0.698009 14.289087,14.289087 0 0 0 0.158836,-0.698009 z m -0.334941,1.387139 a 14.289087,14.289087 0 0 1 -0.22716,0.676799 14.289087,14.289087 0 0 0 0.22716,-0.676799 z"
+       id="path4563"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g5738"
+       transform="matrix(0.3610437,-0.31217519,0.31217519,0.3610437,-54.045029,100.65265)"
+       style="fill:#0000ff">
+      <text
+         id="text5588"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="99.230652"
+         x="135.20827"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#0000ff;stroke-width:0.26458332">
+        <tspan
+           id="tspan5716"
+           style="font-size:2.25777769px;fill:#0000ff">NH</tspan>
+        <tspan
+           id="tspan5712"
+           style="font-size:2.25777769px;baseline-shift:sub;fill:#0000ff">3</tspan>
+        <tspan
+           id="tspan5714"
+           style="font-size:2.25777769px;baseline-shift:super;fill:#0000ff">+</tspan>
+      </text>
+      <text
+         id="text5596"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="110.60766"
+         x="153.0807"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#0000ff;stroke-width:0.26458332">O</text>
+      <text
+         id="text5598"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="118.34677"
+         x="157.54926"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#0000ff;stroke-width:0.26458332">O</text>
+      <text
+         id="text5600"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="124.03505"
+         x="148.61269"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#0000ff;stroke-width:0.26458332">
+        <tspan
+           id="tspan5710"
+           style="font-size:2.25777769px;fill:#0000ff">NH</tspan>
+        <tspan
+           id="tspan5706"
+           style="font-size:2.25777769px;baseline-shift:sub;fill:#0000ff">3</tspan>
+        <tspan
+           id="tspan5708"
+           style="font-size:2.25777769px;baseline-shift:super;fill:#0000ff">+</tspan>
+      </text>
+      <line
+         id="line5608"
+         y2="107.56498"
+         x2="139.67676"
+         y1="110.14464"
+         x1="144.14474"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5610"
+         y2="102.40563"
+         x2="139.67676"
+         y1="107.56498"
+         x1="139.67676"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5612"
+         y2="100.37283"
+         x2="136.15555"
+         y1="102.40563"
+         x1="139.67676"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5620"
+         y2="115.30407"
+         x2="144.14474"
+         y1="110.14464"
+         x1="144.14474"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5622"
+         y2="117.88375"
+         x2="148.61269"
+         y1="115.30407"
+         x1="144.14474"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5624"
+         y2="115.30407"
+         x2="153.0807"
+         y1="117.88375"
+         x1="148.61269"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5626"
+         y2="111.01189"
+         x2="153.55696"
+         y1="115.30407"
+         x1="153.55696"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5628"
+         y2="111.01189"
+         x2="152.60446"
+         y1="115.30407"
+         x1="152.60446"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5630"
+         y2="117.23817"
+         x2="156.4314"
+         y1="115.30407"
+         x1="153.0807"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5632"
+         y2="121.80832"
+         x2="148.62173"
+         y1="117.88375"
+         x1="148.62173"
+         style="fill:#0000ff;stroke:#000000;stroke-width:0.3175" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="40.78883"
+       y="97.108192"
+       id="text5742"><tspan
+         sodipodi:role="line"
+         id="tspan5740"
+         x="40.78883"
+         y="97.108192"
+         style="fill:#0000ff;stroke-width:0.12628302px">L-Lysine</tspan></text>
+    <g
+       id="g5965"
+       transform="matrix(0.17477173,-0.44414045,0.44414045,0.17477173,-22.115031,135.52534)"
+       style="fill:#008000">
+      <text
+         id="text5837"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="43.618938"
+         x="130.41537"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008000;stroke-width:0.26458332"><tspan
+   id="tspan5919"
+   style="font-size:2.25777769px;baseline-shift:super;fill:#008000">-</tspan>
+O</text>
+      <text
+         id="text5839"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="35.879875"
+         x="134.88339"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008000;stroke-width:0.26458332">O</text>
+      <text
+         id="text5841"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="48.778313"
+         x="148.28796"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008000;stroke-width:0.26458332">O</text>
+      <text
+         id="text5843"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="43.618938"
+         x="157.22452"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008000;stroke-width:0.26458332">
+        <tspan
+           id="tspan5925"
+           style="font-size:2.25777769px;fill:#008000">O</tspan>
+        <tspan
+           id="tspan5923"
+           style="font-size:2.25777769px;baseline-shift:super;fill:#008000">-</tspan>
+      </text>
+      <text
+         id="text5845"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="35.879875"
+         x="152.75598"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008000;stroke-width:0.26458332">O</text>
+      <line
+         id="line5847"
+         y2="40.576229"
+         x2="134.88339"
+         y1="42.510468"
+         x1="131.53329"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5849"
+         y2="36.284107"
+         x2="135.35965"
+         y1="40.576229"
+         x1="135.35965"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5851"
+         y2="36.284107"
+         x2="134.40715"
+         y1="40.576229"
+         x1="134.40715"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5853"
+         y2="43.155918"
+         x2="139.35191"
+         y1="40.576229"
+         x1="134.88339"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5855"
+         y2="40.576229"
+         x2="143.81995"
+         y1="43.155918"
+         x1="139.35191"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5857"
+         y2="43.155918"
+         x2="148.28796"
+         y1="40.576229"
+         x1="143.81995"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5859"
+         y2="47.080482"
+         x2="147.81171"
+         y1="43.155918"
+         x1="147.81171"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5861"
+         y2="47.080482"
+         x2="148.76421"
+         y1="43.155918"
+         x1="148.76421"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5863"
+         y2="40.576229"
+         x2="152.75598"
+         y1="43.155918"
+         x1="148.28796"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5865"
+         y2="42.510544"
+         x2="156.10666"
+         y1="40.576229"
+         x1="152.75598"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5867"
+         y2="36.284107"
+         x2="153.23222"
+         y1="40.576229"
+         x1="153.23222"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line5869"
+         y2="36.284107"
+         x2="152.27972"
+         y1="40.576229"
+         x1="152.27972"
+         style="fill:#008000;stroke:#000000;stroke-width:0.3175" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="17.336246"
+       y="71.412567"
+       id="text5929"><tspan
+         sodipodi:role="line"
+         x="17.336246"
+         y="71.412567"
+         style="fill:#008000;stroke-width:0.12628302px"
+         id="tspan5931">2-oxoglutarate</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="32.941235"
+       y="81.2687"
+       id="text5937"><tspan
+         sodipodi:role="line"
+         id="tspan5935"
+         x="32.941235"
+         y="81.2687"
+         style="fill:#ff0000;stroke-width:0.12628302px">NADPH</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.541538"
+       y="87.853455"
+       id="text5941"><tspan
+         sodipodi:role="line"
+         id="tspan5939"
+         x="37.541538"
+         y="87.853455"
+         style="font-size:1.89424539px;fill:#ff6600;stroke-width:0.12628302px">H<tspan
+   style="font-size:1.89424539px;baseline-shift:super;fill:#ff6600;stroke-width:0.12628302px"
+   id="tspan5943">+</tspan></tspan></text>
+    <g
+       id="g6343"
+       transform="matrix(0.47729016,0,0,0.47729016,3.3008121,58.039157)"
+       style="fill:#008080">
+      <text
+         id="text6092"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="59.087608"
+         x="148.85492"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">N</text>
+      <text
+         id="text6094"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="54.998482"
+         x="151.62511"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">H</text>
+      <text
+         id="text6096"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="45.660011"
+         x="135.45036"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6098"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="53.399071"
+         x="130.98235"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6100"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="45.660011"
+         x="153.32294"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6102"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="53.399071"
+         x="157.79149"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6104"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="78.744827"
+         x="132.68028"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">H</text>
+      <text
+         id="text6106"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="84.884491"
+         x="139.91888"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6108"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="84.884491"
+         x="130.98235"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">O</text>
+      <text
+         id="text6110"
+         font-weight="bold"
+         font-size="6.4pt"
+         y="74.565735"
+         x="130.98235"
+         style="font-weight:bold;font-size:2.25777793px;font-family:Helvetica;text-anchor:middle;fill:#008080;stroke-width:0.26458332">N</text>
+      <line
+         id="line6112"
+         y2="66.363655"
+         x2="144.3869"
+         y1="68.943336"
+         x1="139.91888"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6114"
+         y2="61.204277"
+         x2="144.3869"
+         y1="66.363655"
+         x1="144.3869"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6116"
+         y2="59.171539"
+         x2="147.90771"
+         y1="61.204277"
+         x1="144.3869"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <polygon
+         transform="matrix(0.26458333,0,0,0.26458333,120.5744,40.732143)"
+         id="polygon6118"
+         points="109.387,61.4583 104.387,61.4583 106.887,46.125 "
+         style="fill:#008080;stroke:none" />
+      <line
+         id="line6120"
+         y2="53.98851"
+         x2="150.67763"
+         y1="52.93605"
+         x1="148.85492"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6122"
+         y2="50.356361"
+         x2="144.3869"
+         y1="52.93605"
+         x1="148.85492"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6124"
+         y2="52.93605"
+         x2="139.91888"
+         y1="50.356361"
+         x1="144.3869"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6126"
+         y2="50.356361"
+         x2="135.45036"
+         y1="52.93605"
+         x1="139.91888"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6128"
+         y2="46.06424"
+         x2="135.92661"
+         y1="50.356361"
+         x1="135.92661"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6130"
+         y2="46.06424"
+         x2="134.97411"
+         y1="50.356361"
+         x1="134.97411"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6132"
+         y2="52.290596"
+         x2="132.10025"
+         y1="50.356361"
+         x1="135.45036"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6134"
+         y2="50.356361"
+         x2="153.32294"
+         y1="52.93605"
+         x1="148.85492"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6136"
+         y2="46.06424"
+         x2="153.79918"
+         y1="50.356361"
+         x1="153.79918"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6138"
+         y2="46.06424"
+         x2="152.84668"
+         y1="50.356361"
+         x1="152.84668"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6140"
+         y2="52.290672"
+         x2="156.67361"
+         y1="50.356361"
+         x1="153.32294"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6142"
+         y2="74.102722"
+         x2="139.91888"
+         y1="68.943336"
+         x1="139.91888"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6144"
+         y2="76.682404"
+         x2="135.45036"
+         y1="74.102722"
+         x1="139.91888"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6146"
+         y2="77.734909"
+         x2="133.62756"
+         y1="76.682404"
+         x1="135.45036"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6148"
+         y2="81.841782"
+         x2="135.45036"
+         y1="76.682404"
+         x1="135.45036"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6150"
+         y2="84.325958"
+         x2="138.80096"
+         y1="82.254257"
+         x1="135.21223"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6152"
+         y2="83.226074"
+         x2="138.80096"
+         y1="81.429291"
+         x1="135.68846"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <line
+         id="line6154"
+         y2="83.775879"
+         x2="132.10025"
+         y1="81.841782"
+         x1="135.45036"
+         style="fill:#008080;stroke:#000000;stroke-width:0.3175" />
+      <polygon
+         transform="matrix(0.26458333,0,0,0.26458333,120.5744,41.26131)"
+         id="polygon6156"
+         points="43.6674,123.738 56.2241,133.875 41.1673,128.069 "
+         style="fill:#008080;stroke:none" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="63.639088"
+       y="101.44144"
+       id="text6275"><tspan
+         sodipodi:role="line"
+         id="tspan6273"
+         x="63.639088"
+         y="101.44144"
+         style="fill:#008080;stroke-width:0.12628302px">L-saccharopine</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707564px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="82.838203"
+       y="81.745979"
+       id="text5937-1"><tspan
+         sodipodi:role="line"
+         id="tspan5935-2"
+         x="82.838203"
+         y="81.745979"
+         style="fill:#ff0000;stroke-width:0.12628302px">NADP<tspan
+   style="font-size:1.89424539px;baseline-shift:super;stroke-width:0.12628302px"
+   id="tspan6431">+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707564px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="79.401901"
+       y="94.071167"
+       id="text5941-7"><tspan
+         sodipodi:role="line"
+         id="tspan5939-0"
+         x="79.401901"
+         y="94.071167"
+         style="font-size:1.89424539px;fill:#ff6600;stroke-width:0.12628302px">H<tspan
+   style="font-size:1.89424539px;baseline-shift:sub;stroke-width:0.12628302px"
+   id="tspan6433">2</tspan>O</tspan></text>
+    <path
+       style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:0.0592364;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       clip-path="none"
+       d="m 104.20291,75.799239 a 14.289087,14.289087 0 0 0 -0.93257,0.03305 14.289087,14.289087 0 0 1 1.15135,-0.0222 14.289087,14.289087 0 0 0 -0.21878,-0.01085 z m -0.99719,0.03527 a 14.289087,14.289087 0 0 0 -0.65904,0.07893 14.289087,14.289087 0 0 1 0.65904,-0.07893 z m 2.27778,0.02861 a 14.289087,14.289087 0 0 1 0.70319,0.09151 14.289087,14.289087 0 0 0 -0.70319,-0.0915 z m -3.68539,0.141082 a 14.289087,14.289087 0 0 0 -11.884165,14.08401 14.289087,14.289087 0 0 0 14.288965,14.289219 14.289087,14.289087 0 0 0 13.28906,-9.075355 l -13.28906,-5.213864 z m 2.4048,14.08401 h 14.28895 a 14.289087,14.289087 0 0 0 -9.00257,-13.26243 z m 2.6924,-14.026541 a 14.289087,14.289087 0 0 1 0.69455,0.162047 14.289087,14.289087 0 0 0 -0.69455,-0.162047 z m 1.38763,0.339139 a 14.289087,14.289087 0 0 1 0.67162,0.229628 14.289087,14.289087 0 0 0 -0.67162,-0.229628 z m 10.14702,14.926801 a 14.289087,14.289087 0 0 1 -0.0883,0.709849 14.289087,14.289087 0 0 0 0.0883,-0.709849 z m -0.19485,1.414764 a 14.289087,14.289087 0 0 1 -0.15884,0.698007 14.289087,14.289087 0 0 0 0.15884,-0.698007 z m -0.33494,1.387137 a 14.289087,14.289087 0 0 1 -0.22716,0.676803 14.289087,14.289087 0 0 0 0.22716,-0.676803 z"
+       id="path4563-3"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="0.43465167"
+       y="109.56799"
+       id="text6452"><tspan
+         sodipodi:role="line"
+         id="tspan6450"
+         x="0.43465167"
+         y="109.56799"
+         style="stroke-width:0.12628302px"><tspan
+   style="font-weight:bold;stroke-width:0.12628302px"
+   id="tspan6454">Enzyme:</tspan> lysine-oxoglutarate reductase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707564px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="89.566673"
+       y="107.56967"
+       id="text6452-6"><tspan
+         sodipodi:role="line"
+         id="tspan6450-0"
+         x="89.566673"
+         y="107.56967"
+         style="stroke-width:0.12628302px">lysine-oxoglutarate reductase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.89424539px;line-height:3.15707541px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12628302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="43.647285"
+       y="87.664597"
+       id="text6479"><tspan
+         sodipodi:role="line"
+         id="tspan6477"
+         x="43.647285"
+         y="87.664597"
+         style="stroke-width:0.12628302px">Transformation chimique</tspan></text>
+    <g
+       id="g6533"
+       transform="matrix(0,0.01324249,-0.02658769,0,72.39679,84.236449)">
+      <path
+         id="path6531"
+         d="m 353.21,475.08 h 63.676 v 545.31 h 70.407 V 476.76 h 61.151 L 450.827,303.41 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;fill-rule:evenodd;stroke:#000000;stroke-width:1.53299999;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+  </g>
+</svg>
