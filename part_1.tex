@@ -1,22 +1,22 @@
 \begin{refsection}
 	\chapter{Contexte biologique et méthodologique}
 
-    Ce chapitre présente les notions, biologiques puis informatiques, utilisées comme fondement du travail de recherche, effectué lors de cette thèse.
+    Ce chapitre présente les notions biologiques puis informatiques, utilisées comme fondement du travail de recherche effectué lors de cette thèse.
     
     
     \section{Le métabolisme et sa représentation informatique}
     \subsection{Généralités sur le métabolisme}
     
-    Tout organisme vivant, consomme de l'énergie afin de perpétuer son espèce. Pour cela, l'être vivant doit assimiler des composés présent dans son environnement. Ces composés chimiques permettent de produire l'énergie, nécessaire à la survie mais surtout à la transmission du patrimoine génétique. Ainsi on désigne par métabolisme, l'ensemble des processus de synthèse et dégradation de composé chimique, mis en œuvre par l'organisme. De fait, les processus comme la réplication de l'\gls{ADN}, la traduction d'un gène et autres \ldots~sont exclus.
+    Pour perpétuer son espèce, tout organisme vivant consomme de l'énergie pour produire de la biomasse et se répliquer. Pour cela, l'être vivant doit assimiler des composés présent dans son environnement. Ces composés chimiques permettent de produire l'énergie, nécessaire à la survie mais surtout à la transmission du patrimoine génétique. Ainsi on désigne par métabolisme, l'ensemble des processus de synthèse et dégradation de composés chimiques, mis en œuvre par l'organisme. De fait, les processus comme la réplication de l'\gls{ADN}, la traduction d'un gène et autres \ldots~sont exclus.
     
-    \note{Le mot métabolisme à évolué à travers l'histoire pour nous parvenir sous ça forme actuelle. En grec ancien on utilisé "\greekFont{μεταβολή}" équivalent à metabolé désignant "transformation". Le mot métabole signifie "qui subit un changement". Il a été utilisé par la suite comme mot racine: métabol-ique, métabol-isme \ldots
+    \note{Le mot métabolisme à évolué à travers l'histoire pour nous parvenir sous ça forme actuelle. En grec ancien on utilise "\greekFont{μεταβολή}" équivalent à metabolé désignant "transformation". Le mot métabole signifie "qui subit un changement". Il a été utilisé par la suite comme mot racine: métabol-ique, métabol-isme \ldots
     }
     
-    Les organismes vivant opèrent une multitude de transformations chimiques. Elles forment de véritable usine de traitement biochimique. En effet, elles disposent d'une batterie de réaction biochimique, afin de traité un grand nombre de composés, tant à l'intérieur qu'à l'extérieur de la cellule. Par exemple, certains composés, de par la nature de la membrane cellulaire\footnote{La membrane cellulaire constitue une barrière physique entre le milieu extérieur et  intérieur de la cellule.}, doivent être transformé depuis l'extérieur de la cellule, afin d'assimiler le composé transformé. De ce fait, la matière présente dans l'environnement est utilisé pour constituer les briques nécessaires au vivant.
+    Les organismes vivant opèrent une multitude de transformations chimiques. Ils forment de véritable usine de traitement biochimique. En effet, ils disposent d'une batterie de réaction biochimique, afin de traiter un grand nombre de composés, tant à l'intérieur qu'à l'extérieur de la cellule. Par exemple, certains composés, de par la nature de la membrane cellulaire \footnote{La membrane cellulaire constitue une barrière physique entre le milieu extérieur et intérieur de la cellule.}, doivent être transformé depuis l'extérieur de la cellule, afin d'assimiler le composé transformé. De ce fait, la matière présente dans l'environnement est utilisé pour constituer les briques nécessaires au vivant.
     
-    Par conséquent, le métabolisme est essentiel à la vie, d'une part il fournit l'énergie nécessaire. Et d'autre part, il va produire les molécules de base indispensables à l'organisme, pour sa construction, sa défense et autres \ldots 
+    Par conséquent, le métabolisme est essentiel à la vie, d'une part il fournit l'énergie nécessaire. Et d'autre part, il va produire les molécules de base indispensables à l'organisme, pour sa construction, sa défense et autres \ldots
     
-    Bien qu'agissant à une échelle moléculaire, le métabolisme d'un groupe d'organisme peut impacter son environnement. Si bien que les conséquences peuvent être observées à l'échelle humaine voire dans certains cas à l'échelle de la planète (voir Figure~\ref{fig:bloom}). Un autre exemple est celui des espèces végétales. Ils absorbent du dioxyde de carbone et produisent de l'oxygène. Ainsi ils jouent un rôle important dans la concentration de ces composés dans l’atmosphère
+    Bien que agissant à une échelle moléculaire, le métabolisme d'un groupe d'organisme peut impacter son environnement. Si bien que les conséquences peuvent être observées à l'échelle humaine voire dans certains cas à l'échelle de la planète (voir Figure~\ref{fig:bloom}). Un autre exemple est celui des espèces végétales. Ils absorbent du dioxyde de carbone et produisent de l'oxygène. Ainsi ils jouent un rôle important dans la concentration de ces composés dans l’atmosphère.
     
     
     \begin{shadedfigure}
@@ -33,46 +33,68 @@
             \caption{{\tiny Source: \url{https://commons.wikimedia.org/}}}
             \label{fig:bloom_bretagne}
         \end{subfigure}
-    \caption{Le métabolisme d'un groupe d'individu produit une quantité de pigment photosynthétiques suffisamment conséquente, qu'il en devient observable depuis l'espace. Deux évènements distinct sont représentés. Le premier a eu lieu au large de la Gascogne le 17 mai 2004 et le second au niveau de la Bretagne le 15 juin 2004.}
-    \label{fig:bloom}
+        \caption{Le métabolisme d'un groupe d'individu produit une quantité de pigment photosynthétiques suffisamment conséquente, qu'il en devient observable depuis l'espace. Deux évènements distinct sont représentés. Le premier a eu lieu au large de la Gascogne le 17 mai 2004 et le second au niveau de la Bretagne le 15 juin 2004.}
+        \label{fig:bloom}
     \end{shadedfigure}
-
-	\note{Lors de l'apparition des premières formes de vie, il y a 3,6 milliards d’années. L'atmosphère était faiblement pourvue en oxygène. Ces organismes anaérobiques était présent dans les océans. L'oxygène est toxique, leur métabolise s'est adapté au dioxyde de carbone, présent abondamment à ce moment. Puis entre 3.5 à 3 milliard apparurent des cyanobactéries. Ce sont des bactéries capable de capter l'énergie du soleil. Elles sont "photosynthétiques". Leurs métabolismes a la particularité d'oxyder les minéraux  présent dans les océans. Ils produisent ainsi de l'oxygène. Avec le temps leur métabolisme à consommé tellement de minéraux que l'oxygène produits dans les océans est libéré dans l’atmosphère. Modifiant ainsi fortement ça composition. Cet évènement influença le cours de la vie. De sorte que des organismes s'adaptent à l'oxygène. Car l'oxygène devient une molécule courante. Certaine forme de vie évolua jusqu'a devenir aérobie. La Terre a subit ça première pollution atmosphérique d'ampleur induit par des organismes vivant. (Lire: \citetitle{bengtson1994early} ) }
+    
+    \note{Lors de l'apparition des premières formes de vie, il y a 3,6 milliards d’années. L'atmosphère était faiblement pourvue en oxygène. Ces organismes anaérobiques était présent dans les océans. L'oxygène est toxique, leur métabolisme s'est adapté au dioxyde de carbone, présent abondamment à ce moment. Puis entre 3,5 à 3 milliards apparurent des cyanobactéries. Ce sont des bactéries capable de capter l'énergie du soleil. Elles sont "photosynthétiques". Leurs métabolismes possèdent la particularité d'oxyder les minéraux présents dans les océans. Ils produisent ainsi de l'oxygène. Avec le temps leur métabolisme a consommé tellement de minéraux que l'oxygène produits dans les océans s’est libéré dans l’atmosphère. Modifiant ainsi fortement sa composition. Cet évènement influença le cours de la vie. De sorte que des organismes s'adaptent à l'oxygène. Car l'oxygène devient alors une molécule courante. Certaine forme de vie évolua jusqu'à devenir aérobie. Avec cet évènement, la Terre a subi sa première pollution atmosphérique d'ampleur induit par des organismes vivant. (Lire: \citetitle{bengtson1994early} ) }
     
 
     \subsection{Les acteurs}
     
-    L'étude du métabolisme est essentiel pour la compréhension des êtres vivants. Les débouchés impacte de nombreux domaines, tel que : la pharmaceutique, l'énergie, l'agriculture, l'environnement \ldots. Pour mieux le comprendre, il est nécessaire d'introduire les différents acteurs du métabolisme.
+    L'étude du métabolisme est essentiel pour la compréhension des êtres vivants. Les débouchés impactent de nombreux domaines, tel que : la pharmaceutique, l'énergie, l'agriculture, l'environnement \ldots.  Pour mieux le comprendre, il est nécessaire d'introduire les différents acteurs du métabolisme. En effet, le métabolisme représente un ensemble d'événement faisant intervenir des métabolites, des réactions, des cofacteurs, des enzymes \ldots.
     
-    En effet, ils sont de nature variés, les notions de thermodynamique se mêlent à celle de la chimie. Le métabolisme représente un ensemble d'évènement faisant intervenir des métabolites, des cofacteurs, des enzymes \ldots.
     
     
     \subsubsection{Les métabolites}
     
-    La succession des différents processus issus du métabolisme, produit des composés organiques intermédiaires, de petite taille, appelé métabolite. Ils sont tour à tour synthétisés puis dégradés. Selon leurs rôles, ils interviennent soit dans les processus indispensables au développement et à la reproduction, dit "métabolisme primaire" . Soit à des fonctions non vitale comme la production d'antibiotique, de phéromone, de pigment \ldots, dénommé "métabolisme secondaire" .
+    La succession des différents processus issus du métabolisme, produit des composés organiques intermédiaires, de petite taille, appelé métabolite. Ils sont tour à tour synthétisés puis dégradés. Selon leurs rôles, ils interviennent soit dans les processus indispensables, au développement et à la reproduction, dit "métabolisme primaire" . Soit pour des fonctions, non vitale comme la production d'antibiotique, de phéromone, de pigment \ldots, dénommé "métabolisme secondaire" .
     
-    \note{Un composé organique s'oppose a un composé minéral. Cette différentiation s'explique par des raisons philosophiques antérieur au \siecle{19}. En effet, on distinguait les substances constitutives des organismes des autres. Ne sachant pas synthétisé les molécules organiques. On expliquait qu'elle nécessité l'intervention d'une "force vitale". En 1828, Friedrich Wöler mis au point, accidentellement une expérience, produisant de l'urée (considéré comme organique) à partir de composé minéraux, comme le cyanate d’ammonium. Depuis lors, la notion de composé organique a évolué afin de désigné une molécule constitué d'une partie de carbone, le reste pouvant être des atomes d'hydrogène, oxygène azote et autres \ldots. La notion organique est resté car le carbone est un élément essentiel du vivant. Par opposition un composé minéral correspond à toutes toutes molécules constitué d'élément autre que le carbone. Pour plus d'information, je vous invite à lire \citetitle{chimie_organique}.
+    \note{Un composé organique s'oppose à un composé minéral. Cette différenciation s'explique par des raisons philosophiques antérieur au \siecle{19}. En effet, on distinguait les substances constitutives des organismes des autres. Ne sachant pas synthétiser les molécules organiques. On expliquait que l'intervention d'une "force vitale" était nécessaire. En 1828, Friedrich Wöler mis au point, accidentellement une expérience, produisant de l'urée (considéré comme organique) à partir de composé minéraux, comme le cyanate d’ammonium. Depuis lors, la notion de composé organique a évolué afin de désigner une molécule constituée d'une partie de carbone, le reste pouvant être des atomes d'hydrogène, oxygène azote et autres \ldots. La notion organique est resté car le carbone est un élément essentiel du vivant. Par opposition un composé minéral correspond à toutes molécules constituées d'élément autre que le carbone. Pour plus d'information, je vous invite à lire \citetitle{chimie_organique}.
     }    
+      
 
 	\subsubsection{Les réactions}
-	Ces processus s'effectuent au sein de l'organisme, dans l'infiniment petit, au niveau moléculaire. Effectivement des molécules produites par l'organisme vont avoir une affinité avec des composés chimiques. Leur rencontre provoque une transformation du composé. Puis, le ou les produits résultant de cette transformations, peuvent êtres à leur tour reconnu par des molécules produites par l'organisme. Provoquant ainsi une cascade de transformation chimique.
-	
-	La plupart de ces transformations ne sont pas spontanées. Pour cela, l'organisme dispose de molécule facilitant ces transformations, appelé "enzyme" . Ce sont des bio-catalyseurs, c'est-à-dire qu'elles vont favoriser ou accélérer une transformation chimique. Ces molécules peuvent couper, coller, réparer synthétiser ou encore modifier une molécule.
-	
-	Une enzyme est une molécule constituée d'acide aminé, dont ça structure tri-dimensionnel contient des régions impliqués dans la reconnaissance et la transformation de molécule. C'est pourquoi, une même enzyme reconnait une ou plusieurs molécules spécifiquement et induit les mêmes transformations chimiques. Ce processus est décrit par le modèle de "clef / serrure" (voir figure \ref{fig:reaction}).
-	\begin{shadedfigure}
-		\centering
-		\includegraphics[width=\textwidth]{img/lysine-oxoglutarate_reductase.png}
-		\caption{Schéma d'une réaction chimique catalyser par une enzyme. L'enzyme reconnait ces substrats 2-oxoglutarate et L-Lysine, puis les transforme en une molécule de L-Saccharopine. La molécule NADPH$^{+}$ est nécessaire à l'activité enzymatique. On parle de cofacteur.}
-		\label{fig:reaction}
-	\end{shadedfigure}
+	Le processus de transformation d’un métabolite est décrit par une réaction. On désigne par le terme “substrat, les métabolites avant transformation. Par opposition, on parle de produit pour la molécule transformé. Ainsi une réaction est l'événement qui va transformer un substrat afin de produire un nouveau métabolite.
     
+    Une réaction est généralement représenté par l’addition des molécules nécessaires à la transformation d’un côté. Puis de l’autre côté on expose la somme des molécules produites (voir figure \ref{fig:reaction}). Cette équation  représente la stœchiométrie de la réaction. C’est à dire que la proportion des éléments en jeu avant et après la réaction sont représentées. Pour reprendre la célébre maxime “rien ne ser”
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/decarboxylation.png}
+        \caption{Equation ….}
+        \label{fig:reaction}
+    \end{shadedfigure}
+    
+    \citation{ On voit que, pour arriver à la solution de ces deux questions, il fallait d'abord bien connaître l'analyse et la nature du corps susceptible de fermenter, et les produits de la fermentation ; car rien ne se crée, ni dans les opérations de l'art, ni dans celles de la nature, et l'on peut poser en principe que, dans toute opération, il y a une égale quantité de matière avant et après l'opération ; que la qualité et la quantité des principes est la même, et qu'il n'y a que des changements, des modifications }{Antoine Lavoisier}[Traité élémentaire de chimie, 1864]
+    
+    
+    \subsubsection{Les enzymes}
+    Ces processus s'effectuent au sein de l'organisme, dans l'infiniment petit, au niveau moléculaire. Effectivement des molécules produites par l'organisme vont avoir une affinité avec des composés chimiques. Leur rencontre provoque une transformation du composé. Puis, le ou les produits résultant de cette transformations, peuvent êtres à leur tour reconnu par des molécules produites par l'organisme. Provoquant ainsi une cascade de transformation chimique.
+    
+    La plupart de ces transformations ne sont pas spontanées. Pour cela, l'organisme dispose de molécule facilitant ces transformations, appelé "enzyme". Ce sont des bio-catalyseurs, c'est-à-dire qu'elles vont favoriser ou accélérer une transformation chimique. Ces molécules peuvent couper, coller, réparer synthétiser ou encore modifier une molécule.
+    
+    Une enzyme est une molécule constituée d'acide aminé, dont sa structure tri-dimensionnel contient des régions impliquées dans la reconnaissance et la transformation d’une molécule. C'est pourquoi, une même enzyme reconnaît une ou plusieurs molécules spécifiquement et induit les mêmes transformations chimiques. Ce processus est décrit par le modèle de "clef / serrure" (voir figure \ref{fig:reaction_enzymatique}).
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/lysine-oxoglutarate_reductase.png}
+        \caption{Schéma d'une réaction chimique catalysée par une enzyme. L'enzyme reconnaît ces substrats 2-oxoglutarate et L-Lysine, puis les transforme en une molécule de L-Saccharopine. La molécule NADPH$^{+}$ est nécessaire à l'activité enzymatique. On parle de cofacteur.}
+        \label{fig:reaction_enzymatique}
+    \end{shadedfigure}
+    
+    Une enzyme possède une affinité importante avec son substrat. Cette affinité influe sur l’activité enzymatique, c’est à dire sur la vitesse de transformation du substrat. Il existe des molécules, autres que les substrats de l’enzyme,  avec  une forte affinité pour l’enzyme. De tels molécules vont diminuer l’activité enzymatique. Les inhibiteurs enzymatiques joue un rôle important dans le métabolisme. Ils sont employés comme régulateurs du métabolisme. 
+    
+    \note{
+        Les inhibiteurs enzymatiques permettent de limiter voir d’arrêter l’activité d’une enzyme. Cette caractéristique est employé pour  tuer des organismes pathogènes. Par exemple, La Pénicilline est un inhibiteur de la  transpeptidase intervenant dans la synthèse du peptidoglycane. Le peptidoglycane forme la paroi des bactéries. Si cette dernière est dans l’incapacité de synthétiser ça paroi alors cela conduit à la mort de la bactérie.
+    }
+
     \subsubsection{Les cofacteurs}
-    ATP ADP energie
+    Certaines réactions nécessite l’apport d'énergie, d’ion ou encore de molécules d'assistance qui vont favoriser l’activité enzymatique.
     
     
-    \subsubsection{L'anabolisme et le catabolisme}
+    \subsubsection{Voies métaboliques}
     On distingue dans le métabolisme deux catégories de processus, l'anabolisme et le catabolisme. L'anabolisme, représente l'ensemble des réactions impliqué dans la synthèse de nouvelle molécule. La production de nouveaux composés nécessite de l'énergie. De tels processus sont constitués de réaction endergonique. Ainsi le bilan énergétique est négatif.  Au contraire, le catabolisme décrit l'ensemble des réactions de dégradation de molécule. Les réactions impliquées dans la dégradation d'une composé, produisent in-fine plus d'énergie qu'elles en on consommé. Ces réactions produisant de l'énergie sont dites exergoniques.
+    
     
     \subsection{Représentation en graphe}
     \subsection{Ressources sur les voies métaboliques}
@@ -83,25 +105,144 @@
     
     \section{Des génomes aux réseaux métaboliques}
     
-    La connaissance de l'origine des différentes protéines intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. L'acquisition d'un nouvel intervenant est long. Toutefois ce coût est rentabiliser car il deviendra utilisable pour rechercher ça présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappellons brievement les trois niveaux qui les relient. Ceci implique:
+    La connaissance de l'origine des différentes protéines intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. Toutefois ce coût est rentabilisé car il deviendra utilisable pour rechercher sa présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappelons brièvement les trois niveaux qui les relient. Ceci implique:
     
     \begin{itemize}
-    	\item Le génome: compossé d'un ensemble de gène
-    	\item Le transcriptome: constitué d'\gls{ARNm} produit par l'organisme
-    	\item Le protéome: ensemble des protéines exprimé par l'organisme
+        \item Le génome: composé d'un ensemble de gènes
+        \item Le transcriptome: constitué d'\gls{ARNm} produit par l'organisme
+        \item Le protéome: ensemble des protéines exprimées par l'organisme
     \end{itemize}
-
-	Le transcriptome et dans un second temps le protéome, représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçu par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Tandis que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimé plusieurs protéines.}. Ce lien indirect entre le gène et protéine et également appelé "GPR" pour: \textit{Genome Protein Relation}.
     
-    \subsection{Annotation fonctionnelle}
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/production_proteine2.pdf}
+        \caption{Schéma des différentes étapes aboutissant à la production d’une protéine.}
+        \label{fig:production_proteine}
+    \end{shadedfigure}
+    
+    Le transcriptome et, dans un second temps, le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Alors que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène et protéine est également appelé "\acrshort{GPR}" pour: \textit{\acrfull{GPR}}.
+    
+    Afin de documenter le génome, le transcriptome et le protéome on passe par plusieurs étapes d’annotation. L’annotation peut être de nature automatique ou manuelle. Dans ce dernier cas, des experts vont effectuer un travail de validation et invalidation des annotations. Ce travail de curation des données est important car les prédicteurs automatiques ne sont pas toujours fiables.
+    
+    On distingue trois niveaux d’annotation pour un génome (Figure \ref{fig:niveaux_annotation}). Le premier niveau est l’annotation structurale. Elle est utilisé pour définir les bornes de début et de fin d’un gène.  Le second niveau est l’annotation fonctionnelle. Elle recherche à prédire les fonctions biologiques des gènes. Puis, le troisième niveaux correspond à l’annotation relationnelle. Cette annotation consiste à étiqueter les différentes interactions entre les produits des gènes.
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/niveaux_annotation.png}
+        \caption{Présentation des différents niveaux d’annotation.}
+        \label{fig:niveaux_annotation}
+    \end{shadedfigure}
+    
+    \subsection{L’évolution des génomes}
+    Avant d'approfondir l’annotation génomique, il est nécessaire de comprendre le processus d’évolution des génomes. Car les méthodes d’annotation automatique utilisent cette théorie pour extrapoler des fonctionnalitées d’un organisme vers un autre.
+    
+    Le principe explique que le vivant est soumis à différentes contraintes, environnementale par exemple ( ressources nutritives, température, acidité \ldots ), ainsi avec le temps les générations d’individus les plus adaptés à ces contraintes ont de meilleurs chances de se reproduirent. Par conséquent de transmettre leur patrimoine génétique. D’ailleurs c’est ce patrimoine génétique qui permet de s’adapter aux contraintes. Il est le support de l’expression métabolique et ce métabolisme peut fournir des avantages par rapport aux autres individus. Ainsi tant que métabolisme d’un organisme est adapté à ces contraintes, l’individu peut se reproduire et perpétuer sa lignée génétique.
+    
+    Toutefois le génome d’un enfant n’est pas forcément la copie exacte des parents. Différents évènement peuvent venir le modifier légèrement. Par conséquent les gènes modifiés vont produire une protéines légèrement différentes. Ces modifications peuvent alors soit procurer un avantage soit un désavantage qui va mener à la fin de la transmission de ce patrimoine. Pour celà, nous observons la plupart du temps seulement les organismes possédant un patrimoine génétique suffisamment adapté à leurs contraintes. En bref, les organismes sous l’effet de pression variées sont sélectionnées.
+    
+    Suivant cet théorie les gènes se modifient légèrement au cours du temps provoquant de légère modification de leurs séquences. Ainsi des séquences proche de par leur composition sont supposé effectuer produire des protéines avec des fonctions similaires. Le génome peut subir différents évènement qui va conduire à l’expression de protéines différentes de l’origine. 
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/gene_indel.pdf}
+        \caption{Présentation de plusieurs évènement génomiques....}
+        \label{fig:/evenement_mutation}
+    \end{shadedfigure}
+    
+    En conséquence, les gènes similaire d’organismes différents provenant d’un même gène ancestral sont dit homologues. Par contraste, les gènes d’organismes différents mais n’ayant pas la même origine sont définis comme analogue.
+    
+    Les évènement de duplications de gènes décrivent la création d’une nouvelle copie de gène dans l’organisme. Étant donné que l'organisme possède une fonctionnalité en double, une des copies peut diverger. En effet, il existe toujours la fonctionnalité originelle sur un gène. La pression de sélection implique qu’une des copies de gène produisent une protéine remplissant la même fonction originelle. On utilise le terme paralogue pour décrire des gènes issue de cet événement de duplication. Un tels évènement peut dupliquer un gène, une régions de génome contenant plusieurs gènes  voir dans certains cas un génome.
+    
+    Les événements de fusion de gène représentent des gènes originellement séparé qui vont former un unique gène. Par opposition les évènement de fission vont  engendrer la coupure d’un gène en deux gènes distinct. Typiquement ce cas est observé avec des gènes codant pour des protéines multi-domaines. Par exemple, une protéine avec deux domaines, codé par un gène se fissure de tels sorte, que chacun des deux nouveaux gènes se spécialise pour produire un des deux domaines de la protéines. Ce phénomène peut engendrer une pression de sélection différentes sur ces deux gènes, selon l’importance du rôle joué par le domaine dans la protéine. Par conséquent un des deux gènes va diverger plus rapidement du gène ancestrale.
+    
+    Le relâchement de certains facteur de pression de sélection peut conduire à des événements de délétion. L’organisme n’étant plus contraint de posséder une fonctionnalité, les modifications du gène n’impacte pas la capacité de reproduction de l’organisme. Ces modifications peuvent amener à la disparition d’un gène fonctionnel. C’est à dire que la séquence du gène à garder des similarités avec le gène ancestrales mais il n’est plus en mesure de fournir la fonctionnalité.
+    
+    On retrouve également des évènements d’inversion de séquence, de translocations (le gène peut va être déplacé sur un autre chromosome), de transpositions ( un ou plusieurs gènes vont être directement intégré au sein du génome.
+    
+    L’accumulation de tous ces événements peuvent amener  à une divergences importantes du génomes par rapport à un génome ancestrale. Ceci conduit à l’émergence de nouvelle espèce qui vont évoluer différemment. Ces espèces provenant d’une espèces ancestrales vont avoir des gènes proches. Ces gènes sont dit paralogues.
+    
+    L’horloge moléculaire des régions qui ne sont pas soumises à la pression de sélection naturelle (ne codant pas pour des gènes) et minimale dans les parties du génome soumises à une forte pression (c'est à dire les régions codant pour des fonctions essentielles à la survie de l'organisme).
+    
+    
+    \subsection{Annotation des génomes}
+    Changer le contenu de cette section car Annotation fonctionnelles est devenu annotation des génomes.
+    Syntaxique, fonctionnelle, relationnelle (dont voies métaboliques) Zoom sur les fonctions impliquées dans les processus bio = voie métaboliques
+    
+    L’annotation fonctionnelle des gènes, correspond au processus d’attribution de rôle biologique à des gènes. En effet ces gènes vont produire des protéines disposant de une ou plusieurs fonctionnalitées pour l’organisme. Ces fonctions sont habituellement classé en trois catégories: moléculaires, cellulaires, phénotypiques.
+    
+    Les fonctions moléculaires décrivent le rôle biochimique et/ou structural de la protéine. Ainsi les fonctionnalités de catalyse, de liaison et autres sont présentées.
+    
+    Les fonctions cellulaires établissent les différentes interactions de la protéines au sein de la cellule. Par exemple le rôle d’une enzyme dans une voie métabolique comme la biosynthèse de la lysine . 
+    
+    Les fonctions phénotypiques détail les caractéristique observable induite par l’activité d’une protéine. A titre d’exemple, la présence ou l’absence d’une protéine peut jouer un rôle sur la capacité de l’organisme à se développer dans un environnement.
+    
+    Pour cela l’annotation fonctionnelles basé sur des méthodes expérimentales consiste à isoler chaque produit des gènes afin de tester leurs rôles. Par exemple on peut utiliser un vecteur de clonage contenant un gène d'intérêt. Puis on incorpore le vecteur de dans un organisme. Cet organisme est cultivé afin exprimer le gène d'intérêt. La protéine produit par le gène et ensuite purifier afin d'éliminer tout autre molécule. Et enfin seulement après la réussite des étapes précédentes, on va pouvoir tester les fonctions de la protéine.  Ces méthodes ne sont  pas envisageable à l’état d’un génome. Elle sont utilisé pour valider une prédiction bioinformatique.
+    
+    Les méthodes d’annotation fonctionnelle  bioinformatiques se base sur la comparaison de séquence. Ainsi les séquences homologues, les protéines de même familles, les séquences possédant un même domaine ou motif partageront des annotation fonctionnelles.
+    
     \subsection{Reconstruction des réseaux métaboliques}
+    Le métabolisme est un ensemble de réaction biochimique. Une réaction transforme des composés en de nouveaux métabolites. Ces derniers sont modifiées par une autre transformations. Cette succession d'évènement peut être représenté sous la forme d’un graphe de réactions. Le produit d’une réaction est relié à une autre réaction lorsque cette dernière utilise ce métabolite transformé.
+    
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/graphe_reactions_glycolyse.pdf}
+        \caption{A changer source wikipedia.Représentation de la dégradation du glucose sous forme d’un graphe réactionnel. La  succession des réactions forme un chemin dans le réseaux. Cette représentation a pour vocation de restreindre les évènements qui occurrent dans l'organisme aux réactions. Il est important de retenir que ce type de schéma, n'indique pas si ces réactions ont lieu dans le même compartiment cellulaire. Ou encore si les protéines nécessaires aux réactions sont toutes présentes à un moment donnée. Cette une vue générale des réaction pouvant avoir lieu dans un organismes.  }
+        \label{fig:glycolysis}
+    \end{shadedfigure}
+
     \subsection{Modèles métaboliques}
     \subsection{Les données expérimentales}
     \subsubsection{Élucidation des voies métaboliques}
+    Avec la découverte des enzymes à la fin du \siecle{19}, un nouveau champs de connaissance en biologie s’ouvrait. L’enzyme est la clé menant à la compréhension du vivant. Pour cela, la communauté scientifique réalisa un très grand nombre d’expérience permettant produire puis ...
     \subsubsection{Phénotypes de croissances}
+    La plupart des molécules biologiques sont constituées d’atome de  carbone (C), d’hydrogène (H), d’oxygène (O), d’azote (N), de phosphore (P) et de soufre (S) (\acrshort{CHONPS}). Par conséquent les organismes doivent avoir au moins une source de nutrition pour chacun de ces éléments. En plus de ces éléments, on considère qu’il est nécessaire pour la vie d’avoir une source de potassium, de calcium, de magnésium, de fer, d’oligo-éléments et d’eau. Ce sont les éléments minimum pour la vie. Tout autres éléments permettant à des organismes de se développer est catégorisé comme facteur de croissance. 
     
+    Selon les organismes vivants, leurs besoins en éléments et facteurs de croissances varient avec leur capacité métabolique. Ce qui permet de catégoriser les organismes, au regard des manières de constituer de la matière organique via leur anabolisme, ainsi que des moyens de production énergétique via leur catabolisme. (trop lourd) Ces catégories dites types trophiques dépendent de la nature  (i) de la source de carbone (ii) du donneur d’électrons (iii) de la source d'énergie (voir Tableau \ref{tab:type trophique}.
+    \begin{landscape}
+        \begin{table}[]
+            \centering
+            \caption{Structuration des différents types trophiques}
+            \label{tab:type trophique}
+            \begin{tabular}{|l|l|l|l|}
+                \multirow{2}{*}{\specialcell{Lumière\\Photo-}}                              &  \multirow{2}{*}{\specialcell{Composé organique\\-organo-}}   & Organique -hétérotrophe & Photoorganohétérotrophe    \\
+                                                                                            &                                                               & Minérale -autotrophe    & Photoorganoautotrophe      \\ 
+                                                                                            &  \multirow{2}{*}{\specialcell{Inorganique\\-litho-}}          & Organique -hétérotrophe & Photolithohétérotrophe     \\
+                                                                                            &                                                               & Minérale -autotrophe    & Photolithoautotrophe       \\ \hline
+                \multirow{2}{*}{\specialcell{Composé chimique\\organique ou non\\Chimio-}}  &  \multirow{2}{*}{\specialcell{Composé organique\\-organo-}}   & Organique -hétérotrophe & Chimioorganohétérotrophe   \\
+                                                                                            &                                                               & Minérale -autotrophe    & Chimioorganoautotrophe     \\ 
+                                                                                            &  \multirow{2}{*}{\specialcell{Inorganique\\-litho-}}          & Organique -hétérotrophe & Chimiolithohétérotrophe    \\
+                                                                                            &                                                               & Minérale -autotrophe    & Chimiolithoautotrophe      \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{landscape}
+    Certains organismes ont la faculté de se développer dans des milieux dépourvu de facteur de croissance. C’est à dire, qu'à partir des éléments minimaux nécessaires à la vie, ils sont capables de produire toutes les molécules  indispensables à leurs développement. Ce sont des organismes dit prototrophe.  Dans le cas contraire on parle d’auxotrophie. 
+    
+    Le métabolisme fournit les acides aminés indispensable à la production de protéines. Ces protéines sont constitués d’acides aminés. Par conséquent l’organisme doit se procurer ces acides aminés soit par des voies de biosynthèses soit directement par nutrition. C’est pour cela qu’avec les organismes prototrophes on s’attends à retrouver toutes les voies de la biosynthèses des acides aminés. Et par opposition un organisme auxotrophe à un acide aminé ne devrait pas avoir la voie de biosynthèse de ce dernier.
+    
+    \subsection{MicroScope : une plateforme d’annotation de génomes procaryotes et d’analyse de leur métabolisme}
+    
+    Chapeau : objectif MicroScope, les différentes publications
+    Puis celle de 2017
+    Section de la fin : souligner ce qui a été fait en terme de curation pour les bio… mais mieux à faire pour guider les bio dans leur travail de curati=> objectif de ton travail
+    
+
     \section{Raisonnement logique dans le processus de curation}
+    
+    Le processus de curation consiste d’ajouter et/ou enlever des annotations manuellement. Pour cela les bio-curateurs utilisent un ensemble de règles qui leur sont propres. Une des méthodes utilisé par les bio-curateurs passe par la reconstruction des voies métaboliques. Le bio-curateur connaît des caractéristiques phénotypique de son organisme d’intérêt. Il va pour cela commencer par vérifier si les ces caractéristiques sont corrélés aux prédictions. Par exemple, lorsque l’on reconstruit les voies métaboliques d’un Citrobacter, on s’attend à retrouver au moins une voie complète, permettant la dégradation du citrate. Si ce n’est pas le cas, le bio-curateur informé de cette lacune dans l’annotation, va rechercher un ou plusieurs gène permettant in-fine d’exprimer cette capacité.
+    
+    Par ailleurs, lorsque le bio-curateur s’aperçoit qu’il manque une réaction afin de réaliser une voie métabolique. Il va essayer de caractériser le gène en se basant sur le contexte génomiques. Les gènes liées aux réactions qui précèdent et succèdent la réaction non annoté à un gène (trop compliqué)
+    
     \subsection{Lacunes et incertitudes dans nos connaissances}
+    
+    Quelque soit le domaine d’expertise, nous avons des éléments imprédictibles par les modèles scientifiques. Notre savoir sur le monde qui nous entoure est encore partiel. Les modèles scientifiques permettent de représenter une partie de ce monde. Mais il existe un nombre de fait, non négligeable, qui échappe à ces  modèles. Ces trous de connaissances peuvent être identifiés lorsque l’on oppose les prédictions aux expectations. Il apparaît que des faits attendues reste non prédit.
+    
+    D’autre part, les ressources entreposant les faits prédits sont variées. Leurs prédictions proviennent  de différents algorithmes dont leur spécificité \footnote{Proportion de résultat négatifs correctement identifiés.} et sensibilité \footnote{Proportion de résultats positifs correctement identifiés.} diffèrent d’un algorithme à un autre. Ces prédictions aux taux d’erreurs variés viennent enrichir les entrepôts de données. Puis ils seront utilisé à leur tour utilisé pour prédire de nouveau faits. Par conséquent  le taux d’erreur de la première prédiction vient s’ajouter au taux d’erreur de la méthode. Ce processus cyclique, permet de capturer un nombre plus important de fait. Mais il a l’inconvénient de surprédire.
+    
+    Ces problématiques sont retrouvées dans le processus de prédictions de fonction protéiques.
+    Pour pallier à ce phénomène des initiatives tente de limiter l’extrapolation abusive faites par les prédicteurs. Par exemple \citeauthor{pfeiffer2015manual}
+    
+    
     \subsubsection{Les trous dans les connaissances et les enzymes orphelines}
     \subsubsection{Limites de l’annotation fonctionnelle et rôle de la curation}
     \subsection{Logique et raisonnement}

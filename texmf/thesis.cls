@@ -75,6 +75,8 @@
 \RequirePackage{romanbar}                % Use more than one optional parameter in a new commands
 \RequirePackage{emptypage}
 \RequirePackage{needspace}
+\RequirePackage{pdflscape}
+\RequirePackage{multirow}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -628,4 +630,14 @@ BoldItalicFont=FiraSans-MediumItalic
 	\end{tcolorbox}
 \end{figure}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tableaux commandes        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
 \endinput
