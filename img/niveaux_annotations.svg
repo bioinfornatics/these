@@ -16,7 +16,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.0 r"
-   sodipodi:docname="niveaux_annotation.svg"
+   sodipodi:docname="niveaux_annotations.svg"
    inkscape:export-filename="/home/jonathan/these/img/niveaux_annotation.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -231,7 +231,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="41.604103"
+     inkscape:cx="-38.75304"
      inkscape:cy="168.2893"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -262,7 +262,14 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(13.796131,-115.61028)">
+     transform="translate(13.796131,-115.61029)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#fffeff;stroke-width:0.79657453;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4649"
+       width="119.20342"
+       height="75.150024"
+       x="-13.397843"
+       y="116.00858" />
     <g
        id="g4312"
        transform="matrix(0.42571652,0,0,0.42571652,-7.9228901,110.00795)">
