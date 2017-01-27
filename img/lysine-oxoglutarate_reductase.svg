@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="119.99999mm"
-   height="42.120087mm"
-   viewBox="0 0 119.99999 42.120087"
+   height="42.12009mm"
+   viewBox="0 0 119.99999 42.120091"
    version="1.1"
    id="svg8"
    sodipodi:docname="lysine-oxoglutarate_reductase.svg"
@@ -63,7 +63,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="312.94797"
+     inkscape:cx="199.30581"
      inkscape:cy="58.024189"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -93,7 +93,14 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0.44979586,-68.91505)">
+     transform="translate(0.44979586,-68.915047)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.43371534;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4590"
+       width="118.56628"
+       height="40.686375"
+       x="0.2670618"
+       y="69.631905" />
     <path
        style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:0.0592364;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        clip-path="none"
@@ -501,7 +508,7 @@ O</text>
       <polygon
          transform="matrix(0.26458333,0,0,0.26458333,120.5744,40.732143)"
          id="polygon6118"
-         points="109.387,61.4583 104.387,61.4583 106.887,46.125 "
+         points="104.387,61.4583 106.887,46.125 109.387,61.4583 "
          style="fill:#008080;stroke:none" />
       <line
          id="line6120"
@@ -632,7 +639,7 @@ O</text>
       <polygon
          transform="matrix(0.26458333,0,0,0.26458333,120.5744,41.26131)"
          id="polygon6156"
-         points="43.6674,123.738 56.2241,133.875 41.1673,128.069 "
+         points="56.2241,133.875 41.1673,128.069 43.6674,123.738 "
          style="fill:#008080;stroke:none" />
     </g>
     <text

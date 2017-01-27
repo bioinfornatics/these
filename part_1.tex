@@ -77,7 +77,7 @@
     Une enzyme est une molécule constituée d'acide aminé, dont sa structure tri-dimensionnel contient des régions impliquées dans la reconnaissance et la transformation d’une molécule. C'est pourquoi, une même enzyme reconnaît une ou plusieurs molécules spécifiquement et induit les mêmes transformations chimiques. Ce processus est décrit par le modèle de "clef / serrure" (voir figure \ref{fig:reaction_enzymatique}).
     \begin{shadedfigure}
         \centering
-        \includegraphics[width=\textwidth]{img/lysine-oxoglutarate_reductase.png}
+        \includegraphics[width=\textwidth]{img/lysine-oxoglutarate_reductase.pdf}
         \caption{Schéma d'une réaction chimique catalysée par une enzyme. L'enzyme reconnaît ces substrats 2-oxoglutarate et L-Lysine, puis les transforme en une molécule de L-Saccharopine. La molécule NADPH$^{+}$ est nécessaire à l'activité enzymatique. On parle de cofacteur.}
         \label{fig:reaction_enzymatique}
     \end{shadedfigure}
@@ -108,9 +108,9 @@
     La connaissance de l'origine des différentes protéines intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. Toutefois ce coût est rentabilisé car il deviendra utilisable pour rechercher sa présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappelons brièvement les trois niveaux qui les relient. Ceci implique:
     
     \begin{itemize}
-        \item Le génome: composé d'un ensemble de gènes
-        \item Le transcriptome: constitué d'\gls{ARNm} produit par l'organisme
-        \item Le protéome: ensemble des protéines exprimées par l'organisme
+        \item Le génome : composé d'un ensemble de gènes
+        \item Le transcriptome : constitué d'\gls{ARNm} produit par l'organisme
+        \item Le protéome : ensemble des protéines exprimées par l'organisme
     \end{itemize}
     
     \begin{shadedfigure}
@@ -120,89 +120,89 @@
         \label{fig:production_proteine}
     \end{shadedfigure}
     
-    Le transcriptome et, dans un second temps, le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Alors que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène et protéine est également appelé "\acrshort{GPR}" pour: \textit{\acrfull{GPR}}.
+    Le transcriptome et, dans un second temps, le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Alors que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène et protéine est également appelé "\acrshort{GPR}" pour : \textit{\acrfull{GPR}}.
     
     Afin de documenter le génome, le transcriptome et le protéome on passe par plusieurs étapes d’annotation. L’annotation peut être de nature automatique ou manuelle. Dans ce dernier cas, des experts vont effectuer un travail de validation et invalidation des annotations. Ce travail de curation des données est important car les prédicteurs automatiques ne sont pas toujours fiables.
     
-    On distingue trois niveaux d’annotation pour un génome (Figure \ref{fig:niveaux_annotation}). Le premier niveau est l’annotation structurale. Elle est utilisé pour définir les bornes de début et de fin d’un gène.  Le second niveau est l’annotation fonctionnelle. Elle recherche à prédire les fonctions biologiques des gènes. Puis, le troisième niveaux correspond à l’annotation relationnelle. Cette annotation consiste à étiqueter les différentes interactions entre les produits des gènes.
+    On distingue trois niveaux d’annotation pour un génome (Figure \ref{fig:niveaux_annotation}). Le premier niveau est l’annotation structurale. Elle est utilisé pour définir les bornes de début et de fin d’un gène.  Le second niveau est l’annotation fonctionnelle. Elle recherche à prédire les fonctions biologiques des gènes. Puis, le troisième niveau correspond à l’annotation relationnelle. Cette annotation consiste à étiqueter les différentes interactions entre les produits des gènes.
     
     \begin{shadedfigure}
         \centering
-        \includegraphics[width=\textwidth]{img/niveaux_annotation.png}
+        \includegraphics[width=\textwidth]{img/niveaux_annotations.pdf}
         \caption{Présentation des différents niveaux d’annotation.}
         \label{fig:niveaux_annotation}
     \end{shadedfigure}
     
     \subsection{L’évolution des génomes}
-    Avant d'approfondir l’annotation génomique, il est nécessaire de comprendre le processus d’évolution des génomes. Car les méthodes d’annotation automatique utilisent cette théorie pour extrapoler des fonctionnalitées d’un organisme vers un autre.
+    Avant d'approfondir l’annotation génomique, il est nécessaire de comprendre le processus d’évolution des génomes. Car les méthodes d’annotation automatique utilisent cette théorie pour extrapoler des fonctionnalités d’un organisme vers un autre.
     
     Le principe explique que le vivant est soumis à différentes contraintes, environnementale par exemple ( ressources nutritives, température, acidité \ldots ), ainsi avec le temps les générations d’individus les plus adaptés à ces contraintes ont de meilleurs chances de se reproduirent. Par conséquent de transmettre leur patrimoine génétique. D’ailleurs c’est ce patrimoine génétique qui permet de s’adapter aux contraintes. Il est le support de l’expression métabolique et ce métabolisme peut fournir des avantages par rapport aux autres individus. Ainsi tant que métabolisme d’un organisme est adapté à ces contraintes, l’individu peut se reproduire et perpétuer sa lignée génétique.
     
-    Toutefois le génome d’un enfant n’est pas forcément la copie exacte des parents. Différents évènement peuvent venir le modifier légèrement. Par conséquent les gènes modifiés vont produire une protéines légèrement différentes. Ces modifications peuvent alors soit procurer un avantage soit un désavantage qui va mener à la fin de la transmission de ce patrimoine. Pour celà, nous observons la plupart du temps seulement les organismes possédant un patrimoine génétique suffisamment adapté à leurs contraintes. En bref, les organismes sous l’effet de pression variées sont sélectionnées.
+    Toutefois le génome d’un enfant n’est pas forcément la copie exacte des parents. Différents évènements peuvent venir le modifier légèrement. Par conséquent les gènes modifiés vont produire une protéine légèrement différentes. Ces modifications peuvent alors soit procurer un avantage soit un désavantage qui va mener à la fin de la transmission de ce patrimoine. Pour cela, nous observons la plupart du temps seulement les organismes possédant un patrimoine génétique suffisamment adapté à leurs contraintes. En bref, les organismes sous l’effet de pression variées sont sélectionnées.
     
-    Suivant cet théorie les gènes se modifient légèrement au cours du temps provoquant de légère modification de leurs séquences. Ainsi des séquences proche de par leur composition sont supposé effectuer produire des protéines avec des fonctions similaires. Le génome peut subir différents évènement qui va conduire à l’expression de protéines différentes de l’origine. 
+    Suivant cette théorie les gènes se modifient légèrement au cours du temps provoquant de légère modification de leurs séquences. Ainsi des séquences proche de par leur composition sont supposé effectuer produire des protéines avec des fonctions similaires. Le génome peut subir différents évènements qui vont conduire à l’expression de protéines différentes de l’origine. <- mal dit
     
     \begin{shadedfigure}
         \centering
         \includegraphics[width=\textwidth]{img/gene_indel.pdf}
-        \caption{Présentation de plusieurs évènement génomiques....}
+        \caption{Présentation de plusieurs évènements génomiques....}
         \label{fig:/evenement_mutation}
     \end{shadedfigure}
     
-    En conséquence, les gènes similaire d’organismes différents provenant d’un même gène ancestral sont dit homologues. Par contraste, les gènes d’organismes différents mais n’ayant pas la même origine sont définis comme analogue.
+    En conséquence, les gènes similaires d’organismes différents provenant d’un même gène ancestral sont dit homologues. Par contraste, les gènes d’organismes différents mais n’ayant pas la même origine sont définis comme analogue.
     
-    Les évènement de duplications de gènes décrivent la création d’une nouvelle copie de gène dans l’organisme. Étant donné que l'organisme possède une fonctionnalité en double, une des copies peut diverger. En effet, il existe toujours la fonctionnalité originelle sur un gène. La pression de sélection implique qu’une des copies de gène produisent une protéine remplissant la même fonction originelle. On utilise le terme paralogue pour décrire des gènes issue de cet événement de duplication. Un tels évènement peut dupliquer un gène, une régions de génome contenant plusieurs gènes  voir dans certains cas un génome.
+    Les évènements de duplications de gènes décrivent la création d’une nouvelle copie de gène dans l’organisme. Étant donné que l'organisme possède une fonctionnalité en double, une des copies peut diverger. En effet, il existe toujours la fonctionnalité originelle sur un gène. La pression de sélection implique qu’une des copies de gène produisent une protéine remplissant la même fonction originelle. On utilise le terme paralogue pour décrire des gènes issue de cet événement de duplication. Un tel évènement peut dupliquer un gène, une région de génome contenant plusieurs gènes  voir dans certains cas un génome.
     
-    Les événements de fusion de gène représentent des gènes originellement séparé qui vont former un unique gène. Par opposition les évènement de fission vont  engendrer la coupure d’un gène en deux gènes distinct. Typiquement ce cas est observé avec des gènes codant pour des protéines multi-domaines. Par exemple, une protéine avec deux domaines, codé par un gène se fissure de tels sorte, que chacun des deux nouveaux gènes se spécialise pour produire un des deux domaines de la protéines. Ce phénomène peut engendrer une pression de sélection différentes sur ces deux gènes, selon l’importance du rôle joué par le domaine dans la protéine. Par conséquent un des deux gènes va diverger plus rapidement du gène ancestrale.
+    Les événements de fusion de gène représentent des gènes originellement séparé qui vont former un unique gène. Par opposition les évènements de fission vont  engendrer la coupure d’un gène en deux gènes distincts. Typiquement ce cas est observé avec des gènes codant pour des protéines multi-domaines. Par exemple, une protéine avec deux domaines, codé par un gène se fissure de tels sorte, que chacun des deux nouveaux gènes se spécialise pour produire un des deux domaines de la protéines. Ce phénomène peut engendrer une pression de sélection différentes sur ces deux gènes, selon l’importance du rôle joué par le domaine dans la protéine. Par conséquent un des deux gènes va diverger plus rapidement du gène ancestrale.
     
-    Le relâchement de certains facteur de pression de sélection peut conduire à des événements de délétion. L’organisme n’étant plus contraint de posséder une fonctionnalité, les modifications du gène n’impacte pas la capacité de reproduction de l’organisme. Ces modifications peuvent amener à la disparition d’un gène fonctionnel. C’est à dire que la séquence du gène à garder des similarités avec le gène ancestrales mais il n’est plus en mesure de fournir la fonctionnalité.
+    Le relâchement de certains facteur de pression de sélection peut conduire à des événements de délétion. L’organisme n’étant plus contraint de posséder une fonctionnalité, les modifications du gène n’impacte pas la capacité de reproduction de l’organisme. Ces modifications peuvent amener à la disparition d’un gène fonctionnel. C’est-à-dire que la séquence du gène à garder des similarités avec le gène ancestrales mais il n’est plus en mesure de fournir la fonctionnalité.
     
     On retrouve également des évènements d’inversion de séquence, de translocations (le gène peut va être déplacé sur un autre chromosome), de transpositions ( un ou plusieurs gènes vont être directement intégré au sein du génome.
     
-    L’accumulation de tous ces événements peuvent amener  à une divergences importantes du génomes par rapport à un génome ancestrale. Ceci conduit à l’émergence de nouvelle espèce qui vont évoluer différemment. Ces espèces provenant d’une espèces ancestrales vont avoir des gènes proches. Ces gènes sont dit paralogues.
+    L’accumulation de tous ces événements peuvent amener  à une divergence importante du génome par rapport à un génome ancestral. Ceci conduit à l’émergence de nouvelle espèce qui vont évoluer différemment. Ces espèces provenant d’une espèces ancestrales vont avoir des gènes proches. Ces gènes sont dits paralogues.
     
-    L’horloge moléculaire des régions qui ne sont pas soumises à la pression de sélection naturelle (ne codant pas pour des gènes) et minimale dans les parties du génome soumises à une forte pression (c'est à dire les régions codant pour des fonctions essentielles à la survie de l'organisme).
+    L’horloge moléculaire des régions qui ne sont pas soumises à la pression de sélection naturelle (ne codant pas pour des gènes) et minimale dans les parties du génome soumises à une forte pression (c'est-à-dire les régions codant pour des fonctions essentielles à la survie de l'organisme).
     
     
     \subsection{Annotation des génomes}
-    Changer le contenu de cette section car Annotation fonctionnelles est devenu annotation des génomes.
+    Changer le contenu de cette section car Annotation fonctionnelle est devenu annotation des génomes.
     Syntaxique, fonctionnelle, relationnelle (dont voies métaboliques) Zoom sur les fonctions impliquées dans les processus bio = voie métaboliques
     
-    L’annotation fonctionnelle des gènes, correspond au processus d’attribution de rôle biologique à des gènes. En effet ces gènes vont produire des protéines disposant de une ou plusieurs fonctionnalitées pour l’organisme. Ces fonctions sont habituellement classé en trois catégories: moléculaires, cellulaires, phénotypiques.
+    L’annotation fonctionnelle des gènes, correspond au processus d’attribution de rôle biologique à des gènes. En effet ces gènes vont produire des protéines disposant de une ou plusieurs fonctionnalités pour l’organisme. Ces fonctions sont habituellement classées en trois catégories : moléculaires, cellulaires, phénotypiques.
     
     Les fonctions moléculaires décrivent le rôle biochimique et/ou structural de la protéine. Ainsi les fonctionnalités de catalyse, de liaison et autres sont présentées.
     
     Les fonctions cellulaires établissent les différentes interactions de la protéines au sein de la cellule. Par exemple le rôle d’une enzyme dans une voie métabolique comme la biosynthèse de la lysine . 
     
-    Les fonctions phénotypiques détail les caractéristique observable induite par l’activité d’une protéine. A titre d’exemple, la présence ou l’absence d’une protéine peut jouer un rôle sur la capacité de l’organisme à se développer dans un environnement.
+    Les fonctions phénotypiques détails les caractéristiques observables induite par l’activité d’une protéine. A titre d’exemple, la présence ou l’absence d’une protéine peut jouer un rôle sur la capacité de l’organisme à se développer dans un environnement.
     
-    Pour cela l’annotation fonctionnelles basé sur des méthodes expérimentales consiste à isoler chaque produit des gènes afin de tester leurs rôles. Par exemple on peut utiliser un vecteur de clonage contenant un gène d'intérêt. Puis on incorpore le vecteur de dans un organisme. Cet organisme est cultivé afin exprimer le gène d'intérêt. La protéine produit par le gène et ensuite purifier afin d'éliminer tout autre molécule. Et enfin seulement après la réussite des étapes précédentes, on va pouvoir tester les fonctions de la protéine.  Ces méthodes ne sont  pas envisageable à l’état d’un génome. Elle sont utilisé pour valider une prédiction bioinformatique.
+    Pour cela l’annotation fonctionnelle basé sur des méthodes expérimentales consiste à isoler chaque produit des gènes afin de tester leurs rôles. Par exemple on peut utiliser un vecteur de clonage contenant un gène d'intérêt. Puis on incorpore le vecteur de dans un organisme. Cet organisme est cultivé afin exprimer le gène d'intérêt. La protéine produit par le gène et ensuite purifier afin d'éliminer tout autre molécule. Et enfin seulement après la réussite des étapes précédentes, on va pouvoir tester les fonctions de la protéine.  Ces méthodes ne sont  pas envisageables à l’état d’un génome. Elles sont utilisées pour valider une prédiction bio-informatique.
     
-    Les méthodes d’annotation fonctionnelle  bioinformatiques se base sur la comparaison de séquence. Ainsi les séquences homologues, les protéines de même familles, les séquences possédant un même domaine ou motif partageront des annotation fonctionnelles.
+    Les méthodes d’annotation fonctionnelles  bio-informatiques se base sur la comparaison de séquence. Ainsi les séquences homologues, les protéines de même familles, les séquences possédant un même domaine ou motif partageront des annotations fonctionnelles.
     
     \subsection{Reconstruction des réseaux métaboliques}
-    Le métabolisme est un ensemble de réaction biochimique. Une réaction transforme des composés en de nouveaux métabolites. Ces derniers sont modifiées par une autre transformations. Cette succession d'évènement peut être représenté sous la forme d’un graphe de réactions. Le produit d’une réaction est relié à une autre réaction lorsque cette dernière utilise ce métabolite transformé.
+    Le métabolisme est un ensemble de réaction biochimique. Une réaction transforme des composés en de nouveaux métabolites. Ces derniers sont modifiés par d'autres transformations. Cette succession d'évènement peut être représenté sous la forme d’un graphe de réactions. Le produit d’une réaction est relié à une autre réaction lorsque cette dernière utilise ce métabolite transformé.
     
     
     \begin{shadedfigure}
         \centering
         \includegraphics[width=\textwidth]{img/graphe_reactions_glycolyse.pdf}
-        \caption{A changer source wikipedia.Représentation de la dégradation du glucose sous forme d’un graphe réactionnel. La  succession des réactions forme un chemin dans le réseaux. Cette représentation a pour vocation de restreindre les évènements qui occurrent dans l'organisme aux réactions. Il est important de retenir que ce type de schéma, n'indique pas si ces réactions ont lieu dans le même compartiment cellulaire. Ou encore si les protéines nécessaires aux réactions sont toutes présentes à un moment donnée. Cette une vue générale des réaction pouvant avoir lieu dans un organismes.  }
+        \caption{A changer source wikipedia.Représentation de la dégradation du glucose sous forme d’un graphe réactionnel. La  succession des réactions forme un chemin dans le réseau. Cette représentation a pour vocation de restreindre les évènements qui occurrent dans l'organisme aux réactions. Il est important de retenir que ce type de schéma, n'indique pas si ces réactions ont lieu dans le même compartiment cellulaire. Ou encore si les protéines nécessaires aux réactions sont toutes présentes à un moment donné. Cette une vue générale des réactions pouvant avoir lieu dans un organisme.  }
         \label{fig:glycolysis}
     \end{shadedfigure}
 
     \subsection{Modèles métaboliques}
     \subsection{Les données expérimentales}
     \subsubsection{Élucidation des voies métaboliques}
-    Avec la découverte des enzymes à la fin du \siecle{19}, un nouveau champs de connaissance en biologie s’ouvrait. L’enzyme est la clé menant à la compréhension du vivant. Pour cela, la communauté scientifique réalisa un très grand nombre d’expérience permettant produire puis ...
+    Avec la découverte des enzymes à la fin du \siecle{19}, un nouveau champ de connaissance en biologie s’ouvrait. L’enzyme est la clé menant à la compréhension du vivant. Pour cela, la communauté scientifique réalisa un très grand nombre d’expérience permettant produire puis ...
     \subsubsection{Phénotypes de croissances}
     La plupart des molécules biologiques sont constituées d’atome de  carbone (C), d’hydrogène (H), d’oxygène (O), d’azote (N), de phosphore (P) et de soufre (S) (\acrshort{CHONPS}). Par conséquent les organismes doivent avoir au moins une source de nutrition pour chacun de ces éléments. En plus de ces éléments, on considère qu’il est nécessaire pour la vie d’avoir une source de potassium, de calcium, de magnésium, de fer, d’oligo-éléments et d’eau. Ce sont les éléments minimum pour la vie. Tout autres éléments permettant à des organismes de se développer est catégorisé comme facteur de croissance. 
     
-    Selon les organismes vivants, leurs besoins en éléments et facteurs de croissances varient avec leur capacité métabolique. Ce qui permet de catégoriser les organismes, au regard des manières de constituer de la matière organique via leur anabolisme, ainsi que des moyens de production énergétique via leur catabolisme. (trop lourd) Ces catégories dites types trophiques dépendent de la nature  (i) de la source de carbone (ii) du donneur d’électrons (iii) de la source d'énergie (voir Tableau \ref{tab:type trophique}.
+    Selon les organismes vivants, leurs besoins en éléments et facteurs de croissances varient avec leur capacité métabolique. Ce qui permet de catégoriser les organismes, au regard des manières de constituer de la matière organique via leur anabolisme, ainsi que des moyens de production énergétique via leur catabolisme. (trop lourd) Ces catégories dites types trophiques dépendent de la nature  (i) de la source de carbone (ii) du donneur d’électrons (iii) de la source d'énergie (voir Tableau \ref{tab:type trophique}).
     \begin{landscape}
         \begin{table}[]
             \centering
-            \caption{Structuration des différents types trophiques}
+            \caption{Structuration des différents types trophiques.}
             \label{tab:type trophique}
             \begin{tabular}{|l|l|lr|l|}
             	\hline
@@ -217,9 +217,9 @@
             \end{tabular}
         \end{table}
     \end{landscape}
-    Certains organismes ont la faculté de se développer dans des milieux dépourvu de facteur de croissance. C’est à dire, qu'à partir des éléments minimaux nécessaires à la vie, ils sont capables de produire toutes les molécules  indispensables à leurs développement. Ce sont des organismes dit prototrophe.  Dans le cas contraire on parle d’auxotrophie. 
+    Certains organismes ont la faculté de se développer dans des milieux dépourvu de facteur de croissance. C’est-à-dire, qu'à partir des éléments minimaux nécessaires à la vie, ils sont capables de produire toutes les molécules  indispensables à leurs développement. Ce sont des organismes dit prototrophe.  Dans le cas contraire on parle d’auxotrophie. 
     
-    Le métabolisme fournit les acides aminés indispensable à la production de protéines. Ces protéines sont constitués d’acides aminés. Par conséquent l’organisme doit se procurer ces acides aminés soit par des voies de biosynthèses soit directement par nutrition. C’est pour cela qu’avec les organismes prototrophes on s’attends à retrouver toutes les voies de la biosynthèses des acides aminés. Et par opposition un organisme auxotrophe à un acide aminé ne devrait pas avoir la voie de biosynthèse de ce dernier.
+    Le métabolisme fournit les acides aminés indispensables à la production de protéines. Ces protéines sont constituées d’acides aminés. Par conséquent l’organisme doit se procurer ces acides aminés soit par des voies de biosynthèses soit directement par nutrition. C’est pour cela qu’avec les organismes prototrophes on s’attends à retrouver toutes les voies de la biosynthèses des acides aminés. Et par opposition un organisme auxotrophe à un acide aminé ne devrait pas avoir la voie de biosynthèse de ce dernier.
     
     \subsection{MicroScope : une plateforme d’annotation de génomes procaryotes et d’analyse de leur métabolisme}
     
@@ -238,7 +238,7 @@
     
     Quelque soit le domaine d’expertise, nous avons des éléments imprédictibles par les modèles scientifiques. Notre savoir sur le monde qui nous entoure est encore partiel. Les modèles scientifiques permettent de représenter une partie de ce monde. Mais il existe un nombre de fait, non négligeable, qui échappe à ces  modèles. Ces trous de connaissances peuvent être identifiés lorsque l’on oppose les prédictions aux expectations. Il apparaît que des faits attendues reste non prédit.
     
-    D’autre part, les ressources entreposant les faits prédits sont variées. Leurs prédictions proviennent  de différents algorithmes dont leur spécificité \footnote{Proportion de résultat négatifs correctement identifiés.} et sensibilité \footnote{Proportion de résultats positifs correctement identifiés.} diffèrent d’un algorithme à un autre. Ces prédictions aux taux d’erreurs variés viennent enrichir les entrepôts de données. Puis ils seront utilisé à leur tour utilisé pour prédire de nouveau faits. Par conséquent  le taux d’erreur de la première prédiction vient s’ajouter au taux d’erreur de la méthode. Ce processus cyclique, permet de capturer un nombre plus important de fait. Mais il a l’inconvénient de surprédire.
+    D’autre part, les ressources entreposant les faits prédits sont variées. Leurs prédictions proviennent  de différents algorithmes dont leur spécificité \footnote{Proportion de résultat négatifs correctement identifiés.} et sensibilité \footnote{Proportion de résultat positifs correctement identifiés.} diffèrent d’un algorithme à un autre. Ces prédictions aux taux d’erreurs variés viennent enrichir les entrepôts de données. Puis ils seront utilisé à leur tour utilisé pour prédire de nouveau faits. Par conséquent  le taux d’erreur de la première prédiction vient s’ajouter au taux d’erreur de la méthode. Ce processus cyclique, permet de capturer un nombre plus important de fait. Mais il a l’inconvénient de sur-prédire.
     
     Ces problématiques sont retrouvées dans le processus de prédictions de fonction protéiques.
     Pour pallier à ce phénomène des initiatives tente de limiter l’extrapolation abusive faites par les prédicteurs. Par exemple \citeauthor{pfeiffer2015manual}
