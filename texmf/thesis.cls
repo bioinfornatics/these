@@ -63,7 +63,7 @@
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
-\RequirePackage[backend=biber,bibencoding=utf8,backref=true,refsegment=chapter,defernumbers=true,style=ieee,citestyle=ieee,sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=ieee,citestyle=ieee,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
