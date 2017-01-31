@@ -3,6 +3,7 @@ declare -i pages=0
 declare -i pages_with_color=0
 declare -i pages_blank=0
 declare -i pages_black=0
+declare -i pages_low_colour=0
 declare cyan=0
 declare magenta=0
 declare yellow=0
@@ -29,18 +30,24 @@ while read -r _cyan _magenta _yellow _black _; do
         if $(equal_float $_black 0); then
             ((pages_blank++))
         else
+            echo "$_cyan $_magenta $_yellow $_black"
             ((pages_black++))
         fi
     else
         ((pages_with_color++))
+        if [[ $(bc <<< "$_cyan + $_magenta + $_yellow < 0.02 ") -eq 1 ]]; then
+           ((pages_low_colour++))
+        fi
     fi
     
 
 done < <(gs -q -o - -sDEVICE=inkcov "$1")
 
-echo 'total pages:'"$pages"
-echo 'with color: '"$pages_with_color"
-echo 'without color: '$(bc <<< "$pages - $pages_with_color")
-echo 'black only: '"$pages_black"
-echo 'blank: '"$pages_blank"
+echo 'total pages: '"$pages"
+echo '-----------------'
+echo '  with color   : '"$pages_with_color"
+echo '  without color: '$(bc <<< "$pages - $pages_with_color")
+echo '  black only   : '"$pages_black"
+echo '  blank        : '"$pages_blank"
+echo '  pages with less of 2%  colour: '"$pages_low_colour"
 
