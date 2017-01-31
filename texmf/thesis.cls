@@ -77,6 +77,7 @@
 \RequirePackage{needspace}
 \RequirePackage{pdflscape}
 \RequirePackage{multirow}
+\RequirePackage[final]{pdfpages}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
