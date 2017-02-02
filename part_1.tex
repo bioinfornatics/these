@@ -111,14 +111,50 @@
     
     Ces notions permettent de diviser l'ensemble des processus du métabolisme en sous-parties plus faciles à appréhender. Toujours dans l'intention de réduire l'énorme quantité de concept. Les réactions sont regroupées dans différentes entités appelées "voie métabolique". Ce découpage permet de représenter des segments d'évènement de transformation métabolique en ensemble de réaction permettant de réaliser un objectif d'intérêt biologique. Certains objectifs peuvent être atteints par des successions de réactions différentes. Ainsi une même voie métabolique peut être réalisé par différents chemins de réaction.
     
-    Étant donnée que ces modules métaboliques réalise des transformations apportant un avantage à la cellule. Ces modules via le principe de pression de sélection vont tendre à garder la même structuration \cite{braakman2012compositional}. Les gènes correspondant aux protéines impliquées dans ces voies sont souvent co-localisées sur le génome. En effet une telle disposition des gènes favorise l'expression de toutes les protéines nécessaires pour la réalisation de l'objectif biologique à un instant "\textit{t}". De tels dispositions simplifie le processus de régulation d'expressions de ces gènes. Ce qui se traduit souvent par un gain énergétique donc un avantage évolutif pour la cellule. Comprendre la structuration du métabolisme, c'est également comprendre comment la physique et la chimie ont contraint la vie et l'évolution.
+    Étant donnée que ces modules métaboliques réalise des transformations apportant un avantage à la cellule. Ces modules via le principe de pression de sélection vont tendre à garder la même structuration \cite{braakman2012compositional}. Les gènes correspondant aux protéines impliquées dans ces voies sont souvent co-localisées sur le génome. En effet une telle disposition des gènes favorise l'expression de toutes les protéines nécessaires pour la réalisation de l'objectif biologique à un instant "\textit{t}". De tels dispositions simplifie le processus de régulation d'expressions de ces gènes. Ce qui se traduit souvent par un gain énergétique donc un avantage évolutif pour la cellule. Comprendre la structuration du métabolisme, c'est également expliquer comment la physique et la chimie ont contraint la vie et l'évolution.
     
     Ces voies métaboliques sont des réactions connectées les unes aux autres. Ils se représentent intuitivement sous forme de graphe.
     
     \subsection{Représentation en graphe}
     
+    De tels représentations permettent de partager des notions complexes sur un grand nombre de concepts ainsi que leurs relations. Les graphes s'avèrent utile pour l'étude des divers réseaux. Par exemple, le réseau routier, ça représentation est intuitive et permet la mise œuvre d'algorithme de recherche du plus court chemin. Cette branche des mathématiques s'est illustrer à travers la résolution  de problème complexe comme la traversée des des sept ponts de Königsberg, la marche du cavalier sur l’échiquier et bien d'autres. Les applications des recherches issue de la théorie des graphes sont multiples. On retrouve son utilisation dans des domaines comme la chimie, le stockage de donnée (à travers les bases de données type graphe), l'onthologie (et ces relations entre les concepts), la biologie et ces différents réseaux (dont le métabolisme). Cette représentation de l'information à montrer son utilité à des problèmes complexe très variés.
+    
+    Avant d'aller plus loin, il est nécessaire de définir plusieurs notions employé dans la théorie des graphes. Tout d'abord un graphe est constitué de nœud relié entre eux. Les nœuds du graphe sont également appelés sommets ("vertice" en anglais).  Lorsque les relations indique un sens de cheminement entre deux nœuds ("edge" en anglais), elles sont qualifiés d'arc autrement on parle d'arrête. Ainsi on fait la distinction en graphe orienté et non-orienté. Généralement un graphe est désigné sous la forme mathématique:
+    
+    \begin{equation}\label{eq:graph}
+    	G = (V,E) \stepcounter{equation}\tag{équation \theequation}
+    \end{equation}
+    
+    Dans l'\ref{eq:graph}, G désigne le graphe tel que constitué de deux ensembles, celui des sommets V et celui des relations V. Différents type de graphe sont présentés dans la figure  \ref{fig:graphe}.
+    
+    
+    \begin{shadedfigure}
+    	\centering
+    	\includegraphics[width=\textwidth]{img/graph.pdf}
+    	\caption{a) un graphe  avec des arrêtes. b) Un graphe avec des arcs indiquant une orientation entre deux sommets. c) un multigraphe non orienté avec des arêtes reliant les deux mêmes sommets. d) un multigraphe dont les relations forme un chemin cyclique à travers les sommets. e) un graphe avec une hyperarête reliant deux sommets. f) un multigraphe avec une orientation des relations tels que le chemin à travers le graphe traverse qu'une seule fois les sommets. }
+    	\label{fig:graphe}
+    \end{shadedfigure}
+    
+    
+    
+    Dans le cadre de la biologie, de nombreux évènements se représentent sous forme de réseaux. Pour en citer quelques uns, il y a les réseaux : d'interactions physiques protéine-protéine, de régulation de l'expression des gènes, de maximisation de flux (\gls{FBA}), de réaction métabolique… 
+    
+    Dans ce chapitre allons nous intéresser à la représentation en graphe des voie métaboliques. 
     
     \subsection{Ressources sur les voies métaboliques}
+    
+    Une voie métabolique est un enchainement de réaction enzymatique durant lequel les métabolites sont transformés. Ils représentent usuellement une fonction biologique. Par conséquent ces fonctions sont susceptibles d'être partagés à travers le monde du vivant. Toutefois pour réaliser une fonction biologiques, il peut exister plusieurs variantes de chemin réactionnel. Par exemple pour la biosynthèse de la L-lysine, six voies alternatives sont connus à ce jour dans le monde du vivant (voir Figure \ref{fig:lysine} ).
+    	
+    	
+    	\begin{shadedfigure}
+    		\centering
+    		\includegraphics[width=\textwidth]{img/L-lysine-biosynthesis.jpg}
+    		\caption{Biosynthèse de la L-Lysine peut se faire par via la voie DAP et ses 4 chemins de réactions possibles où via la voie AAA et ces voies alternatives. Figure reprise de l'article \citetitle{morgat2011unipathway}. }
+    		\label{fig:lysine}
+    	\end{shadedfigure}
+     
+     La représentation des voie métaboliques est une synthèses d'évènements se produisant le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques KEGG, Reactome, Unipathway, Genome properties.
+     
     \subsubsection{KEGG}
     \subsubsection{Reactome}
     \subsubsection{Unipathway}
