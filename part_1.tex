@@ -72,7 +72,7 @@
     \subsubsection{Les enzymes}    
     La plupart de ces transformations ne sont pas spontanées où se feraient trop lentement. Pour cela, l'organisme dispose de molécule protéique facilitant ces transformations, appelé "enzyme". Ce sont des bio-catalyseurs, c'est-à-dire qu'elles vont favoriser ou accélérer une transformation chimique. Ces molécules peuvent couper, coller, réparer synthétiser ou encore modifier une molécule. Elles ont la particularité d'avoir une forte affinité avec leur substrat.  Leur rencontre provoque une transformation du composé. Puis, le ou les produits résultant de cette transformations, peuvent êtres à leur tour reconnu par d'autres enzymes. Provoquant ainsi une cascade de transformation chimique. 
     
-    Une enzyme est une molécule constituée d'acide aminé, dont sa structure tri-dimensionnel contient des régions impliquées dans la reconnaissance et la transformation d’une molécule. C'est pourquoi, une même enzyme reconnaît une ou plusieurs molécules spécifiquement et induit les mêmes transformations chimiques. Ce processus est décrit par le modèle de "clef / serrure" (voir figure \ref{fig:reaction_enzymatique}).
+    Une enzyme est une molécule constituée d'acide aminé, dont sa structure tri-dimensionnel contient des régions impliquées dans la reconnaissance et la transformation d’une molécule. C'est pourquoi, une même enzyme reconnaît une ou plusieurs molécules spécifiquement et induit les mêmes transformations chimiques. Ce processus est décrit par le modèle de "clef / serrure" (voir figure \ref{fig:reaction_enzymatique}). Le plus couramment les enzymes sont répertoriées selon quatre numéros séparé par des points désignant la réaction chimique qu'elles catalysent. C'est le système de nomenclature \gls{EC}. Chaque nombre est associé à un concept. Ainsi le premier indique le type de réaction catalysé,  le second décrit la catégorie du substrat utilisé, le troisième correspond au substrat spécifiquement impliqué et enfin le quatrième le numéro de série de l'enzyme.
     
     \begin{shadedfigure}
         \centering
@@ -117,9 +117,9 @@
     
     \subsection{Représentation en graphe}
     
-    De tels représentations permettent de partager des notions complexes sur un grand nombre de concepts ainsi que leurs relations. Les graphes s'avèrent utile pour l'étude des divers réseaux. Par exemple, le réseau routier, ça représentation est intuitive et permet la mise œuvre d'algorithme de recherche du plus court chemin. Cette branche des mathématiques s'est illustrer à travers la résolution  de problème complexe comme la traversée des des sept ponts de Königsberg, la marche du cavalier sur l’échiquier et bien d'autres. Les applications des recherches issue de la théorie des graphes sont multiples. On retrouve son utilisation dans des domaines comme la chimie, le stockage de donnée (à travers les bases de données type graphe), l'onthologie (et ces relations entre les concepts), la biologie et ces différents réseaux (dont le métabolisme). Cette représentation de l'information à montrer son utilité à des problèmes complexe très variés.
+    De tels représentations permettent de partager des notions complexes sur un grand nombre de concepts ainsi que leurs relations. Les graphes s'avèrent utile pour l'étude des divers réseaux. Par exemple, le réseau routier, ça représentation est intuitive et permet la mise œuvre d'algorithme de recherche du plus court chemin. Cette branche des mathématiques s'est illustrer à travers la résolution  de problème complexe comme la traversée des sept ponts de Königsberg, la marche du cavalier sur l’échiquier et bien d'autres. Les applications des recherches issue de la théorie des graphes sont multiples. On retrouve son utilisation dans des domaines comme la chimie, le stockage de donnée (à travers les bases de données type graphe), l'ontologie (et ces relations entre les concepts), la biologie et ces différents réseaux (dont le métabolisme). Cette représentation de l'information à montrer son utilité à des problèmes complexe très variés.
     
-    Avant d'aller plus loin, il est nécessaire de définir plusieurs notions employé dans la théorie des graphes. Tout d'abord un graphe est constitué de nœud relié entre eux. Les nœuds du graphe sont également appelés sommets ("vertice" en anglais).  Lorsque les relations indique un sens de cheminement entre deux nœuds ("edge" en anglais), elles sont qualifiés d'arc autrement on parle d'arrête. Ainsi on fait la distinction en graphe orienté et non-orienté. Généralement un graphe est désigné sous la forme mathématique:
+    Avant d'aller plus loin, il est nécessaire de définir plusieurs notions employées dans la théorie des graphes. Tout d'abord un graphe est constitué de nœud relié entre eux. Les nœuds du graphe sont également appelés sommets ("vertice" en anglais).  Lorsque les relations indique un sens de cheminement entre deux nœuds ("edge" en anglais), elles sont qualifiés d'arc autrement on parle d'arrête. Ainsi on fait la distinction en graphe orienté et non-orienté. Généralement un graphe est désigné sous la forme mathématique :
     
     \begin{equation}\label{eq:graph}
     	G = (V,E) \stepcounter{equation}\tag{équation \theequation}
@@ -143,7 +143,7 @@
     
     \subsection{Ressources sur les voies métaboliques}
     
-    Une voie métabolique est un enchainement de réaction enzymatique durant lequel les métabolites sont transformés. Ils représentent usuellement une fonction biologique. Par conséquent ces fonctions sont susceptibles d'être partagés à travers le monde du vivant. Toutefois pour réaliser une fonction biologiques, il peut exister plusieurs variantes de chemin réactionnel. Par exemple pour la biosynthèse de la L-lysine, six voies alternatives sont connus à ce jour dans le monde du vivant (voir Figure \ref{fig:lysine} ).
+    Une voie métabolique est un enchainement de réaction enzymatique durant lequel les métabolites sont transformés. Ils représentent usuellement une fonction biologique. Par conséquent ces fonctions sont susceptibles d'être partagés à travers le monde du vivant. Toutefois pour réaliser une fonction biologique, il peut exister plusieurs variantes de chemin réactionnel. Par exemple pour la biosynthèse de la L-lysine, six voies alternatives sont connus à ce jour dans le monde du vivant (voir Figure \ref{fig:lysine} ).
     	
     	
     	\begin{shadedfigure}
@@ -153,11 +153,52 @@
     		\label{fig:lysine}
     	\end{shadedfigure}
      
-     La représentation des voie métaboliques est une synthèses d'évènements se produisant le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques KEGG, Reactome, Unipathway, Genome properties.
+     La représentation des voies métaboliques est une synthèse d'évènements se produisant le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques KEGG, Reactome, Unipathway, Genome properties.
      
     \subsubsection{KEGG}
+    
+    La ressource KEGG (pour \textit{Kyoto Encyclopedia of genes and Genomes}) \cite{ogata1999kegg,kanehisa2000kegg,kanehisa2002kegg,kanehisa2004kegg,aoki2005using,kanehisa2010kegg,kanehisa2017kegg} organise le réseau métabolique en un graphe dirigé (voir Figure \ref{fig:kegg_lysine}). Ce réseau est découpé sous forme de carte répertoriant toutes les réactions supposées avoir lieu dans le domaine du vivant. La construction de ce réseau provient essentiellement de prédiction bio-informatique.
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/kegg_lysine.png}
+        \caption{ Représentation du réseau métabolique selon un graphe dirigé. Les sommets du graphe sont des métabolites et les arcs correspondent aux réactions. Carte extraite de la ressource en ligne "KEGG pathway". }
+        \label{fig:kegg_lysine}
+    \end{shadedfigure}
+    
     \subsubsection{Reactome}
+    Le projet Reactome \cite{joshi2005reactome,matthews2009reactome,croft2010reactome,croft2014reactome,fabregat2016reactome} met à la disposition de la communauté des voies métaboliques expertisées et vérifiées par l'Homme. Différentes vues sont proposées selon le niveau hiérarchique du concept sélectionné (voir Figure \ref{fig:reactome_metabolism} et \ref{fig:reactome_serine}). Cette ressource contient à ce jour 19 organismes eucaryotes. La curation puis l'organisation des données est couteuse en temps. Pour ce donner un ordre d'idée sur l'avancement du travail d'expertise et d'intégration la version 54 de septembre 2015 comprenait 43\% des gènes humains. Ceci représente un total de 8701 gènes sur les 20 296 gènes codant pour des protéines prédits.
+    
+    \begin{shadedfigure}
+        \begin{subfigure}[t]{.5\textwidth}
+            \centering
+            \includegraphics[angle=90,origin=c,width=\textwidth]{img/reactome_homo_sapiens_metabolism.png}
+            \caption{ Vue globale des relations ontologique chez l'Homme sous forme de graphe hiérarchique. En naviguant du centre vers l'extrémité des sous-graphes, les concepts vont des plus généraux aux plus spécifiques. }
+            \label{fig:reactome_metabolism}
+        \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/reactome_homo_sapiens_serine_biosynthesis.png}
+        \caption{ Représentation du réseau métabolique selon un hypergraphe dirigé. Les sommets verts sont les métabolites et cofacteur participants à la réaction. Les réactions correspondent aux sommets représenté par des carrés blancs. Les sommets cerclés de bleu sont les étiquettes attachées à la réaction, afin d'indiquer le nom de l'enzyme, le numéro \gls{EC} de la réaction et autres informations\ldots. Les hyperarêtes indique le sens de la réaction et pointes sur les molécules transformées. }
+        \label{fig:reactome_serine}
+    \end{subfigure}
+    \end{shadedfigure}
+
     \subsubsection{Unipathway}
+    
+    Cette ressource en ligne fournissait un travail de curation des voies métaboliques \cite{morgat2011unipathway}. C'est-à-dire qu'il y avait une validation des voies métaboliques prédites par de l'expérimentation et/ou de l'expertise humaine. Le réseau métabolique est découpé en cinq concepts, les voies métaboliques (\gls{UPA}), les chemins réactionnels linéaires (\gls{ULS}), les réactions enzymatiques (\gls{UER}), les réactions chimiques (\gls{UCR}) , les composés (\gls{UPC}) (voir Figure \ref{fig:unipathway_structure}).  Toutefois un incident technique a provoqué la fin de ce projet. Cette base d'information est encore à ce jour indisponible : \url{http://www.unipathway.org/}.
+    
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/unipathway_structure.jpeg}
+        \caption{ Overview of the UniPathway concepts. (a) Unified Modeling Language (UML)-like representation of the UniPathway classes and relationships. Legend is to the right of the main part of the figure. Multiplicity constraints read as: One UPA is composed of 0 or more ULS—One ULS is contained in exactly 1 UPA. One ULS is composed of 1 or more UER—One UER is contained in exactly 1 ULS. One UER is composed of 0 or more (alternate) UER—One UER is contained in 0 or at most 1 UER. One UER is composed of 0 or more UCR—One UCR is contained in 1 or more UER. One UCR is composed of 1 or more left UPC and 1 or more right UPC—One UPC is contained in 1 or more UCR. (b) Example of the IsA relationship defining the UniPathway controlled vocabulary hierarchy of pathway terms. A pathway instance may be a specific type of an abstract pathway entity. (c) Example of the PartOf relationship linking a pathway (UPA: light blue), its subpathways (ULS: blue) and individual enzymatic reactions that constitute the subpathway (UER: dark blue). (d) Three cases of the relationship between an UER and its chemical reaction components (UCR): (1) simple one-to-one relationship where R is catalyzed by a single enzyme; (2) R is catalyzed by an enzyme and S is a spontaneous reaction; (3) ‘OR’ relationship: the enzyme can catalyze two reactions differing by their co-substrates (e.g. NADH/NADPH).}
+        \label{fig:unipathway_structure}
+    \end{shadedfigure}
+
+    \subsubsection{MetaCyc}
+    
     \subsubsection{Genome properties}
     
     \section{Des génomes aux réseaux métaboliques}

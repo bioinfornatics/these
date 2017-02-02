@@ -53,6 +53,7 @@
 \RequirePackage{memhfixc}
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
+\RequirePackage[font=small,labelfont=bf]{caption}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
 \RequirePackage[skins]{tcolorbox}
@@ -60,10 +61,11 @@
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
 \RequirePackage{pifont} 
+\RequirePackage{float}
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
-\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=ieee,citestyle=ieee,sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=science,citestyle=science,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
@@ -433,7 +435,13 @@ BoldItalicFont=FiraSans-MediumItalic
 %% Mise en forme des figures %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\newenvironmentx{shadedfigure}[1][1=!ht]{
+    \begin{figure}[#1] %[!ht]
+        \begin{tcolorbox}[colback=gris_clair,colframe=gris_clair,coltext=white]
+        }{
+        \end{tcolorbox}
+    \end{figure}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -513,6 +521,7 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    bibliographie        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
 \DeclareCiteCommand{\citeyear}
 {}
 {\bibhyperref{\printfield{year}}}
@@ -622,14 +631,6 @@ BoldItalicFont=FiraSans-MediumItalic
             }
         }
     \end{minipage}
-}
-
-\newenvironment{shadedfigure}{
-\begin{figure}[h!]
-	\begin{tcolorbox}[colback=gris_clair,colframe=gris_clair,coltext=white]
-}{
-	\end{tcolorbox}
-\end{figure}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
