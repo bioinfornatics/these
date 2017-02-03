@@ -292,16 +292,16 @@ BoldItalicFont=FiraSans-MediumItalic
             {\Large Par}\\
             \vspace{\baselineskip}
             \vspace{\baselineskip}
-            {\Huge{\textbf{\@author}}}\\
+            {\huge{\textbf{\@author}}}\\
             \vspace{\baselineskip}
             \vspace{\baselineskip}
-            {\huge\textbf{\@title}}\\
+            {\Huge\emph{\textbf{\color{psviolet}\@title}}}\\
         \end{center}
         
-        \begin{flushright}
-    		{\bfseries{\@subtitle}}
-            \vspace{\baselineskip}
-        \end{flushright}
+%        \begin{flushright}
+%    		{\bfseries{\@subtitle}}
+%            \vspace{\baselineskip}
+%        \end{flushright}
         
         
         \begin{center}
@@ -310,7 +310,7 @@ BoldItalicFont=FiraSans-MediumItalic
         \end{center}
         
         \begin{flushleft}
-            {\large \textbf{Thèse présentée et soutenue à \@location le \@date}}\\
+            {\large \textbf{Thèse présentée et soutenue à \@location~le \@date}}
             \vspace{\baselineskip}
             \vspace{\baselineskip}
             \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }

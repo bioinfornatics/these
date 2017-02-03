@@ -190,10 +190,10 @@
     Cette ressource en ligne fournissait un travail de curation des voies métaboliques \cite{morgat2011unipathway}. C'est-à-dire qu'il y avait une validation des voies métaboliques prédites par de l'expérimentation et/ou de l'expertise humaine. Le réseau métabolique est découpé en cinq concepts, les voies métaboliques (\gls{UPA}), les chemins réactionnels linéaires (\gls{ULS}), les réactions enzymatiques (\gls{UER}), les réactions chimiques (\gls{UCR}) , les composés (\gls{UPC}) (voir Figure \ref{fig:unipathway_structure}).  Toutefois un incident technique a provoqué la fin de ce projet. Cette base d'information est encore à ce jour indisponible : \url{http://www.unipathway.org/}.
     
     \note{
-    	Selon le fournisseur d'internet néo-zélandais "\textit{Actrix}":
+    	Selon le fournisseur d'internet néozélandais "\textit{Actrix}":
     	\begin{itemize}
     		\item 60\% des compagnies ayant perdu toutes leurs données ont fermé dans les 6 mois après l'évènement.
-    		\item Il est estimé pour une heure de donnée perdue, coûte en moyenne à une entreprise 790\$.
+    		\item Il est estimé pour une heure de travail les données perdues coûte en moyenne à une entreprise 790 \$.
     		\item 31\% de la perte de donnée de plus de 500 000 \$ est due à une défaillance du système.
     		\item Un disque dur sur cinq est bloqué au cours de sa vie.
     	\end{itemize}
@@ -208,9 +208,9 @@
         \label{fig:unipathway_structure}
     \end{shadedfigure}
 
-    \subsubsection{MetaCyc}
+    \subsubsection{BioCyc et MetaCyc}
+    BioCyc \cite{caspi2006metacyc,caspi2008metacyc,caspi2010metacyc,caspi2012metacyc,caspi2014metacyc,caspi2016metacyc} est une collection de voie métabolique et de génomes (dénoté PGDBs pour "Pathway/Genome DataBases"). Ajouté a ces données biologiques, BioCyc fournit des outils pour leur exploration et compréhension. Les PGDBs BioCyc sont générées par un logiciel de prédiction des voies métaboliques. De plus il identifie les opérons et suggère des gènes pour les enzymes orphelines. BioCyc intègre également l'information d'autres bases de données de bioinformatics, telles que la caractéristique de protéine et l'information d'ontologie de gène d'UniProt. Le site Web BioCyc offre une suite d'outils logiciels pour la recherche et la visualisation des bases de données, l'analyse des données omiques, la génomique comparative et les questions de la voie comparative.MetaCyc est un des PGDB de BioCyc. Ce PGDB contient les voies métaboliques expérimentalement observées du monde vivant. 
     
-    \subsubsection{Genome properties}
     
     \section{Des génomes aux réseaux métaboliques}
     
@@ -264,7 +264,7 @@
     
     Les événements de fusion de gène représentent des gènes originellement séparé qui vont former un unique gène. Par opposition les évènements de fission vont  engendrer la coupure d’un gène en deux gènes distincts. Typiquement ce cas est observé avec des gènes codant pour des protéines multi-domaines. Par exemple, une protéine avec deux domaines, codé par un gène se fissure de tels sorte, que chacun des deux nouveaux gènes se spécialise pour produire un des deux domaines de la protéines. Ce phénomène peut engendrer une pression de sélection différentes sur ces deux gènes, selon l’importance du rôle joué par le domaine dans la protéine. Par conséquent un des deux gènes va diverger plus rapidement du gène ancestrale.
     
-    Le relâchement de certains facteur de pression de sélection peut conduire à des événements de délétion. L’organisme n’étant plus contraint de posséder une fonctionnalité, les modifications du gène n’impacte pas la capacité de reproduction de l’organisme. Ces modifications peuvent amener à la disparition d’un gène fonctionnel. C’est-à-dire que la séquence du gène à garder des similarités avec le gène ancestrales mais il n’est plus en mesure de fournir la fonctionnalité.
+    Le relâchement de certains facteur de pression de sélection peut conduire à des événements de délétion. L’organisme n’étant plus contraint de posséder une fonctionnalité, les modifications du gène n’impacte pas la capacité de reproduction de l’organisme. Ces modifications peuvent amener à la disparition d’un gène fonctionnel. C’est-à-dire que la séquence du gène à garder des similarités avec le gène ancestrale mais il n’est plus en mesure de fournir la fonctionnalité.
     
     On retrouve également des évènements d’inversion de séquence, de translocations (le gène peut va être déplacé sur un autre chromosome), de transpositions ( un ou plusieurs gènes vont être directement intégré au sein du génome.
     
