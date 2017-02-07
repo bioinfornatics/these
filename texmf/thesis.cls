@@ -96,7 +96,7 @@
 % \todo[prepend]{mon avis}
 %\newcommand{\note}[1]{\todo[prepend]{#1}}
 \newcommandx{\unsure}[2][1=]{\todo[caption={Incertain},linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-\newcommandx{\change}[2][1=]{\todo[caption={Tournure de phrase à revoir},linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommand{\change}[2]{\todo[caption={#1},linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#2}}
 \newcommandx{\info}[2][1=]{\todo[caption={Info},linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\improvement}[2][1=]{\todo[caption={Amélioration},linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}

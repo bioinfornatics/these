@@ -7,7 +7,7 @@
     \section{Le métabolisme et sa représentation informatique}
     \subsection{Généralités sur le métabolisme}
     
-    Pour perpétuer son espèce, tout organisme vivant consomme de l'énergie pour produire de la biomasse et se répliquer. Pour cela, l'être vivant doit assimiler des composés présent dans son environnement. Ces composés chimiques permettent de produire l'énergie, nécessaire à la survie mais surtout à la transmission du patrimoine génétique. Ainsi on désigne par métabolisme, l'ensemble des processus de synthèse et dégradation de composés chimiques, mis en œuvre par l'organisme. De fait, les processus comme la réplication de l'\gls{ADN}, la traduction d'un gène et autres \ldots~sont exclus.
+    Pour perpétuer son espèce, tout organisme vivant consomme de l'énergie pour produire de la biomasse et se répliquer. Pour cela, l'être vivant doit assimiler des composés présent dans son environnement. Ces composés chimiques permettent de produire l'énergie, nécessaire \change{Vision Génome Centré}{David Vallenet} à la survie mais surtout à la transmission du patrimoine génétique. Ainsi on désigne par métabolisme, l'ensemble des processus de synthèse et dégradation de composés chimiques, mis en œuvre par l'organisme. De fait, les processus comme la réplication de l'\gls{ADN}, la traduction d'un gène et autres \ldots~sont exclus.
     
     \note{Le mot métabolisme à évolué à travers l'histoire pour nous parvenir sous ça forme actuelle. En grec ancien on utilise "\greekFont{μεταβολή}" équivalent à metabolé désignant "transformation". Le mot métabole signifie "qui subit un changement". Il a été utilisé par la suite comme mot racine: métabol-ique, métabol-isme \ldots
     }
@@ -40,6 +40,9 @@
     \note{Lors de l'apparition des premières formes de vie, il y a 3,6 milliards d’années. L'atmosphère était faiblement pourvue en oxygène. Ces organismes anaérobiques était présent dans les océans. L'oxygène est toxique, leur métabolisme s'est adapté au dioxyde de carbone, présent abondamment à ce moment. Puis entre 3,5 à 3 milliards apparurent des cyanobactéries. Ce sont des bactéries capable de capter l'énergie du soleil. Elles sont "photosynthétiques". Leurs métabolismes possèdent la particularité d'oxyder les minéraux présents dans les océans. Ils produisent ainsi de l'oxygène. Avec le temps leur métabolisme a consommé tellement de minéraux que l'oxygène produits dans les océans s’est libéré dans l’atmosphère. Modifiant ainsi fortement sa composition. Cet évènement influença le cours de la vie. De sorte que des organismes s'adaptent à l'oxygène. Car l'oxygène devient alors une molécule courante. Certaine forme de vie évolua jusqu'à devenir aérobie. Avec cet évènement, la Terre a subi sa première pollution atmosphérique d'ampleur induit par des organismes vivant. (Lire: \citetitle{bengtson1994early} ) }
     
 
+    \change{a reprendre car tu mélanges les concepts}{David Vallenet}
+    \change{Plus de contenu}{David Vallenet}
+    
     \subsection{Les acteurs}
     
     L'étude du métabolisme est essentiel pour la compréhension des êtres vivants. Les débouchés impactent de nombreux domaines, tel que : la pharmaceutique, l'énergie, l'agriculture, l'environnement\ldots.  Pour mieux le comprendre, il est nécessaire d'introduire les différents acteurs du métabolisme. En effet, le métabolisme représente un ensemble d'événement faisant intervenir des métabolites, des réactions, des cofacteurs, des enzymes\ldots.
@@ -53,6 +56,7 @@
     \note{Un composé organique s'oppose à un composé minéral. Cette différenciation s'explique par des raisons philosophiques antérieur au \siecle{19}. En effet, on distinguait les substances constitutives des organismes des autres. Ne sachant pas synthétiser les molécules organiques. On expliquait que l'intervention d'une "force vitale" était nécessaire. En 1828, Friedrich Wöler mis au point, accidentellement une expérience, produisant de l'urée (considéré comme organique) à partir de composé minéraux, comme le cyanate d’ammonium. Depuis lors, la notion de composé organique a évolué afin de désigner une molécule constituée d'une partie de carbone, le reste pouvant être des atomes d'hydrogène, oxygène azote et autres \ldots. La notion organique est resté car le carbone est un élément essentiel du vivant. Par opposition un composé minéral correspond à toutes molécules constituées d'élément autre que le carbone. Pour plus d'information, je vous invite à lire \citetitle{chimie_organique}.
     }    
       
+    \change{ne pas mélanger le concept et enzymes}{David Vallenet}
 
 	\subsubsection{Les réactions}
 	Le processus de transformation d’un métabolite est décrit par une réaction. On désigne par le terme "substrat", les métabolites avant transformation. Par opposition, on parle de produit pour la molécule transformée. Ainsi une réaction est l'événement qui va transformer un substrat afin de produire un nouveau métabolite. Ces réactions s'effectuent au sein de l'organisme, dans l'infiniment petit, au niveau moléculaire.
@@ -146,7 +150,7 @@
     Une voie métabolique est un enchainement de réaction enzymatique durant lequel les métabolites sont transformés. Ils représentent usuellement une fonction biologique. Par conséquent ces fonctions sont susceptibles d'être partagés à travers le monde du vivant. Toutefois pour réaliser une fonction biologique, il peut exister plusieurs variantes de chemin réactionnel. Par exemple pour la biosynthèse de la L-lysine, six voies alternatives sont connus à ce jour dans le monde du vivant (voir Figure \ref{fig:lysine} ).
     	
     	
-    	\begin{shadedfigure}
+    	\begin{shadedfigure}[H]
     		\centering
     		\includegraphics[width=\textwidth]{img/L-lysine-biosynthesis.jpg}
     		\caption{Biosynthèse de la L-Lysine peut se faire par via la voie DAP et ses quatre chemins de réactions possibles où via la voie AAA et ces deux voies alternatives. Figure reprise de l'article \citetitle{morgat2011unipathway}. }
@@ -157,7 +161,45 @@
      
     \subsubsection{KEGG}
     
-    La ressource KEGG (pour \textit{Kyoto Encyclopedia of genes and Genomes}) \cite{ogata1999kegg,kanehisa2000kegg,kanehisa2002kegg,kanehisa2004kegg,aoki2005using,kanehisa2010kegg,kanehisa2017kegg} organise le réseau métabolique en un graphe dirigé (voir Figure \ref{fig:kegg_lysine}). Ce réseau est découpé sous forme de carte répertoriant toutes les réactions supposées avoir lieu dans le domaine du vivant. La construction de ce réseau provient essentiellement de prédiction bio-informatique.
+    La ressource \textit{KEGG} (pour "Kyoto Encyclopedia of genes and Genomes") \cite{ogata1999kegg,kanehisa2000kegg,kanehisa2002kegg,kanehisa2004kegg,aoki2005using,kanehisa2010kegg,kanehisa2017kegg} est une ressource de données pour comprendre les fonctions globales et les utilités du système biologique, telles que la cellule, l'organisme et l'écosystème. Pour cela \textit{KEGG} dispose d'un point d'entré principale \url{http://www.genome.jp/kegg/kegg2.html}. Ce point d'entrée liste les trois orientations proposé par \textit{KEGG}.
+    
+    La première entrée est "orienté donnée", elle comprend les informations relatives à: la biologies des systèmes\footnote{Domaine d'étude pour la compréhension des interactions entre les différentes parties du système biologique, tels que les réseaux de gènes et de protéines, les organites et autres \ldots. } , génomiques, chimiques et de santé (voir le détail dans le tableau \ref{tab:kegg_data_oriented}). Le second point d'entrée dit "sujet orienté" propose des informations relatives à une thématique comme le cancer (\textit{KEGG Cancer}), les pathogènes (\textit{KEGG Pathogen}), les virus (\textit{KEGG virus}) et autres \ldots. Le dernier point d'entrée corresponds aux informations spécifiques à un organisme via \textit{KEGG organism}. Ce catalogue contient les génomes complétement séquencés de 346 eucaryotes, 4039 bactéries et 243 archées.  
+    
+    
+    \begin{table}
+        \caption{Détail du point d'entrée "orienté donnée". }\label{tab:kegg_data_oriented}
+        \label{tab:kegg_oriented_data} 
+        \begin{tabular}{p{0.2\linewidth}|p{0.3\linewidth}|p{0.5\linewidth}}
+            \toprule
+            Catégorie               & Point d'entrée                                                        & Contenu \\
+            \midrule
+            Biologies des systèmes  & \href{http://www.genome.jp/kegg/pathway.html}{KEGG PATHWAY}           & Carte métabolique \\   
+            \cline{2-3}
+                                    & \href{http://www.genome.jp/kegg/brite.html}{KEGG BRITE}               & Structuration hiérarchique de fonction biologique \\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/module.html}{KEGG MODULE}             & Collection d'unité fonctionnelle utilisé pour l'annotation génomique et l'interprétation biologique \\
+            \hline
+            Génomique               & \href{http://www.genome.jp/kegg/genome.html}{KEGG GENOME}             & Collection d'organisme \textit{KEGG} complétement séquencé. \\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/genes.html}{KEGG GENES}               & Catalogue de gènes et protéines \\
+            \cline{2-3}             & \href{http://www.kegg.jp/kegg/ssdb/}{KEGG SSDB}                       & Base de donnée sur la similarité des séquences d'acide aminé à partir de tous les gènes codant pour des protéines dont le séquençage et complet \\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/ko.html}{KO (KEGG Orthology)}         & Association des fonctions biologiques aux différents groupes orthologues  \\
+            \hline
+            Chimie                  & \href{http://www.genome.jp/kegg/compound/}{KEGG COMPOUND}             & Ensemble de petite molécule d'intérêt biologique\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/glycan/}{KEGG GLYCAN}                 &\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/reaction/}{KEGG REACTION}             &\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/annotation/enzyme.html}{KEGG ENZYME}  &\\
+            \hline
+            Santé                   & \href{http://www.genome.jp/kegg/disease/}{KEGG DISEASE}               & \\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/}{KEGG DRUG}                     &\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/environ.html}{KEGG ENVIRON}      &\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/medicus.html}{KEGG MEDICUS}           &\\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    
+    Les différents acteurs du métabolisme sont répartit à travers les bases de données \textit{KEGG LIGAND} pour les métabolites, \textit{KEGG REACTIONS} pour les réactions et \textit{KEGG ENZYME} pour les enzymes.
+    
+    En ce qui concerne la représentation du métabolisme, \textit{KEGG PATHWAY} organise le réseau métabolique en un graphe dirigé (voir Figure \ref{fig:kegg_lysine}). Ce réseau est découpé sous forme de carte répertoriant toutes les réactions supposées avoir lieu dans le domaine du vivant. La construction de ce réseau provient essentiellement de prédiction bio-informatique.
     
     \begin{shadedfigure}
         \centering
@@ -246,6 +288,7 @@
     
     \section{Des génomes aux réseaux métaboliques}
     
+    \change{Partir des génomes->gènes->protéines->ae}{David Vallenet}
     La connaissance de l'origine des différentes protéines intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. Toutefois ce coût est rentabilisé car il deviendra utilisable pour rechercher sa présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappelons brièvement les trois niveaux qui les relient. Ceci implique :
     
     \begin{itemize}
@@ -261,8 +304,9 @@
         \label{fig:production_proteine}
     \end{shadedfigure}
     
-    Le transcriptome et, dans un second temps, le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Alors que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène et protéine est également appelé "\acrshort{GPR}" pour : \textit{\acrfull{GPR}}.
+    Le transcriptome et, dans un second temps, le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant \change{terme bof}{David Vallenet}. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Alors que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène et protéine est également appelé "\acrshort{GPR}" pour : \textit{\acrfull{GPR}}.
     
+    \change{ce qui suit doit être à déplacer dans la partie annotation}{David Vallenet}
     Afin de documenter le génome, le transcriptome et le protéome on passe par plusieurs étapes d’annotation. L’annotation peut être de nature automatique ou manuelle. Dans ce dernier cas, des experts vont effectuer un travail de validation et invalidation des annotations. Ce travail de curation des données est important car les prédicteurs automatiques ne sont pas toujours fiables.
     
     On distingue trois niveaux d’annotation pour un génome (Figure \ref{fig:niveaux_annotation}). Le premier niveau est l’annotation structurale. Elle est utilisée pour définir les bornes de début et de fin d’un gène.  Le second niveau est l’annotation fonctionnelle. Elle recherche à prédire les fonctions biologiques des gènes. Puis, le troisième niveau correspond à l’annotation relationnelle. Cette annotation consiste à étiqueter les différentes interactions entre les produits des gènes.
