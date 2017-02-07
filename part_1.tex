@@ -187,7 +187,7 @@
 
     \subsubsection{Unipathway}
     
-    Cette ressource en ligne fournissait un travail de curation des voies métaboliques \cite{morgat2011unipathway}. C'est-à-dire qu'il y avait une validation des voies métaboliques prédites par de l'expérimentation et/ou de l'expertise humaine. Le réseau métabolique est découpé en cinq concepts, les voies métaboliques (\gls{UPA}), les chemins réactionnels linéaires (\gls{ULS}), les réactions enzymatiques (\gls{UER}), les réactions chimiques (\gls{UCR}) , les composés (\gls{UPC}) (voir Figure \ref{fig:unipathway_structure}).  Toutefois un incident technique a provoqué la fin de ce projet. Cette base d'information est encore à ce jour indisponible : \url{http://www.unipathway.org/}.
+    Cette ressource en ligne fournissait un travail de curation des voies métaboliques \cite{morgat2011unipathway}. C'est-à-dire qu'il y avait une validation des voies métaboliques prédites par de l'expérimentation et/ou de l'expertise humaine. Le réseau métabolique est découpé en cinq concepts, les voies métaboliques (\gls{UPA}), les chemins réactionnels linéaires (\gls{ULS}), les réactions enzymatiques (\gls{UER}), les réactions chimiques (\gls{UCR}) , les composés (\gls{UPC}) (voir Figure \ref{fig:unipathway_structure}). Ces concepts sont ordonnés les uns par rapport aux autres via des relations de compositions et d'équivalence. Le modèle est très flexible il fait une distinction entre réaction chimique et réaction enzymatique. En effet une réaction chimique peut être spontané et/ou être réalisé par différent bio-catalyseur. Enfin à travers le concept d'\gls{ULS}, la ressource fait apparaître les enchainements de réactions permettant de réaliser un objectif biologique. Un \gls{ULS} est un ensemble réaction (\gls{UER}) impliqué dans une seule tâche biologique. Ainsi les \gls{ULS} comprenant plusieurs réactions, sont délimités par des réactions impliquée dans au moins deux processus biologiques. Cependant, il est très fréquent de voir une même réaction impliquée dans plusieurs processus biologiques. C'est pourquoi seulement 30\% des \gls{ULS} ont plus de deux réactions. Toutefois un incident technique a provoqué l'arrêt de ce projet. Cette base d'information est encore à ce jour indisponible : \url{http://www.unipathway.org/}.
     
     \note{
     	Selon le fournisseur d'internet néozélandais "\textit{Actrix}":
@@ -209,7 +209,39 @@
     \end{shadedfigure}
 
     \subsubsection{BioCyc et MetaCyc}
-    BioCyc \cite{caspi2006metacyc,caspi2008metacyc,caspi2010metacyc,caspi2012metacyc,caspi2014metacyc,caspi2016metacyc} est une collection de voie métabolique et de génomes (dénoté PGDBs pour "Pathway/Genome DataBases"). Ajouté a ces données biologiques, BioCyc fournit des outils pour leur exploration et compréhension. Les PGDBs BioCyc sont générées par un logiciel de prédiction des voies métaboliques. De plus il identifie les opérons et suggère des gènes pour les enzymes orphelines. BioCyc intègre également l'information d'autres bases de données de bioinformatics, telles que la caractéristique de protéine et l'information d'ontologie de gène d'UniProt. Le site Web BioCyc offre une suite d'outils logiciels pour la recherche et la visualisation des bases de données, l'analyse des données omiques, la génomique comparative et les questions de la voie comparative.MetaCyc est un des PGDB de BioCyc. Ce PGDB contient les voies métaboliques expérimentalement observées du monde vivant. 
+    
+    \textit{BioCyc} \cite{caspi2006metacyc,caspi2007metacyc,caspi2008metacyc,caspi2010metacyc,caspi2012metacyc,caspi2013metacyc,caspi2014metacyc,caspi2015metacyc,caspi2016metacyc} est une collection en ligne (\url{https://biocyc.org/}) de voie métabolique et de génome (dénoté PGDBs pour "Pathway/Genome DataBases"). Cette resource fournit des données de qualtité à travers une sructure multi-couche afin d'avoir un panel d'information large et cohérent (voir Figure \ref{fig:biocyc_collection}) . Ajouté a ces données biologiques, BioCyc fournit des outils pour leurs explorations et compréhensions. Les PGDBs \textit{BioCyc} sont générées par un logiciel de prédiction des voies métaboliques nommé "PathwayTools" \cite{karpe2011pathway,karp2015pathway}. De plus il identifie les opérons \cite{romero2004using} et suggère des gènes pour les enzymes orphelines\footnote{Une enzyme est dites orpheline lorsque l'on n'est pas capable de l'associé à un gène.}\cite{Green2004}. \textit{BioCyc} intègre également les informations d'autres bases de données de bioinformatics, telles que les caractéristiques des protéines et l'information ontologique d'\textit{UniProt} portant sur les gènes . Le site Web \textit{BioCyc} offre une suite d'outils logiciels pour la recherche, l'analyse et la visualisation de donnée métabolique.
+    
+    
+    \begin{shadedfigure}
+    	\centering
+    	\includegraphics[width=\textwidth]{img/BioCycCollection.png}
+    	\caption{\textit{BioCyc} est un ensemble de base de donnée et d'outil sur le métabolisme. \textit{Metacyc} regroupe l'ensemble des informations du monde vivant. Cette ressource comprend 2255 voies métaboliques à ce jour. Ces données biologiques sont répartis à travers 3 couches (i.e "Tiers"). Ces couches classifient le niveau de qualité des bases de données  (Du moins vers le plus qualitatif : tiers 3 à 1). \hspace{\textwidth} Source : \url{https://biocyc.org/}    }
+    	\label{fig:biocyc_collection}
+    \end{shadedfigure}
+    
+    \textit{MetaCyc} \cite{Karp2011,caspi2013metacyc,caspi2016metacyc} est une ressource universelle non redondante sur les voies métaboliques et les enzymes de tous le domaine du vivant. Cette ressource fournit des informations de qualité. Pour cela elle intègre seulement les voies métaboliques décrite dans la littérature scientifique et expérimentalement observées. Au sein du projet \textit{BioCyc} cette base de donnée est utilisé conjointement avec la partie \textit{PathoLogiC} de l'outil \textit{PathwayTools} pour la prédiction de voie métabolique de tout organisme complètement séquencé. 
+    
+    À travers les bases de données spécialisés sur un organisme comme \textit{EcoCyc} (\url{https://ecocyc.org/}) pour \textit{Escherichia coli}, \textit{BsubCyc} (\url{https://bsubcyc.org/}) pour \textit{Bacillus subtilis} ou encore \textit{HumanCyc} (\url{https://humancyc.org/}) pour l'Homme, BioCyc fournit une vue précise des informations sur l'organisme d'intérêt. Ceci est utile pour faire un bilan des connaissances accumulées au sein d'une espèce. Pour cela des outils dédiés viennent enrichir l'expérience utilisateur, comme la navigation dans le génome avec les annotations fonctionnelles sur les gènes (\url{https://ecocyc.org/ECOLI/select-gen-el}). On retrouve également une carte métabolique offrant une vue globale des connaissances métaboliques sur l'organisme (voir \url{https://bsubcyc.org/overviewsWeb/celOv.shtml} ). Ces données spécialisées peuvent être comparées aux autres organismes  (voir \url{https://humancyc.org/comp-genomics}) afin de mettre en évidences des connaissances communes (voir Tableau \ref{tab:compare_tools}).
+    
+    \begin{table}[H]
+    	\caption{Extrait d'une analyse comparative sur les voies métaboliques communes entre d'\textit{Escherechia coli K-12 substr. MG1655}, \textit{Salmonella enterica enterica serovar Typhi str. CT18} et \textit{Shigella dysenteriae 1012} (requête: \url{https://ecocyc.org/comp-genomics?tables=pathway&orgids=\%28ECOLI+SENT220341+SDYS358708\%29}). }
+    	\label{tab:compare_tools} 
+    	\begin{tabular}{l|lll}
+    		\toprule
+    		Pathways Shared by Organism Pairs & Escherechia & Salmonella & Shigella \\
+    		\midrule
+    		Escherichia                       & 342         & 212        & 219      \\           
+    		Salmonella                        & 212         & 341        & 274      \\           
+    		Shigella                          & 219         & 274        & 335      \\ 
+    		\bottomrule
+    	\end{tabular}
+    \end{table}
+    
+    
+    Toutes ces données spécialisées sont croisées pour produire de la connaissance. Afin de visualiser ces connaissances \textit{Biocyc} met à disposition des tables de connaissances interactives, les "\gls{KS}" \cite{bat061SmartTable}. Ces tables intelligentes utilisent la représentation symbolique des connaissances. Elles permettent de regrouper les connaissances vis-à-vis de leur signification. Par exemple le groupe des "composés anti-tuberculosis  et leurs cibles dans  Mycobacterium tuberculosis H37Rv" est formé par l'analyse sémantique des données (voir le groupe : \url{https://biocyc.org/group?id=biocyc14-1553-3679321317}).
+    
+    
     
     
     \section{Des génomes aux réseaux métaboliques}
