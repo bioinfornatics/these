@@ -57,6 +57,7 @@
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
 \RequirePackage[skins]{tcolorbox}
+%\RequirePackage{forest}
 \RequirePackage{tikz}
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
@@ -117,6 +118,9 @@
 \emergencystretch=10em
 \raggedbottom
 \hyphenpenalty=10000
+
+
+%\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         Couleurs        %%
