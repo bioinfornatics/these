@@ -59,6 +59,7 @@
 \RequirePackage[skins]{tcolorbox}
 %\RequirePackage{forest}
 \RequirePackage{tikz}
+\RequirePackage{tkz-euclide} 
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
 \RequirePackage{pifont} 
@@ -120,6 +121,7 @@
 \hyphenpenalty=10000
 
 
+\usetikzlibrary{backgrounds}
 %\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

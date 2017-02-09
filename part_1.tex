@@ -157,7 +157,7 @@
     		\label{fig:lysine}
     	\end{shadedfigure}
      
-     La représentation des voies métaboliques est une synthèse d'évènements se produisant le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques KEGG, Reactome, Unipathway, Genome properties.
+     La représentation des voies métaboliques est une synthèse d'évènements se produisant dans le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques KEGG, Reactome, Unipathway, Genome properties.
      
     \subsubsection{KEGG}
     
@@ -167,13 +167,14 @@
     
     
     \begin{table}
+        \small
         \caption{Détail du point d'entrée "orienté donnée". }\label{tab:kegg_data_oriented}
         \label{tab:kegg_oriented_data} 
         \begin{tabular}{p{0.2\linewidth}|p{0.3\linewidth}|p{0.5\linewidth}}
             \toprule
             Catégorie               & Point d'entrée                                                        & Contenu \\
             \midrule
-            Biologies des systèmes  & \href{http://www.genome.jp/kegg/pathway.html}{KEGG PATHWAY}           & Carte métabolique \\   
+            Biologie des systèmes  & \href{http://www.genome.jp/kegg/pathway.html}{KEGG PATHWAY}           & Carte métabolique \\   
             \cline{2-3}
                                     & \href{http://www.genome.jp/kegg/brite.html}{KEGG BRITE}               & Structuration hiérarchique de fonction biologique \\
             \cline{2-3}             & \href{http://www.genome.jp/kegg/module.html}{KEGG MODULE}             & Collection d'unité fonctionnelle utilisé pour l'annotation génomique et l'interprétation biologique \\
@@ -184,14 +185,14 @@
             \cline{2-3}             & \href{http://www.genome.jp/kegg/ko.html}{KO (KEGG Orthology)}         & Association des fonctions biologiques aux différents groupes orthologues  \\
             \hline
             Chimie                  & \href{http://www.genome.jp/kegg/compound/}{KEGG COMPOUND}             & Ensemble de petite molécule d'intérêt biologique\\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/glycan/}{KEGG GLYCAN}                 &\\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/reaction/}{KEGG REACTION}             &\\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/annotation/enzyme.html}{KEGG ENZYME}  &\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/glycan/}{KEGG GLYCAN}                 & Collection de structure de glycane expérimentalement observé \\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/reaction/}{KEGG REACTION}             & Banque de donnée répertoriant les réactions chimiques dont les réactions enzymatiques\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/annotation/enzyme.html}{KEGG ENZYME}  & Catalogue d'enzymes associé à leurs numéros \gls{EC}\\
             \hline
-            Santé                   & \href{http://www.genome.jp/kegg/disease/}{KEGG DISEASE}               & \\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/}{KEGG DRUG}                     &\\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/environ.html}{KEGG ENVIRON}      &\\
-            \cline{2-3}             & \href{http://www.genome.jp/kegg/medicus.html}{KEGG MEDICUS}           &\\
+            Santé                   & \href{http://www.genome.jp/kegg/disease/}{KEGG DISEASE}               & Fournit des cartes représentant les différents perturbateurs. Ces perturbateurs peuvent être géniques, infectieux, multi-factorielle \ldots\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/}{KEGG DRUG}                     & Classification et description des drogues autorisées au Japon, USA et en Europe\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/drug/environ.html}{KEGG ENVIRON}      & Est une collection de médicaments, d'huiles essentielles et d'autres substances favorisant la santé, qui sont pour la plupart des produits naturels de plantes \ldots Cette base complète la ressource \textit{KEGG DRUG}.\\
+            \cline{2-3}             & \href{http://www.genome.jp/kegg/medicus.html}{KEGG MEDICUS}           & Est une ressource faisant la synthèse des autres  bases orienté-santé \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -381,7 +382,7 @@
     \subsubsection{Élucidation des voies métaboliques}
     Avec la découverte des enzymes à la fin du \siecle{19}, un nouveau champ de connaissance en biologie s’ouvrait. L’enzyme est la clé menant à la compréhension du vivant. Pour cela, la communauté scientifique réalisa un très grand nombre d’expérience permettant produire puis ...
     \subsubsection{Phénotypes de croissances}
-    La plupart des molécules biologiques sont constituées d’atome de  carbone (C), d’hydrogène (H), d’oxygène (O), d’azote (N), de phosphore (P) et de soufre (S) (\acrshort{CHONPS}). Par conséquent les organismes doivent avoir au moins une source de nutrition pour chacun de ces éléments. En plus de ces éléments, on considère qu’il est nécessaire pour la vie d’avoir une source de potassium, de calcium, de magnésium, de fer, d’oligo-éléments et d’eau. Ce sont les éléments minimum pour la vie. Tout autres éléments permettant à des organismes de se développer est catégorisé comme facteur de croissance. 
+    La plupart des molécules biologiques sont constituées d’atome de  carbone (C), d’hydrogène (H), d’oxygène (O), d’azote (N), de phosphore (P) et de soufre (S) (\acrshort{CHONPS}). Par conséquent les organismes doivent avoir au moins une source de nutrition pour chacun de ces éléments. En plus de ces éléments, on considère qu’il est nécessaire pour la vie d’avoir une source de potassium, de calcium, de magnésium, de fer, d’oligo-éléments et d’eau. Ce sont les éléments minimum pour la vie. Tout autre élément permettant à des organismes de se développer est catégorisé comme facteur de croissance. 
     
     Selon les organismes vivants, leurs besoins en éléments et facteurs de croissances varient avec leur capacité métabolique. Ce qui permet de catégoriser les organismes, au regard des manières de constituer de la matière organique via leur anabolisme, ainsi que des moyens de production énergétique via leur catabolisme. (trop lourd) Ces catégories dites types trophiques dépendent de la nature  (i) de la source de carbone (ii) du donneur d’électrons (iii) de la source d'énergie (voir Tableau \ref{tab:type trophique}).
     \begin{landscape}
@@ -431,23 +432,141 @@
     
     
     \subsubsection{Les trous dans les connaissances et les enzymes orphelines}
+    
+    blah blah à écrire
+    
     \subsubsection{Limites de l’annotation fonctionnelle et rôle de la curation}
+    
+    blah blah à écrire
+    
+    Lors de l'analyse des génomes nouvellement séquencé, le biologiste est souvent confronté à la difficile tâche de vérification de la cohérence des gènes annoté vis-à-vis des connaissances biologiques sur l'organisme étudié. Pour cette raison l'automatisation des règles appliquées par le biologiste permettrais de traiter rapidement une quantité importante d'information.
+    
     \subsection{Logique et raisonnement}
+    
+    La logique est une branche à la fois de la philosophie et des mathématiques. Par exemple son utilisation permet d'instrumentaliser les mots afin de faire ressortir la vérité d'une phrase. Dès l'Antiquité elle fut employé comme un outil pour distinguer un raisonnement concluant d'un non-concluant. \textit{Aristote} formalise une logique à deux énoncés (appelées prémisses ou encore propositions) soumis à approbation. Pour illustrer, la phrase qui suit est constitué de deux prémisses séparées par une virgule et de sa conclusion. \textit{Tous les hommes sont mortels, or Socrate est un homme donc Socrate est mortel}. Ainsi la vérification de la véracité de ces prémisses amènent à une conclusion pouvant être vrai ou fausse. Cette méthode de raisonnement s'appelle le syllogisme.
+    
+    Avec l'arrivée de l'informatique, la logique amena les méthodes nécessaires pour l'automatisation des choix à effectuer par un ordinateur. La combinaison de ces deux domaines, permet d'inscrire une mécanique de raisonnement et de l'automatiser. Les méthodes avenir vont connaître de grande mutation avec le développement de l'intelligence artificielle. Le raisonnement critique sur une masse de donnée toujours plus importante permettrait d'assister l'Homme dans sa quête de savoir. 
+    
+    
     \subsubsection{Les différentes logiques}
-    \paragraph{Logique booléenne}
+    
+    La logique est employé sur de multiple problématiques et par conséquence de nombreuses méthodes logiques se sont développées. On retrouve la logique booléenne avec les valeurs de vérité "VRAI" et "FAUX", des logiques multi-valuées pour définir des valeurs de vérités supplémentaires pour désigner toutes choses dont ne peut attribuer les valeurs  "VRAI" et "FAUX", les logiques modales permettant de spécifier des qualités au "vrai".
+    
+    \paragraph{Logique classique}
+    
+    Une des méthodes logique usuellement utilisé, par toutes personnes développant des programmes informatiques, est la logique de \textit{Boole}. Elle permet de traiter les expressions composer de deux valeurs puis d'effecteur le calcul des propositions. Pour cela elle représente deux prémisses séparé par un opérateur de liaison (la conjonction "ET" ou la disjonction "OU" ). Le calcul de ces propositions aboutissent aux valeurs de vérité "VRAI" ou "FAUX" \footnote{On associe usuellement la valeur 1 pour "VRAI" et 0 pour "FAUX".}. Ainsi la combinaison deux à deux des propositions avec les opérateurs de liaison produisent les tables de vérités \ref{tab:bool_truth_table}. Également l'algèbre de \textit{Boole} définit l'opérateur de négation "NON". Il est utile pour exprimer ce qui est "NON VRAI" est "FAUX" et inversement. Les opérateurs logique "ET" et "OU" sont dit binaire car ils impliquent deux opérandes, par opposition "NON" est unaire.
+    
+    On utilisera par la suite le symbole "$\land$" pour le "ET" logique, "$\lor$" pour le "OU" logique et "$\lnot$" pour "NON". La lettre "T" désigne la valeur de vérité "VRAI" et "F" pour "FAUX".
+    
+    
+    \begin{table}[!h]
+        \centering
+        \caption{Table de vérité utilisant l'algèbre de \textit{Boole}.}
+        \label{tab:bool_truth_table}
+        \begin{subtable}{0.5\linewidth}
+            \centering
+            \caption{A et B sont deux propositions dont on attribue tour-à-tour différentes valeurs de vérité.}
+            \begin{tabular}{|l|l|l|l|}
+                \toprule
+                A   &   B   & $A \land B$               & $A \lor B$                \\
+                \midrule
+                T   &   T   & $T \land T \rightarrow T$ & $T \lor T \rightarrow T$  \\ \hline
+                T   &   F   & $T \land F \rightarrow F$ & $T \lor F \rightarrow T$  \\ \hline
+                F   &   F   & $F \land F \rightarrow F$ & $F \lor F \rightarrow F$  \\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+        \begin{subtable}{0.35\linewidth}
+            \centering
+            \caption{Calcul de la proposition A avec l'opérateur "NON".}
+            \begin{tabular}{|l|l|}
+                \toprule
+                A   &  $\lnot A$ \\
+                \midrule
+                T   & $\lnot T \rightarrow F$ \\ \hline
+                F   & $\lnot F \rightarrow T$ \\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+    \end{table}
+
+    La logique classique ne se limite pas à l'algèbre de \textit{Boole}. Elle recherche à classé le monde en vrai/faux. Par exemple Georg Cantor un éminent logicien du \siecle{19} initia la théorie des ensembles \cite{cantor1879satz}. Elle permet d'utiliser les opérateurs logique "ET","OU","NON" sur des ensembles. Et ainsi de déterminer les éléments appartenant ou non à un ensemble. Pour illustrer, deux ensembles A et B, les éléments correspondant à l'ensemble A "ET" à l'ensemble B sont les éléments présent à l'intersection de ces deux ensembles. Lorsque l'on recherche les éléments présents dans A ou B correspond ceci corresponds à rechercher dans l'ensemble former par l'union de ces deux ensembles. Et enfin lorsque l'on recherche à exclure un ensemble on utilise l'opérateur "NON" ce qui se traduit par le complément de cet ensemble (voir Figure: \ref{fig:ensemble}).
+    
+    
+    \begin{shadedfigure}[!h]
+        \centering
+        \caption{Résultat de différentes opérations ensemblistes sélectionnés par la couleur cyan.}
+        \label{fig:ensemble}
+        
+        \begin{subfigure}{0.45\linewidth}
+            \centering
+            \caption{Ensemble A}
+            \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=white}, show background rectangle]
+                \tkzDefPoint(0,0){A}  
+                \tkzDefPoint(4,0){B}
+                \tkzDrawCircle[fill=Cyan,color=Cyan](A,B)  
+                \tkzLabelPoints[below](A)
+            \end{tikzpicture}  
+        \end{subfigure}
+        \begin{subfigure}{0.45\linewidth} 
+            \centering
+            \caption{Complement de l'ensemble A: $\lnot A$}
+            \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=Cyan}, show background rectangle]
+            \tkzDefPoint(0,0){A}  
+            \tkzDefPoint(4,0){B}
+            \tkzDrawCircle[fill=white](A,B)  
+            \tkzLabelPoints[below](A)
+            \end{tikzpicture}
+        \end{subfigure}
+        \vskip 8pt
+        \begin{subfigure}{0.45\linewidth}
+            \centering
+            \caption{Ensemble A intersecte l'ensemble B: $A \cap B$}           
+            \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=white}, show background rectangle]
+            \tkzDefPoint(0,0){A}  
+            \tkzDefPoint(4,0){B}
+            \begin{scope}
+            \tkzClipCircle(A,B) \tkzClipCircle(B,A)
+            \tkzFillCircle[color=Cyan](A,B)  
+            \end{scope}
+            \tkzDrawCircle(A,B)  
+            \tkzDrawCircle(B,A)
+            \tkzLabelPoints[below](A,B)
+            \end{tikzpicture}  
+        \end{subfigure}
+        \begin{subfigure}{0.45\linewidth}
+            \centering
+            \caption{Ensemble A union l'ensemble B: $A \cup B$}           
+            \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=white}, show background rectangle]
+            \tkzDefPoint(0,0){A}  
+            \tkzDefPoint(4,0){B}
+            \tkzDrawCircle[fill=Cyan,color=Cyan](A,B)  
+            \tkzDrawCircle[fill=Cyan,color=Cyan](B,A)
+            \tkzLabelPoints[left](A)
+            \tkzLabelPoints[right](B)
+            \end{tikzpicture} 
+        \end{subfigure}
+        
+    \end{shadedfigure}
+        
     \paragraph{Logique multi-valuée}
+    
     \begin{shadedfigure}
         \centering
-        \includegraphics[width=\textwidth]{img/seven_genralized_truth_values.pdf}
+        \includegraphics[width=0.6\textwidth]{img/seven_genralized_truth_values.pdf}
         \caption{  }
         \label{fig:seven_truth_values}
     \end{shadedfigure}
+
     \begin{shadedfigure}
         \centering
-        \includegraphics[width=\textwidth]{img/Generalized_Truth_Values_and_Multilattices.pdf}
+        \includegraphics[width=0.6\textwidth]{img/Generalized_Truth_Values_and_Multilattices.pdf}
         \caption{  }
         \label{fig:sixteen_truth_values}
     \end{shadedfigure}
+
+    \paragraph{Logique modale}
+    
     \subsubsection{Inférence d’information}
     \paragraph{Représenation des connaissances/ontologies}
     \paragraph{Chainage avant et arrière} %backward/forward

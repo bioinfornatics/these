@@ -11,7 +11,7 @@
    viewBox="0 0 750 650"
    stroke-miterlimit="10"
    id="svg177"
-   sodipodi:docname="GROOLS 1.svg"
+   sodipodi:docname="GROOLS_vs_belnap_1.svg"
    width="750"
    height="650"
    style="fill:none;stroke:none;stroke-linecap:square;stroke-miterlimit:10"
@@ -44,7 +44,7 @@
      id="namedview179"
      showgrid="false"
      inkscape:zoom="0.65555556"
-     inkscape:cx="312.84943"
+     inkscape:cx="289.20536"
      inkscape:cy="-566.81901"
      inkscape:window-x="377"
      inkscape:window-y="0"
@@ -58,6 +58,13 @@
        inkscape:connector-curvature="0"
        style="clip-rule:nonzero" />
   </clipPath>
+  <rect
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#fffeff;stroke-width:0.74834645;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4569"
+     width="750"
+     height="650"
+     x="0.37417322"
+     y="-0.37417322" />
   <g
      style="fill:none;stroke:none;stroke-linecap:square;stroke-miterlimit:10"
      id="g348"
