@@ -81,6 +81,7 @@
 \RequirePackage{needspace}
 \RequirePackage{pdflscape}
 \RequirePackage{multirow}
+\RequirePackage{colortbl}
 \RequirePackage[final]{pdfpages}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}

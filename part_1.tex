@@ -445,8 +445,22 @@
     
     La logique est une branche à la fois de la philosophie et des mathématiques. Par exemple son utilisation permet d'instrumentaliser les mots afin de faire ressortir la vérité d'une phrase. Dès l'Antiquité elle fut employé comme un outil pour distinguer un raisonnement concluant d'un non-concluant. \textit{Aristote} formalise une logique à deux énoncés (appelées prémisses ou encore propositions) soumis à approbation. Pour illustrer, la phrase qui suit est constitué de deux prémisses séparées par une virgule et de sa conclusion. \textit{Tous les hommes sont mortels, or Socrate est un homme donc Socrate est mortel}. Ainsi la vérification de la véracité de ces prémisses amènent à une conclusion pouvant être vrai ou fausse. Cette méthode de raisonnement s'appelle le syllogisme.
     
-    Avec l'arrivée de l'informatique, la logique amena les méthodes nécessaires pour l'automatisation des choix à effectuer par un ordinateur. La combinaison de ces deux domaines, permet d'inscrire une mécanique de raisonnement et de l'automatiser. Les méthodes avenir vont connaître de grande mutation avec le développement de l'intelligence artificielle. Le raisonnement critique sur une masse de donnée toujours plus importante permettrait d'assister l'Homme dans sa quête de savoir. 
+    Avec l'arrivée de l'informatique, la logique amena les méthodes nécessaires pour l'automatisation des choix à effectuer par un ordinateur. La combinaison de ces deux domaines, permet d'inscrire une mécanique de raisonnement et de l'automatiser. Les méthodes avenir vont connaître de grande mutation avec le développement de l'intelligence artificielle. Le raisonnement critique sur une masse de donnée toujours plus importante permettrait d'assister l'Homme dans sa quête de savoir.
     
+    
+    Avant de commencer, il est important d'introduire du vocabulaire issue de la logique. Tout d'abord il est nécessaire de différencier une proposition et un prédicat.  Une proposition peut être vue comme est une assertion pouvant être vrai ou fausse. Par exemple, la phrase "La capitale de la France est Paris." est une proposition (qui est vrai\ldots). En revanche la phrase "La capitale de mon pays est Paris" est un prédicats car elle contient une variable. En effet, tout dépends de qui est désigné par le terme "mon" si c'est un français le prédicat est vrai sinon il fait faux. Au passage ceci met en exemple, la règle du tiers exclu, si ce n'est pas faux c'est vrai et inversement.
+    
+    Le calcul des propositions consiste de mettre en relation les propositions afin d'aboutir sur une des deux valeurs de vérité ("VRAI" ou "FAUX"). Ceci implique l'utilisation de connecteur pour exprimer la conjonction et la disjonction (\textit{ET} / \textit{OU}), ainsi que l'expression de la négation (\textit{NON}). Pour illustrer, le calcul des proposition permet de déduire que les deux propositions suivantes sont vrais: "La capitale de la France est Paris et Nice est une ville de France".
+    
+    On utilisera par la suite le symbole "$\land$" pour le \textit{ET} logique, "$\lor$" pour le \textit{OU} logique et "$\lnot$" pour \textit{NON}. L'implication est représenté par le symbole "$\rightarrow$". 
+    
+    Le calcul des prédicats du premier ordre (également nommé logique du premier ordre) ajoute une couche d'abstraction par l'utilisation des variables. Par exemple on peut déduire l'expression "Le X est un oiseau" selon de ce qui est désigné par "X". Ainsi l'évaluation des variables forme une proposition. D'après l'expression précédente si "X" désigne un renard: "Le renard est un oiseau" est une proposition fausse. La logique du premier ordre est caractérisé par l'utilisation de: variable, de prédicat, de connecteur logique ( \textit{ET}, \textit{OU} \ldots), de quantificateurs (pour tout: "$\forall$", il existe au moins un \ldots tels que: "$\exists$" ). Cette ensemble de caractéristique permet une grande expressivité de problème logique. Par exemple, pour énoncé, "Pour toute personnes françaises, il existe au moins une personne bordelaise" peut s'écrire de la manière suivante:
+    
+    \begin{equation*}
+        \forall x~estUnePersonne(x) \land \exists x~estFrancaise(x) \land \exists x~estBordelaise(x) \stepcounter{equation}
+    \end{equation*}
+    
+    Je vais introduire dans les sections qui suivent différents aspects de la logique, qui m'ont inspiré pour mon travail de recherche. Cette introduction aux différentes logiques est une compréhension du domaine en tant que bio-informaticien. Par conséquent certaines parties pourraient apparaître approximative pour un expert du domaine.
     
     \subsubsection{Les différentes logiques}
     
@@ -454,20 +468,19 @@
     
     \paragraph{Logique classique}
     
-    Une des méthodes logique usuellement utilisé, par toutes personnes développant des programmes informatiques, est la logique de \textit{Boole}. Elle permet de traiter les expressions composer de deux valeurs puis d'effecteur le calcul des propositions. Pour cela elle représente deux prémisses séparé par un opérateur de liaison (la conjonction "ET" ou la disjonction "OU" ). Le calcul de ces propositions aboutissent aux valeurs de vérité "VRAI" ou "FAUX" \footnote{On associe usuellement la valeur 1 pour "VRAI" et 0 pour "FAUX".}. Ainsi la combinaison deux à deux des propositions avec les opérateurs de liaison produisent les tables de vérités \ref{tab:bool_truth_table}. Également l'algèbre de \textit{Boole} définit l'opérateur de négation "NON". Il est utile pour exprimer ce qui est "NON VRAI" est "FAUX" et inversement. Les opérateurs logique "ET" et "OU" sont dit binaire car ils impliquent deux opérandes, par opposition "NON" est unaire.
-    
-    On utilisera par la suite le symbole "$\land$" pour le "ET" logique, "$\lor$" pour le "OU" logique et "$\lnot$" pour "NON". La lettre "T" désigne la valeur de vérité "VRAI" et "F" pour "FAUX".
+    Une des méthodes logique usuellement utilisé, par toutes personnes développant des programmes informatiques, est la logique de \textit{Boole}. Elle permet de traiter les expressions composer de deux valeurs puis d'effecteur le calcul des propositions. Pour cela elle représente deux prémisses séparé par un opérateur de liaison (la conjonction \textit{ET} ou la disjonction \textit{OU} ). Le calcul de ces propositions aboutissent aux valeurs de vérité "VRAI" ou "FAUX" \footnote{On associe usuellement la valeur 1 pour "VRAI" et 0 pour "FAUX".}. Ainsi la combinaison deux à deux des propositions avec les opérateurs de liaison produisent les tables de vérités (voir \ref{tab:bool_truth_table}). Également l'algèbre de \textit{Boole} définit l'opérateur de négation \textit{NON}. Il permet d'inverser les valeurs de vérité. Une proposition "NON VRAI" est "FAUX" et inversement. Les opérateurs logique \textit{ET} et \textit{OU} sont dit binaire car ils impliquent deux opérandes, par opposition \textit{NON} est unaire.
     
     
-    \begin{table}[!h]
+    \begin{table}[H]
         \centering
-        \caption{Table de vérité utilisant l'algèbre de \textit{Boole}.}
+        \caption{Table de vérité utilisant l'algèbre de \textit{Boole}. La lettre "T" désigne la valeur de vérité "VRAI" et "F" pour "FAUX". }
         \label{tab:bool_truth_table}
         \begin{subtable}{0.5\linewidth}
             \centering
             \caption{A et B sont deux propositions dont on attribue tour-à-tour différentes valeurs de vérité.}
-            \begin{tabular}{|l|l|l|l|}
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|>{\columncolor{LightCyan}}l|l|l|}
                 \toprule
+                \rowcolor{LightCyan}
                 A   &   B   & $A \land B$               & $A \lor B$                \\
                 \midrule
                 T   &   T   & $T \land T \rightarrow T$ & $T \lor T \rightarrow T$  \\ \hline
@@ -479,8 +492,9 @@
         \begin{subtable}{0.35\linewidth}
             \centering
             \caption{Calcul de la proposition A avec l'opérateur "NON".}
-            \begin{tabular}{|l|l|}
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|}
                 \toprule
+                \rowcolor{LightCyan}
                 A   &  $\lnot A$ \\
                 \midrule
                 T   & $\lnot T \rightarrow F$ \\ \hline
@@ -490,12 +504,12 @@
         \end{subtable}
     \end{table}
 
-    La logique classique ne se limite pas à l'algèbre de \textit{Boole}. Elle recherche à classé le monde en vrai/faux. Par exemple Georg Cantor un éminent logicien du \siecle{19} initia la théorie des ensembles \cite{cantor1879satz}. Elle permet d'utiliser les opérateurs logique "ET","OU","NON" sur des ensembles. Et ainsi de déterminer les éléments appartenant ou non à un ensemble. Pour illustrer, deux ensembles A et B, les éléments correspondant à l'ensemble A "ET" à l'ensemble B sont les éléments présent à l'intersection de ces deux ensembles. Lorsque l'on recherche les éléments présents dans A ou B correspond ceci corresponds à rechercher dans l'ensemble former par l'union de ces deux ensembles. Et enfin lorsque l'on recherche à exclure un ensemble on utilise l'opérateur "NON" ce qui se traduit par le complément de cet ensemble (voir Figure: \ref{fig:ensemble}).
+    La logique classique ne se limite pas à l'algèbre de \textit{Boole}. Elle recherche à classé le monde en vrai/faux. Par exemple Georg Cantor un éminent logicien du \siecle{19} initia la théorie des ensembles \cite{cantor1879satz}. Elle permet d'utiliser les opérateurs logique \textit{ET},\textit{OU},\textit{NON} sur des ensembles. Et ainsi de déterminer les éléments appartenant ("$\in$") ou non ("$\notin$") à un ensemble. Pour illustrer, deux ensembles A et B, les éléments correspondant à l'ensemble A "ET" à l'ensemble B sont les éléments présent à l'intersection de ces deux ensembles. Lorsque l'on recherche les éléments présents dans A ou B correspond ceci corresponds à rechercher dans l'ensemble former par l'union de ces deux ensembles. Et enfin lorsque l'on recherche à exclure un ensemble on utilise l'opérateur \textit{NON} ce qui se traduit par le complément de cet ensemble (voir Figure: \ref{fig:ensemble}).
     
     
     \begin{shadedfigure}[!h]
         \centering
-        \caption{Résultat de différentes opérations ensemblistes sélectionnés par la couleur cyan.}
+        \caption{Différentes opérations ensemblistes sélectionnées par la couleur cyan.}
         \label{fig:ensemble}
         
         \begin{subfigure}{0.45\linewidth}
@@ -513,15 +527,16 @@
             \caption{Complement de l'ensemble A: $\lnot A$}
             \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=Cyan}, show background rectangle]
             \tkzDefPoint(0,0){A}  
-            \tkzDefPoint(4,0){B}
+            \tkzDefPoint(2,0){B}
             \tkzDrawCircle[fill=white](A,B)  
             \tkzLabelPoints[below](A)
+            \tkzLabelCircle[R,text width=2cm,text centered](A,3 cm)(-70){NON A}
             \end{tikzpicture}
         \end{subfigure}
         \vskip 8pt
         \begin{subfigure}{0.45\linewidth}
             \centering
-            \caption{Ensemble A intersecte l'ensemble B: $A \cap B$}           
+            \caption{Intersection de l'ensemble A et B: $A \cap B$}           
             \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=white}, show background rectangle]
             \tkzDefPoint(0,0){A}  
             \tkzDefPoint(4,0){B}
@@ -536,7 +551,7 @@
         \end{subfigure}
         \begin{subfigure}{0.45\linewidth}
             \centering
-            \caption{Ensemble A union l'ensemble B: $A \cup B$}           
+            \caption{Union de l'ensemble A et B: $A \cup B$}           
             \begin{tikzpicture}[scale=0.45,background rectangle/.style={fill=white}, show background rectangle]
             \tkzDefPoint(0,0){A}  
             \tkzDefPoint(4,0){B}
@@ -548,8 +563,114 @@
         \end{subfigure}
         
     \end{shadedfigure}
+
+    La théorie des ensembles tel qu'énoncé par \textit{Georg Cantor}, laissait apparaître des paradoxes comme le paradoxe de Russell ("\textit{l'ensemble des ensembles n'appartenant pas à eux-mêmes appartient-il à lui-même ?}"), le paradoxe du plus grand cardinal \footnote{Un ordinal caractérise une liste ordonnée et un cardinal caractérise une quantité d'objet.} et d'autres \ldots~. Pour cela la théorie des ensembles a été axiomatisé \footnote{Procédé pour déduire de façon logique et rigoureuse un théorème.} en logique du premier ordre par \textit{Ernst Zermelo}, \textit{ Abraham Fraenkel} et \textit{Thoralf Skolem} \cite{hayden1968zermelo,kanamori2008higher}. La théories des ensembles de Zermelo-Fraenkel (abrégé ZF) apporte la notion de classe pour représenter des collections d'objet partageant une ou plusieurs propriétés , mais cette collection d'objet ne forme pas un ensemble. Cette notion de classe permet de lever les ambiguïtés et donc les paradoxes originelles liée à la théories des ensembles de \textit{Georg Cantor}. Toutefois il existe des théories voisines de la ZF comme la théorie des classes \cite{bernays1937system,van1967frege} de \textit{von Neumann-Bernays-Gödel} (NBG).
+
+    \citation{"Grandeurs" : Voilà un mot dont tout le monde croit avoir une idée bien nette et qu'il est assez difficile de bien définir. Ne serait-ce pas parce que l'idée que ce mot renferme est plus simple que les idées par lesquelles on peut entreprendre de l'expliquer ? }{Jean Rond d'Alembert}
         
-    \paragraph{Logique multi-valuée}
+    \paragraph{Logique multivaluée}
+    
+    Les logiques multivaluées recherche à étendre le vocabulaire pour déterminé la véracité d'une expression. Parfois il est nécessaire d'assigner un état autre que vrai ou faux. Lorsque l'on souhaite exprimer l'incertitude, on ne peut pas asserter par un état vrai ou faux. Car cela reviendrait à mettre un affirmation ou une infirmation sur l'expression. Par conséquent de tels logiques ne peuvent plus employer la règle du tiers exclu.
+    
+    Pour cela des logiques à trois valeurs de vérité sont employées, comme la logique de Kleene (K$_{3}$). Cette dernière utilise une troisième valeur de vérité pour signifier un état indéterminé (noté I). Cette nouvelle valeur représente ce qui est ni vrai ni faux (voir table de vérité \ref{tab:kleen_truth_table}). (B)
+    
+    
+    \begin{table}[H]
+        \centering
+        \caption{Table de vérité pour la logique de Kleene (strong)K$_{3}^{s}$  }
+        \label{tab:kleen_truth_table}
+        \begin{subtable}{0.2\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\lnot$ &    \\
+                \midrule
+                T       &   F\\ \hline
+                I       &   I\\ \hline
+                F       &   T\\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+        \begin{subtable}{0.35\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\land$ & T & I & F \\
+                \midrule
+                T       & T & I & F \\ \hline
+                I       & I & I & F \\ \hline
+                F       & F & F & F \\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+        \begin{subtable}{0.35\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\lor$ & T & I & F \\
+                \midrule
+                T       & T & T & T \\ \hline
+                I       & T & I & I \\ \hline
+                F       & T & I & F \\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+    \end{table}
+
+    Par extension d'autre logique souhaite discriminer l'inconnu et la contradiction comme la logique à quatre valeurs de Belnap \cite{belnap77}, également noté B$_{4}$ . 
+    
+    
+    \begin{table}[H]
+        \centering
+        \caption{Table de vérité pour la logique B$_{4}$. La lettre N représente ce qui est non déterminé et la lettre B ce qui est vrai-et-faux.  }
+        \label{tab:belnap_truth_table}
+        \begin{subtable}{0.2\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\lnot$ &    \\
+                \midrule
+                T       &   F\\ \hline
+                B       &   B\\ \hline
+                N       &   N\\
+                F       &   T\\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+        \begin{subtable}{0.35\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|l|l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\land$ & T & B & N & F \\
+                \midrule
+                T       & T & B & N & F \\ \hline
+                B       & B & B & F & F \\ \hline
+                N       & N & F & N & F \\ \hline
+                F       & F & F & F & F\\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+        \begin{subtable}{0.35\linewidth}
+            \centering
+            \begin{tabular}{|>{\columncolor{LightCyan}}l|l|l|l|l|}
+                \toprule
+                \rowcolor{LightCyan}
+                $\lor$ & T & B & N & F \\
+                \midrule
+                T       & T & T & T & T \\ \hline
+                B       & T & B & T & B \\ \hline
+                N       & T & T & N & N \\ \hline
+                F       & T & B & N & F\\
+                \bottomrule
+            \end{tabular}
+        \end{subtable}
+    \end{table}
+    
     
     \begin{shadedfigure}
         \centering
