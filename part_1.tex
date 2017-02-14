@@ -572,13 +572,13 @@
     
     Les logiques multivaluées recherche à étendre le vocabulaire pour déterminé la véracité d'une expression. Parfois il est nécessaire d'assigner un état autre que vrai ou faux. Lorsque l'on souhaite exprimer l'incertitude, on ne peut pas asserter par un état vrai ou faux. Car cela reviendrait à mettre un affirmation ou une infirmation sur l'expression. Par conséquent de tels logiques ne peuvent plus employer la règle du tiers exclu.
     
-    Pour cela des logiques à trois valeurs de vérité sont employées, comme la logique de Kleene (K$_{3}$). Cette dernière utilise une troisième valeur de vérité pour signifier un état indéterminé (noté I). Cette nouvelle valeur représente ce qui est ni vrai ni faux (voir table de vérité \ref{tab:kleen_truth_table}). (B)
+    Pour cela des logiques à trois valeurs de vérité sont employées, comme la logique de \textit{Kleene} (K$_{3}$) ou encore celle de \textit{Priest} P$_{3}$. La logique K$_{3}$ utilise la troisième valeur de vérité pour signifier un état indéterminé (noté I).  Cette nouvelle valeur représente ce qui est ni vrai ni faux.  Tandis que dans la logique P$_{3}$ la troisième valeur représente l'état vrai et faux permettant l'expression d'une contradiction. Malgré cette différence ces deux logique se représente à travers les mêmes table de vérité (voir table de vérité \ref{tab:three_truth_table}).
     
     
     \begin{table}[H]
         \centering
         \caption{Table de vérité pour la logique de Kleene (strong)K$_{3}^{s}$  }
-        \label{tab:kleen_truth_table}
+        \label{tab:three_truth_table}
         \begin{subtable}{0.2\linewidth}
             \centering
             \begin{tabular}{|>{\columncolor{LightCyan}}l|l|}
@@ -620,8 +620,8 @@
         \end{subtable}
     \end{table}
 
-    Par extension d'autre logique souhaite discriminer l'inconnu et la contradiction comme la logique à quatre valeurs de Belnap \cite{belnap77}, également noté B$_{4}$ . 
-    
+    \textit{Belnap} combine la logique K$_{3}$ et P$_{3}$ afin de pouvoir discriminer l'inconnu et la contradiction.  Pour cela il définit la valeur ni vrai ni faux de \textit{Kleen} par une valeur signifiant "aucun" état ("None"). Et pour la valeur vrai et faux exprimé par \textit{Priest}, il utilise l'état "les deux" ("Both"). À partir de ces quatre valeurs des vérités (Vrai, Faux, Aucun, Les deux), \textit{Belnap} décrit une logique pour gérer des informations dont on ne peut pas statuer simplement en vrai/faux. Cette logique est également noté B$_{4}$ \cite{belnap77}. La table de vérité associé est présenté dans le tableau \ref{tab:belnap_truth_table}) . 
+   
     
     \begin{table}[H]
         \centering
@@ -670,19 +670,39 @@
             \end{tabular}
         \end{subtable}
     \end{table}
+
+    Ces travaux sur une logique à plusieurs valeurs s'intègre plus généralement dans ce que l'on appelle la logique paracohérente ("Paraconsistent Logic"). L'intérêt de ces approches et de pouvoir raisonner sur des informations incohérente et incomplètes sans tomber dans de l'absurde. Dans une logique non paracohérente, lorsqu'une incohérence est rencontré, \textit{de facto} tout ce qui est obtenu à partir de cette information est incohérente à son tour. Ainsi soit l'information n'est pas traité soit elle est assimilé à de la fausseté. Par conséquent la notion de faux n'indique plus seulement la certitude d'une fausseté mais également l'inconnu et la contradiction.
     
+    Finalement la paracohérente logique est une méthode de raisonnement permettant de mettre en lumière les absurdités, les certitudes et ce qui reste d'inconnu. Surtout dans un monde ou l'information est multiple. Nous ne pouvons pas garantir ça cohérence vis à vis des autres informations. Par opposition en logique classique afin de garantir la cohérence des résultats il est nécessaire de certifier qu'il n'existe pas d'ambiguïté dans les information avant de comment un raisonnement. Ce qui n'est pas toujours faisable \ldots
     
-    \begin{shadedfigure}
-        \centering
-        \includegraphics[width=0.6\textwidth]{img/seven_genralized_truth_values.pdf}
-        \caption{  }
-        \label{fig:seven_truth_values}
-    \end{shadedfigure}
+    On retrouve d'autres logiques cherchant à décrire les combinaisons de ces quatre valeurs de vérité. Ainsi l'agrégation de ces valeurs de vérité forme de nouvelle valeur. Comme dans la logique à seize valeurs décrit par \citeauthor{shramko2005some} \cite{shramko2005some,shramko2011truth,shramko2006hyper}. La combinaison des valeurs T (Vrai) et B (les deux) forme la valeur TB (voir Figure \ref{fig:sixteen_truth_values}). Ces nouvelles valeurs de vérité sont pour \citeauthor{shramko2005some} une généralisation des valeurs décrites par \textit{Nuel Belnap}. Ces valeurs généralisées représente des ensembles de valeur de vérité. La valeur TF par exemple est un ensemble constitué de l'ensemble T et de l'ensemble F : $\{\{t\},\{f\}\}$. Alors que la valeur B est un ensemble de valeur vrai et faux: $\{t,f\}$. Cette structure mathématique permet d'ordonner les valeurs de vérité via des opérations ensemblistes. Pour cela \textit{Shramko et al} définissent une méthode pour ordonner les valeurs de vérité entre elles selon l'échelle de l'information (\ref{eq:sixteen_definition_info}), la véracité (\ref{eq:sixteen_definition_truth}) ou encore celui de la fausseté (\ref{eq:sixteen_definition_falsehood}) . C'est une méthode comparative deux à deux. Par conséquent elle ne permet pas de positionner unitairement, une valeur de vérité selon un degrés de véracité ( de même pour la fausseté et l'information) .
+    
+    \textbf{Définition:} Pour tout x,y parmi les valeurs de vérité en Sixteen$_{3}$: \vspace{-0.5cm}
+    \begin{align}
+        \begin{split}
+        x \leq& _{i}~y~iff~x \subseteq y\label{eq:sixteen_definition_info};
+        \end{split}\\ \begin{split}\label{eq:sixteen_definition_truth}
+        x \leq& _{t}~y~iff~x^{t} \subseteq y^{t} and~y^{-t} \subseteq x^{-t},\\
+              &where~x^{t} := \{y \in x | T \in y \}~and~x^{-t} := \{y \in x | T \notin y \};
+        \end{split}\\ \begin{split}\label{eq:sixteen_definition_falsehood}
+        x \leq& _{f}~y~iff~x^{f} \subseteq y^{f} and~y^{-f} \subseteq x^{-f},\\
+              &where~x^{f} := \{y \in x | T \in y \}~and~x^{-f} := \{y \in x | F \notin y \};
+        \end{split}
+    \end{align}
+    
+    Description des symboles:\nolisttopbreak
+    \begin{itemize}
+        \item "iff" désigne: si et seulement si
+        \item $x \subseteq y$ pour indiquer que  l'élément x est ou un sous-ensemble voire un ensemble identique à y
+        \item $x \in y$ pour informer que l'élément x appartient à l'ensemble y et  $\notin$ pour n'appartient pas
+        \item $E : \{ x \in \mathbb{N} | x < 10 \}$ pour définir un ensemble ($\{\}$) E contenant des nombres entiers naturel ($\mathbb{N}$) nommé x tels que($|$) tout x est strictement plus petit que 10
+    \end{itemize}
+
 
     \begin{shadedfigure}
         \centering
         \includegraphics[width=0.6\textwidth]{img/Generalized_Truth_Values_and_Multilattices.pdf}
-        \caption{  }
+        \caption{ Treillis issue de la combinaison des valeurs de vérité (T,F,B,N). L'agrégation de toutes les valeurs de vérité est représenté par la lettre A ("all"). Cette figure représente les valeurs de vérité selon trois axes, (i) la vérité "t", (ii) la fausseté "f$^{-1}: t -f $", (iii), l'information noté "i". Ce treillis est appelé par \textit{Shramko et al.} "Trilattice Sixteen$_{3}$".  }
         \label{fig:sixteen_truth_values}
     \end{shadedfigure}
 
@@ -705,6 +725,7 @@
     
     \subsection{IMG terms}
     \subsection{HERBS}
+    A mettre au début de grools
     
     \subbibliography
 \end{refsegment}

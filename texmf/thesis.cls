@@ -121,6 +121,9 @@
 \raggedbottom
 \hyphenpenalty=10000
 
+% macro à utiliser vant une énumération pour empécher que la liste se trouve sur une nouvelle page sans le texte qui le précède sur la même page.
+%\newcommand{\nolisttopbreak}{\vspace{\topsep}\nobreak\@afterheading}
+\newcommand\nolisttopbreak{\par\nobreak\@afterheading} 
 
 \usetikzlibrary{backgrounds}
 %\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
