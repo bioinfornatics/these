@@ -81,6 +81,8 @@
 \RequirePackage{needspace}
 \RequirePackage{pdflscape}
 \RequirePackage{multirow}
+\RequirePackage{mathtools}
+\RequirePackage{enumitem}
 \RequirePackage{colortbl}
 \RequirePackage[final]{pdfpages}
 %\RequirePackage[none]{hyphenat}
