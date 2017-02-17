@@ -35,7 +35,8 @@
 }
 \makeatother
 
-\includeonly{remerciement,introduction,part_1,part_2,part_3}
+\includeonly{glossaires,remerciement,introduction,part_1,part_2,part_3}
+
 
 \begin{document}
     \maketitle
@@ -43,7 +44,8 @@
     \thispagestyle{plain}
     \include{remerciement}
     
-    \printglossary[type=\acronymtype,title={Abréviations}]
+    \printglossary[title={Abréviations}]
+    \cleardoublepage
     
     \renewcommand{\contentsname}{Sommaire}
     {

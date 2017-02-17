@@ -510,7 +510,7 @@
     La logique classique ne se limite pas à l'algèbre de \textit{Boole}. Elle recherche à classé le monde en vrai/faux. Par exemple Georg Cantor un éminent logicien du \siecle{19} initia la théorie des ensembles \cite{cantor1879satz}. Elle permet d'utiliser les opérateurs logique \textit{ET},\textit{OU},\textit{NON} sur des ensembles. Et ainsi de déterminer les éléments appartenant ("$\in$") ou non ("$\notin$") à un ensemble. Pour illustrer, deux ensembles A et B, les éléments correspondant à l'ensemble A "ET" à l'ensemble B sont les éléments présent à l'intersection de ces deux ensembles. Lorsque l'on recherche les éléments présents dans A ou B correspond ceci corresponds à rechercher dans l'ensemble former par l'union de ces deux ensembles. Et enfin lorsque l'on recherche à exclure un ensemble on utilise l'opérateur \textit{NON} ce qui se traduit par le complément de cet ensemble (voir Figure: \ref{fig:ensemble}).
     
     
-    \begin{shadedfigure}[!h]
+    \begin{shadedfigure}
         \centering
         \caption{Différentes opérations ensemblistes sélectionnées par la couleur cyan.}
         \label{fig:ensemble}
@@ -783,17 +783,21 @@
     
     \section{Méthodes existantes}
     
-    Dans le domaine de la biologie et plus précisément sur l'annotation des gènes, il existe plusieurs méthodologie. Ce qui nous amène à présenter HAMAP, UniRule, Genome properties et IMG terms. Comme expliqué par \citeauthor{dale2010machine}\cite{dale2010machine} il ne faut pas perdre le point de vue suivant, l'annotation des gènes est essentiel pour étudier le réactome d'un organisme.
+    Dans le domaine de la biologie et plus précisément sur l'annotation des gènes, il existe plusieurs ressource utilisant des systèmes à base de règle. Ce qui nous amène à présenter UniRule, Genome properties et IMG terms. Comme expliqué par \citeauthor{dale2010machine}\cite{dale2010machine} il ne faut pas perdre le point de vue suivant, l'annotation des gènes est essentiel pour étudier le réactome d'un organisme.
     
     \subsection{UniRule}
-    Dans l'objectif de mimer l'expertise humaine sur l'annotation de plusieurs milliard de séquence, UniProt à mis en place un outil à base de règle appelé UniRule \cite{unirule2015,bridge2010unirule}.
+    Dans l'objectif de mimer l'expertise humaine sur l'annotation de plusieurs milliard de séquence, UniProt à mis en place un outil à base de règle appelé UniRule \cite{unirule2015,bridge2010unirule}. C'est une base de règle unifiant les règles provenant d'\gsl{HAMAP}, \gsl{PIR} et RuleBase . UniRule est utilisé conjointement avec \gls{SAAS} \cite{kretschmann2001automatic,uniprot2015} pour l'annotation des protéines (voir Figure~\ref{fig:unirule}).
     
     \begin{shadedfigure}
         \centering
         \includegraphics[width=\textwidth]{img/unirule.png}
-        \caption{ Chaînage d'apllication pour l'annotation automatique pour la base de donnée UniProtKB. Figure extraite de \citetitle{bridge2010unirule}. }
+        \caption{ Chaînage d'application pour l'annotation automatique pour la base de donnée UniProtKB. Figure extraite de \citetitle{bridge2010unirule}. }
         \label{fig:unirule}
     \end{shadedfigure}
+
+    Les règles \acrshort{PIR} proviennent de deux bases de règle.  Celle regroupant les règles d'annotation des sites protéiques (\acrfull{PIRSR} \cite{vasudevan2011structure}) et celle du nommage (\acrfull{PIRSN}). Les règles \acrfull{PIRSR} sont validé humainement. Ces règles d'annotation ont une précision atomique. C'est à dire que la composition de la séquence protéique est utilisable pour déclencher une règle.
+    
+    En ce qui concerne \gls{HAMAP}, c'est un système automatique de classification et d'annotation des séquences protéiques. Il est maintenu par le groupe Swiss-Prot . Pour cela, \gls{HAMAP} se base sur des profiles de séquences protéiques validé par l'Homme et également des règles d'annotation fonctionnelle créer par des experts du domaine. La syntaxe des règles  \gls{HAMAP} permet une grande expressivité et utilise le vocabulaire contrôlé d'UniProt et les termes \gls{GO} (présenté dans \url{http://hamap.expasy.org/unirule/unirule.html}). Tout comme les règles provenant de \gls{PIR}, \gls{HAMAP} peut effectuer des choix d'annotations selon la composition de la séquence protéique. Cela permet de déclarer des résidus clef, nécessaire pour effectuer une annotation fonctionnelle. Et ainsi, d'être un des moyens de stopper la propagation des erreurs d'annotations persistante dans les ressources publiques \cite{schnoes2009annotation,devos2001intrinsic,bell2013can,gilks2002modeling}. Les annotations amené par \gls{HAMAP} concerne de nombreux champs comme: la protéine, le nom du gène, les fonctions, les activités catalytiques, la localisation intracellulaire, les interactions protéines-protéines. Le système classifie automatiquement les séquences dans une des familles validé par les bio-curateurs en utilisant l'homologie de séquence.
     
     \subsection{Genome properties}
     \begin{shadedfigure}

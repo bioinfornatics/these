@@ -67,9 +67,9 @@
 %\RequirePackage{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
-\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=science,citestyle=science,sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=nature,citestyle=science,sorting=none]{biblatex}
 \RequirePackage{booktabs}
-\RequirePackage[noredefwarn,acronym]{glossaries}
+\RequirePackage[nomain,noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
 \RequirePackage{etoolbox}
 \RequirePackage{kpfonts}
@@ -517,9 +517,9 @@ BoldItalicFont=FiraSans-MediumItalic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Glossaire         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\loadglsentries[main]{glossaires}
 \makeglossaries
-\input{glossaires}
-
+\makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          Sommaire         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -644,6 +644,8 @@ BoldItalicFont=FiraSans-MediumItalic
         }
     \end{minipage}
 }
+
+\newcommand{\gsl}[1]{\acrshort{#1} (\acrlong{#1})}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Tableaux commandes        %%
