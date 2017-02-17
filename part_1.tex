@@ -763,15 +763,38 @@
     Par exemple une structuration hiérarchique de concept relié les uns aux autres par des relations symbolisant le "ET" et le "OU" sont efficacement disposé lorsque l'arbre est une disjonction de clause.
     En effet dans de tels cas on peut rechercher indépendamment la véracité de l'un ou de l'autre littéral. Il suffit d'établir qu'un des deux littéral soit vrai pour déduire que la clause est vrai à son tour. Une telle structuration est une forme normale disjonctive.
     
-    Évidement la logique de description n'est pas limité aux relations "ET" "OU". Des sémantiques comme celle proposé par le W3C \footnote{ W3C, est un organisme de standardisation à but non lucratif, fondé en octobre 1994 chargé de promouvoir la compatibilité des technologies du World Wide Web.}
+    Évidement la logique de description n'est pas limité aux relations ET/OU. Des sémantiques comme celle proposé par \gls{GO}, dispose de relation pour exprimer la composition et l'identité. Pour cela  \gls{GO} propose un vocabulaire contrôlé (l'ontologie). On ne peut pas parlé de la représentation des connaissances sans cité le web sémantique (standardisé par le W3C \footnote{W3C, est un organisme de standardisation à but non lucratif, fondé en octobre 1994 chargé de promouvoir la compatibilité des technologies du World Wide Web.}). Le web sémantique incarne un effort important de la communauté à fournir les outils et les méthodes pour analyser l'information dans sons sens le plus générale. Une fois l'information structuré, des méthodes de raisonnement sur ces données peuvent être appliquées.
     
+    \paragraph{Chaînage avant et arrière} %backward/forward
+    Un raisonnement peut être décrit par une suite de règle. Une tel règle comporte deux partie. La première partie sélectionne les informations correspondant à une contrainte. Comme par exemple: "x est une transaminase", tous faits respectant la contrainte seront sélectionnés. Puis la deuxième partie correspond au conséquence logique. Pour faire suite à l'exemple précédent: "alors x est une protéine" . Ces deux parties forme une règle d'inférence. Les conséquences logiques d'une règle peuvent activer de nouvelles règles. Par la méthode du chaînage avant, les faits (des prémisses) sont utilisés pour remonter aux conclusions. Ce processus de déduction se poursuit tant qu'il existe des faits respectant les contraintes des règles.
     
+    Prenons les trois règles suivantes:\nolisttopbreak    
+    \begin{enumerate}
+        \item Si x est une transaminase alors x est une protéine
+        \item Si x est un ARN alors x est composé d'acides ribonucléiques
+        \item Si x est une protéine alors x est composé d'acides aminés
+    \end{enumerate}
+
+    Lorsque le moteur d'inférence traite le fait "aspartate aminotransférase". La règle \ding{172} est activé et  conclut que le fait est une protéine. Cette conséquence va permettre d'activer à son tour la règle \ding{174} et conclure sur ça composition. Aucun fait restant peut activer une règle, fin du raisonnement.
     
-    \paragraph{Chainage avant et arrière} %backward/forward
-    \paragraph{Règles et système expert}
+    Il est possible également de partir des conclusions pour revenir aux prémisses, par la méthode du chaînage arrière. Ces méthodes de chaînage sont mis en œuvre à travers des moteurs d'inférence.
+    
+    \paragraph{Système expert} la mise bout à bout des connaissances, des règles d'inférence et des faits observés permet de reproduire des systèmes cognitif d'un expert d'un domaine (bio-curateur par exemple). Cet ensemble forme un système expert, ce procédé est utilisé notamment pour la mise en œuvre de l'intelligence artificielle. Pour cela, un tel système dispose d'une base de fait, une base de règle et un moteur d'inférence. Les déductions effectuer à partir des faits observé permettent dans certains d'acquérir de nouvelles connaissances. Ce qui se traduit par la formulation de nouvelle règle. Cet apprentissage automatique permet de dépasser le cadre théorique imposé par les règle de départ. Afin de mimer un comportement d'un expert faisant preuve d'adaptabilité face aux problèmes.
     
     \section{Méthodes existantes}
-    \subsection{HAMAP et UniRule}
+    
+    Dans le domaine de la biologie et plus précisément sur l'annotation des gènes, il existe plusieurs méthodologie. Ce qui nous amène à présenter HAMAP, UniRule, Genome properties et IMG terms. Comme expliqué par \citeauthor{dale2010machine}\cite{dale2010machine} il ne faut pas perdre le point de vue suivant, l'annotation des gènes est essentiel pour étudier le réactome d'un organisme.
+    
+    \subsection{UniRule}
+    Dans l'objectif de mimer l'expertise humaine sur l'annotation de plusieurs milliard de séquence, UniProt à mis en place un outil à base de règle appelé UniRule \cite{unirule2015,bridge2010unirule}.
+    
+    \begin{shadedfigure}
+        \centering
+        \includegraphics[width=\textwidth]{img/unirule.png}
+        \caption{ Chaînage d'apllication pour l'annotation automatique pour la base de donnée UniProtKB. Figure extraite de \citetitle{bridge2010unirule}. }
+        \label{fig:unirule}
+    \end{shadedfigure}
+    
     \subsection{Genome properties}
     \begin{shadedfigure}
         \centering
