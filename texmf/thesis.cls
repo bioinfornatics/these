@@ -65,7 +65,7 @@
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
 \RequirePackage{pifont} 
 \RequirePackage{float}
-%\RequirePackage{cleveref}
+\RequirePackage[noabbrev]{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
 \RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=nature,citestyle=science,sorting=none]{biblatex}
