@@ -59,7 +59,8 @@
 \RequirePackage[skins]{tcolorbox}
 %\RequirePackage{forest}
 \RequirePackage{tikz}
-\RequirePackage{tkz-euclide} 
+\RequirePackage{tkz-euclide}
+\RequirePackage{forest} 
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle=true,english=american,french=guillemets]{csquotes}
 \RequirePackage{pifont} 
@@ -127,7 +128,7 @@
 %\newcommand{\nolisttopbreak}{\vspace{\topsep}\nobreak\@afterheading}
 \newcommand\nolisttopbreak{\par\nobreak\@afterheading} 
 
-\usetikzlibrary{backgrounds}
+\usetikzlibrary{backgrounds,shadows,arrows,decorations.markings}
 %\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
