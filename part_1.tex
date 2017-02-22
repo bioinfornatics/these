@@ -43,7 +43,7 @@
     \change{a reprendre car tu mélanges les concepts}{David Vallenet}
     \change{Plus de contenu}{David Vallenet}
     
-    \subsection{Les acteurs}
+    \subsection{Les acteurs}\label{subsec:acteurs}
     
     L'étude du métabolisme est essentiel pour la compréhension des êtres vivants. Les débouchés impactent de nombreux domaines, tel que : la pharmaceutique, l'énergie, l'agriculture, l'environnement\ldots.  Pour mieux le comprendre, il est nécessaire d'introduire les différents acteurs du métabolisme. En effet, le métabolisme représente un ensemble d'événement faisant intervenir des métabolites, des réactions, des cofacteurs, des enzymes\ldots.
     
@@ -873,22 +873,20 @@
         IMG_{reaction1} \; AND \; (IMG_{reaction2} \; OR \; IMG_{reaction3} ) \to IMG_{pathway 1}
     \end{equation}
     
-    \textbf{Ce qui suit doit/peut être déplacé en discussion.}
-    
-    Toutefois la méthode utilisé reste assez flou d'un point de vue formel. La distinction entre prédiction et expectation s'entre mêle. La combinaison de deux états (provenant de : certifié, inconnu, non certifié) implique neuf combinaisons possibles. Mais ces combinaisons sont représentables uniquement par les valeurs vrai,faux,inconnu. Donc un même résultat peut correspondre à plusieurs combinaisons possible. Ce qui amène à des phrases pour le moins subtile, par exemple la distinction entre inconnu et non certifié:
-    \begin{itemize}
-        \item "The status “unknown” is assigned to an IMG pathway, in which IMG terms without gene assignments have “candidate genes”."
-        \item "In contrast, the status “not asserted” is assigned to an IMG pathway when no “candidate genes” can be found."
-    \end{itemize}
-    
-    De plus la notion de consistance est employé ici pour décrire un cadre logique. Mais en logique ce terme est utilisé pour désigné une chose ne contenant pas de contradiction. Or ici elle est utilisé abusivement pour décrire "une cohérence biologique".
-    
-    Pour finir contrairement à leur constat sur les données biologiques erronées et donc la nécessité d'automatiser un raisonnement pour l'annotation fonctionnelle. Leur méthode aura pour tendance d'attribuer pour un génome partielle ou distant des génomes de références à une majorité d'états non certifiés ou inconnu. En conséquence les bio-curateurs seront difficilement plus aider par l'apport de ces nouvelles informations.
-    
     \subsection{Méthodes utilisant des modèles métaboliques}
     
-    \subsection{HERBS}
-    A mettre au début de grools
+    En biologie des systèmes\footnote{Domaine d'étude des relations et des interactions entre différentes parties du système biologique.} une approche souvent utilisé pour l'étude des réseaux biochimiques d'un organisme et le \gls{FBA}\cite{orth2010flux}. L'objectif est de reconstruire un réseaux métabolique \textit{in sillico} permettant la production de la biomasse\footnote{Ensemble de métabolite considéré comme nécessaire aux développement de l'organisme} nécessaire aux développement et à la reproduction de l'organisme d'intérêt. Cette modélisation du réactome permet d'émettre des prédictions sur la vitesse de développement d'un organisme, par exemple avec et sans oxygène. Les capacités d'un organisme sont alors étudiés par simulation dans une infinie de condition.
+    
+    Tout d'abord, il est nécessaire de décrire mathématiquement les flux de métabolites. Pour chaque réaction, les coefficients stœchiométriques des acteurs de la réaction (substrat, produit, co-facteur \ldots~voir \cref{subsec:acteurs}) sont renseignés dans une matrice réaction/métabolite. Cette matrice est employé pour contraindre la production de métabolite de sorte qu'elle soit égale à la quantité de métabolite consommé et produit à l'état stationnaire\footnote{L'état stationnaire représente un moment où les métabolites sont consommés et produits lors d'une réaction.}.  La stœchiométrie oriente le flux des métabolites à travers le réseaux de réaction. Ce flux est contraint de respecter l'équilibre des réactions. Toutefois cette contrainte ne tient pas compte de la cinétiques des réactions \cite{covert2001metabolic,edwards2002metabolic}\footnote{Il existe d'autre méthode utilisant à la fois les modèles métaboliques et la cinétique des réactions tels que l'approche \gls{MCA}. De tels approches sont complexes, car elles nécessitent d'établir la cinétique de toutes les réactions ayant lieu \textit{in-vivo} et également la concentration des métabolites.}. L'inégalités des proportions de métabolite en entrée et en sortie imposent des limites au système. En réponse à cette contrainte une proportion minimum et maximum de flux autorisé est définis pour chaque réaction. D'autre contraintes peuvent être ajouté.
+    
+    Une fois le modèle mathématiquement décrit, il est possible de rechercher les meilleurs conditions de développement pour un organisme. Prédire le développement maximum d'un organsime revient à calculer le flux maximum amenant à la production de biomasse. En d'autre terme les flux seront optimisé pour atteindre les réaction permettant la production de la biomasse. Mathématiquement cela revient à définir quantitativement dans quel proportions chaque réactions doit contribuer pour l'expression du phénotype.  Par la suite, la production par modélisation de la biomasse peut être comparé aux résultats expérimentaux, validant ou non le modèle métabolique.
+    
+    
+    Dans le cadre du \gls{FBA} la résolution de tel modèle passe souvent par l'utilisation de la programmation linéaire. En effet, cette approche permet la résolution de problème où l'on recherche à optimiser un objectif (nommé "fonction objectif"). Dans le domaine de la bio-informatique la méthode ce justifie par le postulat  que l’évolution a conduit à des " organismes optimaux ". Ainsi selon les métabolites compris par le terme biomasse, les flux optimaux varieront.
+    
+    Toutefois cette méthode nécessite un modèle métabolique complet et de qualité. Autrement des "fuites" de métabolites vont gêner l'optimisation des objectifs voire même 'être dans l'impossibilité de les atteindre. Pour cela, des méthodes pour combler les "trous" sont développés, comme GapFill\cite{kumar2007optimization}, FastGapFill\cite{thiele2014fastgapfill}, Mirage\cite{vitkin2012mirage}, Meneco\cite{prigent2017meneco}.
+    
+    
     
     \subbibliography
 \end{refsegment}

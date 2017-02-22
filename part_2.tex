@@ -35,6 +35,19 @@ vers une représentation ensemblistes des connaissances et de leur valeurs de v�
 \section{Le début de GROOLS}
 expliqué les ratés
 inaptitude à tout programmer de manière explicite
+
+\textbf{Ce qui suit doit/peut être déplacé en discussion.}
+
+Toutefois la méthode utilisé reste assez flou d'un point de vue formel. La distinction entre prédiction et expectation s'entre mêle. La combinaison de deux états (provenant de : certifié, inconnu, non certifié) implique neuf combinaisons possibles. Mais ces combinaisons sont représentables uniquement par les valeurs vrai,faux,inconnu. Donc un même résultat peut correspondre à plusieurs combinaisons possible. Ce qui amène à des phrases pour le moins subtile, par exemple la distinction entre inconnu et non certifié:
+\begin{itemize}
+    \item "The status “unknown” is assigned to an IMG pathway, in which IMG terms without gene assignments have “candidate genes”."
+    \item "In contrast, the status “not asserted” is assigned to an IMG pathway when no “candidate genes” can be found."
+\end{itemize}
+
+De plus la notion de consistance est employé ici pour décrire un cadre logique. Mais en logique ce terme est utilisé pour désigné une chose ne contenant pas de contradiction. Or ici elle est utilisé abusivement pour décrire "une cohérence biologique".
+
+Pour finir contrairement à leur constat sur les données biologiques erronées et donc la nécessité d'automatiser un raisonnement pour l'annotation fonctionnelle. Leur méthode aura pour tendance d'attribuer pour un génome partielle ou distant des génomes de références à une majorité d'états non certifiés ou inconnu. En conséquence les bio-curateurs seront difficilement plus aider par l'apport de ces nouvelles informations.
+
 \includepdf[pages=-]{img/DILS_2014.pdf}
 
 \begin{shadedfigure}
