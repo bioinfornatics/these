@@ -39,17 +39,30 @@
 	\RequirePackage[utf8]{inputenc}
 	\RequirePackage[T1]{fontenc}
 	\RequirePackage{lmodern}
+    \RequirePackage{hyperref}
+    \RequirePackage[pdftex]{pdflscape}
+    \typeout{pdftex latex engine!}
 \else
 	\ifXeTeX
 		\RequirePackage{xltxtra}
 		\RequirePackage{fontspec}
-	\else 
-		\RequirePackage{luatextra}
+        \RequirePackage[xetex]{hyperref}
+        \RequirePackage[xetex]{pdflscape}
+        \typeout{xetex latex engine!}
+	\else
+        \ifLuaTeX
+    		\RequirePackage{luatextra}
+            %\RequirePackage{hyperref}
+            \RequirePackage[pdftex]{pdflscape}
+            \RequirePackage[a-3u]{pdfx}
+            \typeout{lualatex latex engine!}
+        \else
+            \typeout{Unknown latex engine!}
 	\fi
 	\defaultfontfeatures{Ligatures=TeX}
 \fi
+
 \RequirePackage{geometry}
-\RequirePackage[xetex]{hyperref}
 \RequirePackage{memhfixc}
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
@@ -80,7 +93,6 @@
 \RequirePackage{romanbar}                % Use more than one optional parameter in a new commands
 \RequirePackage{emptypage}
 \RequirePackage{needspace}
-\RequirePackage{pdflscape}
 \RequirePackage{multirow}
 \RequirePackage{mathtools}
 \RequirePackage{enumitem}
@@ -218,14 +230,14 @@
 %\setsansfont[]{Fira Sans}
 % Normal font
 \setmainfont[
-Path=fonts/,
-Extension=.otf,
-Numbers=OldStyle,
-BoldFont=FiraSans-Medium,
-ItalicFont=FiraSans-LightItalic,
-BoldItalicFont=FiraSans-MediumItalic
+    Path=fonts/,
+    Extension=.otf,
+    Numbers=OldStyle,
+    BoldFont=FiraSans-Medium,
+    ItalicFont=FiraSans-LightItalic,
+    BoldItalicFont=FiraSans-MediumItalic
 ]{FiraSans-Light}
-\newfontfamily{\normalFont}{fonts/FiraSans-Book.otf}
+\newfontfamily{\normalFont}[Path=fonts/,Extension=.otf]{FiraSans-Book}
 %\newfontfamily{\sectionNumberFont}{fonts/Canter-Bold-3D.otf}
 \newfontfamily{\secNumFont}[Path=fonts/,Extension=.ttf]{Oswald-MediumItalic}
 \newfontfamily{\secnameFont}[Path=fonts/,Extension=.otf]{Canter-Bold}
