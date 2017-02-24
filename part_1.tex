@@ -765,6 +765,9 @@
     
     Évidement la logique de description n'est pas limité aux relations ET/OU. Des sémantiques comme celle proposé par \acrfull{GO}, dispose de relation pour exprimer la composition et l'identité. Pour cela  \acrfull{GO} propose un vocabulaire contrôlé (l'ontologie). On ne peut pas parlé de la représentation des connaissances sans cité le web sémantique (standardisé par le W3C \footnote{W3C, est un organisme de standardisation à but non lucratif, fondé en octobre 1994 chargé de promouvoir la compatibilité des technologies du World Wide Web.}). Le web sémantique incarne un effort important de la communauté à fournir les outils et les méthodes pour analyser l'information dans sons sens le plus générale. Une fois l'information structuré, des méthodes de raisonnement sur ces données peuvent être appliquées.
     
+    \paragraph{Programmation logique} La logique est notamment utilisé afin de simuler un raisonnement. Pour cela on définit un ensemble de règles logique pour traiter un ensemble de faits élémentaires. Ainsi les faits respectant les contraintes d'une règle se voient attribuer les conséquences logiques décrit pas la règle. Cet approche s'apparente à la programmation d'une logique. De nombreux outils et méthodes permettent de mettre en œuvre un raisonnement logique basé sur des règles. Une règle est généralement composé de deux parties. La première est un ensemble de clause et la seconde correspond à la conséquence logique.
+    Une clause est une suite de littéraux relié par des opérateurs de conjonction et disjonction. Un litéral est un atome avec ou non ça négation. Et un atome est une proposition élémentaire vrai ou fausse. La conséquence logique est activé si le calcul des propositions pour un fait est établi comme vrai. On peut cité le langage \texttt{PROLOG} \cite{colmerauer1990introduction,clocksin2003programming} permettant de résoudre des problèmes impliquant des objets\footnote{La notion d'objet au sens \texttt{PROLOG} et une entité représentable par un terme (oiseau par exemple). }
+    
     \paragraph{Chaînage avant et arrière} %backward/forward
     Un raisonnement peut être décrit par une suite de règle. Une tel règle comporte deux partie. La première partie sélectionne les informations correspondant à une contrainte. Comme par exemple: "x est une transaminase", tous faits respectant la contrainte seront sélectionnés. Puis la deuxième partie correspond au conséquence logique. Pour faire suite à l'exemple précédent: "alors x est une protéine" . Ces deux parties forme une règle d'inférence. Les conséquences logiques d'une règle peuvent activer de nouvelles règles. Par la méthode du chaînage avant, les faits (des prémisses) sont utilisés pour remonter aux conclusions. Ce processus de déduction se poursuit tant qu'il existe des faits respectant les contraintes des règles.
     
@@ -888,9 +891,19 @@
     
     Pour résumer les approches utilisé par les outils précédemment cités.\texttt{GapFill} remplis les "trous" et optimise la synthèse de la biomasse, par l'identification d'un nombre minimal de réaction nécessaire pour atteindre les objectifs. \texttt{FastGapFill} étends les fonctionnalités de \texttt{GapFill} en ne concentrant plus uniquement sur la production de la biomasse. Mais également par l'ajout de flux entrant et sortant aux réseaux métaboliques. \texttt{Mirage} relâche la notion de minimalité de réaction à ajouter pour satisfaire les objectifs. Et utilise également les profiles phylogénétiques des espèces pour déterminer si une réaction doit être ajouté ou non. \texttt{Meneco} se base sur la topologie du réseaux pour remplir les "trous". Pour cela il va restreindre les réactions à ajouter au métabolite produit via un chemin de réaction connecté aux substrats. De sorte que les métabolites entrant dans le réseaux soient topologiquement produit.
     
-    \subsection{Méthodes utilisant des logiques probabilistes}
+    \subsection{Méthodes utilisant d'autres systèmes logiques }
     
-    Il existe également des méthodes basé sur la fouille de données pour émettre des lois générale avec un certains niveau de confiance au regard de nos connaissance actuelle. 
+    Il existe également des méthodes logiques utilisant la probabilité pour l'inférence d'état comme en logique inductive \cite{michalski1983theory,muggleton1994inductive}. Généralement elle se base sur une fouille de données. Après analyse de ces données il est possible de décrire une probabilité qu'un évènement se passe et donc d'inférer des lois générales sur la base des évènements avec un fort degrés de croyance. Dans un tel système le degrés de croyance est un moyen de définir quelque chose comme probablement vrai. Cette notion de croyance se différencie du vrai définis en logique classique car ce dernier est une affirmation non probabiliste. Ainsi la programmation par logique inductive permet de généré des hypothèses au regard des faits observés. Cette approche est nommé dans la littérature scientifique de la manière suivante: "\gls{ILP}". Ce domaine d'étude est à l'intersection de deux domaines, (i) l'apprentissage ("machine learning") et (ii) la programmation logique. Dans le domaine de l'annotation fonctionnelles des gènes des approches utilisant l'\gls{ILP} ont été proposé à la communauté scientifique \cite{clare2003predicting,king2004applying}.
+    
+    Une autre approche part du principe qu'il est compliqué de tout catégoriser en terme de vrai ou de faux. En lieu et place l'utilisation de nuance permettrais de raisonner avec des données approximatives, incertaines ou manquantes. Cet méthodologie de raisonnement est apellé "logique floue" \ref{fig:fuzzy}.
+        
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/fuzzi-schema-controleur.png}
+        \caption{Les données non floues sont transformés en donnée floue. Puis le moteur d'inférence va propager les conséquences logiques à travers des règles floues. Pour terminer les conséquences logiques sont retranscrites de  manière non floue par l'étape de "défuzzification". Image source: \url{http://www.decformations.com/mathematiques/logique_floue.php}
+        \label{fig:fuzzy}
+        
+    \end{shadedfigure}
     
     
     \subbibliography
