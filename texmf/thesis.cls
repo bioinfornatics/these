@@ -34,28 +34,53 @@
 \RequirePackage{fix-cm}
 \RequirePackage{etex} % increase register size
 \RequirePackage{iftex}
+\RequirePackage{etoolbox}
+\RequirePackage[a-3u]{pdfx}
+\providecommand{\pdfxopts}{a-3u}
+
+\AtEndPreamble{%
+    \makeatletter
+    \hypersetup{ 
+        unicode     = true,
+        final       = true,
+        colorlinks  = true,
+        urlcolor    = blue,
+        citecolor   = blue,
+        linkcolor   = MidnightBlue,
+        unicode     = true,
+        linktoc     = section,
+        pdflang     = fr-FR,
+        pdfauthor   = {\@author},
+        pdfkeywords = {\@keywords},
+        pdftitle    = {\@title},
+        pdfsubject  = {Genomic expert annotation}
+    }
+    \makeatother
+}{}
+
+
+% \immediate\write18{rm \jobname.xmpdata}
+% \begin{filecontents*}{\jobname.xmpdata}
+%     \pdfstringdef\inputTitle{\@title}
+% \end{filecontents*}
 
 \ifPDFTeX
+    \typeout{pdftex latex engine!}
 	\RequirePackage[utf8]{inputenc}
 	\RequirePackage[T1]{fontenc}
 	\RequirePackage{lmodern}
-    \RequirePackage{hyperref}
     \RequirePackage[pdftex]{pdflscape}
-    \typeout{pdftex latex engine!}
 \else
 	\ifXeTeX
+        \typeout{xetex latex engine!}
 		\RequirePackage{xltxtra}
 		\RequirePackage{fontspec}
-        \RequirePackage[xetex]{hyperref}
         \RequirePackage[xetex]{pdflscape}
-        \typeout{xetex latex engine!}
 	\else
         \ifLuaTeX
-    		\RequirePackage{luatextra}
-            %\RequirePackage{hyperref}
-            \RequirePackage[pdftex]{pdflscape}
-            \RequirePackage[a-3u]{pdfx}
             \typeout{lualatex latex engine!}
+    		\RequirePackage{luatextra}
+            \RequirePackage[pdftex]{pdflscape}
         \else
             \typeout{Unknown latex engine!}
 	\fi
@@ -81,11 +106,10 @@
 \RequirePackage[noabbrev]{cleveref}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
-\RequirePackage[backend=biber,bibencoding=utf8,backref=true,style=nature,citestyle=science,sorting=none]{biblatex}
+\RequirePackage[backend=biber,bibencoding=utf8,defernumbers=true,backref=true,style=nature,citestyle=science,sorting=none]{biblatex}
 \RequirePackage{booktabs}
 \RequirePackage[nomain,noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
-\RequirePackage{etoolbox}
 \RequirePackage{kpfonts}
 \RequirePackage{arrayjob}
 \RequirePackage{microtype}
@@ -182,6 +206,9 @@
 
 \def\author#1{\def\@author{#1}}
 \let\@author\@empty
+
+\def\org#1{\def\@org{#1}}
+\let\@org\@empty
 
 \def\title#1{\def\@title{#1}}
 \let\@title\@empty
