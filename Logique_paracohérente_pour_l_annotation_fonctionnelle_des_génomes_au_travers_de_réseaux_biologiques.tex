@@ -15,7 +15,7 @@
 \discipline{Bio-Informatique}
 \doctoralschoolnumber{577}
 \doctoralschool{Structure et dynamique des systèmes vivants}
-\keywords{biologie computationnelle, logique , métabolisme, représentation des connaissances, savoir, inconsistance, incomplétude}
+\keywords{biologie computationnelle, logique , métabolisme, représentation des connaissances, savoir, inconsistance, logique partiel}
 
 
 \includeonly{glossaires,remerciement,introduction,part_1,part_2,part_3}
@@ -48,8 +48,46 @@
     \include{part_3}
     
     \cleardoublepage
+    
+    \backmatter
     \thispagestyle{empty}
     \nocite{*}
     \printbibliography
     \cleardoublepage
+    
+    \thispagestyle{empty}
+    \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.1cm}
+    \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50, font=\tiny]
+        {\small \textbf{Logique paracohérente pour l’annotation fonctionnelle des génomes au travers de réseaux biologiques}}
+        
+        \noindent\textbf{Mots clés :} biologie computationnelle, logique , métabolisme, représentation des connaissances, inconsistance, logique partiel, raisonnement déductif
+        
+        \begin{multicols}{2}            
+            \paragraph{\textbf{Résumé:} }Face à l’augmentation des capacités de séquençage, on assiste à une accumulation de prédictions \textit{in silico} dans les banques de séquences biologiques. Cette masse de données dépasse nos capacités d’expertise humaine et, malgré des progrès méthodologiques, ces analyses automatisées produisent de nombreuses erreurs notamment dans la prédiction de la fonction biologique des protéines. Par conséquent, il est nécessaire de se doter d’outils capables de guider l’expertise humaine par une évaluation des prédictions en confrontation avec les connaissances sur l’organisme étudié. 
+            
+            GROOLS (pour "Genomic Rule Object-Oriented Logic System") est un système expert capable de raisonner à partir d’informations incomplètes et contradictoires. Il a été développé afin de devenir l’assistant du biologiste dans un processus d’annotation fonctionnelle de génome intégrant une grande quantité d’information de sources diverses. GROOLS utilise une représentation générique des connaissances sous la forme d’un graphe de concepts qui est orienté et acyclique. Les concepts représentent les différents composants de processus biologiques (e.g. voies métaboliques) et sont connectés par des relations de différents types (i.e. "part-of", "subtype-of").  Ces "Connaissances-a-priori" représentent des théories dont on souhaite élucider leur présence dans un organisme. Elles vont servir de socle au raisonnement afin d’être évaluées à partir d’observations de type "Prédiction" (e.g. activités enzymatiques prédites) ou "Expectation" (e.g. phénotypes de croissance). Pour cela, GROOLS met en œuvre une logique paraconsistante sur des ensembles de faits que sont les observations. Au travers de différentes règles, les valeurs de "Prédiction" et "d’Expectation" vont être propagées dans le graphe sous la forme d’ensembles de valeurs de vérité. A la fin du raisonnement, une conclusion sera donnée pour chaque "Connaissance-a-priori" en combinant leur valeurs de "Prédiction" et d' "Expectation". Les valeurs de conclusion peuvent, par exemple, indiquer une "Présence-confirmée" (i.e. fonction prédite et attendue), une "Absence" (i.e. fonction non prédite mais attendue) ou une "Présence-non-attendue" (i.e. fonction prédite mais pas attendue dans l’organisme).
+            
+            Le raisonnement de GROOLS a été appliqué sur plusieurs organismes microbiens avec différentes sources de "Prédictions" (i.e. annotations d’UniProtKB ou de MicroScope) et de processus biologiques (i.e. GenomeProperties et UniPathway). Pour les "Expectations", des données de phénotype de croissance et les voies de biosynthèse des acides aminés ont été utilisées. Les résultats obtenus permettent rapidement d’évaluer la qualité globale des annotations d’un génome et de proposer aux biologistes des annotations à compléter ou à corriger car contradictoires. Plus généralement, le logiciel GROOLS peut être utilisé pour l’amélioration de la reconstruction du réseau métabolique d’un organisme qui est une étape indispensable à l’obtention d’un modèle métabolique de qualité.
+        \end{multicols}
+    \end{mdframed}
+    
+    \newpage
+    
+    \thispagestyle{empty}
+    \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.1cm}
+    \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50, font=\tiny]\textenglish{   
+        {\small \textbf{Functional genomic annotation with paraconsistent logic through biological network}}
+        
+        \noindent\textbf{Keywords :} computationnal biology, logic , métabolism, knowledge representation, inconsistencies, partial logic, deductive reasoning
+        
+        \begin{multicols}{2}          
+            \paragraph{\textbf{Abstract:} }One consequence of increasing sequencing capacity is the the accumulation  of \textit{in silico} predictions in biological sequence databanks. This amount of data exceeds human curation capacity and, despite methodological progress, numerous errors on the prediction of protein functions are made.  Therefore, tools are required to guide human expertise in the evaluation of bioinformatics predictions taking into account background knowledge on the studied organism.
+            
+            GROOLS (for “Genomic Rule Object-Oriented Logic System”) is an expert system that is able to reason on incomplete and contradictory information. It was developed with the objective of assisting biologists in the process of genome functional annotation by integrating high quantity of information from various sources. GROOLS adopts a generic representation of knowledge using a directed acyclic graph of concepts that represent the different components of a biological process (e.g. a metabolic pathway) connected by two types of relations (i.e. “part-of” and “subtype-of”). These concepts are called “Prior Knowledge concepts” and correspond to theories for which their presence in an organism needs to be elucidated. They serve as basis for the reasoning and are evaluated from observations of “Prediction” (e.g. a predicted enzymatic activity) or “Expectation” (e.g. growth phenotypes) type. Indeed, GROOLS implements a paraconsistent logic on set of facts that are observations. Using different rules, “Prediction” and “Expectation” values are propagated on the graph as sets of truth values. At the end of the reasoning, a conclusion is given on each “Prior Knowledge concepts” by combining “Prediction” and “Expectation” values. Conclusions may, for example, indicate a “Confirmed-Presence” (i.e. the function is predicted and expected), a “Missing” concept (i.e. the function is expected but not predicted) or an “Unexpected-Presence” (i.e. the function is predicted but not expected in the organisms).
+            
+            GROOLS reasoning was applied on several organisms and with different sources of “Predictions” (i.e. annotations from UniProtKB or MicroScope) and biological processes (i.e. GenomeProperties and UniPathway). For “Expectations”, growth phenotype data and amino-acid biosynthesis pathways were used. GROOLS results are useful to quickly evaluate the overall annotation quality of a genome and to propose annotations to be completed or corrected by a biocurator. More generally, the GROOLS software can be used to improve the  reconstruction of the metabolic network of an organism which is an essential step in obtaining a high-quality metabolic model.
+        \end{multicols}
+    }
+    \end{mdframed}
+    
 \end{document}

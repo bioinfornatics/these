@@ -122,6 +122,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{colortbl}
 \RequirePackage[final]{pdfpages}
+\RequirePackage{multicol}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -150,6 +151,8 @@
 \setlength{\TPVertModule}{1cm}  %controls vertical movements
 
 \setdefaultlanguage{french}
+\setmainlanguage{french}
+\setotherlanguage{english}
 % affiche dans la colonne les changements si l'option draft est fournie
 \changemarks
 
@@ -326,60 +329,58 @@
         %\vspace{0.2cm}
         
         \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50]
-        
-        \begin{center}
-            {\huge \textcolor{psviolet}{THÈSE DE DOCTORAT}}\\
-            {\huge \textcolor{psviolet}{DE L'UNIVERSITÉ PARIS SACLAY}}\\
-            {\Large \textcolor{psviolet}{préparée à }} \\
-            {\Large \textcolor{psviolet}{l'Université d'Évry Val d'Essonne}} \\
-            \vspace{\baselineskip}
-            \vspace{\baselineskip}
-        	{\Large ÉCOLE DOCTORALE N°\@doctoralschoolnumber} \\
-        	{\Large \@doctoralschool}\\
-            \vspace{\baselineskip}
-            {\Large Spécialité de doctorat : Sciences de la Vie et de la Santé } \\
-        	{\Large Discipline : \@discipline}\\
-            \vspace{\baselineskip}
-            \vspace{\baselineskip}
-            {\Large Par}\\
-            \vspace{\baselineskip}
-            \vspace{\baselineskip}
-            {\huge{\textbf{\@author}}}\\
-            \vspace{\baselineskip}
-            \vspace{\baselineskip}
-            {\Huge\emph{\textbf{\color{psviolet}\@title}}}\\
-        \end{center}
-        
-%        \begin{flushright}
-%    		{\bfseries{\@subtitle}}
-%            \vspace{\baselineskip}
-%        \end{flushright}
-        
-        
-        \begin{center}
-            {\large Numéro national de thèse: \@nationalthesisnumber}\\
-            \vspace{\baselineskip}
-        \end{center}
-        
-        \begin{flushleft}
-            {\large \textbf{Thèse présentée et soutenue à \@location~le \@date}}
-            \vspace{\baselineskip}
-            \vspace{\baselineskip}
-            \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
-            	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{DR (CNRS)} \\
-            	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{CR (CEA)} \\
-            	                                                        &                         &\\
-            	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
-            	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{..... (......)} \\
-            	\footnotesize{Rapporteurs} :                            & .......                 & \footnotesize{..... (......)} \\
-                                                                        & .......                 & \footnotesize{..... (......)} \\
-                \footnotesize{Examinateurs} :                           & .......                 & \footnotesize{..... (......)} \\
-                                                                        & .......                 & \footnotesize{..... (......)} \\
-            	\footnotesize{Invités} :                                & .......                 & \footnotesize{..... (......)} \\
-            \end{tabular}
-        \end{flushleft}
-        
-        
+            
+            \begin{center}
+                {\huge \textcolor{psviolet}{THÈSE DE DOCTORAT}}\\
+                {\huge \textcolor{psviolet}{DE L'UNIVERSITÉ PARIS SACLAY}}\\
+                {\Large \textcolor{psviolet}{préparée à }} \\
+                {\Large \textcolor{psviolet}{l'Université d'Évry Val d'Essonne}} \\
+                \vspace{\baselineskip}
+                \vspace{\baselineskip}
+            	{\Large ÉCOLE DOCTORALE N°\@doctoralschoolnumber} \\
+            	{\Large \@doctoralschool}\\
+                \vspace{\baselineskip}
+                {\Large Spécialité de doctorat : Sciences de la Vie et de la Santé } \\
+            	{\Large Discipline : \@discipline}\\
+                \vspace{\baselineskip}
+                \vspace{\baselineskip}
+                {\Large Par}\\
+                \vspace{\baselineskip}
+                \vspace{\baselineskip}
+                {\huge{\textbf{\@author}}}\\
+                \vspace{\baselineskip}
+                \vspace{\baselineskip}
+                {\Huge\emph{\textbf{\color{psviolet}\@title}}}\\
+            \end{center}
+            
+    %        \begin{flushright}
+    %    		{\bfseries{\@subtitle}}
+    %            \vspace{\baselineskip}
+    %        \end{flushright}
+            
+            
+            \begin{center}
+                {\large Numéro national de thèse: \@nationalthesisnumber}\\
+                \vspace{\baselineskip}
+            \end{center}
+            
+            \begin{flushleft}
+                {\large \textbf{Thèse présentée et soutenue à \@location~le \@date}}
+                \vspace{\baselineskip}
+                \vspace{\baselineskip}
+                \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
+                	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{DR (CNRS)} \\
+                	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{CR (CEA)} \\
+                	                                                        &                         &\\
+                	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
+                	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{..... (......)} \\
+                	\footnotesize{Rapporteurs} :                            & .......                 & \footnotesize{..... (......)} \\
+                                                                            & .......                 & \footnotesize{..... (......)} \\
+                    \footnotesize{Examinateurs} :                           & .......                 & \footnotesize{..... (......)} \\
+                                                                            & .......                 & \footnotesize{..... (......)} \\
+                	\footnotesize{Invités} :                                & .......                 & \footnotesize{..... (......)} \\
+                \end{tabular}
+            \end{flushleft}
         \end{mdframed}
         \clearpage
         \restoregeometry

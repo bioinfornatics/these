@@ -39,10 +39,6 @@
     
     \note{Lors de l'apparition des premières formes de vie, il y a 3,6 milliards d’années. L'atmosphère était faiblement pourvue en oxygène. Ces organismes anaérobiques était présent dans les océans. L'oxygène est toxique, leur métabolisme s'est adapté au dioxyde de carbone, présent abondamment à ce moment. Puis entre 3,5 à 3 milliards apparurent des cyanobactéries. Ce sont des bactéries capable de capter l'énergie du soleil. Elles sont "photosynthétiques". Leurs métabolismes possèdent la particularité d'oxyder les minéraux présents dans les océans. Ils produisent ainsi de l'oxygène. Avec le temps leur métabolisme a consommé tellement de minéraux que l'oxygène produits dans les océans s’est libéré dans l’atmosphère. Modifiant ainsi fortement sa composition. Cet évènement influença le cours de la vie. De sorte que des organismes s'adaptent à l'oxygène. Car l'oxygène devient alors une molécule courante. Certaine forme de vie évolua jusqu'à devenir aérobie. Avec cet évènement, la Terre a subi sa première pollution atmosphérique d'ampleur induit par des organismes vivant. (Lire: \citetitle{bengtson1994early} ) }
     
-
-    \change{a reprendre car tu mélanges les concepts}{David Vallenet}
-    \change{Plus de contenu}{David Vallenet}
-    
     \subsection{Les acteurs}\label{subsec:acteurs}
     
     L'étude du métabolisme est essentiel pour la compréhension des êtres vivants. Les débouchés impactent de nombreux domaines, tel que : la pharmaceutique, l'énergie, l'agriculture, l'environnement\ldots.  Pour mieux le comprendre, il est nécessaire d'introduire les différents acteurs du métabolisme. En effet, le métabolisme représente un ensemble d'événement faisant intervenir des métabolites, des réactions, des cofacteurs, des enzymes\ldots.
@@ -56,8 +52,6 @@
     \note{Un composé organique s'oppose à un composé minéral. Cette différenciation s'explique par des raisons philosophiques antérieur au \siecle{19}. En effet, on distinguait les substances constitutives des organismes des autres. Ne sachant pas synthétiser les molécules organiques. On expliquait que l'intervention d'une "force vitale" était nécessaire. En 1828, Friedrich Wöler mis au point, accidentellement une expérience, produisant de l'urée (considéré comme organique) à partir de composé minéraux, comme le cyanate d’ammonium. Depuis lors, la notion de composé organique a évolué afin de désigner une molécule constituée d'une partie de carbone, le reste pouvant être des atomes d'hydrogène, oxygène azote et autres \ldots. La notion organique est resté car le carbone est un élément essentiel du vivant. Par opposition un composé minéral correspond à toutes molécules constituées d'élément autre que le carbone. Pour plus d'information, je vous invite à lire \citetitle{chimie_organique}.
     }    
       
-    \change{ne pas mélanger le concept et enzymes}{David Vallenet}
-
 	\subsubsection{Les réactions}
 	Le processus de transformation d’un métabolite est décrit par une réaction. On désigne par le terme "substrat", les métabolites avant transformation. Par opposition, on parle de produit pour la molécule transformée. Ainsi une réaction est l'événement qui va transformer un substrat afin de produire un nouveau métabolite. Ces réactions s'effectuent au sein de l'organisme, dans l'infiniment petit, au niveau moléculaire.
     
@@ -129,7 +123,7 @@
     	G = (V,E) \stepcounter{equation}\tag{équation \theequation}
     \end{equation}
     
-    Dans l'\cref{eq:graph}, G désigne le graphe tel que constitué de deux ensembles, celui des sommets V et celui des relations V. Différents type de graphe sont présentés dans la \cref{fig:graphe}.
+    Dans l'équation \ref{eq:graph}, G désigne le graphe tel que constitué de deux ensembles, celui des sommets V et celui des relations V. Différents type de graphe sont présentés dans la \cref{fig:graphe}.
     
     
     \begin{shadedfigure}[H]
@@ -150,12 +144,12 @@
     Une voie métabolique est un enchainement de réaction enzymatique durant lequel les métabolites sont transformés. Ils représentent usuellement une fonction biologique. Par conséquent ces fonctions sont susceptibles d'être partagés à travers le monde du vivant. Toutefois pour réaliser une fonction biologique, il peut exister plusieurs variantes de chemin réactionnel. Par exemple pour la biosynthèse de la L-lysine, six voies alternatives sont connus à ce jour dans le monde du vivant (voir \cref{fig:lysine} ).
     	
     	
-    	\begin{shadedfigure}[H]
-    		\centering
-    		\includegraphics[width=\textwidth]{img/L-lysine-biosynthesis.jpg}
-    		\caption{Biosynthèse de la L-Lysine peut se faire par via la voie DAP et ses quatre chemins de réactions possibles où via la voie AAA et ces deux voies alternatives. Figure reprise de l'article \citetitle{morgat2011unipathway}. }
-    		\label{fig:lysine}
-    	\end{shadedfigure}
+   	\begin{shadedfigure}[H]
+   		\centering
+   		\includegraphics[width=\textwidth]{img/L-lysine-biosynthesis.jpg}
+   		\caption{Biosynthèse de la L-Lysine peut se faire par via la voie DAP et ses quatre chemins de réactions possibles où via la voie AAA et ces deux voies alternatives. Figure reprise de l'article \citetitle{morgat2011unipathway}. }
+   		\label{fig:lysine}
+   	\end{shadedfigure}
      
      La représentation des voies métaboliques est une synthèse d'évènements se produisant dans le vivant. Par conséquent cette représentation est subjective. Elle diffère selon les éléments souhaitais être en avant où bien encore selon les informations et les meta-informations dont dispose la ressource. Ces différences seront exposées à travers les ressources sur les voies métaboliques \texttt{\gls{KEGG}}, Reactome, Unipathway, Genome properties.
      
@@ -289,14 +283,17 @@
     
     \section{Des génomes aux réseaux métaboliques}
     
-    \change{Partir des génomes->gènes->protéines->ae}{David Vallenet}
-    La connaissance de l'origine des différentes protéines intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. Toutefois ce coût est rentabilisé car il deviendra utilisable pour rechercher sa présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappelons brièvement les trois niveaux qui les relient. Ceci implique :
+    Le génome d'un organisme contient l'informations pour produire des protéines \ref{fig:production_proteine}. Ce génome est constitué d'\gls{ADN} dont l'ordonnancement de ces bases ont une signification biologique. Par analogie comprendre l'information dans le génome c'est comme lire un livre de cuisine   composé uniquement de quatre lettres (ACGT: adénine, cytosine, guanine, thymine) et décrivant seulement la liste des ingrédient pour chaque recette. Cette petite digression fait référence aux gènes, ce sont des suites de molécules d'\gls{ADN} décrivant la composition et l'ordre en acide aminé d'une protéine. Pour cela, les gènes sont lues par une enzyme, la séquence d'\gls{ADN} est transcrit en \gls{ARNm}. Puis la séquence d'{ARNm} est traduit en une protéine.
+     
+    La connaissance de tous les gènes intervenant dans le métabolisme permet d'avoir un catalogue des capacités du vivant. Dès lors, il peut être réutilisé afin de prédire des fonctions métaboliques. Toutefois ce coût est rentabilisé car il deviendra utilisable pour rechercher sa présence dans tous les organismes. Afin d'aborder les liens entre le génome et le métabolisme d'un organisme, nous rappelons brièvement les trois niveaux qui les relient. Ceci implique :\nolisttopbreak
     
     \begin{itemize}
         \item Le génome : composé d'un ensemble de gènes
-        \item Le transcriptome : constitué d'\acrfull{ARNm} produit par l'organisme
+        \item Le transcriptome : constitué d'\gls{ARNm} produit par l'organisme
         \item Le protéome : ensemble des protéines exprimées par l'organisme
     \end{itemize}
+
+\note{La séquence \gls{ADN} peut être vue comme un support de stockage décrivant la composition des protéines. D'ailleurs des chercheurs travaillent sur la mise au point de méthode pour lire et écrire des données dans une séquence d'\gls{ADN} \cite{bornholt2016dna,yazdi2015rewritable}. Ils estiment qu'une telle séquence peut stocker 87,5 TeraBytes de données par gramme. Par comparaison un disque dur classique d'1TB pèse environ 100 gramme. Une telle prouesse révolutionnerais les systèmes d'archivages.}
     
     \begin{shadedfigure}[H]
         \centering
@@ -454,7 +451,7 @@
     
     On utilisera par la suite le symbole "$\land$" pour le \textit{ET} logique, "$\lor$" pour le \textit{OU} logique et "$\lnot$" pour \textit{NON}. L'implication est représenté par le symbole "$\rightarrow$". 
     
-    Le calcul des prédicats du premier ordre (également nommé logique du premier ordre) ajoute une couche d'abstraction par l'utilisation des variables. Par exemple on peut déduire l'expression "Le X est un oiseau" selon de ce qui est désigné par "X". Ainsi l'évaluation des variables forme une proposition. D'après l'expression précédente si "X" désigne un renard: "Le renard est un oiseau" est une proposition fausse. La logique du premier ordre est caractérisé par l'utilisation de: variable, de prédicat, de connecteur logique ( \textit{ET}, \textit{OU} \ldots), de quantificateurs (pour tout: "$\forall$", il existe au moins un \ldots tels que: "$\exists$" ). Cette ensemble de caractéristique permet une grande expressivité de problème logique. Par exemple, pour énoncé, "Pour toute personnes françaises, il existe au moins une personne bordelaise" peut s'écrire de la manière suivante:
+    Le calcul des prédicats du premier ordre (également nommé logique du premier ordre) ajoute une couche d'abstraction par l'utilisation des variables. Par exemple on peut déduire l'expression "Le X est un oiseau" selon de ce qui est désigné par "X". Ainsi l'évaluation des variables forme une proposition. D'après l'expression précédente si "X" désigne un renard: "Le renard est un oiseau" est une proposition fausse. La logique du premier ordre est caractérisé par l'utilisation de: variable, de prédicat, de connecteur logique ( \textit{ET}, \textit{OU} \ldots), de quantificateurs (pour tout: "$\forall$", il existe au moins un \ldots tels que: "$\exists$" ). Cette ensemble de caractéristique permet une grande expressivité de problème logique. Par exemple, pour énoncé, "Pour toute personnes françaises, il existe au moins une personne bordelaise" peut s'écrire de la manière suivante:\nolisttopbreak
     
     \begin{equation*}
         \forall x~estUnePersonne(x) \land \exists x~estFrancaise(x) \land \exists x~estBordelaise(x) \stepcounter{equation}
@@ -730,7 +727,7 @@
         \item $\square A \land \square B$ est obligatoirement faux dans un monde ω si $\square A \to \lnot \square B \lor \square B \to \lnot\square A$
     \end{enumerate}
 
-    La logique modale permet d'exprimer quatre notions ( plus en les combinant ):
+    La logique modale permet d'exprimer quatre notions ( plus en les combinant ):\nolisttopbreak
     \begin{enumerate}[label={}]
         \item $\square p$: p est nécessaire / obligatoire
         \item $\lnot\square p$: p est contingent / incertain
@@ -782,7 +779,14 @@
     
     Il est possible également de partir des conclusions pour revenir aux prémisses, par la méthode du chaînage arrière. Ces méthodes de chaînage sont mis en œuvre à travers des moteurs d'inférence.
     
-    \paragraph{Système expert} la mise bout à bout des connaissances, des règles d'inférence et des faits observés permet de reproduire des systèmes cognitif d'un expert d'un domaine (bio-curateur par exemple). Cet ensemble forme un système expert, ce procédé est utilisé notamment pour la mise en œuvre de l'intelligence artificielle. Pour cela, un tel système dispose d'une base de fait, une base de règle et un moteur d'inférence. Les déductions effectuer à partir des faits observé permettent dans certains d'acquérir de nouvelles connaissances. Ce qui se traduit par la formulation de nouvelle règle. Cet apprentissage automatique permet de dépasser le cadre théorique imposé par les règle de départ. Afin de mimer un comportement d'un expert faisant preuve d'adaptabilité face aux problèmes.
+    \paragraph{Système expert} la mise bout à bout des connaissances, des règles d'inférence et des faits observés permet de reproduire des systèmes cognitif d'un expert d'un domaine (bio-curateur par exemple). Cet ensemble forme un système expert \ref{fig:systeme_expert}, ce procédé est utilisé notamment pour la mise en œuvre de l'intelligence artificielle. Pour cela, un tel système dispose d'une base de fait, une base de règle et un moteur d'inférence. Les déductions effectuer à partir des faits observé permettent dans certains d'acquérir de nouvelles connaissances. Ce qui se traduit par la formulation de nouvelle règle. Cet apprentissage automatique permet de dépasser le cadre théorique imposé par les règle de départ. Afin de mimer un comportement d'un expert faisant preuve d'adaptabilité face aux problèmes.
+    
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/systeme_expert.pdf}
+        \caption{Présentation des principaux composants d'un système expert.}
+        \label{fig:systeme_expert}
+    \end{shadedfigure}
     
     \section{Méthodes existantes}
     
@@ -895,14 +899,13 @@
     
     Il existe également des méthodes logiques utilisant la probabilité pour l'inférence d'état comme en logique inductive \cite{michalski1983theory,muggleton1994inductive}. Généralement elle se base sur une fouille de données. Après analyse de ces données il est possible de décrire une probabilité qu'un évènement se passe et donc d'inférer des lois générales sur la base des évènements avec un fort degrés de croyance. Dans un tel système le degrés de croyance est un moyen de définir quelque chose comme probablement vrai. Cette notion de croyance se différencie du vrai définis en logique classique car ce dernier est une affirmation non probabiliste. Ainsi la programmation par logique inductive permet de généré des hypothèses au regard des faits observés. Cette approche est nommé dans la littérature scientifique de la manière suivante: "\gls{ILP}". Ce domaine d'étude est à l'intersection de deux domaines, (i) l'apprentissage ("machine learning") et (ii) la programmation logique. Dans le domaine de l'annotation fonctionnelles des gènes des approches utilisant l'\gls{ILP} ont été proposé à la communauté scientifique \cite{clare2003predicting,king2004applying}.
     
-    Une autre approche part du principe qu'il est compliqué de tout catégoriser en terme de vrai ou de faux. En lieu et place l'utilisation de nuance permettrais de raisonner avec des données approximatives, incertaines ou manquantes. Cet méthodologie de raisonnement est apellé "logique floue" \ref{fig:fuzzy}.
+    Une autre approche part du principe qu'il est compliqué voir impossible de tout catégoriser en terme soit vrai soit faux. En effet, il existe des cas floue. En lieu et place des termes binaires, l'utilisation d'ensemble au contour floue permet de raisonner avec des données approximatives, incertaines ou manquantes. Cet méthodologie de raisonnement est appelé "logique floue" \ref{fig:fuzzy}.
         
     \begin{shadedfigure}[H]
         \centering
         \includegraphics[width=\textwidth]{img/fuzzi-schema-controleur.png}
-        \caption{Les données non floues sont transformés en donnée floue. Puis le moteur d'inférence va propager les conséquences logiques à travers des règles floues. Pour terminer les conséquences logiques sont retranscrites de  manière non floue par l'étape de "défuzzification". Image source: \url{http://www.decformations.com/mathematiques/logique_floue.php}
+        \caption{Les données non floues sont transformés en donnée floue. Puis le moteur d'inférence va propager les conséquences logiques à travers des règles floues. Pour terminer les conséquences logiques sont retranscrites de  manière non floue par l'étape de "défuzzification". Image source: \url{http://www.decformations.com/mathematiques/logique_floue.php}}
         \label{fig:fuzzy}
-        
     \end{shadedfigure}
     
     
