@@ -744,7 +744,7 @@
         alétiques:      & il est possible qu'il fasse un beau temps \\
     \end{tabular}
 
-    Bien que je n'ai pas travaillé sur la logique modale en tant que tel. J'ai le sentiment que le travail de recherche effectué à travers GROOLS peut avoir des liens avec la logique modale. Notamment au travers des notions: "requis", "interdit", "incertain" et "peut être" utilisé pour la formulation des conclusions. Mais également avec les notions de prédiction et d'expectation. Elles ont un sens proche de ce qui est exprimé en logique épistémiques ("on croît" / "on sait"). Mais également sur les conclusions "La connaissance doit être manquante" semble une formulation proche de la logique déontiques.
+    Bien que je n'ai pas travaillé sur la logique modale en tant que tel. J'ai le sentiment que le travail de recherche effectué à travers \gls{GROOLS} peut avoir des liens avec la logique modale. Notamment au travers des notions: "requis", "interdit", "incertain" et "peut être" utilisé pour la formulation des conclusions. Mais également avec les notions de prédiction et d'expectation. Elles ont un sens proche de ce qui est exprimé en logique épistémiques ("on croît" / "on sait"). Mais également sur les conclusions "La connaissance doit être manquante" semble une formulation proche de la logique déontiques.
     
     
     
@@ -872,7 +872,7 @@
     
     \subsection{IMG terms}
     
-    \texttt{IMG terms} \cite{chen2013improving} est certainement la méthodologie la plus proche de celle utilisé par \texttt{GROOLS}. La méthodologie employé recherche à être robuste aux données biologiques  erronées. Comme nous l'avons vu dans la section \nameref{subsec:lacunes} les données biologiques dans les ressources publiques sont partielles et contradictoires. Pour cela le raisonnement emploie une logique tri-valué. Bien que non déclaré comme tel dans l'article "\citetitle{chen2013improving}", ce sont les mêmes table de vérité que celles décrites par \textit{Kleen} et \textit{Priest} (présenté dans la partie \nameref{par:logic_multivalué}). Le raisonnement appliqué attribue aux voies métaboliques un des trois états vrai, faux, inconnu.
+    \texttt{IMG terms} \cite{chen2013improving} est certainement la méthodologie la plus proche de celle utilisé par \texttt{\gls{GROOLS}}. La méthodologie employé recherche à être robuste aux données biologiques  erronées. Comme nous l'avons vu dans la section \nameref{subsec:lacunes} les données biologiques dans les ressources publiques sont partielles et contradictoires. Pour cela le raisonnement emploie une logique tri-valué. Bien que non déclaré comme tel dans l'article "\citetitle{chen2013improving}", ce sont les mêmes table de vérité que celles décrites par \textit{Kleen} et \textit{Priest} (présenté dans la partie \nameref{par:logic_multivalué}). Le raisonnement appliqué attribue aux voies métaboliques un des trois états vrai, faux, inconnu.
     
     Tout d'abord les \texttt{IMG terms} forment un vocabulaire contrôlé. Ils sont notamment utilisés pour décrire des \texttt{IMG reaction}  et des \texttt{IMG pathway}. Les \texttt{IMG reaction} représente des réactions généralisés, c'est-à-dire qu'une \texttt{IMG reaction} peut correspondre à plusieurs réactions. Ce qui permet de fusionner les réactions alternatives à une \texttt{IMG reaction}. Chaque réaction est relié à une ou plusieurs \texttt{IMG reaction}. La présence d'une \texttt{IMG reaction} est considéré comme présente lorsqu'au moins un des réactions alternatives possèdent tous les \texttt{IMG terms} impliqués dans ça réactions. Ainsi sont assignés aux \texttt{IMG reaction} un des trois états: certifié ("asserted") de celles inconnu("unknown") et non certifié ("not asserted"). À partir de l'état des \texttt{IMG reaction} composant un  \texttt{IMG pathway}, l'état de la voie métabolique est déduit par simple calcul des propositions. En effet les règles d'inférence sont représentées ici sous la forme de conjonction et disjonction de réaction:
     
@@ -904,7 +904,7 @@
     \begin{shadedfigure}[H]
         \centering
         \includegraphics[width=\textwidth]{img/fuzzi-schema-controleur.png}
-        \caption{Les données non floues sont transformés en donnée floue. Puis le moteur d'inférence va propager les conséquences logiques à travers des règles floues. Pour terminer les conséquences logiques sont retranscrites de  manière non floue par l'étape de "défuzzification". Image source: \url{http://www.decformations.com/mathematiques/logique_floue.php}}
+        \caption{Les données non floues sont transformés en donnée floue. Puis le moteur d'inférence va propager les conséquences logiques à travers des règles floues. Pour terminer les conséquences logiques sont retranscrites de  manière non floue par l'étape de "défuzzification". \hspace{\textwidth}\tiny{source: \url{http://www.decformations.com/mathematiques/logique_floue.php}}}
         \label{fig:fuzzy}
     \end{shadedfigure}
     

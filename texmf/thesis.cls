@@ -16,7 +16,7 @@
 %% What to do, if an unknown option is entered?
 \DeclareOption*{%
 	\PassOptionsToClass{\CurrentOption}{memoir}}
-
+\PassOptionsToPackage{font=small,labelfont=bf}{caption}
 \ExecuteOptions{univ} %default is univ
 \ProcessOptions\relax
 
@@ -35,8 +35,6 @@
 \RequirePackage{etex} % increase register size
 \RequirePackage{iftex}
 \RequirePackage{etoolbox}
-\RequirePackage[a-3u]{pdfx}
-\providecommand{\pdfxopts}{a-3u}
 
 \AtEndPreamble{%
     \makeatletter
@@ -87,15 +85,15 @@
 	\defaultfontfeatures{Ligatures=TeX}
 \fi
 
+\RequirePackage[a-3u]{pdfx}
+\providecommand{\pdfxopts}{a-3u}
 \RequirePackage{geometry}
 \RequirePackage{memhfixc}
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
-\RequirePackage[font=small,labelfont=bf]{caption}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
 \RequirePackage[skins]{tcolorbox}
-%\RequirePackage{forest}
 \RequirePackage{tikz}
 \RequirePackage{tkz-euclide}
 \RequirePackage{forest} 
@@ -107,7 +105,6 @@
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{notoccite}
 \RequirePackage[backend=biber,bibencoding=utf8,defernumbers=true,backref=true,style=nature,citestyle=science,sorting=none]{biblatex}
-\RequirePackage{booktabs}
 \RequirePackage[nomain,noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
 \RequirePackage{kpfonts}
@@ -121,8 +118,8 @@
 \RequirePackage{mathtools}
 \RequirePackage{enumitem}
 \RequirePackage{colortbl}
-\RequirePackage[final]{pdfpages}
 \RequirePackage{multicol}
+\RequirePackage[final]{pdfpages}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -516,7 +513,7 @@
 \newcommand\coloredBox[1]%
 {
 	\needspace{2\baselineskip}
-	\begin{tcolorbox}[colframe=mediumelectricblue, colback=mediumelectricblue,fontupper=\color{white}, left=2em]
+	\begin{tcolorbox}[colframe=mediumelectricblue, colback=mediumelectricblue,fontupper=\color{white}, left=2em,right=2em]
 		\contentslabel{0.5cm}~#1\hfill\contentspage
 	\end{tcolorbox}
 }
