@@ -208,15 +208,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="145.9331"
-     inkscape:cy="191.71968"
+     inkscape:cx="55.341703"
+     inkscape:cy="190.70954"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-height="1053"
      inkscape:window-x="0"
-     inkscape:window-y="867"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -230,7 +230,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -238,7 +238,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-0.00834734,-166.99244)">
+     transform="translate(4.7541529,-166.99244)">
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.15879363;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4646"
@@ -704,7 +704,7 @@
          style="font-size:2.82222223px;stroke-width:0.26458332px">a</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458302px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458302px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="24.057083"
        y="226.29704"
        id="text111"><tspan
@@ -712,7 +712,7 @@
          id="tspan109"
          x="24.057083"
          y="226.29704"
-         style="font-size:2.82222223px;stroke-width:0.26458332px;fill:#000080;">b</tspan></text>
+         style="font-size:2.82222223px;fill:#000080;stroke-width:0.26458332px">b</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -748,7 +748,7 @@
          style="font-size:2.82222223px;stroke-width:0.26458332px">a</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="12.101813"
        y="228.01064"
        id="text111-9"><tspan
@@ -756,10 +756,10 @@
          id="tspan109-1"
          x="12.101813"
          y="228.01064"
-         style="font-size:2.82222223px;stroke-width:0.26458332px;fill:#000080;">b</tspan></text>
+         style="font-size:2.82222223px;fill:#000080;stroke-width:0.26458332px">b</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="32.087303"
        y="218.41948"
        id="text111-2"><tspan
@@ -767,10 +767,10 @@
          id="tspan109-7"
          x="32.087303"
          y="218.41948"
-         style="font-size:2.82222223px;stroke-width:0.26458332px;fill:#000080;">b</tspan></text>
+         style="font-size:2.82222223px;fill:#000080;stroke-width:0.26458332px">b</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="20.322796"
        y="219.97864"
        id="text111-0"><tspan
@@ -778,6 +778,6 @@
          id="tspan109-9"
          x="20.322796"
          y="219.97864"
-         style="font-size:2.82222223px;stroke-width:0.26458332px;fill:#000080;">b</tspan></text>
+         style="font-size:2.82222223px;fill:#000080;stroke-width:0.26458332px">b</tspan></text>
   </g>
 </svg>
