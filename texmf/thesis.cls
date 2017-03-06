@@ -2,6 +2,7 @@
 \ProvidesClass{thesis}
 % Based on the memoir class
 \newif\ifthesis@univ
+\newif\ifxetexorluatex
 
 \DeclareOption{univ}{%
 	\thesis@univtrue
@@ -23,23 +24,39 @@
 % Based on the memoir class
 \LoadClass{memoir}
 
+\global\pdfobjcompresslevel=0
+\global\pdfminorversion=5
+\global\pdfinclusioncopyfonts=1
+\newcommand{\pdfapart}{2}        % PDF/A part
+\newcommand{\pdfaconformance}{U} % PDF/A conformance
+
 \ifthesis@univ
 	% \typeout{Foo!} % print to stdout
 \else
 	% \\typeout{NoFoo!} % print to stdout
 	\setstocksize{240mm}{160mm}
-	\settrimmedsize{\stockheight}{\stockwidth}{*}
+    \paperheight=240mm \paperwidth=160mm
+	\settrimmedsize{\stockheight}{\stockwidth}
+    \setlrmarginsandblock{2cm}{2cm}{*}%%%%
+    \setulmarginsandblock{2cm}{2cm}{*}
+    \checkandfixthelayout
+    \fixpdflayout
 \fi
 
 \RequirePackage{fix-cm}
 \RequirePackage{etex} % increase register size
 \RequirePackage{iftex}
 \RequirePackage{etoolbox}
+\RequirePackage[pdf15,a-3u,latxmp]{pdfx}
+\providecommand{\pdfxopts}{a-3u}
 
 \AtEndPreamble{%
     \makeatletter
     \hypersetup{ 
+        pdfencoding = unicode,
         unicode     = true,
+        pdfapart    = {\pdfapart},
+        pdfaconformance = {\pdfaconformance},
         final       = true,
         colorlinks  = true,
         urlcolor    = blue,
@@ -51,6 +68,7 @@
         pdfauthor   = {\@author},
         pdfkeywords = {\@keywords},
         pdftitle    = {\@title},
+        pdflang     = {fr},
         pdfsubject  = {Genomic expert annotation}
     }
     \makeatother
@@ -64,29 +82,34 @@
 
 \ifPDFTeX
     \typeout{pdftex latex engine!}
+    \RequirePackage[T1]{fontenc}
 	\RequirePackage[utf8]{inputenc}
-	\RequirePackage[T1]{fontenc}
 	\RequirePackage{lmodern}
     \RequirePackage[pdftex]{pdflscape}
+    \xetexorluatexfalse
 \else
 	\ifXeTeX
         \typeout{xetex latex engine!}
 		\RequirePackage{xltxtra}
 		\RequirePackage{fontspec}
+        \RequirePackage[xetex]{hyperref}
         \RequirePackage[xetex]{pdflscape}
+        \xetexorluatextrue
+        
 	\else
         \ifLuaTeX
             \typeout{lualatex latex engine!}
     		\RequirePackage{luatextra}
+            \RequirePackage[pdftex]{hyperref}
             \RequirePackage[pdftex]{pdflscape}
+            \xetexorluatextrue
         \else
             \typeout{Unknown latex engine!}
+            \xetexorluatexfalse
 	\fi
 	\defaultfontfeatures{Ligatures=TeX}
 \fi
 
-\RequirePackage[a-3u]{pdfx}
-\providecommand{\pdfxopts}{a-3u}
 \RequirePackage{geometry}
 \RequirePackage{memhfixc}
 \RequirePackage{graphicx}
@@ -239,6 +262,42 @@
 
 \def\nationalthesisnumber#1{\def\@nationalthesisnumber{#1}}
 \let\@nationalthesisnumber\@empty
+
+\ifxetexorluatex
+    \RequirePackage{hyperxmp}
+    
+    %\global\pdfcompresslevel=9
+    
+    \edef\pwpt{\strip@pt\dimexpr0.996264009963\paperwidth\relax} %paper width in PS points
+    \edef\phpt{\strip@pt\dimexpr0.996264009963\paperheight\relax} %paper height in PS points
+    
+    \pdfpageattr{
+        /MediaBox [0 0 \pwpt \phpt]^^J
+        /BleedBox [0.00000 0.00000 \pwpt \phpt]^^J
+        /CropBox [0 0 \pwpt \phpt]^^J
+        /TrimBox [0.00000 0.00000 \pwpt \phpt]
+    }
+
+    \pdfinfo{ 
+        /Title (\@title)
+        /Author(\@author)
+        /Keywords(\@keywords)
+        /GTS_PDFXVersion (PDF/A-3:2012)
+        /GTS_PDFXConformance (PDF/A-3u:2012)
+    }
+%    \immediate\pdfobj stream attr{/N 4^^J/Alternate/DeviceCMYK} file{coated_FOGRA39L_argl.icc}
+%    \pdfcatalog{
+%        /PageMode /UseNone
+%        /OutputIntents [ <<
+%        /Type /OutputIntent
+%        /S /GTS_PDFA3
+%        /DestOutputProfile \the\pdflastobj\space 0 R
+%        /OutputConditionIdentifier (Coated FOGRA39)
+%        /RegistryName (http://www.argyllcms.com/)
+%        /Info(FOGRA39 (ISO Coated v2 300\% (ECI)))
+%        >> ]
+%    }%
+\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
