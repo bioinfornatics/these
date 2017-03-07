@@ -32,7 +32,19 @@ vers une représentation ensemblistes des connaissances et de leur valeurs de v�
 
 \begin{refsegment}
 \chapter{GROOLS}
+
+J'ai consacré ces trois années de recherche pour une approche interactive entre le biologiste et les prédictions bio-informatique lors du processus de curation de l'annotation fonctionnelle des génomes bactériens. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait assister les biologistes à détecter les annotations inconsistantes et contradictoires. La curation et la validation des prédictions bio-informatiques pourrait alors rattraper son retard.
+
 \section{Le début de GROOLS}
+
+L'équipe HELIX d'Alain VIARI avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \gls{SIB} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} était d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \gls{JESS}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. Alain VIARI m'a permis d'accéder l'outil PathRules qui est une implémentation de \gls{HERBS} avec le moteur \gls{CLIPS} \cite{riley1991clips} ainsi que son code source.
+
+
+J'ai pris en main l'outil par l'intégration des voies de biosynthèse de la lysine (AAA et DAP) décrit par UniPathway et l'ajouts des prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers, (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension .data
+
+
+
+
 expliqué les ratés
 inaptitude à tout programmer de manière explicite
 
