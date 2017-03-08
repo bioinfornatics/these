@@ -24,9 +24,9 @@
 % Based on the memoir class
 \LoadClass{memoir}
 
-\global\pdfobjcompresslevel=0
-\global\pdfminorversion=5
-\global\pdfinclusioncopyfonts=1
+%\global\pdfobjcompresslevel=0
+%\global\pdfminorversion=5
+%\global\pdfinclusioncopyfonts=1
 \newcommand{\pdfapart}{3}        % PDF/A part
 \newcommand{\pdfaconformance}{U} % PDF/A conformance
 
@@ -116,7 +116,7 @@
 \RequirePackage{subcaption}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
-\RequirePackage[skins]{tcolorbox}
+\RequirePackage[skins,most,]{tcolorbox}
 \RequirePackage{tikz}
 \RequirePackage{tkz-euclide}
 \RequirePackage{forest} 
@@ -143,6 +143,8 @@
 \RequirePackage{colortbl}
 \RequirePackage{multicol}
 \RequirePackage[final]{pdfpages}
+\RequirePackage{listings}
+\RequirePackage{verbatim}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -496,18 +498,18 @@
     \renewcommand{\printchaptername}{}
     \renewcommand\printchaptertitle[1]{
         \begin{tikzpicture}[remember picture,overlay,shift={(current page.north west)},yshift=-3cm]
-            \path[fill=Black] (0,0) rectangle(\paperwidth,3cm);
+            \path[fill=Black] (0,0) rectangle(1.1\paperwidth,3cm);
             \foreach \x in {0,1, ..., 70}{
                 \foreach \y in {0, ...,7} 
                     \pgfmathsetmacro\Random{random(1,4)}
                 \node[draw=none,color=Random\Random,anchor=south west,font=\tiny,xshift=-.05cm] at (\x*.3cm,\y*.33cm) {\dnaletters(\Random)};
             };
             \node[anchor=east,xshift=0.95\paperwidth] {
-            	\begin{tcolorbox}[colframe=MidnightBlue, colback=MidnightBlue,opacityframe=0.65, opacityback=0.65,arc=20pt,left=4em,width=1\paperwidth]
+            	\begin{tcolorbox}[colframe=MidnightBlue, colback=MidnightBlue,opacityframe=0.65, opacityback=0.65,arc=20pt,left=4em,width=\paperwidth]
             		\ifnum\value{chapter}>0
-            		\normalfont\Huge\bfseries\color{white}\Romanbar{\thechapter}~##1
+            		  \normalfont\Huge\bfseries\color{white}\Romanbar{\thechapter}~##1
             		\else
-            		\normalfont\Huge\bfseries\color{white}##1
+            		  \normalfont\Huge\bfseries\color{white}##1
             		\fi
             	\end{tcolorbox}
             };
@@ -733,6 +735,25 @@
 
 
 %% Terminal
+
+%\newtcblisting{commandshell}{
+%    colback=black,colupper=white,colframe=black,
+%    listing only,listing options={language=sh},
+%    every listing line={\textcolor{green}{\small\ttfamily\bfseries Linux \$> }}
+%}
+
+\newcommand{\console}[2]{
+    \vspace*{1em}
+    \begin{tcolorbox}[colframe=black, colback=black,colupper=white,arc=10pt]
+        \begin{SingleSpace}
+             \tiny\ttfamily\bfseries\textcolor{green}{ Linux \$ }#1 \par
+             #2
+        \end{SingleSpace}
+    \end{tcolorbox}
+    \vspace*{1em}
+    \needspace{3\baselineskip}
+}
+
 \newcommand{\terminal}[1]{
     \begin{minipage}{\textwidth}
     Sortie dans le terminal:

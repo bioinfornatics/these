@@ -18,7 +18,7 @@
 \keywords{biologie computationnelle, logique , métabolisme, représentation des connaissances, savoir, inconsistance, logique partiel}
 
 
-\includeonly{glossaires,remerciement,introduction,part_1,part_2,part_3}
+\includeonly{glossaires,remerciement,introduction,part_1,part_2,part_3,annexe}
 
 
 \begin{document}
@@ -50,14 +50,21 @@
     \cleardoublepage
     
     \backmatter
-    \thispagestyle{empty}
-    \nocite{*}
-    \printbibliography
-    \cleardoublepage
+    {
+        \cleardoublepage
+        \appendix
+        \include{annexe}
+        \thispagestyle{empty}
+        \nocite{*}
+        \printbibliography
+        \cleardoublepage
+    }
+    
+    \newpage
     
     \thispagestyle{empty}
     \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.5cm}
-    \begin{textblock}{3}(1,0.7)
+    \begin{textblock}{3}(1,1.7)
         \includegraphics[height=2cm]{img/logo_ecole_doctorale.png}
     \end{textblock}
     \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50, font=\tiny]
@@ -84,14 +91,12 @@
     \begin{textblock}{3}(17,25)
         \includegraphics[height=3cm]{img/univ-e.png}
     \end{textblock}
-    \restoregeometry
-
     
-    \newpage
+    \clearpage
     
     \thispagestyle{empty}
     \newgeometry{left=1.5cm,right=1.5cm,top=4cm,bottom=0.5cm}
-    \begin{textblock}{3}(1,0.7)
+    \begin{textblock}{3}(1,1.7)
         \includegraphics[height=2cm]{img/logo_ecole_doctorale.png}
     \end{textblock}
     \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50, font=\tiny]\textenglish{   
@@ -119,6 +124,6 @@
     \begin{textblock}{3}(17,25)
         \includegraphics[height=3cm]{img/univ-e.png}
     \end{textblock}
-    \restoregeometry
+    
     
 \end{document}

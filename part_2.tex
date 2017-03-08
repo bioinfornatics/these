@@ -1,35 +1,3 @@
-Question principale:\\
-Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert peut il détecter les annotations inconsistantes et informer les possibles annotations manquantes vis à vis d'un organisme prokaryotes? 
-
-idée directrices:
-l'inférence logiques des prédictions peut se faire via une représentation en graphes des connaissances et l'utilisation de la logique non classiques permettant de représenter l'inconnu et la contradiction.
-
-histoires:
-
-herbs
-   représentation en dag des connaissances
-   description manuel des connaissances
-   and or graph 
-   logique classique T / F
-   prédiction et expectation
-   conclusion
-   
-Mais descriptions des connaissances fastidieuses .…… 
-les prédictions inconnu sont considéré absentes suivant le principe du tiers exclut
-ne peut pas gérer la contradictions..
-structurations de l'information sous forme de phrases
-
-vers une représentation des connaissances orienté-objets
-vers une logique à 4 valeurs T,F,B,N pour gérer l'inconnu et la contradiction
-
-belnap et ses tables de vérité
-
-oui mais certains résultat semble incohérent  N ou B donc T ...
-
-vers une représentation ensemblistes des connaissances et de leur valeurs de vérité
-  - les ensembles et leur représentation en graphe conceptuelle
-  - les valeurs de vérité généralisés
-
 \begin{refsegment}
 \chapter{GROOLS}
 
@@ -37,12 +5,81 @@ J'ai consacré ces trois années de recherche pour une approche interactive entr
 
 \section{Le début de GROOLS}
 
-L'équipe HELIX d'Alain VIARI avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \gls{SIB} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} était d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \gls{JESS}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. Alain VIARI m'a permis d'accéder l'outil PathRules qui est une implémentation de \gls{HERBS} avec le moteur \gls{CLIPS} \cite{riley1991clips} ainsi que son code source.
+L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} était d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \texttt{\gls{JESS}}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. \textit{Alain VIARI} m'a permis d'accéder l'outil PathRules qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips} ainsi que son code source.
 
 
-J'ai pris en main l'outil par l'intégration des voies de biosynthèse de la lysine (AAA et DAP) décrit par UniPathway et l'ajout des prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers, (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data}
+J'ai pris en main l'outil par l'intégration des voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et l'ajout des prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichiers est utilisé comme identifiant pour faire le lien entre les processus, les , prédictions et les information taxonomique de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
+
+\console{find data/ -name 'ACIAD.data'}{ data/observers/uniprot/ACIAD.data\par data/species/ACIAD.data }
 
 
+La description des données dans ses fichiers suit la nomenclature \texttt{\gls{CLIPS}}. C'est à dire que les faits sont déclarés entre parenthèses. Les observations sont formatés comme suit: ( \texttt{source} (id \texttt{xxx}) (alias \texttt{yyy} sp:\texttt{zzz})  ) .
+
+\console{head data/observers/uniprot/data/ACIAD.data}{
+    (uniprot (id ASPARTATE-SEMIALDEHYDE-DEHYDROGENASE-RXN) (alias ACIAD0479 sp:ACIAD00423))\par
+    (uniprot (id SUCCDIAMINOPIMDESUCC-RXN) (alias ACIAD0791 sp:ACIAD0070)\par
+    (uniprot (id ASPARTATEKIN-RXN) (alias ACIAD1252 sp:ACIAD01133))\par
+    (uniprot (id SUCCINYLDIAMINOPIMTRANS-RXN) (alias ACIAD2080 sp:ACIAD01886))\par
+    (uniprot (id TETHYDPICSUCC-RXN) (alias ACIAD2599 sp:ACIAD02357))\par
+    (uniprot (id DIAMINOPIMEPIM-RXN) (alias ACIAD2659 sp:ACIAD02412))\par
+    (uniprot (id DIAMINOPIMDECARB-RXN) (alias ACIAD2660 sp:ACIAD02413))\par
+    (uniprot (id DIHYDRODIPICSYN-RXN) (alias ACIAD3585 sp:ACIAD03222))\par
+    (uniprot (id DIHYDROPICRED-RXN) (alias ACIAD3619 sp:ACIAD03252))\par
+}
+
+
+L'information taxonomique est également un fait. Il débute par "species" suivis de plusieurs chaîne de caractères pour renseigné de plus en plus précisément la taxonomie de l'organisme.
+
+\console{cat data/species/ACIAD.data}{ (species lineage Bacteria Proteobacteria Gammaproteobacteria Pseudomonadales Moraxellaceae Acinetobacter Acinetobacter\_sp.\_ADP1) }
+
+Pour représenter la structure hiérarchique des voies métaboliques, les fait sont organisés pour exprimé la notion de composition et d'équivalence. La notion de composition et utiliser pour relier les blocs réactionnelles à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatif pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 3)$". }. Ci-dessous la voie métabolique de la biosynthèse de la lysine par la voie AAA (Acide Alpha-amino Adipique) selon \texttt{UniPathway}.
+
+\console{cat data/processes/lysine\_AAA\_biosynthesis.data}{
+;;;; --------------------------------------------------------\par
+;;; HERBS (Hamap Expert Rules Based System)\par
+;;;\par
+;;; @file: lysine\_AAA\_biosynthesis.data\par
+;;; --------------------------------------------------------\par
+;;;\par
+(process declare lysine\_AAA\_biosynthesis present in ALL)\par
+(process define lysine\_AAA\_biosynthesis -> and UPA00033)\par
+(process define UPA00033 -> or UPA00033-alt-0 UPA00033-alt-1)\par
+(process define UPA00033-alt-0 -> and ULS00012 ULS00013)\par
+(process define UPA00033-alt-1 -> and ULS00012 ULS00014)\par
+(process define ULS00012 -> and ULS00012-alt-0)\par
+(process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
+(process define ULS00013 -> or ULS00013-alt-0 ULS00013-alt-1)\par
+(process define ULS00013-alt-0 -> and UER00032 UER00034)\par
+(process define ULS00013-alt-1 -> and UER00033 UER00034)\par
+(process define ULS00012 -> and ULS00012-alt-0)\par
+(process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
+(process define ULS00014 -> or ULS00014-alt-0 ULS00014-alt-1)\par
+(process define ULS00014-alt-0 -> and UER00035 UER00037 UER00038 UER00039)\par
+(process define ULS00014-alt-1 -> and UER00036 UER00037 UER00038 UER00039)\par
+}
+
+
+Chaque processus est un fait désigné par le mot clé "process". Les voies métabolique sont préfixer du mot clé "declare" et "define" pour ces composants. Les faits constituant la voie métabolique sont hiérarchiquement organisé. Lorsque un fait et composé de plusieurs concepts on utilise le symbole "and" et "or" lorsqu'un fait possède des équivalences. Les lignes débutant par un point virgules ne sont pas interprété par  \texttt{\gls{CLIPS}}.
+
+Ceci permet d'obtenir une évaluation de la complétion de l'annotation fonctionnelle des génomes (\cref{fig:herbs_rapport}).
+
+\begin{shadedfigure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/herbs_conclusion_report.png}
+    \caption{Rapport sur la présence de la voie de biosynthèse de la lysine.}
+    \label{fig:herbs_rapport}
+\end{shadedfigure}
+
+L'utilisateur à la possibilité d'explorer les voies métaboliques pour discriminer les composants manquants (\cref{fig:herbs_dag}).
+
+\begin{landscape}
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/herbs_aciad_lysine_dap.png}
+        \caption{Rapport sur la présence de la voie de biosynthèse de la lysine.}
+        \label{fig:herbs_dag}
+    \end{shadedfigure}
+\end{landscape}
 
 
 expliqué les ratés

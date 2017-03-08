@@ -295,14 +295,6 @@
     
     Le transcriptome et dans un second temps le protéome représentent les produits de l'expression des gènes. Ces deux niveaux sont dynamiques et changeant. Ils diffèrent selon les stress perçus par l'organisme. C'est-à-dire, à un temps donné, seulement une partie des gènes de l'organisme est exprimée. Tandis que le génome d'un organisme est considéré comme invariant en gène. Ainsi pour chaque gène retrouvé dans un organisme, on sera en mesure de déterminer la ou les séquence(s) protéique(s) \footnote{Un même gène peut exprimer plusieurs protéines.}. Ce lien indirect entre le gène, ces protéines et ces réactions est également appelé "\acrshort{GPR}" pour : \textit{\acrfull{GPR}}.
     
-    
-    \begin{shadedfigure}[H]
-        \centering
-        \includegraphics[width=\textwidth]{img/niveaux_annotations.pdf}
-        \caption{Présentation des trois niveaux d’annotation. 1) Annotation Structurale : identification des gènes et des séquences issue de transcription et la traduction. 2) Annotation Fonctionnelle : attribution des objectifs biologiques réalisé pars les séquences précédemment identifiées (usuellement par homologie avec une séquence de fonction connue). 3) Annotation Relationnelle : regroupe différentes relations établis entre les séquences pour décrire des objectifs biologiques telle qu'une voie métabolique.  }
-        \label{fig:niveaux_annotation}
-    \end{shadedfigure}
-    
     \subsection{L’évolution des génomes}
     Avant d'approfondir l’annotation génomique, il est nécessaire de comprendre le processus d’évolution des génomes. En effet les méthodes d’annotation automatique utilisent cette théorie pour extrapoler des fonctionnalités d’un organisme vers un autre.
     
@@ -338,6 +330,13 @@
     Afin de documenter le génome, le transcriptome et le protéome on passe par plusieurs étapes d’annotation. L’annotation peut être de nature automatique ou manuelle. Dans ce dernier cas, des experts vont effectuer un travail de validation et invalidation des annotations. Ce travail de curation des données est important car les prédicteurs automatiques ne sont pas toujours fiables.
     
     On distingue trois niveaux d’annotation pour un génome (\cref{fig:niveaux_annotation}). Le premier niveau est l’annotation structurale. Elle est utilisée pour définir les bornes de début et de fin d’un gène.  Le second niveau est l’annotation fonctionnelle. Elle recherche à prédire les fonctions biologiques des gènes. Puis, le troisième niveau correspond à l’annotation relationnelle. Cette annotation consiste à étiqueter les différentes interactions entre les produits des gènes.
+    
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/niveaux_annotations.pdf}
+        \caption{Présentation des trois niveaux d’annotation. 1) Annotation Structurale : identification des gènes et des séquences issue de transcription et la traduction. 2) Annotation Fonctionnelle : attribution des objectifs biologiques réalisé pars les séquences précédemment identifiées (usuellement par homologie avec une séquence de fonction connue). 3) Annotation Relationnelle : regroupe différentes relations établis entre les séquences pour décrire des objectifs biologiques telle qu'une voie métabolique.  }
+        \label{fig:niveaux_annotation}
+    \end{shadedfigure}
     
     L’annotation fonctionnelle des gènes, correspond au processus d’attribution de rôle biologique à des gènes. En effet ces gènes vont produire des protéines disposant de une ou plusieurs fonctionnalités pour l’organisme. Ces fonctions sont habituellement classées en trois catégories : moléculaires, cellulaires, phénotypiques.
     
@@ -426,7 +425,7 @@
     
     \subsubsection{Rôle de la curation}
     
-    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisé, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \gls{IMG} \cite{markowitz2009img,markowitz2012img} ou encore SEED \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbien. L'objectif est de collecter et de mettre en relations les informations relatives aux différents gènes identifiés en vue de facilité le travail du curateur. Ainsi le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génome.
+    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisé, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \texttt{\gls{IMG}} \cite{markowitz2009img,markowitz2012img} ou encore \texttt{SEED} \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbien. L'objectif est de collecter et de mettre en relations les informations relatives aux différents gènes identifiés en vue de facilité le travail du curateur. Ainsi le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génome.
     
     Lors de l'analyse des génomes nouvellement séquencé, le biologiste est confronté à la difficile tâche de vérification de la cohérence des gènes annoté vis-à-vis des connaissances biologiques sur l'organisme étudié. Pour cette raison l'automatisation des règles appliquées par le biologiste permettrais de traiter rapidement une quantité importante d'information.
     
@@ -771,7 +770,7 @@
     
     Il est possible également de partir des conclusions pour revenir aux prémisses, par la méthode du chaînage arrière. Ces méthodes de chaînage sont mis en œuvre à travers des moteurs d'inférence.
     
-    \paragraph{Système expert} la mise bout à bout des connaissances, des règles d'inférence et des faits observés permet de reproduire des systèmes cognitif d'un expert d'un domaine (bio-curateur par exemple). Cet ensemble forme un système expert \ref{fig:systeme_expert}, ce procédé est utilisé notamment pour la mise en œuvre de l'intelligence artificielle. Pour cela, un tel système dispose d'une base de fait, une base de règle et un moteur d'inférence. Les déductions effectuer à partir des faits observé permettent dans certains d'acquérir de nouvelles connaissances. Ce qui se traduit par la formulation de nouvelle règle. Cet apprentissage automatique permet de dépasser le cadre théorique imposé par les règle de départ. Afin de mimer un comportement d'un expert faisant preuve d'adaptabilité face aux problèmes.
+    \paragraph{Système expert} la mise bout à bout des connaissances, des règles d'inférence et des faits observés permet de reproduire des systèmes cognitif d'un expert d'un domaine (bio-curateur par exemple). Cet ensemble forme un système expert (voir \cref{fig:systeme_expert}), ce procédé est utilisé notamment pour la mise en œuvre de l'intelligence artificielle. Pour cela, un tel système dispose d'une base de fait, une base de règle et un moteur d'inférence. Les déductions effectuer à partir des faits observé permettent dans certains d'acquérir de nouvelles connaissances. Ce qui se traduit par la formulation de nouvelle règle. Cet apprentissage automatique permet de dépasser le cadre théorique imposé par les règle de départ. Afin de mimer un comportement d'un expert faisant preuve d'adaptabilité face aux problèmes.
     
     \begin{shadedfigure}[H]
         \centering
