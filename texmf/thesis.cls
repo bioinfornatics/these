@@ -27,7 +27,7 @@
 \global\pdfobjcompresslevel=0
 \global\pdfminorversion=5
 \global\pdfinclusioncopyfonts=1
-\newcommand{\pdfapart}{2}        % PDF/A part
+\newcommand{\pdfapart}{3}        % PDF/A part
 \newcommand{\pdfaconformance}{U} % PDF/A conformance
 
 \ifthesis@univ
