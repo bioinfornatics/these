@@ -53,23 +53,23 @@
 \AtEndPreamble{%
     \makeatletter
     \hypersetup{ 
-        pdfencoding = unicode,
-        unicode     = true,
-        pdfapart    = {\pdfapart},
+        pdfencoding 	= unicode,
+        unicode     	= true,
+        pdfapart    	= {\pdfapart},
         pdfaconformance = {\pdfaconformance},
-        final       = true,
-        colorlinks  = true,
-        urlcolor    = blue,
-        citecolor   = blue,
-        linkcolor   = MidnightBlue,
-        unicode     = true,
-        linktoc     = section,
-        pdflang     = fr-FR,
-        pdfauthor   = {\@author},
-        pdfkeywords = {\@keywords},
-        pdftitle    = {\@title},
-        pdflang     = {fr},
-        pdfsubject  = {Genomic expert annotation}
+        final       	= true,
+        colorlinks  	= true,
+        urlcolor    	= blue,
+        citecolor   	= blue,
+        linkcolor   	= MidnightBlue,
+        unicode     	= true,
+        linktoc     	= section,
+        pdflang     	= fr-FR,
+        pdfauthor   	= {\@author},
+        pdfkeywords 	= {\@keywords},
+        pdftitle    	= {\@title},
+        pdflang     	= {fr},
+        pdfsubject  	= {Genomic expert annotation}
     }
     \makeatother
 }{}
@@ -116,7 +116,7 @@
 \RequirePackage{subcaption}
 \RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
 \RequirePackage[framemethod=default]{mdframed}
-\RequirePackage[skins,most,]{tcolorbox}
+\RequirePackage[skins,most,listings,skins]{tcolorbox}
 \RequirePackage{tikz}
 \RequirePackage{tkz-euclide}
 \RequirePackage{forest} 
@@ -143,7 +143,6 @@
 \RequirePackage{colortbl}
 \RequirePackage{multicol}
 \RequirePackage[final]{pdfpages}
-\RequirePackage{listings}
 \RequirePackage{verbatim}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
@@ -155,7 +154,7 @@
 %\usepackage{changes}
 % \added[remark={blabla}]{voici ce que je rajoute}
 % \replaced[remark={blabla}]{voici comment le dire}{ce qui est mal dit}
-% \deleted[remark={blabla}]{le texte a enlever}
+% \deleted[remark={blabla}]{le texte a enleàver}
 
 \RequirePackage[colorinlistoftodos,prependcaption,obeyFinal,textsize=tiny]{todonotes}
 % \todo[prepend]{mon avis}
@@ -680,7 +679,14 @@
 	\markright{\itshape #1}
 }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Numerotation         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand\@memmain@floats{%
+	\counterwithin{figure}{part}
+	\counterwithin{table}{part}}
+\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Autres commandes        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

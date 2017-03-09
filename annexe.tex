@@ -1,12 +1,14 @@
-cat data/processes/lysine_DAP_biosynthesis.data
+\chapter{Annexe}
+
+\begin{lstlisting}[basicstyle=\tiny\normalfont\ttfamily,caption=data/processes/lysine\_DAP\_biosynthesis.data]
 ;;;; -------------------------------------------------------
 ;;; HERBS (Hamap Expert Rules Based System)
 ;;;
-;;; @file: lysine_DAP_biosynthesis.data
+;;; @file: lysine\_DAP\_biosynthesis.data
 ;;; -------------------------------------------------------
 ;;;
-(process declare lysine_DAP_biosynthesis present in ALL)
-(process define lysine_DAP_biosynthesis -> and UPA00034)
+(process declare lysine\_DAP\_biosynthesis present in ALL)
+(process define lysine\_DAP\_biosynthesis -> and UPA00034)
 (process define UPA00034 -> or UPA00034-alt-0 UPA00034-alt-1 UPA00034-alt-2 )
 (process define UPA00034-alt-0  -> and ULS00006 ULS00007 ULS00009 ULS00010 ULS00011)
 (process define UPA00034-alt-1  -> and ULS00006 ULS00008 ULS00009 ULS00010 ULS00011)
@@ -44,3 +46,4 @@ cat data/processes/lysine_DAP_biosynthesis.data
 (process define ULS00010-alt-0  -> and UER00026)
 (process define ULS00011 -> and ULS00011-alt-0 )
 (process define ULS00011-alt-0  -> and UER00027)
+\end{lstlisting}
