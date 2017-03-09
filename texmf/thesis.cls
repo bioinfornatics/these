@@ -457,6 +457,7 @@
 \newarray\dnaletters
 \readarray{dnaletters}{A&C&G&T}
 
+
 \maxtocdepth{paragraph}
 \setsecnumdepth{paragraph}
 %\setlength\cftpartnumwidth{3em}
@@ -465,7 +466,7 @@
 
 \renewcommand{\thechapter}{\Roman{chapter}}
 %\renewcommand{\thesection}{\Roman{chapter}.\arabic{section}}
-\renewcommand{\thesection}{\Romanbar{\Roman{section}}}
+\renewcommand{\thesection}{\arabic{section}}
 %\renewcommand{\thesubsection}{\Roman{chapter}.\arabic{section}.\alph{subsection}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
@@ -504,7 +505,7 @@
                 \node[draw=none,color=Random\Random,anchor=south west,font=\tiny,xshift=-.05cm] at (\x*.3cm,\y*.33cm) {\dnaletters(\Random)};
             };
             \node[anchor=east,xshift=0.95\paperwidth] {
-            	\begin{tcolorbox}[colframe=MidnightBlue, colback=MidnightBlue,opacityframe=0.65, opacityback=0.65,arc=20pt,left=4em,width=\paperwidth]
+            	\begin{tcolorbox}[colframe=MidnightBlue, colback=MidnightBlue,opacityframe=0.65, opacityback=0.65,arc=20pt,left=5em,width=\paperwidth]
             		\ifnum\value{chapter}>0
             		  \normalfont\Huge\bfseries\color{white}\Romanbar{\thechapter}~##1
             		\else
@@ -517,29 +518,52 @@
     \renewcommand{\afterchapternum}{}
 }
 
+\newcommand{\ruledsec}[1]{%
+    \vskip 1em
+    {\color{MidnightBlue}\hrule}
+    \vskip 1em
+    {\normalfont\Large\bfseries#1}
+    \vskip 1em
+    {\color{MidnightBlue}\hrule}
+}
+
+\newtcbox{\mybox}{
+    nobeforeafter,
+    colframe=bluegray!40,
+    colback=bluegray!40,
+    colupper=white,
+    boxrule=0.5pt,
+    arc=4pt,
+    boxsep=0pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    box align=center
+}
 
 \makeheadstyles{thesisStyle}{
     \chapterstyle{thesisStyle}
     
-    \ifthesis@univ
-	    %\setbeforesecskip{\onelineskip}
-	    \setsecheadstyle{\normalfont\Huge}
-    \else 
-	    \setsecheadstyle{\normalfont\Large}
-    \fi
+    \setsecheadstyle{\ruledsec}
     \setaftersecskip{2\onelineskip}
     
     \setsubsecheadstyle{\normalfont\large}
+    \setsubsubsecheadstyle{\normalfont\color{MidnightBlue}}
 }
 
 \setbeforesecskip{1cm}
-\setsecnumformat{\csname #1secnumformat\endcsname}
-\ifthesis@univ
-	\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
-\else 
-	\newcommand\sectionsecnumformat{{\secNumFont\fontsize{1.5cm}{3cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
-\fi
-\newcommand\subsectionsecnumformat{\thesubsection\quad}
+\setsecnumformat{\csname #1secnumformat\endcsname} % numbering format
+%\newcommand\sectionsecnumformat{{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\color{bluegray!30}\raisebox{-3mm}[1pt][1pt]{\thesection}}\hspace{-2mm}}
+\newcommand\sectionsecnumformat{
+    \hspace{-5mm}
+    \mybox{\secNumFont\fontsize{2cm}{3.5cm}\selectfont\thesection}
+    \hspace{-2mm}
+}
+
+
+\newcommand\subsectionsecnumformat{\thesubsection\quad}         % number subsection style
+\newcommand\subsubsectionsecnumformat{\thesubsubsection\quad}   % number subsubsection style
+\newcommand\paragraphsecnumformat{\theparagraph\quad}           % number paragraph style
 
 \headstyles{thesisStyle}
 
@@ -697,7 +721,7 @@
     \begin{tcolorbox}[colframe=PeachPuff, colback=PeachPuff,arc=10pt]
         \Huge{\ding{43}} \large{\textbf{Attention}}: \newline
         \normalsize{#1}
-    \end{tcolorbox}
+    \end{tcolorbox}\bfseries
     \needspace{3\baselineskip}
 }
 \newcommand{\note}[1]{

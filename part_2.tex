@@ -1,19 +1,23 @@
 \begin{refsegment}
 \chapter{GROOLS}
 
-J'ai consacré ces trois années de recherche pour une approche interactive entre le biologiste et les prédictions bio-informatiques lors du processus de curation de l'annotation fonctionnelle des génomes bactériens. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait assister les biologistes à détecter les annotations inconsistantes et contradictoires. La curation et la validation des prédictions bio-informatiques pourrait alors rattraper son retard.
+J'ai consacré ces trois années de recherche pour une approche interactive entre le biologiste et les prédictions bio-informatiques lors du processus de curation de l'annotation fonctionnelle des génomes bactériens. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait assister les biologistes à détecter les annotations inconsistantes et contradictoires. La curation et la validation des prédictions bio-informatiques pourrait alors rattraper se retard.
 
 \section{Le début de GROOLS}
 
-L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} était d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \texttt{\gls{JESS}}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. \textit{Alain VIARI} m'a permis d'accéder l'outil PathRules qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips} ainsi que son code source.
+\subsection{HERBS}
+
+L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} est d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \texttt{\gls{JESS}}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. \textit{Alain VIARI} m'a permis d'utiliser l'outil \texttt{PathRules} qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips}.
 
 
-J'ai pris en main l'outil par l'intégration des voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et l'ajout des prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichiers est utilisé comme identifiant pour faire le lien entre les processus, les , prédictions et les information taxonomique de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
+J'ai fournis à la base de fait de  \texttt{PathRules} les voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et les prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichiers est utilisé comme identifiant pour faire le lien entre les processus, les prédictions et les informations taxonomiques de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
 
 \console{find data/ -name 'ACIAD.data'}{ data/observers/uniprot/ACIAD.data\par data/species/ACIAD.data }
 
 
-La description des données dans ses fichiers suit la nomenclature \texttt{\gls{CLIPS}}. C'est à dire que les faits sont déclarés entre parenthèses. Les observations sont formatés comme suit: ( \texttt{source} (id \texttt{xxx}) (alias \texttt{yyy} sp:\texttt{zzz})  ) .
+La description des données dans ses fichiers suit la nomenclature \texttt{\gls{CLIPS}}. C'est à dire que les faits sont déclarés entre parenthèses. Les observations sont formatées comme suit: ( \texttt{source} (id \texttt{xxx}) (alias \texttt{yyy} sp:\texttt{zzz})  ) .
+
+Extrait d'un fichier cataloguant les faits relatives à une espèce:\nolisttopbreak
 
 \console{head data/observers/uniprot/data/ACIAD.data}{
     (uniprot (id ASPARTATE-SEMIALDEHYDE-DEHYDROGENASE-RXN) (alias ACIAD0479 sp:ACIAD00423))\par
@@ -32,7 +36,7 @@ L'information taxonomique est également un fait. Il débute par "species" suivi
 
 \console{cat data/species/ACIAD.data}{ (species lineage Bacteria Proteobacteria Gammaproteobacteria Pseudomonadales Moraxellaceae Acinetobacter Acinetobacter\_sp.\_ADP1) }
 
-Pour représenter la structure hiérarchique des voies métaboliques, les fait sont organisés pour exprimé la notion de composition et d'équivalence. La notion de composition et utiliser pour relier les blocs réactionnelles à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatif pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 3)$". }. Ci-dessous la voie métabolique de la biosynthèse de la lysine par la voie AAA (Acide Alpha-amino Adipique) selon \texttt{UniPathway}.
+Pour représenter la structure hiérarchique des voies métaboliques, les faits sont organisés pour exprimer la notion de composition et d'équivalence. La notion de composition et utilisé pour relier les blocs réactionnelles à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatifs pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 3)$". }. Ci-après la voie métabolique de la biosynthèse de la lysine par la voie AAA (Acide Alpha-amino Adipique) selon \texttt{UniPathway}.
 
 \console{cat data/processes/lysine\_AAA\_biosynthesis.data}{
 ;;;; --------------------------------------------------------\par
@@ -70,7 +74,7 @@ Ceci permet d'obtenir une évaluation de la complétion de l'annotation fonction
     \label{fig:herbs_rapport}
 \end{shadedfigure}
 
-L'utilisateur à la possibilité d'explorer les voies métaboliques pour discriminer les composants manquants (\cref{fig:herbs_dag}).
+L'utilisateur à la possibilité d'explorer les voies métaboliques à travers le graphe orienté acyclique pour discriminer les composants du métabolisme manquants (\cref{fig:herbs_dag}).
 
 \begin{landscape}
     \begin{shadedfigure}[H]
@@ -81,6 +85,28 @@ L'utilisateur à la possibilité d'explorer les voies métaboliques pour discrim
     \end{shadedfigure}
 \end{landscape}
 
+
+Pour passer à l'échelle, il est nécessaire de retranscrire  en \texttt{\gls{CLIPS}}  toutes les voies métaboliques et toutes les prédictions bio-informatiques. De plus le système doit être étendue à la notion d'inconnu et si possible à la notion de contradiction. Car en biologie, nous possédons la connaissance de ce qui est et ce qui n'est pas présent, pour le reste nous n'avons pas d'idée. Ce point de vue, peut paraître un peu philosophique. Il fait référence aux concepts de "monde ouvert" et "monde fermé". Une hypothèse en monde fermé va considéré toutes les questions sans réponses comme fausses. En monde ouvert, les hypothèses prennent les valeurs vrais ou fausses lorsqu'elles sont explicitement décrites comme telles. Pour les autres cas les hypothèses sont considérés incertaines tant qu'un fait ne la désigne pas comme vrai ou fausse. Dans le cas présent la plupart des voies métaboliques sont déclarés "MISSING" ce qui n'aide pas beaucoup le biologiste. Ceci est dues au raisonnement en monde fermé, en biologie quantité de connaissances ne sont pas prédites et pour autant cela ne signifie pas qu'elles sont prédites comme non présentes dans l'organisme.
+
+\subsection{GROOLS: Un système à base de règle pour l'annotation fonctionnelle des génomes microbiens}
+
+Mon projet de recherche débute par l'identification des besoins et des outils à ma disposition. Les besoins de la plateforme se divise en trois axes.
+
+Le premier  corresponds à la modernisation du système de gestion et déclaration des chaînages applicatifs. Pour cela la plateforme MicroScope s'oriente par la mise en place du moteur pour le chaînage d'application à base de règle développé en interne au GenoScope (\texttt{\gls{BIRDS}}) . Le système utilise l'application \texttt{DROOLS}\cite{browne2009jboss} pour raisonner et donc ordonnées les processus. Il est donc nécessaire d'informé à \gls{BIRDS} comment organiser les processus de l'annotation.
+
+Le second axe consiste à pourvoir discuter avec le  système d'intégration continue des donnée interne à la plateforme, dénommé Galileo \cite{galileo2014}. Cet outil à la faculté de réconcilié les informations provenant de multiple ressource interne et donc d'avoir accès à un large éventail d'information à travers une unique interface. Ceci lui permet de fournir une représentation unifié des voies métaboliques par l'utilisation des information de \texttt{CHebi}, \texttt{RHEA}, \texttt{KEGG} et \texttt{MetaCyc}.
+
+Le troisième axe s'articule autour d'un système à base de règle pour l'annotation des génomes et guider le biologiste sur les annotations suspecté manquante dans un organsine donnée. Il est composé de deux sous partie. La première a pour objectif de récupérer les règles d'UniRule et de les rendre utilisable en dehors de "l'\gsl{EBI}". Les règles d'annotation fonctionnelles à partir des domaines protéiques seraient ainsi partagé à la communauté scientifique. La deuxième partie se consacre à la mise en évidence des régions de connaissances non prédites ou contradictoire. La cohérence des génomes peut être évalué au regards des attentes porté sur les fonction des organismes. L'application \texttt{DROOLS} a été choisie pour la mise en œuvre du raisonnement afin de garder la maitrise autour d'une même application pour tout développement impliquant un système à base de règle. Cet application se montre moderne et capable de communiquer avec les application java ce  qui est un avantage car Galileo est écrit en Java.
+
+C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant sur les deux premiers axes afin de récupérer les prédictions bio-informatiques et les voies métaboliques unifié. Le cadre de mon projet de recherche a été présenté lors de la 10$^{eme}$ conférence international sur l'intégration de donnée en science de la vie (DILS 2014 \url{http://dils2014.inesc-id.pt/}).
+
+\includepdf[pages=-]{img/DILS_2014.pdf}
+
+\subsection{Gestion de l'incertitude et de la contradiction}
+
+Au début de mes investigations j'ai rencontré plusieurs difficulté. La première était comment utiliser les données structurées et complexes issue de la biologie à travers des règles ? Il faut savoir que la plupart des raisonneurs (comme Prolog) utilise le modèle passage de messages ("message passing") c'est à dire
+
+, de révéler les zones de connaissances couvertes par aucune prédiction et identifier les observations contradictoire.
 
 expliqué les ratés
 inaptitude à tout programmer de manière explicite
@@ -97,7 +123,7 @@ De plus la notion de consistance est employé ici pour décrire un cadre logique
 
 Pour finir contrairement à leur constat sur les données biologiques erronées et donc la nécessité d'automatiser un raisonnement pour l'annotation fonctionnelle. Leur méthode aura pour tendance d'attribuer pour un génome partielle ou distant des génomes de références à une majorité d'états non certifiés ou inconnu. En conséquence les bio-curateurs seront difficilement plus aider par l'apport de ces nouvelles informations.
 
-\includepdf[pages=-]{img/DILS_2014.pdf}
+
 
 \begin{shadedfigure}
     \centering
