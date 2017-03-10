@@ -10,7 +10,7 @@ J'ai consacré ces trois années de recherche pour une approche interactive entr
 L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} est d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \texttt{\gls{JESS}}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. \textit{Alain VIARI} m'a permis d'utiliser l'outil \texttt{PathRules} qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips}.
 
 
-J'ai fournis à la base de fait de  \texttt{PathRules} les voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et les prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichiers est utilisé comme identifiant pour faire le lien entre les processus, les prédictions et les informations taxonomiques de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
+J'ai fournis à la base de fait de  \texttt{PathRules} les voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et les prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichier est utilisé comme identifiant pour faire le lien entre les processus, les prédictions et les informations taxonomiques de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
 
 \console{find data/ -name 'ACIAD.data'}{ data/observers/uniprot/ACIAD.data\par data/species/ACIAD.data }
 
@@ -102,10 +102,57 @@ C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant s
 
 \includepdf[pages=-]{img/DILS_2014.pdf}
 
+\subsection{Investigation sur les règles de logiques}
+
+Au début de mes investigations, j'ai rencontré plusieurs difficultés. La première était d'utiliser les données structurées et complexes issues de la biologie à travers des règles de logique. Il faut savoir que la plupart des raisonneurs (comme \texttt{Prolog} et \texttt{CLIPS}) utilise la programmation déclarative, ce qui consiste à décrire le problème\footnote{Par opposition a des langages comme Java, Python, D, Perl \ldots, ils utilisent la programmation impérative qui s'attache à décrire comment trouver la solution.}. La déclaration de problème impliquant  des données structurées n'était pas initialement prévue dans ce paradigme\footnote{Des extensions du paradigmes ont permis de gérer des structures de données complexes comme Prolog++.}. Par exemple un bloc de réaction  composé de la réaction A et B peut s'exprimer par la règle suivante (en Prolog):
+
+\begin{lstlisting}[basicstyle=\small\normalfont\ttfamily,language=Prolog]
+    reaction_block(Arg1, Arg2) :-
+        reaction_A(Arg1),
+        reaction_B(Arg2).
+\end{lstlisting}
+
+Ce qui précède  ":-" est le nom de la règle et ces arguments, ce symbole signifie "si". Pour reprendre l'exemple précédant "reaction\_block(Arg1,Arg2)" est vrai si "reaction\_A(Arg1)" et "reaction\_B(Arg2)" sont vrais. Il n'est pas simple de rattaché des attributs à des catégories de réaction comme on pourrait le faire avec le paradigme orienté-objet. C'est la raison pour laquelle j'ai utilisé le système \texttt{DROOLS}. Il permet d'utiliser des objets (au sens Java)  et de les utiliser pour établie des règles. Par exemple l'utilisation d'un attribut peut être employé pour indiquer que certaines réactions sont optionnel et ainsi "relacher" la définition du bloc de réaction. Le raisonnement est influé par les états des différents attributs attaché à une réaction. Je devais donc établir un raisonnement utilisant des structures de données et leurs relations. Pour cela je me suis inspiré de "\citetitle{amir1999object}" \cite{amir1999object} et appuyé sur le projet \texttt{DROOLS} \cite{mcwhirter2001drools} pour écrire les règles de raisonnement et établir une description formelle des objets manipulé.
+
+\subsection{La représentation des connaissances}
+
+La seconde problématique portait sur la représentation des connaissances. Les voies métaboliques sont représentées de différentes manières selon la ressource utilisé. Il était nécessaire d'avoir un modèle hiérarchique des connaissances unifier pour utiliser indifféremment le même raisonnement. Pour cela, j'ai utilisé les représentations des voies métaboliques de \texttt{Metacyc} (\cref{fig:metacyc_lysine}), \texttt{KEGG} (\cref{fig:kegg_lysine}) et \texttt{Unipathway} (\cref{fig:lysine}) et recherché les caractéristiques pouvant être mise en commun. Cette étude a permis de mettre en place une structuration hiérarchiques de connaissance-apriori. Les observations sont reliées a ces connaissances-aprioris pour indiquer les attentes et les prédictions de ces dernières. Les observations et les connaissances-apriori sont des faits reliés les uns aux autres par des relations pour exprimer la composition et l'équivalence. Pour cela les opérateurs ET/OU sont employés pour exprimer ces deux notions et établir un raisonnement.
+
+\begin{lstlisting}[basicstyle=\tiny\normalfont\ttfamily,caption=Inférence de la prédiction d'absence]
+rule "Prediction infer his none existence"
+when
+    $k: Knowledge( $kid := id, nodeType == NodeType.LEAF )
+    (
+        or
+        not( Prediction( $kid := knowledgeId ) )
+        Prediction( $kid := knowledgeId, presence == FourState.UNKNOWN )
+    )
+then
+    modify( $k ){
+    presence = FourState.UNKNOWN
+    }
+end
+\end{lstlisting}
+
 \subsection{Gestion de l'incertitude et de la contradiction}
 
-Au début de mes investigations j'ai rencontré plusieurs difficultés. La première était comment utiliser les données structurées et complexes issue de la biologie à travers des règles ? Il faut savoir que la plupart des raisonneurs (comme Prolog et CLIPS) utilise la programmation déclarative, ce qui consiste à décrire le problème\footnote{Par opposition a des langages comme Java, Python, D, Perl \ldots, ils utilisent la programmation impérative qui s'attache à décrire comment trouver la solution.}. La déclaration de problème impliquant  des données structurées n'était pas initialement prévue dans ce paradigme\footnote{Des extensions du paradigmes ont permis de gérer des structures de données complexes comme Prolog++.}. Je devais établir un raisonnement utilisant des structures de données et leurs relations.
-OOlogic[REF]
+Quant à la troisième problématique, elle consistait à trouver la méthode logique pour travailler sur des données incertaines et incohérentes. Or la plupart des raisonneurs ( comme \texttt{CLIPS}, \texttt{PROLOG} \ldots ) s'inspire fortement la logique classique pour l'inférence des valeurs de vérité. Nous pensions qu'une telle problématique à forcément aboutis à une méthodologie applicable pour notre domaine d'étude. Cependant la grande majorité des raisonneurs ne proposaient pas un cadre pour l'utilisation de logique multi-valuées. Les valeurs vrai et fausse donne dans les système classique faux alors que nous souhaitions obtenir une valeur pour exprimer la contradiction. De même lorsqu'il y a aucun fait, la logique classique donne faux alors que la aussi nous souhaitions distinguer ce qui est  considéré comme faux de l'incertain. Pour cela mon travail de recherche ces basé sur les quatre valeurs de vérité décrites par \citeauthor{belnap77}\cite{belnap77}. J'ai établis une méthode pour le calcul des prédicats selon les opérateurs "ET" et "OU" dans un graphe de connaissance (\cref{fig:four_truth_values}). L'idée est d'inférer la valeur de vérité qui minimise l'incohérente à partir  d'un groupe de concepts enfant vers un concept parent. Cet approche s'apparente à un algorithme minmax \cite{aho1989} (\url{https://fr.wikipedia.org/wiki/Algorithme_minimax}). Par exemple dans le calcul: $ True \land Unknown \land False \to None$; le résultat est incertain car au moins un des concepts est ni-vrai-ni-faux par conséquent c'est la valeur utilisée pour l'inférence de la présence du groupe de concept vers le concept parent. Les règles de priorité pour l'inférence des valeurs de vérité étaient un moyen de retranscrire les tables de vérité de Belnap (présenté précédemment dans la partie \nameref{par:logic_multivalued} \cref{tab:belnap_truth_table}) dans des règles logiques.
+
+\begin{shadedfigure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/four_values_priorities_rules.pdf}
+    \caption{ Règle de priorité pour l'inférences de multiple valeurs de vérité à travers un graphe "et/ou". }
+    \label{fig:four_truth_values}
+\end{shadedfigure}
+
+La mise bout à bout des éléments précédemment cités permet d'écrire des règles
+
+Ce travail à aboutis sur une première implémentation et présenté lors de la conférence \texttt{RULEML2015}.
+
+\includepdf[pages=-]{img/GROOLS__Reactive_Graph_Reasoning_for_Genome_Annotation.pdf}
+
+
+
 La seconde est la contradiction
 , de révéler les zones de connaissances couvertes par aucune prédiction et identifier les observations contradictoire.
 
@@ -124,16 +171,6 @@ De plus la notion de consistance est employé ici pour décrire un cadre logique
 
 Pour finir contrairement à leur constat sur les données biologiques erronées et donc la nécessité d'automatiser un raisonnement pour l'annotation fonctionnelle. Leur méthode aura pour tendance d'attribuer pour un génome partielle ou distant des génomes de références à une majorité d'états non certifiés ou inconnu. En conséquence les bio-curateurs seront difficilement plus aider par l'apport de ces nouvelles informations.
 
-
-
-\begin{shadedfigure}
-    \centering
-    \includegraphics[width=\textwidth]{img/four_values_priorities_rules.pdf}
-    \caption{  }
-    \label{fig:seven_truth_values}
-\end{shadedfigure}
-
-\includepdf[pages=-]{img/GROOLS__Reactive_Graph_Reasoning_for_Genome_Annotation.pdf}
 
 7 valeurs de vérité mais pas encore l'utilisation de l'ensemble vide
 

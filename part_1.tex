@@ -269,7 +269,14 @@
     
     Toutes ces données spécialisées sont croisées pour produire de la connaissance. Afin de visualiser ces connaissances \textit{Biocyc} met à disposition des tables de connaissances interactives, les "\acrfull{KS}" \cite{bat061SmartTable}. Ces tables intelligentes utilisent la représentation symbolique des connaissances. Elles permettent de regrouper les connaissances vis-à-vis de leur signification. Par exemple le groupe des "composés anti-tuberculosis  et leurs cibles dans  \textit{Mycobacterium tuberculosis} H37Rv" est formé par l'analyse sémantique des données (voir le groupe : \url{https://biocyc.org/group?id=biocyc14-1553-3679321317}).
     
+    La représentation des voies métaboliques est découpé par chemin de réaction (appelé également variant) pour atteindre un objectif biologique. ci-a près une des six voies alternatives pour la biosynthèse de la lysine ( \cref{fig:metacyc_lysine}  ).
     
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textheight]{img/lysine_biosynthesis_1_metacyc.png}
+        \caption{Représentation d'un variant de la biosynthèse de la lysine, dénommé: L-lysine biosynthesis I }
+        \label{fig:metacyc_lysine}
+    \end{shadedfigure}
     
     
     \section{Des génomes aux réseaux métaboliques}
@@ -387,10 +394,13 @@
                                                                                             					&                                                               					& Minérale 	& -\textcolor{bleudefrance}{autotrophe}	& \textcolor{vert}{Chimio}\textcolor{brown}{litho}\textcolor{bleudefrance}{autotrophe}      \\ \hline
             \end{tabular}
         \end{table}
+    
     \end{landscape}
     Certains organismes ont la faculté de se développer dans des milieux dépourvu de facteur de croissance. C’est-à-dire, qu'à partir des éléments minimaux nécessaires à la vie, ils sont capables de produire toutes les molécules  indispensables à leurs développements. Ce sont des organismes dit prototrophes.  Dans le cas contraire on parle d’auxotrophie. 
     
     Le métabolisme fournit les acides aminés indispensables à la production de protéines. Ces protéines sont constituées d’acides aminés. Par conséquent l’organisme doit se procurer ces acides aminés soit par des voies de biosynthèses soit directement par nutrition. C’est pour cela qu’avec les organismes prototrophes on s’attend à retrouver toutes les voies de la biosynthèses des acides aminés. Et par opposition un organisme auxotrophe à un acide aminé ne devrait pas avoir la voie de biosynthèse de ce dernier.
+    
+    Les compétences métaboliques d'une bactérie sont testées en laboratoire dans diverses conditions. Lorsque l'on souhaite déterminer la capacité d'un organisme à dégradé ou non d'un nutriment carboné, on place l'organisme dans un milieu avec pour seul source de carbone le nutriment a tester. Un organisme capable de dégradé le composé va réutilisé ses atomes carbones pour alimenter la machinerie cellulaire. C'est la raison pour laquelle l'organisme ve pouvoir se développer sur le milieux de culture et faire croitre sa population. Ces milieux sont constitués des éléments minimaux (\gls{CHONPS}) pour le développement de la vie. La société Biolog \cite{bochner2009global} a développé une méthodologie pour tester 96 conditions de croissances par plaque. Ce procédé permet de cribler les capacités de dégradation à partir de différentes source de carbones, azotes et phosphores. La croissance ou non de l'organisme permet \textit{in-fine} d'attribuer un phénotype. Le biologiste s'attendra à retrouver les gènes impliqués dans la dégradation des composés testés.
     
     \subsection{MicroScope : une plateforme d’annotation de génomes procaryotes et d’analyse de leur métabolisme}
     
@@ -425,7 +435,14 @@
     
     \subsubsection{Rôle de la curation}
     
-    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisé, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \texttt{\gls{IMG}} \cite{markowitz2009img,markowitz2012img} ou encore \texttt{SEED} \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbien. L'objectif est de collecter et de mettre en relations les informations relatives aux différents gènes identifiés en vue de facilité le travail du curateur. Ainsi le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génome.
+    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisé, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \texttt{\gls{IMG}} \cite{markowitz2009img,markowitz2012img} ou encore \texttt{SEED} \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbien. L'objectif est de collecter et de mettre en relations les informations relatives aux différents gènes identifiés en vue de facilité le travail du curateur. Ainsi le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génome (\cref{fig:edit_microscope}).
+    
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/curation_edit.png}
+        \caption{Interface d'édition pour l'annotation fonctionnelle des gènes. }
+        \label{fig:edit_microscope}
+    \end{shadedfigure}
     
     Lors de l'analyse des génomes nouvellement séquencé, le biologiste est confronté à la difficile tâche de vérification de la cohérence des gènes annoté vis-à-vis des connaissances biologiques sur l'organisme étudié. Pour cette raison l'automatisation des règles appliquées par le biologiste permettrais de traiter rapidement une quantité importante d'information.
     
@@ -559,7 +576,7 @@
 
     \citation{"Grandeurs" : Voilà un mot dont tout le monde croit avoir une idée bien nette et qu'il est assez difficile de bien définir. Ne serait-ce pas parce que l'idée que ce mot renferme est plus simple que les idées par lesquelles on peut entreprendre de l'expliquer ? }{Jean Rond d'Alembert}
         
-    \paragraph{Logique multivaluée}\label{par:logic_multivalué}
+    \paragraph{Logique multivaluée}\label{par:logic_multivalued}
     
     Les logiques multivaluées recherche à étendre le vocabulaire pour déterminer la véracité d'une expression. Parfois il est nécessaire d'assigner un état autre que vrai ou faux. Lorsque l'on souhaite exprimer l'incertitude, on ne peut pas asserter par un état vrai ou faux. Car cela reviendrait à mettre un affirmation ou une infirmation sur l'expression. Par conséquent de tels logiques ne peuvent plus employer la règle du tiers exclu.
     
@@ -808,7 +825,7 @@
         \label{fig:gp_lysine}
     \end{shadedfigure}
 
-    Les données de genome properties sont extraites de la ressource \acrfull{CMR} \cite{peterson2001comprehensive,davidsen2009comprehensive}. Ces données d'entrées sont issue soit de la recherche de \texttt{TIGRFAM} \cite{haft2003tigrfams}\label{key} soit de la recherche de séquence discriminante représenter par des \texttt{Pfam} \acrfull{HMM} \cite{bateman2000pfam,bateman2002pfam,bateman2004pfam,finn2008pfam,finn2009pfam,punta2011pfam,finn2013pfam,finn2016pfam}. Ces données sont considérées comme des preuves dans la structure de \texttt{Genome Properties}. Elles sont reliées à des composants. Les composants sont les briques du systèmes, elles sont utilisés pour regrouper des notions entre elles pour représenter une propriété (notion plus généraliste). Par exemple un ensemble de gènes représentant un des chemins métabolique pour produire un composé d'intérêt pour l'organisme. Ainsi la hiérarchie est une suite de preuve - composant - propriété qui se répète (voir Figure~\cref{fig:gp_modele}).
+    Les données de genome properties sont extraites de la ressource \acrfull{CMR} \cite{peterson2001comprehensive,davidsen2009comprehensive}. Ces données d'entrées sont issues soit de la recherche de \texttt{TIGRFAM} \cite{haft2003tigrfams}\label{key} soit de la recherche de séquence discriminante représenter par des \texttt{Pfam} \acrfull{HMM} \cite{bateman2000pfam,bateman2002pfam,bateman2004pfam,finn2008pfam,finn2009pfam,punta2011pfam,finn2013pfam,finn2016pfam}. Ces données sont considérées comme des preuves dans la structure de \texttt{Genome Properties}. Elles sont reliées à des composants. Les composants sont les briques du systèmes, elles sont utilisés pour regrouper des notions entre elles pour représenter une propriété (notion plus généraliste). Par exemple un ensemble de gènes représentant un des chemins métabolique pour produire un composé d'intérêt pour l'organisme. Ainsi la hiérarchie est une suite de preuve - composant - propriété qui se répète (voir Figure~\cref{fig:gp_modele}).
     
     \begin{shadedfigure}
         \tikzset{
@@ -863,7 +880,7 @@
     
     \subsection{IMG terms}
     
-    \texttt{IMG terms} \cite{chen2013improving} est certainement la méthodologie la plus proche de celle utilisé par \texttt{\gls{GROOLS}}. La méthodologie employées recherche à être robuste aux données biologiques  erronées. Comme nous l'avons vu dans la section \nameref{subsec:lacunes} les données biologiques dans les ressources publiques sont partielles et contradictoires. Pour cela le raisonnement emploie une logique tri-valué. Bien que non déclaré comme tel dans l'article "\citetitle{chen2013improving}", ce sont les mêmes tables de vérité que celles décrites par \textit{Kleen} et \textit{Priest} (présenté dans la partie \nameref{par:logic_multivalué}). Le raisonnement appliqué attribue aux voies métaboliques un des trois états vrai, faux, inconnu.
+    \texttt{IMG terms} \cite{chen2013improving} est certainement la méthodologie la plus proche de celle utilisé par \texttt{\gls{GROOLS}}. La méthodologie employées recherche à être robuste aux données biologiques  erronées. Comme nous l'avons vu dans la section \nameref{subsec:lacunes} les données biologiques dans les ressources publiques sont partielles et contradictoires. Pour cela le raisonnement emploie une logique tri-valué. Bien que non déclaré comme tel dans l'article "\citetitle{chen2013improving}", ce sont les mêmes tables de vérité que celles décrites par \textit{Kleen} et \textit{Priest} (présenté dans la partie \nameref{par:logic_multivalued}). Le raisonnement appliqué attribue aux voies métaboliques un des trois états vrai, faux, inconnu.
     
     Tout d'abord les \texttt{IMG terms} forment un vocabulaire contrôlé. Ils sont notamment utilisés pour décrire des \texttt{IMG reaction}  et des \texttt{IMG pathway}. Les \texttt{IMG reaction} représente des réactions généralisés, c'est-à-dire qu'une \texttt{IMG reaction} peut correspondre à plusieurs réactions. Ce qui permet de fusionner les réactions alternatives à une \texttt{IMG reaction}. Chaque réaction est reliée à une ou plusieurs \texttt{IMG reaction}. La présence d'une \texttt{IMG reaction} est considéré comme présente lorsqu'au moins une des réactions alternatives possèdent tous les \texttt{IMG terms} impliqués dans ça réactions. Ainsi sont assignés aux \texttt{IMG reaction} un des trois états: certifié ("asserted") de celles inconnu("unknown") et non certifié ("not asserted"). À partir de l'état des \texttt{IMG reaction} composant un  \texttt{IMG pathway}, l'état de la voie métabolique est déduit par simple calcul des propositions. En effet les règles d'inférence sont représentées ici sous la forme de conjonction et disjonction de réaction:
     

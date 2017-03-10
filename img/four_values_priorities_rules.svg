@@ -13,7 +13,7 @@
    height="135.00002mm"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.0 r"
+   inkscape:version="0.92.1 r"
    sodipodi:docname="four_values_priorities_rules.svg"
    inkscape:export-filename="rule_priorities.png"
    inkscape:export-xdpi="90"
@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="262.25025"
-     inkscape:cy="320.77508"
+     inkscape:cx="232.43209"
+     inkscape:cy="138.29481"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="1947"
+     inkscape:window-width="1200"
+     inkscape:window-height="1883"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      units="mm"
      fit-margin-top="0"
@@ -73,7 +73,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -112,7 +112,7 @@
            id="tspan3600"
            x="76.051674"
            y="579.95648"
-           style="stroke-width:0.60604191">Unknown &gt; Both &gt; False &gt; True  </tspan></text>
+           style="stroke-width:0.60604191">None &gt; Both &gt; False &gt; True  </tspan></text>
       <g
          transform="matrix(0.56816425,0,0,0.56816425,18.199277,562.27297)"
          id="g4649">
@@ -440,7 +440,7 @@
              id="tspan3803"
              x="698.78601"
              y="153.59639"
-             style="stroke-width:1.06666672">U</tspan></text>
+             style="stroke-width:1.06666672">N</tspan></text>
         <text
            id="text3805"
            y="84.959862"
@@ -451,7 +451,7 @@
              x="670.12463"
              id="tspan3807"
              sodipodi:role="line"
-             style="fill:#ff6600;stroke-width:1.06666672">U</tspan></text>
+             style="fill:#ff6600;stroke-width:1.06666672">N</tspan></text>
         <g
            transform="translate(53.797426,1.7929219)"
            id="g4041">
@@ -529,7 +529,7 @@
              x="273.69403"
              id="tspan3979"
              sodipodi:role="line"
-             style="fill:#ff6600;stroke-width:1.06666672">U</tspan></text>
+             style="fill:#ff6600;stroke-width:1.06666672">N</tspan></text>
         <text
            id="text3981"
            y="311.67587"
@@ -540,7 +540,7 @@
              x="395.1279"
              id="tspan3983"
              sodipodi:role="line"
-             style="stroke-width:1.06666672">U</tspan></text>
+             style="stroke-width:1.06666672">N</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:21.33333397px;line-height:125%;font-family:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:1.06666672"
@@ -551,7 +551,7 @@
              sodipodi:role="line"
              id="tspan3987"
              x="366.46649"
-             y="243.03935">U</tspan></text>
+             y="243.03935">N</tspan></text>
         <g
            transform="translate(-562.08343,166.84607)"
            id="g4061">
@@ -909,7 +909,7 @@
            id="tspan4559"
            x="417.04263"
            y="922.50024"
-           style="stroke-width:0.60604191">U</tspan></text>
+           style="stroke-width:0.60604191">N</tspan></text>
       <text
          id="text4561"
          y="883.50342"
@@ -1005,7 +1005,7 @@
            sodipodi:role="line"
            id="tspan4593"
            x="86.702415"
-           y="1003.8308">U</tspan></text>
+           y="1003.8308">N</tspan></text>
       <text
          id="text4595"
          y="964.83398"
@@ -1090,7 +1090,7 @@
            x="111.2578"
            id="tspan4623"
            sodipodi:role="line"
-           style="fill:#ff6600;stroke-width:0.60604191">U</tspan></text>
+           style="fill:#ff6600;stroke-width:0.60604191">N</tspan></text>
       <text
          id="text4625"
          y="1003.8308"
@@ -1101,7 +1101,7 @@
            y="1003.8308"
            x="180.25218"
            id="tspan4627"
-           sodipodi:role="line">U</tspan></text>
+           sodipodi:role="line">N</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:12.12083817px;line-height:125%;font-family:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.60604191"
@@ -1112,7 +1112,7 @@
            sodipodi:role="line"
            id="tspan4631"
            x="163.96779"
-           y="964.83398">U</tspan></text>
+           y="964.83398">N</tspan></text>
       <g
          transform="matrix(0.56816425,0,0,0.56816425,-363.60108,921.54363)"
          id="g4633">
@@ -1167,7 +1167,7 @@
            x="73.021469"
            id="tspan4778"
            sodipodi:role="line"
-           style="stroke-width:0.60604191">True &gt; False &gt; Both &gt; Unknown </tspan></text>
+           style="stroke-width:0.60604191">True &gt; False &gt; Both &gt; None </tspan></text>
       <g
          id="g4967"
          transform="matrix(0.56816425,0,0,0.56816425,-32.51039,562.27297)">
@@ -1199,7 +1199,7 @@
              id="tspan3803-8"
              x="220.83591"
              y="310.60925"
-             style="stroke-width:1.06666672">U</tspan></text>
+             style="stroke-width:1.06666672">N</tspan></text>
         <text
            id="text3805-4"
            y="241.9727"
@@ -1210,7 +1210,7 @@
              x="192.17451"
              id="tspan3807-0"
              sodipodi:role="line"
-             style="fill:#ff6600;stroke-width:1.06666672">U</tspan></text>
+             style="fill:#ff6600;stroke-width:1.06666672">N</tspan></text>
         <g
            transform="translate(-576.47503,162.00817)"
            id="g4051">
@@ -1524,7 +1524,7 @@
              x="857.36481"
              id="tspan5200"
              sodipodi:role="line"
-             style="fill:#ff6600;stroke-width:1.06666672">U</tspan></text>
+             style="fill:#ff6600;stroke-width:1.06666672">N</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:21.33333397px;line-height:125%;font-family:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:1.06666672"
@@ -1535,7 +1535,7 @@
              id="tspan5204"
              x="828.70343"
              y="241.0179"
-             style="fill:#ff6600;stroke-width:1.06666672">U</tspan></text>
+             style="fill:#ff6600;stroke-width:1.06666672">N</tspan></text>
         <text
            id="text5206"
            y="316.31967"
@@ -1792,7 +1792,7 @@
            id="tspan5771"
            x="460.87189"
            y="1000.8005"
-           style="fill:#ff6600;stroke-width:0.60604191">U</tspan></text>
+           style="fill:#ff6600;stroke-width:0.60604191">N</tspan></text>
       <text
          id="text5773"
          y="961.80377"
