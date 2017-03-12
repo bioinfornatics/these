@@ -15,7 +15,7 @@
    version="1.1"
    viewBox="-96 -263 963.77949 491.33856"
    sodipodi:docname="GROOLS_mindmap.svg"
-   inkscape:version="0.92.0 r">
+   inkscape:version="0.92.1 r">
   <metadata
      id="metadata491">
     <rdf:RDF>
@@ -40,14 +40,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-height="1053"
      id="namedview487"
      showgrid="false"
      inkscape:zoom="1.8717974"
-     inkscape:cx="507.96285"
-     inkscape:cy="218.88175"
+     inkscape:cx="393.09999"
+     inkscape:cy="217.81326"
      inkscape:window-x="0"
-     inkscape:window-y="1947"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="workspace" />
   <rect
@@ -254,7 +254,7 @@
       <tspan
          id="tspan96"
          dy="1em"
-         x="3">Résonneur</tspan>
+         x="3">Raisonneur</tspan>
     </text>
     <circle
        style="fill:#e0e5ef;stroke:#023bb9;stroke-width:1px"

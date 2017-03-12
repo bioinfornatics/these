@@ -27,8 +27,8 @@
 %\global\pdfobjcompresslevel=0
 %\global\pdfminorversion=5
 %\global\pdfinclusioncopyfonts=1
-\newcommand{\pdfapart}{3}        % PDF/A part
-\newcommand{\pdfaconformance}{U} % PDF/A conformance
+%\newcommand{\pdfapart}{3}        % PDF/A part
+%\newcommand{\pdfaconformance}{U} % PDF/A conformance
 
 \ifthesis@univ
 	% \typeout{Foo!} % print to stdout
@@ -37,7 +37,7 @@
 	\setstocksize{240mm}{160mm}
     \paperheight=240mm \paperwidth=160mm
 	\settrimmedsize{\stockheight}{\stockwidth}
-    \setlrmarginsandblock{2cm}{2cm}{*}%%%%
+    \setlrmarginsandblock{2cm}{2cm}{*}
     \setulmarginsandblock{2cm}{2cm}{*}
     \checkandfixthelayout
     \fixpdflayout
@@ -55,8 +55,8 @@
     \hypersetup{ 
         pdfencoding 	= unicode,
         unicode     	= true,
-        pdfapart    	= {\pdfapart},
-        pdfaconformance = {\pdfaconformance},
+%        pdfapart    	= {\pdfapart},
+%        pdfaconformance = {\pdfaconformance},
         final       	= true,
         colorlinks  	= true,
         urlcolor    	= blue,
@@ -144,6 +144,8 @@
 \RequirePackage{multicol}
 \RequirePackage[final]{pdfpages}
 \RequirePackage{verbatim}
+\RequirePackage{tasks}
+\RequirePackage{adjustbox}
 %\RequirePackage[none]{hyphenat}
 %\RequirePackage{natbib}
 %\DisemulatePackage{tocbibind}
@@ -188,7 +190,7 @@
 %\newcommand{\nolisttopbreak}{\vspace{\topsep}\nobreak\@afterheading}
 \newcommand\nolisttopbreak{\par\nobreak\@afterheading} 
 
-\usetikzlibrary{backgrounds,shadows,arrows,decorations.markings}
+\usetikzlibrary{backgrounds,shadows,arrows,decorations.markings,positioning}
 %\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,27 +267,27 @@
 \let\@nationalthesisnumber\@empty
 
 \ifxetexorluatex
-    \RequirePackage{hyperxmp}
-    
-    %\global\pdfcompresslevel=9
-    
-    \edef\pwpt{\strip@pt\dimexpr0.996264009963\paperwidth\relax} %paper width in PS points
-    \edef\phpt{\strip@pt\dimexpr0.996264009963\paperheight\relax} %paper height in PS points
-    
-    \pdfpageattr{
-        /MediaBox [0 0 \pwpt \phpt]^^J
-        /BleedBox [0.00000 0.00000 \pwpt \phpt]^^J
-        /CropBox [0 0 \pwpt \phpt]^^J
-        /TrimBox [0.00000 0.00000 \pwpt \phpt]
-    }
-
-    \pdfinfo{ 
-        /Title (\@title)
-        /Author(\@author)
-        /Keywords(\@keywords)
-        /GTS_PDFXVersion (PDF/A-3:2012)
-        /GTS_PDFXConformance (PDF/A-3u:2012)
-    }
+%    \RequirePackage{hyperxmp}
+%    
+%    %\global\pdfcompresslevel=9
+%    
+%    \edef\pwpt{\strip@pt\dimexpr0.996264009963\paperwidth\relax} %paper width in PS points
+%    \edef\phpt{\strip@pt\dimexpr0.996264009963\paperheight\relax} %paper height in PS points
+%    
+%    \pdfpageattr{
+%        /MediaBox [0 0 \pwpt \phpt]^^J
+%        /BleedBox [0.00000 0.00000 \pwpt \phpt]^^J
+%        /CropBox [0 0 \pwpt \phpt]^^J
+%        /TrimBox [0.00000 0.00000 \pwpt \phpt]
+%    }
+%
+%    \pdfinfo{ 
+%        /Title (\@title)
+%        /Author(\@author)
+%        /Keywords(\@keywords)
+%        /GTS_PDFXVersion (PDF/A-3:2012)
+%        /GTS_PDFXConformance (PDF/A-3u:2012)
+%    }
 %    \immediate\pdfobj stream attr{/N 4^^J/Alternate/DeviceCMYK} file{coated_FOGRA39L_argl.icc}
 %    \pdfcatalog{
 %        /PageMode /UseNone
@@ -519,6 +521,7 @@
 }
 
 \newcommand{\ruledsec}[1]{%
+	\needspace{5\baselineskip}
     \vskip 1em
     {\color{MidnightBlue}\hrule}
     \vskip 1em
@@ -575,7 +578,7 @@
 \newenvironmentx{shadedfigure}[1][1=!ht]{
     \begin{figure}[#1] %[!ht]
         \begin{tcolorbox}[colback=gris_clair,colframe=gris_clair,coltext=white]
-        }{
+}{
         \end{tcolorbox}
     \end{figure}
 }
@@ -708,9 +711,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 \renewcommand\@memmain@floats{%
+	\counterwithin{lstlisting}{part}
 	\counterwithin{figure}{part}
 	\counterwithin{table}{part}}
 \makeatother
+%\renewcommand{\thelstlisting}{\arabic{lstlisting}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Autres commandes        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -799,12 +804,26 @@
 \newcommand{\gsl}[1]{\acrshort{#1} (\acrlong{#1})}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Tableaux commandes        %%
+%% Tableaux commandes      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcommand{\specialcell}[2][l]{%
     \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+    #1\ignorespaces
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        Listings         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistingname}{Code}
+
+\lstdefinelanguage{drl}{
+	keywords = {rule,when,then,end}
+}
+\lstdefinestyle{drl-style}{basicstyle=\tiny\normalfont\ttfamily,language=drl,keywordstyle=\color{blue},escapechar=@}
+\lstdefinestyle{python-style}{basicstyle=\tiny\normalfont\ttfamily,language=python,commentstyle=\color{green},stringstyle=\color{orange},keywordstyle=\color{blue}}
 
 \endinput

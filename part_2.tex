@@ -1,23 +1,66 @@
 \begin{refsegment}
 \chapter{GROOLS}
 
-J'ai consacré ces trois années de recherche pour une approche interactive entre le biologiste et les prédictions bio-informatiques lors du processus de curation de l'annotation fonctionnelle des génomes bactériens. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait assister les biologistes à détecter les annotations inconsistantes et contradictoires. La curation et la validation des prédictions bio-informatiques pourrait alors rattraper se retard.
+Ces trois années de recherche ont été consacrées à la conception d’une méthode et au développement du logiciel \gls{GROOLS} . Ce logiciel offre une approche interactive entre le biologiste et les prédictions bio-informatiques lors du processus de curation de l'annotation fonctionnelle des génomes bactériens au travers de processus biologiques comme les voies métaboliques. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait aider les biologistes à détecter les annotations inconsistantes et contradictoires dans cette masse d'information. 
 
 \section{Le début de GROOLS}
 
 \subsection{HERBS}
 
-L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} est d'alerter les biologistes sur les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur un moteur d'inférence \texttt{\gls{JESS}}, d'une base de connaissance (contenant les règles et les faits, \cref{fig:systeme_expert}) et d'une interface graphique pour l'exploration des connaissances. \textit{Alain VIARI} m'a permis d'utiliser l'outil \texttt{PathRules} qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips}.
+L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} est d'alerter les biologistes sur les fonctions et les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur le moteur d'inférence \texttt{\gls{JESS}}, sur une base de connaissances (contenant les règles et les faits, \cref{fig:systeme_expert}) et sur une interface graphique pour l'exploration des connaissances. 
+
+Les connaissances dans \texttt{HERBS} sont structurées en trois composants :\nolisttopbreak
+\begin{itemize}
+	\item Une Base de Connaissance qui contient des faits primaires sur l’organisme étudié (sa taxonomie  et des propriétés phénotypiques, exemple : l’organisme est photosynthétique) et des faits généraux décrivant des processus biologiques et leurs composants sous la forme d’un  graphe orienté acyclique avec des nœuds \texttt{ET} et \texttt{OU}.
+	\item Une Base d’Observations qui contient des prédictions d’unités fonctionnelles (i.e. composants de processus) dans l’organisme étudié.
+	\item Des règles logiques permettant de prendre des décisions (e.g. SI X est requis par une bactérie et X n’est pas observé ALORS X est manquant dans l’annotation de la bactérie).
+\end{itemize}
+
+Le raisonnement dans \texttt{HERBS} se fait en propageant les observations au travers du graphe de connaissances par l’application des règles logiques. Chaque nœud est associé à trois attributs pouvant prendre les valeurs oui ou non au cours du raisonnement :\nolisttopbreak
+\begin{itemize}
+	\item "Présent", le composant est prédit ou non dans l’organisme
+	\item "Requis", le composant est attendu dans l’organisme (i.e. il doit être prédit)
+	\item "Interdit", le composant n’est pas attendu dans l’organisme.
+\end{itemize}
+
+À la fin du raisonnement des conclusions sur les processus et leurs composants sont données suivant cette table de correspondance :\nolisttopbreak
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|>{\columncolor{LightCyan}}l|}
+		\toprule
+		\rowcolor{LightCyan}
+		\textbf{Présent} & \textbf{Requis} & \textbf{Interdit} & \textbf{Conclusion} \\ 
+		\midrule
+		oui & oui & oui & ambigu \\ 
+		\hline 
+		oui & oui & non & normal \\ 
+		\hline 
+		oui & non & oui & inattendu \\ 
+		\hline 
+		oui & non & non & orphelin \\ 
+		\hline 
+		non & oui & oui & ambigu \\ 
+		\hline 
+		non & oui & oui & manquant \\ 
+		\hline 
+		non & non & oui & normal \\ 
+		\hline 
+		non & non & non & normal \\ 
+		\bottomrule
+	\end{tabular} 
+\end{table}
+
+\textit{Alain VIARI} m'a permis d'utiliser l'outil \texttt{PathRules} qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips}.
 
 
-J'ai fournis à la base de fait de  \texttt{PathRules} les voies de biosynthèse de la lysine (AAA et DAP) décrit par \texttt{UniPathway} et les prédictions provenant de 79 organismes. Pour ce faire les données sont rangées dans trois dossiers présent à la racine du projet: (i) "data/processes" pour la description des voies métaboliques, (ii) "data/observers/uniprot" pour le catalogues des prédictions par espèces, (iii) "data/species" pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichier est utilisé comme identifiant pour faire le lien entre les processus, les prédictions et les informations taxonomiques de l'espèce. Par exemple, j'ai utilisé l'identifiant ACIAD pour mettre en relation les informations d'\textit{Acinetobacter sp ADP1}.
+Pour tester le logiciel \texttt{PathRules} j'ai fourni à la base de faits les voies de biosynthèse de la lysine avec le variant (\texttt{AAA} et le variant \texttt{DAP}) décrits par \texttt{UniPathway} et les prédictions d’activités enzymatiques provenant de l’analyse 79 génomes. Pour ce faire les données sont rangées dans trois dossiers présents à la racine du projet: (i) \texttt{data/processes} pour la description des voies métaboliques, (ii) \texttt{data/observers/uniprot} pour le catalogues des prédictions par espèces, (iii) \texttt{data/species} pour la description taxonomique des espèces. Les fichiers doivent porter l'extension \texttt{.data} et le nom du fichier est utilisé comme identifiant pour faire le lien entre les processus, les prédictions et les informations taxonomiques de l'espèce. Par exemple, j'ai utilisé l'identifiant \texttt{ACIAD} pour mettre en relation les informations d'\textit{Acinetobacter baylyi ADP1}.
 
 \console{find data/ -name 'ACIAD.data'}{ data/observers/uniprot/ACIAD.data\par data/species/ACIAD.data }
 
 
-La description des données dans ses fichiers suit la nomenclature \texttt{\gls{CLIPS}}. C'est à dire que les faits sont déclarés entre parenthèses. Les observations sont formatées comme suit: ( \texttt{source} (id \texttt{xxx}) (alias \texttt{yyy} sp:\texttt{zzz})  ) .
+La description des données dans ces fichiers suit la nomenclature \texttt{\gls{CLIPS}}. C'est-à-dire que les faits sont déclarés entre parenthèses. C'est la raison pour laquelle les observations sont formatées comme suit: ( \texttt{source} (id \texttt{xxx}) (alias \texttt{yyy} sp:\texttt{zzz})  ) .
 
-Extrait d'un fichier cataloguant les faits relatives à une espèce:\nolisttopbreak
+Extrait d'un fichier cataloguant les faits relatifs à une espèce:\nolisttopbreak
 
 \console{head data/observers/uniprot/data/ACIAD.data}{
     (uniprot (id ASPARTATE-SEMIALDEHYDE-DEHYDROGENASE-RXN) (alias ACIAD0479 sp:ACIAD00423))\par
@@ -32,11 +75,11 @@ Extrait d'un fichier cataloguant les faits relatives à une espèce:\nolisttopbr
 }
 
 
-L'information taxonomique est également un fait. Il débute par "species" suivis de plusieurs chaîne de caractères pour renseigné de plus en plus précisément la taxonomie de l'organisme.
+L'information taxonomique est également un fait. Il débute par "species" suivis de plusieurs chaînes de caractères pour renseigner de plus en plus précisément la taxonomie de l'organisme.
 
 \console{cat data/species/ACIAD.data}{ (species lineage Bacteria Proteobacteria Gammaproteobacteria Pseudomonadales Moraxellaceae Acinetobacter Acinetobacter\_sp.\_ADP1) }
 
-Pour représenter la structure hiérarchique des voies métaboliques, les faits sont organisés pour exprimer la notion de composition et d'équivalence. La notion de composition et utilisé pour relier les blocs réactionnelles à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatifs pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 3)$". }. Ci-après la voie métabolique de la biosynthèse de la lysine par la voie AAA (Acide Alpha-amino Adipique) selon \texttt{UniPathway}.
+Pour représenter la structure hiérarchique des voies métaboliques, les faits sont organisés pour exprimer la notion de composition et d'équivalence. La notion de composition et utilisé pour relier les ensembles de réactions (\gls{ULS} \texttt{d’UniPathway}) à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatifs (variants) pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 3)$". }. Ci-après le fichier de description de la voie métabolique de la biosynthèse de la lysine par le variant \texttt{AAA} (Acide alpha-Amino Adipique) selon \texttt{UniPathway}.
 
 \console{cat data/processes/lysine\_AAA\_biosynthesis.data}{
 ;;;; --------------------------------------------------------\par
@@ -63,9 +106,9 @@ Pour représenter la structure hiérarchique des voies métaboliques, les faits 
 }
 
 
-Chaque processus est un fait désigné par le mot clé "process". Les voies métabolique sont préfixer du mot clé "declare" et "define" pour ces composants. Les faits constituant la voie métabolique sont hiérarchiquement organisé. Lorsque un fait et composé de plusieurs concepts on utilise le symbole "and" et "or" lorsqu'un fait possède des équivalences. Les lignes débutant par un point virgules ne sont pas interprété par  \texttt{\gls{CLIPS}}.
+Chaque processus est un fait désigné par le mot clé "process". Les voies métaboliques sont préfixées du mot clé "declare" et "define" pour ses composants. Les faits constituant la voie métabolique sont hiérarchiquement organisé. Lorsqu'un fait est composé de plusieurs concepts on utilise le symbole "and" et le symbole "or" lorsqu'un fait possède des équivalences. Les lignes débutant par un point virgules ne sont pas interprétées par  \texttt{\gls{CLIPS}}.Elles permettent de commenter les règles et les faits.
 
-Ceci permet d'obtenir une évaluation de la complétion de l'annotation fonctionnelle des génomes (\cref{fig:herbs_rapport}).
+À la fin du raisonnement, une évaluation de la complétion de l'annotation fonctionnelle des génomes est proposée sous la forme d’un tableau(\cref{fig:herbs_rapport}).
 
 \begin{shadedfigure}[H]
     \centering
@@ -74,37 +117,37 @@ Ceci permet d'obtenir une évaluation de la complétion de l'annotation fonction
     \label{fig:herbs_rapport}
 \end{shadedfigure}
 
-L'utilisateur à la possibilité d'explorer les voies métaboliques à travers le graphe orienté acyclique pour discriminer les composants du métabolisme manquants (\cref{fig:herbs_dag}).
+L'utilisateur a la possibilité d'explorer les résultats de \texttt{\gls{HERBS}} sur les voies métaboliques et leurs composants à travers un graphe orienté acyclique (\cref{fig:herbs_dag}).
 
 \begin{landscape}
     \begin{shadedfigure}[H]
         \centering
         \includegraphics[width=\textwidth]{img/herbs_aciad_lysine_dap.png}
-        \caption{Rapport sur la présence de la voie de biosynthèse de la lysine.}
+        \caption{Rapport sur la présence de la voie de biosynthèse de la lysine. La couleur jaune indique que la prédiction portée sur le concept est en accords avec les connaissances acquises sur l'organisme. Dans le cas contraire le concept est sur fond rouge. }
         \label{fig:herbs_dag}
     \end{shadedfigure}
 \end{landscape}
 
 
-Pour passer à l'échelle, il est nécessaire de retranscrire  en \texttt{\gls{CLIPS}}  toutes les voies métaboliques et toutes les prédictions bio-informatiques. De plus le système doit être étendue à la notion d'inconnu et si possible à la notion de contradiction. Car en biologie, nous possédons la connaissance de ce qui est et ce qui n'est pas présent, pour le reste nous n'avons pas d'idée. Ce point de vue, peut paraître un peu philosophique. Il fait référence aux concepts de "monde ouvert" et "monde fermé". Une hypothèse en monde fermé va considéré toutes les questions sans réponses comme fausses. En monde ouvert, les hypothèses prennent les valeurs vrais ou fausses lorsqu'elles sont explicitement décrites comme telles. Pour les autres cas les hypothèses sont considérés incertaines tant qu'un fait ne la désigne pas comme vrai ou fausse. Dans le cas présent la plupart des voies métaboliques sont déclarés "MISSING" ce qui n'aide pas beaucoup le biologiste. Ceci est dues au raisonnement en monde fermé, en biologie quantité de connaissances ne sont pas prédites et pour autant cela ne signifie pas qu'elles sont prédites comme non présentes dans l'organisme.
+Pour passer à l'échelle, il est nécessaire de retranscrire  en \texttt{\gls{CLIPS}}  toutes les voies métaboliques et toutes les prédictions bio-informatiques. De plus le système doit être étendu à la notion d'inconnu et si possible à la notion de contradiction. Car en biologie, l’absence de résultat suite à une expérience ou à une prédiction est souvent difficile à interpréter comme un résultat vrai négatif ou faux négatif.  Dans le but d'appuyer le propos sur l'intérêt de valeurs autres que frai et faux, une non-prédiction bio-informatique ne signifie pas une prédiction de non-présence. Ce point de vue peut paraître un peu philosophique. Il fait référence aux concepts de "monde ouvert" et "monde fermé". Une hypothèse en monde fermé va considérer toutes les questions sans réponse comme fausses. En monde ouvert, les hypothèses prennent les valeurs vraies ou fausses lorsqu'elles sont explicitement décrites comme telles. Pour les autres cas, une hypothèse est considérée incertaine tant qu'un fait ne la désigne pas comme vraie ou fausse. En biologie quantité de connaissances ne sont pas prédites et pour autant cela ne signifie pas qu'elles sont prédites comme non présentes dans l'organisme. Dans l’exemple précédent de \texttt{\gls{HERBS}}, la plupart des voies métaboliques sont déclarées "Missing" sans pour autant suggérer quel variant est le plus probable pour l'organisme d'intérêt. Ceci est due au fait que l’absence de prédiction d’une réaction engendre la valeur de vérité faux qui est propagée sur la voie métabolique malgré que d’autres réactions de la voie soient prédites. On pourrait s’attendre à ce que le système \texttt{\gls{HERBS}} soit capable de repérer cette contradiction.
 
-\subsection{GROOLS: Un système à base de règle pour l'annotation fonctionnelle des génomes microbiens}
+\subsection{Contexte du projet GROOLS}
 
-Mon projet de recherche débute par l'identification des besoins et des outils à ma disposition. Les besoins de la plateforme se divise en trois axes.
+Mon projet de recherche a débuté par l'identification des besoins et des outils à ma disposition. Les besoins de la plateforme MicroScope (i.e. plateforme d’annotation de génomes microbiens, développée dans le laboratoire où j’ai réalisé ces travaux) se divisent en trois axes.
 
-Le premier  corresponds à la modernisation du système de gestion et déclaration des chaînages applicatifs. Pour cela la plateforme MicroScope s'oriente par la mise en place du moteur pour le chaînage d'application à base de règle développé en interne au GenoScope (\texttt{\gls{BIRDS}}) . Le système utilise l'application \texttt{DROOLS}\cite{browne2009jboss} pour raisonner et donc ordonnées les processus. Il est donc nécessaire d'informé à \gls{BIRDS} comment organiser les processus de l'annotation.
+Le premier  correspond à la modernisation du système de gestion et déclaration des chaînages applicatifs ("wokflows"). Pour cela la plateforme MicroScope s'oriente vers la mise en place du moteur à base de règles développé en interne au GenoScope (\texttt{\gls{BIRDS}}) . Le système utilise l'application \texttt{DROOLS}\cite{mcwhirter2001drools,browne2009jboss} pour raisonner et donc ordonnées les processus à partir de règles métiers décrivant les ressources à utiliser et l’enchainement des programmes dans le processus de l'annotation.
 
-Le second axe consiste à pourvoir discuter avec le  système d'intégration continue des donnée interne à la plateforme, dénommé Galileo \cite{galileo2014}. Cet outil à la faculté de réconcilié les informations provenant de multiple ressource interne et donc d'avoir accès à un large éventail d'information à travers une unique interface. Ceci lui permet de fournir une représentation unifié des voies métaboliques par l'utilisation des information de \texttt{CHebi}, \texttt{RHEA}, \texttt{KEGG} et \texttt{MetaCyc}.
+Le second axe consiste à la mise en place d'un système d'intégration des données métabolique de la plateforme, dénommé Galileo \cite{galileo2014}. Cet outil a la faculté de réconcilier les informations provenant de multiple ressources externes et internes et donc d'avoir accès à un large éventail d'information à travers une unique interface. Ceci permet  notamment de fournir une représentation unifiée des connaissances métaboliques par l'utilisation des informations de \texttt{ChEBI} \cite{hastings2013chebi}, \texttt{RHEA} \cite{alcantara2012rhea}, \texttt{KEGG} et \texttt{MetaCyc}.
 
-Le troisième axe s'articule autour d'un système à base de règle pour l'annotation des génomes et guider le biologiste sur les annotations suspecté manquante dans un organsine donnée. Il est composé de deux sous partie. La première a pour objectif de récupérer les règles d'UniRule et de les rendre utilisable en dehors de "l'\gsl{EBI}". Les règles d'annotation fonctionnelles à partir des domaines protéiques seraient ainsi partagé à la communauté scientifique. La deuxième partie se consacre à la mise en évidence des régions de connaissances non prédites ou contradictoire. La cohérence des génomes peut être évalué au regards des attentes porté sur les fonction des organismes. L'application \texttt{DROOLS} a été choisie pour la mise en œuvre du raisonnement afin de garder la maitrise autour d'une même application pour tout développement impliquant un système à base de règle. Cet application se montre moderne et capable de communiquer avec les application java ce  qui est un avantage car Galileo est écrit en Java.
+Le troisième axe s'articule autour d'un système à base de règles pour l'annotation des génomes. Il a pour objectif de guider le biologiste sur les annotations suspectées manquantes dans un organisme donné. Il est composé de deux modules. Le premier a pour objectif de récupérer les règles d'UniRule et de les rendre utilisable en dehors de "l'\gls{EBI}". Les règles d'annotation fonctionnelle à partir des domaines protéiques seraient ainsi partagées es à la communauté scientifique. Le deuxième module doit évaluer les fonctions prédites au regard des processus métaboliques et mettre en évidence des annotations confirmées,   manquantes ou contradictoires. La cohérence des annotations d'un génome peut ainsi être évaluée au regard des attentes portées sur des processus que l'organisme est capable de réaliser. L'application \texttt{DROOLS} a été choisie pour la mise en œuvre du raisonnement afin de garder la maitrise autour d'une même application pour tout développement impliquant un système à base de règles. Son moteur de règle se montre moderne et capable de communiquer avec les applications Java ce  qui est un avantage car \texttt{Galileo} et \texttt{BIRDS} sont également écrit ce même langage.
 
-C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant sur les deux premiers axes afin de récupérer les prédictions bio-informatiques et les voies métaboliques unifié. Le cadre de mon projet de recherche a été présenté lors de la 10$^{eme}$ conférence international sur l'intégration de donnée en science de la vie (DILS 2014 \url{http://dils2014.inesc-id.pt/}).
+C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant avec les deux premiers axes afin de récupérer les prédictions bio-informatiques et les données métaboliques unifiées. Le cadre de mon projet de recherche a été présenté lors de la 10$^{eme}$ conférence internationale sur l'intégration de données en science de la vie (DILS 2014 \url{http://dils2014.inesc-id.pt/}).
 
 \includepdf[pages=-]{img/DILS_2014.pdf}
 
-\subsection{Investigation sur les règles de logiques}
+\subsection{Logique et notion d'objet}
 
-Au début de mes investigations, j'ai rencontré plusieurs difficultés. La première était d'utiliser les données structurées et complexes issues de la biologie à travers des règles de logique. Il faut savoir que la plupart des raisonneurs (comme \texttt{Prolog} et \texttt{CLIPS}) utilise la programmation déclarative, ce qui consiste à décrire le problème\footnote{Par opposition a des langages comme Java, Python, D, Perl \ldots, ils utilisent la programmation impérative qui s'attache à décrire comment trouver la solution.}. La déclaration de problème impliquant  des données structurées n'était pas initialement prévue dans ce paradigme\footnote{Des extensions du paradigmes ont permis de gérer des structures de données complexes comme Prolog++.}. Par exemple un bloc de réaction  composé de la réaction A et B peut s'exprimer par la règle suivante (en Prolog):
+Au début de mes investigations, j'ai rencontré plusieurs difficultés. La première était d'utiliser les données structurées et complexes issues de la biologie à travers des règles de logique. Il faut savoir que la plupart des raisonneurs (comme \texttt{Prolog} et \texttt{CLIPS}) utilise la programmation déclarative, ce qui consiste à décrire le problème\footnote{Par opposition a des langages comme Java, Python, D, Perl \ldots, ils utilisent la programmation impérative qui s'attache à décrire comment trouver la solution.}. La déclaration de problèmes impliquant  des données structurées n'était pas initialement prévue dans ce paradigme\footnote{Des extensions du paradigmes ont permis d'utiliser des structures de données complexes comme Prolog++.}. Par exemple un bloc de réactions composé des réactions A et B peut s'exprimer par la règle suivante (en Prolog):
 
 \begin{lstlisting}[basicstyle=\small\normalfont\ttfamily,language=Prolog]
     reaction_block(Arg1, Arg2) :-
@@ -112,100 +155,195 @@ Au début de mes investigations, j'ai rencontré plusieurs difficultés. La prem
         reaction_B(Arg2).
 \end{lstlisting}
 
-Ce qui précède  ":-" est le nom de la règle et ces arguments, ce symbole signifie "si". Pour reprendre l'exemple précédant "reaction\_block(Arg1,Arg2)" est vrai si "reaction\_A(Arg1)" et "reaction\_B(Arg2)" sont vrais. Il n'est pas simple de rattaché des attributs à des catégories de réaction comme on pourrait le faire avec le paradigme orienté-objet. C'est la raison pour laquelle j'ai utilisé le système \texttt{DROOLS}. Il permet d'utiliser des objets (au sens Java)  et de les utiliser pour établie des règles. Par exemple l'utilisation d'un attribut peut être employé pour indiquer que certaines réactions sont optionnel et ainsi "relacher" la définition du bloc de réaction. Le raisonnement est influé par les états des différents attributs attaché à une réaction. Je devais donc établir un raisonnement utilisant des structures de données et leurs relations. Pour cela je me suis inspiré de "\citetitle{amir1999object}" \cite{amir1999object} et appuyé sur le projet \texttt{DROOLS} \cite{mcwhirter2001drools} pour écrire les règles de raisonnement et établir une description formelle des objets manipulé.
+Ce qui précède  ":-" est le nom de la règle et ses arguments, ce symbole signifie "si". Pour reprendre l'exemple précédant "reaction\_block(Arg1,Arg2)" est vrai si "reaction\_A(Arg1)" et "reaction\_B(Arg2)" sont vrais. Il n'est pas simple de rattacher des attributs à des catégories de réaction comme on pourrait le faire avec le paradigme orienté-objet. C'est la raison pour laquelle j'ai utilisé le système \texttt{DROOLS}. Il permet d'utiliser des objets (au sens du langage Java)  et de les utiliser pour établir des règles. Par exemple, l'utilisation d'un attribut peut être employé pour indiquer que certaines réactions sont optionnelles et ainsi "relacher" la définition du bloc de réaction. Le raisonnement peut ainsi être orienté par les états des différents attributs attachés à une réaction. La représentation des connaissances sous forme d'objet permet également d'exprimer la composition d'autres objets, par exemple la déclaration d'une classe bloc de réaction avec pour attribut une liste d'objet de type réaction. Je devais donc établir un raisonnement logique utilisant des structures de données et leurs relations. Pour cela je me suis inspiré de la logique orientée-objet du premier ordre ()"\citetitle{amir1999object}") \cite{amir1999object}, du projet \texttt{\gls{HERBS}} et utilisé l'application \texttt{DROOLS} pour écrire les règles de raisonnement et établir une description formelle des objets manipulés.
 
-\subsection{La représentation des connaissances}
+\subsection{Représentation des connaissances}
 
-La seconde problématique portait sur la représentation des connaissances. Les voies métaboliques sont représentées de différentes manières selon la ressource utilisé. Il était nécessaire d'avoir un modèle hiérarchique des connaissances unifier pour utiliser indifféremment le même raisonnement. Pour cela, j'ai utilisé les représentations des voies métaboliques de \texttt{Metacyc} (\cref{fig:metacyc_lysine}), \texttt{KEGG} (\cref{fig:kegg_lysine}) et \texttt{Unipathway} (\cref{fig:lysine}) et recherché les caractéristiques pouvant être mise en commun. Cette étude a permis de mettre en place une structuration hiérarchiques de connaissance-apriori. Les observations sont reliées a ces connaissances-aprioris pour indiquer les attentes et les prédictions de ces dernières. Les observations et les connaissances-apriori sont des faits reliés les uns aux autres par des relations pour exprimer la composition et l'équivalence. Pour cela les opérateurs ET/OU sont employés pour exprimer ces deux notions et établir un raisonnement.
+La seconde problématique portait sur la représentation des connaissances. Les voies métaboliques sont représentées de différentes manières selon la ressource utilisée. Il était nécessaire d'avoir un modèle hiérarchique des connaissances unifié pour utiliser le même raisonnement indifféremment de la ressource métabolique utilisée. Pour cela, j'ai étudié les représentations des voies métaboliques de \texttt{Metacyc} (\cref{fig:metacyc_lysine}), \texttt{KEGG} (\cref{fig:kegg_lysine}) et \texttt{UniPathway} (\cref{fig:lysine}) et recherché les caractéristiques pouvant être mise en commun. Cette étude a permis de mettre en place une structuration hiérarchique de connaissance a priori dans un graphe ET/OU. Je parle ici de connaissance a priori car tant que les prédictions et les expectations n'ont pas été évalué la connaissance n'est pas confirmé. C'est la raison pour laquelle j'emploie également les terme de théorie et de concept en lieu et place de connaissance a priori. 
 
-\begin{lstlisting}[basicstyle=\tiny\normalfont\ttfamily,caption=Inférence de la prédiction d'absence]
-rule "Prediction infer his none existence"
-when
-    $k: Knowledge( $kid := id, nodeType == NodeType.LEAF )
-    (
-        or
-        not( Prediction( $kid := knowledgeId ) )
-        Prediction( $kid := knowledgeId, presence == FourState.UNKNOWN )
-    )
-then
-    modify( $k ){
-    presence = FourState.UNKNOWN
-    }
+Les observations sont reliées a ces connaissances a priori pour indiquer les attentes (expectations)  et les prédictions ur les voies métaboliques. Les observations et les connaissances a priori sont des faits à partir desquels les règles logiques vont établir un raisonnement. 
+
+\needspace{15\baselineskip}
+\begin{lstlisting}[caption=Inférence de la prédiction d'absence, style=drl-style]
+rule "Prediction infer his none existence" @\tikz[remember picture] \node [] (a){};@
+when   @\tikz[remember picture] \node [] (b){};@
+	$k: PriorKnowledge( $kid := id, nodeType == NodeType.LEAF )   @\tikz[remember picture] \node [] (c){};@
+	( @\tikz[remember picture] \node [] (d){};@
+		or
+		not( Prediction( $kid := knowledgeId ) )
+		Prediction( $kid := knowledgeId, presence == FourState.UNKNOWN )
+	)
+then @\tikz[remember picture] \node [] (e){};@
+	modify( $k ){ 
+		presence = FourState.UNKNOWN
+	}
 end
 \end{lstlisting}
+\begin{tikzpicture}[remember picture, overlay, every edge/.append style = { ->, thick, >=stealth, DimGray, dashed, line width = 1pt },
+					every node/.append style = { align = center, minimum height = 10pt, font = \tiny, fill= green!20},
+					text width = 2.5cm ]
+	\node [above left = .8cm and 4.5 cm of a,text width = 2.2cm]
+	(A) {Nom de la règle};
+	\draw (A.south) + (0, 0) coordinate(x1) edge (x1|-a.north);	
+	\node [right = 5.5cm of b, text width = 4cm]  (B) {Déclaration des contraintes};
+	\draw (B.west) edge (b.east) ;
+	\node [right = 1.5cm of c, text width = 3cm]  (C) {Sélection d'une Connaissance a priori étant une feuille dans le graphe};
+	\draw (C.west) edge (c.east) ;
+	\node [below right = -0.2cm and 2cm of d, text width = 8cm]  (D) {Déclaration de deux propositions relié par l'opérateur OU};
+	\draw (D.west) edge (d.east) ;
+	\node [right = 4.cm of e, text width = 6cm]  (E) {Description de la conséquence logique lorsque la règle est vrai};
+	\draw (E.west) edge (e.east) ;
+\end{tikzpicture} 
 
-\subsection{Gestion de l'incertitude et de la contradiction}
+Les connaissances a priori sont reliés les uns aux autres par des relations pour exprimer la composition et l'équivalence. Pour cela l'attribut \texttt{NodeType} peut prendre la valeur AND/OR sont employés pour exprimer ces deux notions et établir un raisonnement.
 
-Quant à la troisième problématique, elle consistait à trouver la méthode logique pour travailler sur des données incertaines et incohérentes. Or la plupart des raisonneurs ( comme \texttt{CLIPS}, \texttt{PROLOG} \ldots ) s'inspire fortement la logique classique pour l'inférence des valeurs de vérité. Nous pensions qu'une telle problématique à forcément aboutis à une méthodologie applicable pour notre domaine d'étude. Cependant la grande majorité des raisonneurs ne proposaient pas un cadre pour l'utilisation de logique multi-valuées. Les valeurs vrai et fausse donne dans les système classique faux alors que nous souhaitions obtenir une valeur pour exprimer la contradiction. De même lorsqu'il y a aucun fait, la logique classique donne faux alors que la aussi nous souhaitions distinguer ce qui est  considéré comme faux de l'incertain. Pour cela mon travail de recherche ces basé sur les quatre valeurs de vérité décrites par \citeauthor{belnap77}\cite{belnap77}. J'ai établis une méthode pour le calcul des prédicats selon les opérateurs "ET" et "OU" dans un graphe de connaissance (\cref{fig:four_truth_values}). L'idée est d'inférer la valeur de vérité qui minimise l'incohérente à partir  d'un groupe de concepts enfant vers un concept parent. Cet approche s'apparente à un algorithme minmax \cite{aho1989} (\url{https://fr.wikipedia.org/wiki/Algorithme_minimax}). Par exemple dans le calcul: $ True \land Unknown \land False \to None$; le résultat est incertain car au moins un des concepts est ni-vrai-ni-faux par conséquent c'est la valeur utilisée pour l'inférence de la présence du groupe de concept vers le concept parent. Les règles de priorité pour l'inférence des valeurs de vérité étaient un moyen de retranscrire les tables de vérité de Belnap (présenté précédemment dans la partie \nameref{par:logic_multivalued} \cref{tab:belnap_truth_table}) dans des règles logiques.
+\needspace{15\baselineskip}
+\begin{lstlisting}[caption=Inférence de la prédiction de présence à travers les connaissances, style=drl-style]
+rule "And PriorKnowledge is present "
+when
+	$k: PriorKnowledge( presence != FourState.TRUE, nodeType == NodeType.AND ) @\tikz[remember picture] \node [] (a){};@
+	
+	$childs: List() from collect ( PriorKnowledge( $k memberOf partOf )) @\tikz[remember picture] \node [] (b){};@
+	
+	forall( PriorKnowledge( presence == FourState.TRUE ) from $childs ) @\tikz[remember picture] \node [] (c){};@
+then
+	modify( $k ){
+		presence = FourState.TRUE
+	}
+end
+\end{lstlisting}
+\begin{tikzpicture}[remember picture, overlay, every edge/.append style = { ->, thick, >=stealth, DimGray, dashed, line width = 1pt },
+every node/.append style = { align = center, minimum height = 10pt, font = \tiny, fill= green!20},
+text width = 2.5cm ]
+\node [above left = .2cm and -2cm of a, text width = 10cm]  (A) {Sélection d'une Connaissance a priori composé de plusieurs enfants};
+\draw (A.west) + (0, 0) coordinate(x1) edge (x1|-a.west);	
+\node [right = 1cm of b, text width = 4cm]  (B) {Récupération des Connaissance a priori enfants de \$k};
+\draw (B.west) edge (b.east) ;
+\node [below right =-0.2cm and 1cm of c, text width = 4cm]  (C) {Tous les enfants doivent être prédits présents};
+\draw (C.west) edge (c.east) ;
+\end{tikzpicture} 
+
+\subsection{Logique multi-valuée pour la contradiction et l'incertitude}
+
+Quant à la troisième problématique, elle consistait à trouver le cadre logique pour travailler sur des données incertaines et contradictoires. Dès le départ nous avions constaté que la plupart des  outils et méthodes de raisonnement utilisent la logique classique pour l'inférence des valeurs de vérité. En effet, de tels systèmes effectuent le calcul des propositions par l'utilisation de l'algèbre de Boole. Cette algèbre ne permet pas de calculer des propositions incertaines ou vrai-et-fausse à la fois.  Nous pensions qu'une telle problématique à forcément aboutis à une méthodologie applicable pour notre domaine d'étude. Le calcul d'une proposition $Vrai \land Faux$ donne dans les systèmes classiques faux alors que nous souhaitions obtenir une valeur pour exprimer la contradiction. De même, si aucun fait n’est observé, la proposition est évalué à faux alors que là aussi nous souhaitions distinguer ce qui est  considéré comme faux de l'incertain. Nous souhaitions donc utiliser la logique multi-valuée. Pour cela, j’ai décidé d’utiliser les quatre valeurs de vérité décrites par \citeauthor{belnap77}\cite{belnap77}. Une méthode pour le calcul des prédicats selon les opérateurs "ET" et "OU" dans un graphe de connaissance a été établie  (\cref{fig:four_truth_values}). L'idée est d'inférer la valeur de vérité qui minimise l'incohérence à partir  d'un groupe de concepts enfants vers un concept parent. Cette approche s'apparente à un algorithme minmax \cite{aho1989} (\url{https://fr.wikipedia.org/wiki/Algorithme_minimax}). Par exemple dans le calcul: $ True \land Unknown \land False \to None$; le résultat est incertain ("None") car il est prioritaire sur les autres valeurs. Ces règles de priorité pour l'inférence des valeurs de vérité sont un moyen de retranscrire les tables de vérité de \textit{Belnap} (présentées précédemment dans la partie \nameref{par:logic_multivalued} \cref{tab:belnap_truth_table}) dans des règles logiques.
 
 \begin{shadedfigure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/four_values_priorities_rules.pdf}
-    \caption{ Règle de priorité pour l'inférences de multiple valeurs de vérité à travers un graphe "et/ou". }
+    \caption{ Règle de priorité pour l'inférence de multiple valeurs de vérité à travers un graphe "et/ou". }
     \label{fig:four_truth_values}
 \end{shadedfigure}
 
-La mise bout à bout des éléments précédemment cités permet d'écrire des règles
 
-Ce travail à aboutis sur une première implémentation et présenté lors de la conférence \texttt{RULEML2015}.
+\subsection{Première version de GROOLS}
+Ce travail a abouti sur une première implémentation qui a été présentée lors de la conférence \texttt{RULEML2015}. En plus de pouvoir raisonné avec une logique multi-valuée, le système est réactif à l'introduction de nouveau fait de sorte que seul les nouvelles conséquences sont recalculées.
 
 \includepdf[pages=-]{img/GROOLS__Reactive_Graph_Reasoning_for_Genome_Annotation.pdf}
 
-
-
-La seconde est la contradiction
-, de révéler les zones de connaissances couvertes par aucune prédiction et identifier les observations contradictoire.
-
-expliqué les ratés
-inaptitude à tout programmer de manière explicite
-
-\textbf{Ce qui suit doit/peut être déplacé en discussion.}
-
-Toutefois la méthode utilisé reste assez flou d'un point de vue formel. La distinction entre prédiction et expectation s'entre mêle. La combinaison de deux états (provenant de : certifié, inconnu, non certifié) implique neuf combinaisons possibles. Mais ces combinaisons sont représentables uniquement par les valeurs vrai,faux,inconnu. Donc un même résultat peut correspondre à plusieurs combinaisons possible. Ce qui amène à des phrases pour le moins subtile, par exemple la distinction entre inconnu et non certifié:
-\begin{itemize}
-    \item "The status “unknown” is assigned to an IMG pathway, in which IMG terms without gene assignments have “candidate genes”."
-    \item "In contrast, the status “not asserted” is assigned to an IMG pathway when no “candidate genes” can be found."
-\end{itemize}
-
-De plus la notion de consistance est employé ici pour décrire un cadre logique. Mais en logique ce terme est utilisé pour désigné une chose ne contenant pas de contradiction. Or ici elle est utilisé abusivement pour décrire "une cohérence biologique".
-
-Pour finir contrairement à leur constat sur les données biologiques erronées et donc la nécessité d'automatiser un raisonnement pour l'annotation fonctionnelle. Leur méthode aura pour tendance d'attribuer pour un génome partielle ou distant des génomes de références à une majorité d'états non certifiés ou inconnu. En conséquence les bio-curateurs seront difficilement plus aider par l'apport de ces nouvelles informations.
-
-
-7 valeurs de vérité mais pas encore l'utilisation de l'ensemble vide
-
-
 \section{Vers un raisonnement descriptif}
-ensembliste valeur de vérité généralisé
 
+La logique à quatre valeurs a ces limites lorsque l'on raisonne sur un graphe hiérarchique de connaissance. En effet, dans certains cas avec au moins deux concepts équivalent, il n'est pas possible de suggérer le chemin le plus probable comme montré dans la \cref{fig:grools_belnap}. Bien que si on prête attention aux concepts feuilles des chemins représentés par les nœuds équivalents, intuitivement on choisirait le chemin avec la plus grande proportion de concept vrai.
 
-
-\begin{shadedfigure}
-    \centering
-    \includegraphics[width=\textwidth]{img/GROOLS_mindmap.pdf}
-    \caption{  }
-    \label{fig:GROOLS_mindmap}
+\begin{shadedfigure}[H]
+	\begin{subfigure}[t]{.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/GROOLS_vs_belnap_1.pdf}
+		\caption{Avec la logique de Belnap il n'est pas possible de suggérer le chemin le plus vraisemblable lorsqu'il y a des valeurs incertaines.}
+		\label{fig:grools_belnap_1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/GROOLS_vs_belnap_2.pdf}
+		\caption{Avec la logique de Belnap il n'est pas possible de distinguer le chemin avec le plus grand degré de véracité. }
+		\label{fig:grools_belnap_2}
+	\end{subfigure}
+	\label{fig:grools_belnap}
 \end{shadedfigure}
 
-\section{La méthode}
+J'ai réalisé que la notion de valeur contradictoire décrite par Belnap ("Both") était en fait un ensemble de valeur de vérité vrai et fausse. Et par conséquent essayer de représenter un ensemble de plusieurs valeurs dans une seule valeur vérité "Both" était au mieux une approximation . J'ai poursuivi mon idée sur les ensembles de valeur vérité et constaté que dans mon cas j'avais des ensembles d'observations. En effet, les sources d'observations peuvent être multiples et pour autant elles portent sur le même concept. Pour développer cette idée, en laboratoire on peut être amené à répéter une même expérience. Il y a également le cas de figure avec des équipes différentes qui ont réalisé la même expérience. Et donc ces multiples observations bien que relié a une même théorie, elles peuvent être de valeur différentes. Par conséquent les ensembles de valeur de vérité possibles en lien avec d'observations sont : $\{t\} \{f\} \{t,f\} \{\emptyset\}$, respectivement ensemble : vrai, faux, vrai-et-faux, ni-vrai-ni-faux. Les connaissances a priori sont observables par de multiple ensemble d'observation due à la notion de composition de concepts. Je m'explique, lorsqu'une connaissance \texttt{A} et composé d'une connaissance \texttt{B} et d'une autre \texttt{C}. Les observations relatives à la  connaissance \texttt{A} est l'union des ensembles d'observations de \texttt{B} et \texttt{C} donc un ensemble d'ensemble d'observation. La combinaison des quatre ensembles d'observation donne seize ensembles par lesquels la predictabilité et l'expectabilité d'un concept peut être exprimé. Ces seize combinaisons permettent de mieux représenter la population des observations d'un concept et ainsi faire des choix plus précis. Peu de temps après avoir décrit les seize ensembles possibles, j'ai remarqué qu'un travail de recherche similaire réalisé par \citeauthor{shramko2005some} décrivait ces mêmes ensembles, nommé les valeurs de vérité généralisé. Ces valeurs ont été présentées dans la partie \nameref{par:logic_multivalued}  à travers la \cref{fig:sixteen_truth_values}.
+
+\begin{tasks}[counter-format = {tsk[1].},label-offset = {0.8em},label-format = {\bfseries}](4)
+	\task $\{\emptyset\}$
+	\task $\{\{\emptyset\}\}$
+	\task $\{\{t\}\}$
+	\task $\{\{f\}\}$
+	\task $\{\{t,f\}\}$
+	\task $\{\{t\},\{t,f\}\}$
+	\task $\{\{\emptyset\},\{t\}\}$
+	\task $\{\{\emptyset\},\{f\}\}$
+	\task $\{\{t\},\{f\}\}$
+	\task $\{\{f\},\{t,f\}\}$
+	\task $\{\{\emptyset\},\{t\},\{t,f\}\}$
+	\task $\{\{t\},\{f\},\{t,f\}\}$
+	\task $\{\{\emptyset\},\{t\},\{f\}\}$
+	\task $\{\{\emptyset\},\{t,f\}\}$
+	\task $\{\{\emptyset\},\{f\},\{t,f\}\}$
+	\task $\{\{\emptyset\},\{t\},\{f\},\{t,f\}\}$
+\end{tasks}
+
+
+
+
+\section{La méthode}\label{sec:methode}
 le papier
 pdf ici
 
-discussion
 
-\begin{shadedfigure}
-    \centering
-    \includegraphics[width=\textwidth]{img/GROOLS_vs_belnap_1.pdf}
-    \caption{  }
-    \label{fig:grools_belnap_1}
-\end{shadedfigure}
+\section{discussion}
 
-\begin{shadedfigure}
-    \centering
-    \includegraphics[width=\textwidth]{img/GROOLS_vs_belnap_2.pdf}
-    \caption{  }
-    \label{fig:grools_belnap_2}
-\end{shadedfigure}
+\subsection{Difficulté rencontré}
+La description du raisonnement dans un système à base de règles a engendré quelques difficultés. La première est la non maitrise du moment de l'évaluation d'un groupe de fait par une règle. Il faut savoir que seul le moteur de règle décide quel règle doit être activé. Il utilise en interne un système de résolution de conflit pour déterminer quel règle doit être activé. Il arrive que deux règles pourraient être activé à un même moment entrainant une boucle de raisonnement. Pour illustrer un tel cas considéré les deux règles suivantes:
+
+\begin{lstlisting}[style=drl-style,caption=conflit]
+rule "Direct prediction"
+when
+	$k : PriorKnowledge(  )
+	$p : Observation( type = Type.PREDICTION,  value != $k.prediction )
+then
+	modify($k){
+		prediction = $p.value
+	}
+end
+
+rule "Infer prediction from children PriorKnowledge"
+when
+	$k    : PriorKnowledge(  )
+	$child: PriorKnowledge( $k memberOf parents, prediction not in $k.prediction )
+then
+	modify($k){
+		prediction += $child.prediction
+	}
+
+end
+\end{lstlisting}
+
+Les deux règles ont la même contrainte primaire, c'est-à-dire de trouver l'existence d'une connaissance a priori. Si une connaissance a priori corresponds aux deux contraintes alors le moteur de règle choisira laquelle activée. Ceci peut changer complétement le résultat, si une telle connaissance à une prédiction initiale $\{\{t,f\}\}$, le concept enfant  $\{\{f\}\}$ et la prédiction directe $\{\{t\}\}$ alors lorsque la règle 1 puis 2 est activé la connaissance \$k a une prédiction  $\{\{t\},\{t,f\}\}$ et si c'est la règle 2 puis 1 on obtient:  $\{\{t\}\}$.
+
+Il existe le système de \texttt{salience} qui attribue un poids a une règle et ainsi priorise les règles les une par rapport aux autres. La \texttt{salience} permet d'éviter le Mais avoir recours à la \texttt{salience}  est souvent le signe que le raisonnement est mal formulé. 
+
+Mais dans un système réactif la modification de la connaissance a priori induit par les deux règles provoque une boucle de raisonnement car elles vont perpétuellement s'activer. Pour éviter de tel cas de figure il faut rendre les règles plus précises et donc il y a plus de règles pour correspondre à la diversité des possibilités. En conséquence  il y a un risque plus important de collision de règle, car il faut garantir que chaque ajout de nouvelle règle il n'existe pas un tel cas de figure au regard de toutes les autres règle et au regard de la diversité des faits possibles. Tout ceci rends la construction d'un raisonnement réactif très compliqué. Dans le cas précédemment décrit, la règle  pour l'inférence directe de la  prédiction peut être divisé en deux règles, la première pour inférer l'ensemble d'observation lorsque la connaissance a priori ne possèdent aucune prédiction ($\{\{\emptyset\}\}$) et une seconde lorsque la connaissance a priori possède une prédiction, les observations directes vient s'ajouter à l'ensemble des prédictions.
+
+Une des grandes difficultés lorsque l'on travaille avec ce type d'outil, c'est que nous obtenons un résultat final sans être en mesure d'identifier quel règles ont été activé et pourquoi elles l'on était. Le système \texttt{DROOLS} fournit un système de trace des évènements mais il est compliqué à comprendre, il n'indique pas pourquoi la règle est activé et encore moins pourquoi elle n'a pas était activé. Pour un petit jeu de données les traces produises un volume important d'évènement, ce qui demande du temps pour les analyser et comprendre les choix du raisonneur. Autant dire que s'il existe un cas non souhaitais dues a une combinaison d'activation de plusieurs règles, c'est extrêmement laborieux d'analyser les traces.
+
+En plus des difficultés pour cordonner les différentes règles, j'ai rencontré des erreurs critique dans le système \texttt{DROOLS} . J'ai rapporté ces problèmes aux développeurs quand j'était en mesure de fournir un exemple minimal (ce qui n'est pas simple):
+\begin{itemize}
+	\item \url{https://issues.jboss.org/browse/DROOLS-809}
+	\item \url{https://issues.jboss.org/browse/DROOLS-809}
+\end{itemize}
+ 
+En plus de devoir exprimer des contraintes sur les règles le système me contraignais sur la façon dont je pouvais les exprimer.
+
+Malgré toutes ces difficultés, ce travail a aboutis à une version fonctionnelle \url{https://github.com/Grools/grools-drools-checker} . Cependant le raisonneur \texttt{DROOLS} n'est pas fait pour raisonner sur des données hiérarchiques. Les règles et les faits ne sont pas utilisé dans un ordre optimum vis-à-vis du graphe de connaissance engendrant de nombreuses ré-activations de règles. Le raisonnement prend entre 2h et 9h selon la quantité de fait et la représentation des connaissances utilisé (Genome-Properties, UniPathway). Il était donc nécessaire d'ajouter en plus du raisonnement de l'intelligence sur comment et quand activer les règles vis-à-vis d'un graphe de connaissance. J'avais commencé ce travail mais là encore j'ai était confronté a des comportements indésirables de la part du raisonneur. J'ai établi au cours de ces trois années de bonne relation avec l'équipe \texttt{DROOLS} . À la suite de la présentation  des nouveaux problèmes rencontré, ils m'ont proposé de travailler conjointement pour apporter les corrections dans la version suivante. Malheureusement le temps qui m'était impartit ne me permettait pas d'investiguer dans le moteur d'inférence, de trouver une solution, de la faire valider et attendre la nouvelle version.
+
+C'est la raison pour laquelle j'ai ré-écrit un système réactif en pure Java. Afin de rester dans le contexte d'une programmation  déclarative les règles ont été écrite sous la forme de programmation fonctionnelle\footnote{Qui perçoit les applications comme un ensemble de fonctions mathématiques, source: wikipedia}\footnote{\url{https://fr.wikipedia.org/wiki/Programmation_déclarative}}. Ce projet est open source est appelé \texttt{grools-reasoner} (\url{https://github.com/Grools/grools-reasoner}). Cette bibliothèque a été utilisée pour l'exploration des voies métabolique de 14 génomes bactérien dans l'article présenté dans la \namecref{sec:methode} \cref{sec:methode}. Elle s'est montré capable de raisonner sur tout un génome en moins d'une minute.
+
+La bibliothèque est modulaire, elle peut être utilisé selon les différents besoins, comme:\nolisttopbreak
+\begin{itemize}
+	\item \texttt{grools-application} pour l'exploration du métabolisme à travers les modèles GenProperties,Unipathway 
+	\item \texttt{grools-interpreter} pour charger un ancien raisonnement et effectué des requêtes pour l'analyses des faits
+	\item et d'autres à venir \ldots
+\end{itemize}
 
 \subbibliography
 \end{refsegment}
