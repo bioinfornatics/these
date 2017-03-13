@@ -186,6 +186,12 @@
 \raggedbottom
 \hyphenpenalty=10000
 
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+
+
 % macro à utiliser vant une énumération pour empécher que la liste se trouve sur une nouvelle page sans le texte qui le précède sur la même page.
 %\newcommand{\nolisttopbreak}{\vspace{\topsep}\nobreak\@afterheading}
 \newcommand\nolisttopbreak{\par\nobreak\@afterheading} 
@@ -342,7 +348,7 @@
 %%      Utilitaires        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\siecle}[1]{\uppercase\expandafter{\romannumeral #1\relax}$^{eme}$ siècle}
+\newcommand{\siecle}[1]{\uppercase\expandafter{\romannumeral #1\relax}$^{ème}$ siècle}
 
 \DeclareDocumentCommand{\isOddPage}{mm}{%
 	\strictpagechecktrue%

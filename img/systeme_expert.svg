@@ -15,7 +15,7 @@
    viewBox="0 0 120 140"
    version="1.2"
    id="svg8"
-   inkscape:version="0.92.0 r"
+   inkscape:version="0.92.1 r"
    sodipodi:docname="systeme_expert.svg">
   <defs
      id="defs2">
@@ -131,15 +131,15 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="195.98793"
-     inkscape:cy="208.47903"
+     inkscape:cx="202.68037"
+     inkscape:cy="369.09328"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1200"
-     inkscape:window-height="1883"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1053"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:pagecheckerboard="false" />
@@ -151,7 +151,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -452,7 +452,7 @@
            id="flowSpan4654">Si ... Alors ... </flowSpan></flowPara><flowPara
          id="flowPara4707">- Les faits proviennent généralement de base de données tierces.</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;text-align:justify;font-size:2.82222223px;line-height:6.61458302px;font-family:sans-serif;text-align:justify;writing-mode:lr-tb;text-anchor:middle;fill:#000000;"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458302px;font-family:sans-serif;text-align:justify;writing-mode:lr-tb;text-anchor:middle;fill:#000000"
        id="flowRoot4693"><flowRegion
          id="flowRegion4695"><use
            x="0"
@@ -461,7 +461,7 @@
            id="use4697"
            width="100%"
            height="100%" /></flowRegion><flowPara
-         id="flowPara4699">1) Le moteur résoud les problèmes en reliant les  faits aux règles.</flowPara><flowPara
+         id="flowPara4699">1) Le moteur résout les problèmes en reliant les  faits aux règles.</flowPara><flowPara
          id="flowPara4709">2) Puis il applique les conséquences logiques. De nouveaux faits sont produits.</flowPara><flowPara
          id="flowPara4719">Le raisonnement se poursuit tant que des faits sont reliés à des règles.</flowPara></flowRoot>  </g>
 </svg>
