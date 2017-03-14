@@ -216,18 +216,21 @@
     Le projet Reactome \cite{joshi2005reactome,matthews2009reactome,croft2010reactome,croft2014reactome,fabregat2016reactome}, initialement mis en place dans le cadre de l’analyse du métabolisme humain, met à la disposition de la communauté des voies métaboliques expertisées et vérifiées manuellement. Différentes vues sont proposées selon le niveau hiérarchique du concept sélectionné (voir \cref{fig:reactome_metabolism} et \cref{fig:reactome_serine}). Cette ressource contient à ce jour dix-neuf organismes eucaryotes dont l’Homme. La curation, puis l'organisation des données, est couteuse en temps. Pour donner un ordre d'idée de l'avancement du travail d'expertise et d'intégration, la version 54 de septembre 2015 comprenait 43\% des gènes humains. Ceci représente un total de 8701 gènes sur plus de 20 000 gènes prédits dans le génome humain.
     
     \begin{shadedfigure}[H]
-        \begin{subfigure}[t]{.5\textwidth}
+        \begin{subfigure}[t]{\textwidth}
             \centering
-            \includegraphics[angle=90,origin=c,width=\textwidth]{img/reactome_homo_sapiens_metabolism.png}
+            \includegraphics[width=\textwidth]{img/reactome_homo_sapiens_metabolism.png}
             \caption{ Vue globale des relations d'ontologie chez l'Homme sous forme de graphe. En naviguant du centre vers l'extrémité des sous-graphes, les concepts vont des plus généraux aux plus spécifiques. }
             \label{fig:reactome_metabolism}
         \end{subfigure}
-    \hfill
-    \begin{subfigure}[t]{.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{img/reactome_homo_sapiens_serine_biosynthesis.png}
-        \caption{ Représentation du réseau métabolique selon un hypergraphe dirigé. Les sommets verts sont les métabolites et les cofacteurs participant à la réaction. Les réactions correspondent aux sommets représentés par des carrés blancs. Les sommets cerclés de bleu sont les étiquettes attachées à la réaction qui permettent d'indiquer le nom de l'enzyme, le numéro \gls{EC} de la réaction et autres informations. Les hyper-arêtes indiquent le sens de la réaction et pointent sur les molécules transformées. }
-        \label{fig:reactome_serine}
+    \newline
+    \begin{subfigure}[b]{\textwidth}
+        \begin{minipage}[c]{0.58\textwidth}
+            \caption{ Représentation du réseau métabolique selon un hypergraphe dirigé. Les sommets verts sont les métabolites et les cofacteurs participant à la réaction. Les réactions correspondent aux sommets représentés par des carrés blancs. Les sommets cerclés de bleu sont les étiquettes attachées à la réaction qui permettent d'indiquer le nom de l'enzyme, le numéro \gls{EC} de la réaction et autres informations. Les hyper-arêtes indiquent le sens de la réaction et pointent sur les molécules transformées. }
+            \label{fig:reactome_serine}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.38\textwidth}
+            \includegraphics[height=0.5\textheight]{img/reactome_homo_sapiens_serine_biosynthesis.png}
+        \end{minipage}
     \end{subfigure}
     \end{shadedfigure}
 
@@ -786,7 +789,7 @@
     (A) {litéral};
     \draw (A.south) + (0, 0) coordinate(x1) edge (x1|-a.north);
     \node [below left = .8cm and -0.4 cm of a,text width = 2cm]
-    (A1) {atome};
+    (A1) {variable};
     \draw (A1.north) + (0, 0) coordinate(x1) edge (x1|-a.south);	
     \node [above left = .8cm and -0.9cm of b,text width = 2cm]
     (B) {conjonction};
@@ -795,7 +798,7 @@
     (C) {litéral};
     \draw (C.south) + (0, 0) coordinate(x1) edge (x1|-c.north);	
     \node [below left = .8cm and -0.6 cm of c,text width = 2cm]
-    (C1) {atome};
+    (C1) {variable};
     \draw (C1.north) + (0, 0) coordinate(x1) edge (x1|-c.south);
     \end{tikzpicture} 
     

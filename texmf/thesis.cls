@@ -131,13 +131,14 @@
 \RequirePackage[nomain,noredefwarn,acronym]{glossaries}
 \RequirePackage{titletoc}
 \RequirePackage{kpfonts}
-\RequirePackage{arrayjob}
+\RequirePackage{arrayjobx}
 \RequirePackage{microtype}
 \RequirePackage{xargs}                      % Use more than one optional parameter in a new commands
 \RequirePackage{romanbar}                % Use more than one optional parameter in a new commands
 \RequirePackage{emptypage}
 \RequirePackage{needspace}
 \RequirePackage{multirow}
+\RequirePackage{amsmath}
 \RequirePackage{mathtools}
 \RequirePackage{enumitem}
 \RequirePackage{colortbl}
@@ -825,11 +826,12 @@
 %%        Listings         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\lstlistingname}{Code}
-
 \lstdefinelanguage{drl}{
-	keywords = {rule,when,then,end}
+    morestring  =[b]",
+    keywords    =[1]{rule,when,then,end},
+    keywords    =[2]{from,collect,accumulate,forall,memberOf,modify}
 }
-\lstdefinestyle{drl-style}{basicstyle=\tiny\normalfont\ttfamily,language=drl,keywordstyle=\color{blue},escapechar=@}
-\lstdefinestyle{python-style}{basicstyle=\tiny\normalfont\ttfamily,language=python,commentstyle=\color{green},stringstyle=\color{orange},keywordstyle=\color{blue}}
 
+\lstdefinestyle{drl-style}{basicstyle=\tiny\normalfont\ttfamily,language=drl,keywordstyle=[1]\color{blue},keywordstyle=[2]\color{red},stringstyle=\color{psviolet},escapechar=@}
+\lstdefinestyle{python-style}{basicstyle=\tiny\normalfont\ttfamily,language=python,commentstyle=\color{green},stringstyle=\color{orange},keywordstyle=\color{blue}}
 \endinput
