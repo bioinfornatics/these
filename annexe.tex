@@ -1,8 +1,8 @@
 \chapter{Annexe}
 
-\chapter{Fichier créer pour HERBS}
+\section{Fichier créer pour HERBS}
 
-\section{Les protéines associé à un organisme}
+\subsection{Les protéines associé à un organisme}
 
 Ce qui suit sont deux extraits de fichier \texttt{csv} avec le point-virgule comme séparateur, des données représente les protéines prédites  dans différents organismes.
 Ces protéines proviennent de différentes ressources et donc qu'une même protéine  peut avoir un identifiant différent, c'est la raison pour laquelle une étiquette unique est attribué. Les colonnes utilisées sont:
@@ -58,7 +58,7 @@ MJ1391;-1;1338520;1339776;16;RXN-7737;115009;MJ1391;Q58786;NULL;0;Q58786;METJA01
 \end{lstlisting}
 \end{adjustbox}
 
-\section{Intégration des prédictions de protéines dans la base de faits CLIPS}
+\subsection{Intégration des prédictions de protéines dans la base de faits CLIPS}
 \needspace{50\baselineskip}
 \begin{lstlisting}[style=python-style,caption=getProteinFacts.py]
 #!/usr/bin/env python
@@ -137,7 +137,7 @@ if __name__ == "__main__":
                                                               + " -> and " + fields[2] + ")\n" )
 \end{lstlisting}
 
-\section{Fichier de correspondance protéines et réaction enzymatique d'UniPathway (UER)}
+\subsection{Fichier de correspondance protéines et réaction enzymatique d'UniPathway (UER)}
 
 Ces fichiers de correspondances sont tabulés pour décrire les colonnes: description, id UER, id RHEA, id MetaCyc, variant métabolique.
 
@@ -252,7 +252,7 @@ LL-2,6-diaminopimelate from (S)-tetrahydrodipicolinate (succinylase route): step
 \end{lstlisting}
 \end{adjustbox}
 
-\section{Les variants métabolique pour la biosynthèse de la lysine}
+\subsection{Les variants métabolique pour la biosynthèse de la lysine}
 \begin{lstlisting}[basicstyle=\tiny\normalfont\ttfamily,caption=data/processes/lysine\_DAP\_biosynthesis.data]
 ;;;; -------------------------------------------------------
 ;;; HERBS (Hamap Expert Rules Based System)
