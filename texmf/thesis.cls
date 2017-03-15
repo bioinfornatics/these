@@ -492,10 +492,10 @@
 \makepagestyle{thesisStyle}
 \makeheadfootruleprefix{thesisStyle}{}{\color{MidnightBlue}}
 \makefootrule{thesisStyle}{\textwidth}{\normalrulethickness}{\footruleskip}
-\makeevenfoot{thesisStyle}{\thepage}{}{\itshape\leftmark}
-\makeoddfoot{thesisStyle}{\itshape\leftmark}{}{\thepage}
+\makeevenfoot{thesisStyle}{\thepage}{}{\itshape\small\rightmark}
+\makeoddfoot{thesisStyle}{\itshape\small\leftmark}{}{\thepage}
 \makepsmarks{thesisStyle}{
-  \createmark{chapter}{left}{shownumber}{\@chapapp\ }{.\ }
+  \createmark{chapter}{left}{shownumber}{\@chapapp\space}{.\space}
 }
 
 \copypagestyle{chapter}{thesisStyle}
@@ -528,7 +528,7 @@
 }
 
 \newcommand{\ruledsec}[1]{%
-	\needspace{5\baselineskip}
+	\needspace{4\baselineskip}
     \vskip 1em
     {\color{MidnightBlue}\hrule}
     \vskip 1em

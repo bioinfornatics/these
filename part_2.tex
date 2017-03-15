@@ -1,53 +1,65 @@
 \begin{refsegment}
-\chapter{GROOLS}
+\chapter{Investigations sur la logique paracohérente}
 
 Ces trois années de recherche ont été consacrées à la conception d’une méthode et au développement du logiciel \gls{GROOLS} . Ce logiciel offre une approche interactive entre le biologiste et les prédictions bio-informatiques lors du processus de curation de l'annotation fonctionnelle des génomes bactériens au travers de processus biologiques telles que les voies métaboliques. Compte tenu de l'augmentation constante et rapide des annotations automatiques, un système expert pourrait aider les biologistes à détecter les annotations inconsistantes et contradictoires dans cette masse d'information. 
 
-\section{Le début de GROOLS}
+\section{Contexte du projet}
 
-\subsection{HERBS}
+Mon projet de recherche a débuté par l'identification des besoins et des outils à ma disposition. Les besoins de la plateforme \texttt{MicroScope} (i.e. plateforme d’annotation de génomes microbiens, développée dans le laboratoire où j’ai réalisé ces travaux) se divisent en trois axes.
+
+Le premier correspond à la modernisation du système de gestion et déclaration des chaînages applicatifs ("wokflows"). Pour cela, la plateforme \texttt{MicroScope} s'oriente vers la mise en place du moteur à base de règles développées en interne au \texttt{GenoScope} (\texttt{\gls{BIRDS}}) . Le système utilise l'application \texttt{DROOLS}\cite{mcwhirter2001drools,browne2009jboss} pour ordonner les processus à partir de règles métiers. À l'arrivée de nouvelles ressources, le système est intelligent. Celui-ci, exécute l’enchainement des programmes lié au processus de l'annotation.
+
+Le second axe consiste à la mise en place d'un système d'intégration des données métaboliques de la plateforme, dénommé \texttt{Galileo} \cite{galileo2014}. Cet outil a la faculté de réconcilier les informations provenant de multiple ressources externes et internes. Les informations contenues dans ces différentes ressources sont réunies dans une interface unique. Les informations sont extraites des ressources \texttt{ChEBI} \cite{hastings2013chebi}, \texttt{RHEA} \cite{alcantara2012rhea}, \texttt{KEGG} et \texttt{MetaCyc}. Ainsi, \texttt{Galileo} permet d'avoir accès à un large éventail d'information sur les connaissances métaboliques. 
+
+Le troisième axe s'articule autour d'un système à base de règles pour l'annotation des génomes. Il a pour objectif de guider le biologiste sur les annotations suspectées manquantes dans un organisme donné. Il est composé de deux modules. Le premier a pour objectif de récupérer les règles d'\texttt{UniRule} et de les rendre utilisables en dehors de "l'\gls{EBI}". Les règles d'annotations fonctionnelles établies à partir des domaines protéiques seraient ainsi partagées à la communauté scientifique. Le deuxième module doit évaluer les fonctions prédites au regard des processus métaboliques et mettre en évidence des annotations confirmées, manquantes ou contradictoires. La cohérence des annotations d'un génome peut ainsi être évaluée vis-à-vis des attentes portées sur des processus que l'organisme est capable de réaliser. L'application \texttt{DROOLS} a été choisie pour la mise en œuvre du raisonnement. L'utilisation de  \texttt{DROOLS} permet d'acquérir une expertise commune sur le logiciel. De plus, son moteur de règles est moderne. Il est capable de communiquer avec les applications \texttt{Java} ce  qui est un avantage car \texttt{Galileo} et \texttt{BIRDS} sont également écrit dans ce même langage.
+
+C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant avec les deux premiers axes afin de récupérer les prédictions bio-informatiques et les données métaboliques unifiées. Le cadre de mon projet de recherche a été présenté lors de la 10$^{eme}$ conférence internationale sur l'intégration de données en science de la vie (DILS 2014 \url{http://dils2014.inesc-id.pt/}).
+
+\includepdf[pages=-]{img/DILS_2014.pdf}
+
+\section{HERBS}
 
 L'équipe \texttt{HELIX} d'\textit{Alain VIARI} avait commencé un projet en ce sens nommé \texttt{\gls{HERBS}} en collaboration avec le \texttt{\gls{SIB}} dans le cadre du projet \gls{HAMAP} \cite{pedruzzi2015hamap}. L'objectif de \texttt{\gls{HERBS}} est d'alerter les biologistes sur les fonctions et les voies métaboliques manquantes, non attendues ou encore ambiguës. Pour cela l'outil s'appuie sur le moteur d'inférence \texttt{\gls{JESS}}, sur une base de connaissances (contenant les règles et les faits, \cref{fig:systeme_expert}) et sur une interface graphique pour l'exploration des connaissances. 
 
 Les connaissances dans \texttt{HERBS} sont structurées en trois composants :\nolisttopbreak
 \begin{itemize}
-	\item La base de connaissance contient des faits primaires sur l’organisme étudié (sa taxonomie  et des propriétés phénotypiques, exemple : l’organisme est photosynthétique) et des faits généraux décrivant des processus biologiques et leurs composants sous la forme d’un  graphe orienté acyclique avec des nœuds \texttt{ET} et \texttt{OU}.
-	\item La base d’observations contient des prédictions d’unités fonctionnelles (i.e. composants de processus) dans l’organisme étudié.
-	\item Des règles logiques permettant de prendre des décisions (e.g. SI X est requis par une bactérie et X n’est pas observé ALORS X est manquant dans l’annotation de la bactérie).
+    \item La base de connaissance contient des faits primaires sur l’organisme étudié (sa taxonomie  et des propriétés phénotypiques, exemple : l’organisme est photosynthétique) et des faits généraux décrivant des processus biologiques et leurs composants sous la forme d’un  graphe orienté acyclique avec des nœuds \texttt{ET} et \texttt{OU}.
+    \item La base d’observations contient des prédictions d’unités fonctionnelles (i.e. composants de processus) dans l’organisme étudié.
+    \item Des règles logiques permettant de prendre des décisions (e.g. SI X est requis par une bactérie et X n’est pas observé ALORS X est manquant dans l’annotation de la bactérie).
 \end{itemize}
 
 Le raisonnement dans \texttt{HERBS} se fait en propageant les observations au travers du graphe de connaissances par l’application des règles logiques. Chaque nœud est associé à trois attributs pouvant prendre les valeurs oui ou non au cours du raisonnement :\nolisttopbreak
 \begin{itemize}
-	\item "Présent", le composant est prédit ou non dans l’organisme
-	\item "Requis", le composant est attendu dans l’organisme (i.e. il doit être prédit)
-	\item "Interdit", le composant n’est pas attendu dans l’organisme.
+    \item "Présent", le composant est prédit ou non dans l’organisme
+    \item "Requis", le composant est attendu dans l’organisme (i.e. il doit être prédit)
+    \item "Interdit", le composant n’est pas attendu dans l’organisme.
 \end{itemize}
 
 À la fin du raisonnement, des conclusions sur les processus et leurs composants sont données suivant cette table de correspondance :\nolisttopbreak
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|>{\columncolor{LightCyan}}l|}
-		\toprule
-		\rowcolor{LightCyan}
-		\textbf{Présent} & \textbf{Requis} & \textbf{Interdit} & \textbf{Conclusion} \\ 
-		\midrule
-		oui & oui & oui & ambigu \\ 
-		\hline 
-		oui & oui & non & normal \\ 
-		\hline 
-		oui & non & oui & inattendu \\ 
-		\hline 
-		oui & non & non & orphelin \\ 
-		\hline 
-		non & oui & oui & ambigu \\ 
-		\hline 
-		non & oui & oui & manquant \\ 
-		\hline 
-		non & non & oui & normal \\ 
-		\hline 
-		non & non & non & normal \\ 
-		\bottomrule
-	\end{tabular} 
+    \centering
+    \begin{tabular}{|l|l|l|>{\columncolor{LightCyan}}l|}
+        \toprule
+        \rowcolor{LightCyan}
+        \textbf{Présent} & \textbf{Requis} & \textbf{Interdit} & \textbf{Conclusion} \\ 
+        \midrule
+        oui & oui & oui & ambigu \\ 
+        \hline 
+        oui & oui & non & normal \\ 
+        \hline 
+        oui & non & oui & inattendu \\ 
+        \hline 
+        oui & non & non & orphelin \\ 
+        \hline 
+        non & oui & oui & ambigu \\ 
+        \hline 
+        non & oui & oui & manquant \\ 
+        \hline 
+        non & non & oui & normal \\ 
+        \hline 
+        non & non & non & normal \\ 
+        \bottomrule
+    \end{tabular} 
 \end{table}
 
 \textit{Alain VIARI} m'a permis d'utiliser l'outil \texttt{PathRules} qui est une implémentation de \texttt{\gls{HERBS}} avec le moteur \texttt{\gls{CLIPS}} \cite{riley1991clips}.
@@ -84,27 +96,27 @@ L'information taxonomique est également un fait. Il débute par le mot-clé "sp
 Pour représenter la structure hiérarchique des voies métaboliques, les faits sont organisés pour exprimer la notion de composition et d'équivalence. La notion de composition est utilisée pour relier les ensembles de réactions (\gls{ULS} \texttt{d’UniPathway}) à leurs réactions. Quant à l'équivalence elle permet de définir les chemins alternatifs (variants) pour réaliser une voie métabolique. La syntaxe \texttt{\gls{CLIPS}} utilise $x -> \ldots$ pour signifier "x tel que \ldots". La partie à droite de la flèche décrit les relations en notation polonaise\footnote{Également connue sous le nom "notation pré-fixée". Par exemple, le calcul "$5 \times (2 + 3)$", s'écrit "$\times 5 (+ 2 \qquad 3)$". }. Ci-après le fichier de description de la voie métabolique de la biosynthèse de la lysine par le variant \texttt{AAA} (Acide alpha-Amino Adipique) selon \texttt{UniPathway}.
 
 \console{cat data/processes/lysine\_AAA\_biosynthesis.data}{
-;;;; --------------------------------------------------------\par
-;;; HERBS (Hamap Expert Rules Based System)\par
-;;;\par
-;;; @file: lysine\_AAA\_biosynthesis.data\par
-;;; --------------------------------------------------------\par
-;;;\par
-(process declare lysine\_AAA\_biosynthesis present in ALL)\par
-(process define lysine\_AAA\_biosynthesis -> and UPA00033)\par
-(process define UPA00033 -> or UPA00033-alt-0 UPA00033-alt-1)\par
-(process define UPA00033-alt-0 -> and ULS00012 ULS00013)\par
-(process define UPA00033-alt-1 -> and ULS00012 ULS00014)\par
-(process define ULS00012 -> and ULS00012-alt-0)\par
-(process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
-(process define ULS00013 -> or ULS00013-alt-0 ULS00013-alt-1)\par
-(process define ULS00013-alt-0 -> and UER00032 UER00034)\par
-(process define ULS00013-alt-1 -> and UER00033 UER00034)\par
-(process define ULS00012 -> and ULS00012-alt-0)\par
-(process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
-(process define ULS00014 -> or ULS00014-alt-0 ULS00014-alt-1)\par
-(process define ULS00014-alt-0 -> and UER00035 UER00037 UER00038 UER00039)\par
-(process define ULS00014-alt-1 -> and UER00036 UER00037 UER00038 UER00039)\par
+    ;;;; --------------------------------------------------------\par
+    ;;; HERBS (Hamap Expert Rules Based System)\par
+    ;;;\par
+    ;;; @file: lysine\_AAA\_biosynthesis.data\par
+    ;;; --------------------------------------------------------\par
+    ;;;\par
+    (process declare lysine\_AAA\_biosynthesis present in ALL)\par
+    (process define lysine\_AAA\_biosynthesis -> and UPA00033)\par
+    (process define UPA00033 -> or UPA00033-alt-0 UPA00033-alt-1)\par
+    (process define UPA00033-alt-0 -> and ULS00012 ULS00013)\par
+    (process define UPA00033-alt-1 -> and ULS00012 ULS00014)\par
+    (process define ULS00012 -> and ULS00012-alt-0)\par
+    (process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
+    (process define ULS00013 -> or ULS00013-alt-0 ULS00013-alt-1)\par
+    (process define ULS00013-alt-0 -> and UER00032 UER00034)\par
+    (process define ULS00013-alt-1 -> and UER00033 UER00034)\par
+    (process define ULS00012 -> and ULS00012-alt-0)\par
+    (process define ULS00012-alt-0 -> and UER00028 UER00029 UER00030 UER00031 UER01027)\par
+    (process define ULS00014 -> or ULS00014-alt-0 ULS00014-alt-1)\par
+    (process define ULS00014-alt-0 -> and UER00035 UER00037 UER00038 UER00039)\par
+    (process define ULS00014-alt-1 -> and UER00036 UER00037 UER00038 UER00039)\par
 }
 
 
@@ -133,19 +145,7 @@ L'utilisateur a la possibilité d'explorer les résultats de \texttt{\gls{HERBS}
 
 Pour passer à l'échelle, il est nécessaire de retranscrire  en \texttt{\gls{CLIPS}}  toutes les voies métaboliques et toutes les prédictions bio-informatiques. De plus le système doit être étendu à la notion d'inconnu et si possible à la notion de contradiction. En biologie, l’absence de résultat suite à une expérience ou à une prédiction est souvent difficile à interpréter comme un résultat vrai négatif ou faux négatif.  Dans le but d'appuyer le propos sur l'intérêt de valeurs autre que vrai et faux, une non-prédiction bio-informatique ne signifie pas une prédiction de non-présence. Ce point de vue peut paraître quelque peu philosophique. Il fait référence aux concepts de "monde ouvert" et "monde fermé". Une hypothèse en monde fermé va considérer toutes les questions sans réponse comme fausses. En monde ouvert, les hypothèses prennent les valeurs vraies ou fausses lorsqu'elles sont explicitement décrites comme telles. Pour les autres cas, une hypothèse est considérée incertaine tant qu'un fait ne la désigne pas comme vraie ou fausse. En biologie, quantité de connaissances ne sont pas prédites et néanmoins cela ne signifie pas qu'elles sont prédites comme non présentes dans l'organisme. Dans l’exemple précédent de \texttt{\gls{HERBS}}, la plupart des voies métaboliques sont déclarées "Missing" sans pour autant suggérer quel variant est le plus probable pour l'organisme d'intérêt. Ceci s'explique d'une part à cause des prédictions bio-informatiques, elles sont soit présentes soit non présentes (équivalant à ni-vrai-ni-faux) par conséquent il n'y a pas de prédiction pour indiquer l'absence d'une fonction. D'autre part, le système n'est pas capable de choisir lorsque les prédictions ne couvrent pas l'ensemble d'un variant.  La combinaison de ces deux cas induit que la plupart des voies métaboliques seront soit "Missing" lorsque la voie est requise soit "Normal" si elle est ni requise ni interdite. On pourrait s’attendre à ce que le système \texttt{\gls{HERBS}} soit capable de repérer les variants requis pour corréler les attentes portées sur les voies métaboliques.
 
-\subsection{Contexte du projet GROOLS}
-
-Mon projet de recherche a débuté par l'identification des besoins et des outils à ma disposition. Les besoins de la plateforme \texttt{MicroScope} (i.e. plateforme d’annotation de génomes microbiens, développée dans le laboratoire où j’ai réalisé ces travaux) se divisent en trois axes.
-
-Le premier correspond à la modernisation du système de gestion et déclaration des chaînages applicatifs ("wokflows"). Pour cela, la plateforme \texttt{MicroScope} s'oriente vers la mise en place du moteur à base de règles développées en interne au \texttt{GenoScope} (\texttt{\gls{BIRDS}}) . Le système utilise l'application \texttt{DROOLS}\cite{mcwhirter2001drools,browne2009jboss} pour ordonner les processus à partir de règles métiers. À l'arrivée de nouvelles ressources, le système est intelligent. Celui-ci, exécute l’enchainement des programmes lié au processus de l'annotation.
-
-Le second axe consiste à la mise en place d'un système d'intégration des données métaboliques de la plateforme, dénommé \texttt{Galileo} \cite{galileo2014}. Cet outil a la faculté de réconcilier les informations provenant de multiple ressources externes et internes. Les informations contenues dans ces différentes ressources sont réunies dans une interface unique. Les informations sont extraites des ressources \texttt{ChEBI} \cite{hastings2013chebi}, \texttt{RHEA} \cite{alcantara2012rhea}, \texttt{KEGG} et \texttt{MetaCyc}. Ainsi, \texttt{Galileo} permet d'avoir accès à un large éventail d'information sur les connaissances métaboliques. 
-
-Le troisième axe s'articule autour d'un système à base de règles pour l'annotation des génomes. Il a pour objectif de guider le biologiste sur les annotations suspectées manquantes dans un organisme donné. Il est composé de deux modules. Le premier a pour objectif de récupérer les règles d'\texttt{UniRule} et de les rendre utilisables en dehors de "l'\gls{EBI}". Les règles d'annotations fonctionnelles établies à partir des domaines protéiques seraient ainsi partagées à la communauté scientifique. Le deuxième module doit évaluer les fonctions prédites au regard des processus métaboliques et mettre en évidence des annotations confirmées, manquantes ou contradictoires. La cohérence des annotations d'un génome peut ainsi être évaluée vis-à-vis des attentes portées sur des processus que l'organisme est capable de réaliser. L'application \texttt{DROOLS} a été choisie pour la mise en œuvre du raisonnement. L'utilisation de  \texttt{DROOLS} permet d'acquérir une expertise commune sur le logiciel. De plus, son moteur de règles est moderne. Il est capable de communiquer avec les applications \texttt{Java} ce  qui est un avantage car \texttt{Galileo} et \texttt{BIRDS} sont également écrit dans ce même langage.
-
-C'est sur ce dernier axe que j'ai effectué mes recherches tout en échangeant avec les deux premiers axes afin de récupérer les prédictions bio-informatiques et les données métaboliques unifiées. Le cadre de mon projet de recherche a été présenté lors de la 10$^{eme}$ conférence internationale sur l'intégration de données en science de la vie (DILS 2014 \url{http://dils2014.inesc-id.pt/}).
-
-\includepdf[pages=-]{img/DILS_2014.pdf}
+\section{Première version de GROOLS}
 
 \subsection{Logique et notion d'objet}
 
@@ -238,12 +238,15 @@ Quant à la troisième problématique, elle consistait à trouver le cadre logiq
 \end{shadedfigure}
 
 
-\subsection{Première version de GROOLS}
+\subsection{Application}
 Ce travail a abouti sur une première implémentation qui a été présentée lors de la conférence \texttt{RULEML2015}. En plus de pouvoir raisonner avec une logique multi-valuée, le système est réactif à l'introduction de nouveau fait de sorte que seul les nouvelles conséquences sont recalculées.
 
 \includepdf[pages=-]{img/GROOLS__Reactive_Graph_Reasoning_for_Genome_Annotation.pdf}
 
-\section{Vers un raisonnement descriptif}
+\chapter{GROOLS: un système expert pour l'annotation fonctionnelle}
+
+
+\section{Raisonnement sur des ensembles de valeurs de vérité}
 
 La logique à quatre valeurs a ses limites lorsque l'on raisonne sur un graphe hiérarchique de connaissances. En effet, dans certains cas qui implique au moins deux concepts équivalent, il n'est pas possible de suggérer le chemin le plus probable comme montré dans la \cref{fig:grools_belnap}. Bien que si on prête attention aux concepts feuilles du graphe (les unités fonctionnelles), intuitivement on choisirait le variant avec la plus grande proportion de fonctions prédites.
 
@@ -331,13 +334,11 @@ Cette méthode permet de calculer également le degré de fausseté (i.e non-cro
     \label{fig:set3d}
 \end{shadedfigure}
 
-\section{La méthode}\label{sec:methode}
+\section{La méthode GROOLS}\label{sec:methode}
 
 Mes recherches m'ont conduit à développer une méthode pour représenter et raisonner sur des ensembles de valeurs de vérités. Ces ensembles sont utilisés pour décrire les prédictions et les expectations des différentes théories.
 
 Dans l'article ci-dessous, je décris comment inférer les prédictions et les expectation à travers un graphe de connaissances reliées les une aux autres pour exprimer soit la composition soit l'équivalence.
-
-
 
 
 \section{Discussion}
