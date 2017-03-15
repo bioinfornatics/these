@@ -133,7 +133,8 @@ if __name__ == "__main__":
                 start = line.find( "UER" )
                 if start != -1:
                     fields= line[start:].split( )
-                    output.write( "(observer uniprot define " + fields[0] + " -> and " + fields[2] + ")\n" )
+                    output.write( "(observer uniprot define " + fields[0]
+                                                              + " -> and " + fields[2] + ")\n" )
 \end{lstlisting}
 
 \section{Fichier de correspondance protéines et réaction enzymatique d'UniPathway (UER)}
