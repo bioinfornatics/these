@@ -216,19 +216,22 @@
     Le projet Reactome \cite{joshi2005reactome,matthews2009reactome,croft2010reactome,croft2014reactome,fabregat2016reactome}, initialement mis en place dans le cadre de l’analyse du métabolisme humain, met à la disposition de la communauté des voies métaboliques expertisées et vérifiées manuellement. Différentes vues sont proposées selon le niveau hiérarchique du concept sélectionné (voir \cref{fig:reactome_metabolism} et \cref{fig:reactome_serine}). Cette ressource contient à ce jour dix-neuf organismes eucaryotes dont l’Homme. La curation, puis l'organisation des données, est couteuse en temps. Pour donner un ordre d'idée de l'avancement du travail d'expertise et d'intégration, la version 54 de septembre 2015 comprenait 43\% des gènes humains. Ceci représente un total de 8701 gènes sur plus de 20 000 gènes prédits dans le génome humain.
     
     \begin{shadedfigure}[H]
-        \begin{subfigure}[t]{.5\textwidth}
+        \begin{subfigure}[t]{\textwidth}
             \centering
-            \includegraphics[angle=90,origin=c,width=\textwidth]{img/reactome_homo_sapiens_metabolism.png}
+            \includegraphics[width=\textwidth]{img/reactome_homo_sapiens_metabolism.png}
             \caption{ Vue globale des relations d'ontologie chez l'Homme sous forme de graphe. En naviguant du centre vers l'extrémité des sous-graphes, les concepts vont des plus généraux aux plus spécifiques. }
             \label{fig:reactome_metabolism}
         \end{subfigure}
-    \hfill
-    \begin{subfigure}[t]{.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{img/reactome_homo_sapiens_serine_biosynthesis.png}
-        \caption{ Représentation du réseau métabolique selon un hypergraphe dirigé. Les sommets verts sont les métabolites et les cofacteurs participant à la réaction. Les réactions correspondent aux sommets représentés par des carrés blancs. Les sommets cerclés de bleu sont les étiquettes attachées à la réaction qui permettent d'indiquer le nom de l'enzyme, le numéro \gls{EC} de la réaction et autres informations. Les hyper-arêtes indiquent le sens de la réaction et pointent sur les molécules transformées. }
-        \label{fig:reactome_serine}
-    \end{subfigure}
+    \newline
+    \begin{subfigure}[b]{\textwidth}*
+        \begin{minipage}[c]{0.58\textwidth}
+            \caption{ Représentation du réseau métabolique selon un hypergraphe dirigé. Les sommets verts sont les métabolites et les cofacteurs participant à la réaction. Les réactions correspondent aux sommets représentés par des carrés blancs. Les sommets cerclés de bleu sont les étiquettes attachées à la réaction qui permettent d'indiquer le nom de l'enzyme, le numéro \gls{EC} de la réaction et autres informations. Les hyper-arêtes indiquent le sens de la réaction et pointent sur les molécules transformées. }
+            \label{fig:reactome_serine}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.38\textwidth}
+            \includegraphics[height=0.5\textheight]{img/reactome_homo_sapiens_serine_biosynthesis.png}
+        \end{minipage}
+        \end{subfigure}
     \end{shadedfigure}
 
     \subsubsection{UniPathway}
@@ -251,7 +254,7 @@
     \begin{shadedfigure}[H]
     	\centering
     	\includegraphics[width=\textwidth]{img/BioCycCollection.png}
-    	\caption{\texttt{BioCyc} est un ensemble de bases de données et d'outils sur le métabolisme. \texttt{Metacyc} regroupe l'ensemble des informations du monde vivant. Cette ressource comprend plus de 2400 voies métaboliques à ce jour. Ces données biologiques sont structurées 3 couches en fonction du niveau de curation des voies métaboliques des organismes étudiés (i.e "Tiers"). Ces couches classifient donc le niveau de qualité des bases de données  (du moins vers le plus qualitatif : tiers 3 à 1). \hspace{\textwidth} Source : \url{https://biocyc.org/}    }
+    	\caption{\texttt{BioCyc} est un ensemble de bases de données et d'outils sur le métabolisme. \texttt{Metacyc} regroupe l'ensemble des informations du monde vivant. Cette ressource comprend plus de 2400 voies métaboliques à ce jour. Ces données biologiques sont structurées en 3 couches selon le niveau de curation des voies métaboliques des organismes étudiés (i.e "Tiers"). Ces couches classifient donc le niveau de qualité des bases de données  (du moins vers le plus qualitatif : tiers 3 à 1). \hspace{\textwidth} Source : \url{https://biocyc.org/}    }
     	\label{fig:biocyc_collection}
     \end{shadedfigure}
     
@@ -367,15 +370,11 @@
     
     \subsection{Reconstruction des réseaux métaboliques}
     
-    La reconstruction du réseau métabolique d’un organisme, à partir de son génome complet annoté, peut être réalisée d’une manière automatisée. La qualité de la reconstruction sera fortement dépendante de celle des annotations fonctionnelles. Une première étape consiste à relier l’annotation des gènes aux réactions catalysées. Le système PathoLogic de BioCyc utilise les descriptions textuelles, les numéros EC ou éventuellement directement des identifiants de réactions.  Cet ensemble de réactions enzymatiques potentiellement présentes dans l’organisme est ensuite projeté sur des voies métaboliques de référence de bases de données généralistes (comme KEGG ou MetaCyc). Cette reconstruction est dite par homologie car elle suppose que les voies métaboliques sont conservées entre les organismes au cours de l’évolution. Suivant différents critères comme la complétion (i.e. proportion de réactions annotées par rapport au nombre total de réactions de la voie), un ensemble de voies métaboliques seront prédites  dans l’organisme. 
+    La reconstruction du réseau métabolique d’un organisme, à partir de son génome complet annoté, peut être réalisée d’une manière automatisée. La qualité de la reconstruction sera fortement dépendante de celle des annotations fonctionnelles. Une première étape consiste à relier l’annotation des gènes aux réactions catalysées. Le système \texttt{PathoLogic} de \texttt{BioCyc} utilise les descriptions textuelles, les numéros \gls{EC} ou éventuellement directement des identifiants de réactions.  Cet ensemble de réactions enzymatiques potentiellement présentes dans l’organisme est ensuite projeté sur des voies métaboliques de référence de bases de données généralistes (comme \texttt{KEGG} ou \texttt{MetaCyc}). Cette reconstruction est dite par homologie car elle suppose que les voies métaboliques sont conservées entre les organismes au cours de l’évolution. Suivant différents critères comme la complétion (i.e. proportion de réactions annotées par rapport au nombre total de réactions de la voie), un ensemble de voies métaboliques seront prédites  dans l’organisme. 
     Certaines de ces voies métaboliques prédites auront des « trous » de réaction : réaction d’une voie prédite qui n’est pas associée à un gène.  Un effort de curation sera alors nécessaire pour trouver des gènes candidats pour ces réactions orphelines. De plus,  cette reconstruction par homologie ne permet pas de détecter des caractéristiques spécifiques à l'organisme, comme des réactions ou des voies métaboliques non représentées dans les bases de référence utilisées. La curation d’un réseau métabolique requiert ainsi une connaissance avancée de l’organisme étudié et est souvent assez laborieuse. 
     
     
-    \subsection{Les données expérimentales}
-    
-    \subsubsection{Élucidation des voies métaboliques}
-    Avec la découverte des enzymes à la fin du \siecle{19}, un nouveau champ de connaissance en biologie s’ouvrait. L’enzyme est la clé menant à la compréhension du vivant. Pour cela, la communauté scientifique réalisa un très grand nombre d’expériences permettant produire puis ...
-    \subsubsection{Phénotypes de croissances}
+    \subsection{Phénotypes de croissances}
     Les molécules biologiques sont généralement constituées d’atome de  carbone (C), d’hydrogène (H), d’oxygène (O), d’azote (N), de phosphore (P) et de soufre (S). Par conséquent, les organismes doivent avoir accès à au moins une source de nutrition pour chacun de ces éléments. En plus de ces éléments, on considère qu’il est nécessaire pour la vie d’avoir une source de potassium, de calcium, de magnésium, de fer et autres oligo-éléments. Ce sont des éléments essentiels pour la vie. Tout autre élément permettant à des organismes de se développer est catégorisé comme facteur de croissance. 
     
     Les organismes peuvent être classés selon trois axes liés à leur métabolisme d'après la nature  (i) de la source de carbone (ii) du donneur d’électrons (iii) de la source d'énergie utilisé (voir \cref{tab:type trophique}).
@@ -406,9 +405,14 @@
     
     \subsection{MicroScope : une plateforme d’annotation de génomes procaryotes et d’analyse de leur métabolisme}
     
-    Chapeau : objectif MicroScope, les différentes publications
-    Puis celle de 2017
-    Section de la fin : souligner ce qui a été fait en terme de curation pour les bio… mais mieux à faire pour guider les bio dans leur travail de curati=> objectif de ton travail
+    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisée, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \texttt{\gls{IMG}} \cite{markowitz2009img,markowitz2012img} ou encore \texttt{SEED} \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbiens. L'objectif est de collecter et de mettre en relation les informations relatives aux différents gènes identifiés en vue de faciliter le travail du curateur. Ainsi, le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génomes (\cref{fig:edit_microscope}).
+    
+    \begin{shadedfigure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/curation_edit.png}
+        \caption{Interface d'édition pour l'annotation fonctionnelle des gènes. }
+        \label{fig:edit_microscope}
+    \end{shadedfigure}
     
     \includepdf[pages=-]{img/microscope2017.pdf}
 
@@ -432,17 +436,6 @@
     Nos connaissances des systèmes biologiques sont encore aujourd'hui incomplètes. Lorsque l'on regarde de plus près ces lacunes , on remarque que deux éléments semblent être liés. Le premier est le grand nombre de gènes de fonction inconnue. Le second part du constat qu'une proportion non négligeable des activités enzymatiques ne sont pas représentées par une enzyme. Dans de tels cas, l'activité enzymatique est "orpheline" de séquence. Elle est qualifiée par la communauté scientifique "d'orphan enzyme" \cite{lespinet2005orphan}. Dans ce contexte, nous ne sommes pas en mesure d'associer une protéine correspondant à l'activité enzymatique observée. Des initiatives comme celle de \citeauthor{karp2004call} tentent de mettre en relation au moins une enzyme pour chaque activité enzymatique biochimiquement caractérisée \cite{karp2004call}. La combinaison des résultats expérimentaux et bio-informatiques permet de valider les prédictions et dans certains cas d'identifier l'enzyme. Pour ce faire, les méthodes expérimentales doivent pouvoir tester un large spectre de candidats. Pa exemple, l'approche expérimentale mise au point par \citeauthor{kuznetsova2005enzyme} a permis d'assigner une fonction catalytique à 36 protéines sur un éventail d'une centaine de protéines testées \cite{kuznetsova2005enzyme}.
     
     Suite à l'appel de \citeauthor{karp2004call} en 2004, \citeauthor{shearer2014finding} crée le "Orphan Enzyme Project" (\url{http://www.orphanenzymes.org/}). Au début de ce projet, plus d'un tiers des 4400 activités enzymatiques décrites par la commission enzymatique (\gls{EC}) étaient orphelines de séquence. Une approche combinant la bio-informatique et la recherche en laboratoire a permis d'identifier 270 séquences candidates pour des activités orphelines\cite{shearer2014finding}. Toutefois, les numéros \gls{EC} ne reflètent pas toutes les activités enzymatiques réalisées par le vivant. EN effet, dans les bases de données métaboliques \texttt{KEGG} et \texttt{MetaCyc}, on dénombre  respectivement 26\% et $39,5$\% de réactions orphelines de séquence \cite{sorokina2014profiling}.
-    
-    \subsubsection{Rôle de la curation}
-    
-    Afin de réduire les différentes lacunes dans nos connaissances, l'expertise humaine est indispensable. Une fois l'annotation automatique réalisée, les biocurateurs vérifient les fonctions prédites dans l'organisme. Pour cela, la mise en relation des différentes connaissances sur l'organisme permet de trouver des gènes pour les fonctions manquantes et retirer les annotations sur-prédites. Afin de faciliter ce travail de curation des plateformes comme MicroScope \cite{vallenet2016microscope,Belda2017}, \texttt{\gls{IMG}} \cite{markowitz2009img,markowitz2012img} ou encore \texttt{SEED} \cite{overbeek2004seed,overbeek2014seed} fournissent un environnement intégré pour l'annotation des génomes microbiens. L'objectif est de collecter et de mettre en relation les informations relatives aux différents gènes identifiés en vue de faciliter le travail du curateur. Ainsi, le curateur corrige les annotations à travers des interfaces de parcours et d'édition de génomes (\cref{fig:edit_microscope}).
-    
-    \begin{shadedfigure}[H]
-        \centering
-        \includegraphics[width=\textwidth]{img/curation_edit.png}
-        \caption{Interface d'édition pour l'annotation fonctionnelle des gènes. }
-        \label{fig:edit_microscope}
-    \end{shadedfigure}
     
     Lors de l'analyse de génomes nouvellement séquencés, le biologiste est confronté à la difficile tâche de vérification de la cohérence des gènes annotés vis-à-vis des connaissances biologiques sur l'organisme étudié. Pour cette raison l'automatisation des règles appliquées par le biologiste permettrais de traiter rapidement une quantité importante d'information.
     
@@ -789,7 +782,7 @@
     (A) {litéral};
     \draw (A.south) + (0, 0) coordinate(x1) edge (x1|-a.north);
     \node [below left = .8cm and -0.4 cm of a,text width = 2cm]
-    (A1) {atome};
+    (A1) {variable};
     \draw (A1.north) + (0, 0) coordinate(x1) edge (x1|-a.south);	
     \node [above left = .8cm and -0.9cm of b,text width = 2cm]
     (B) {conjonction};
@@ -798,7 +791,7 @@
     (C) {litéral};
     \draw (C.south) + (0, 0) coordinate(x1) edge (x1|-c.north);	
     \node [below left = .8cm and -0.6 cm of c,text width = 2cm]
-    (C1) {atome};
+    (C1) {variable};
     \draw (C1.north) + (0, 0) coordinate(x1) edge (x1|-c.south);
     \end{tikzpicture} 
     
@@ -812,7 +805,7 @@
         \item Si x est une protéine alors x est composé d'acides aminés
     \end{enumerate}
 
-    Lorsque le moteur d'inférence traite le fait "aspartate aminotransférase" la règle \ding{172} est activée et  conclue que le fait est une protéine. Cette conséquence va permettre d'activer à son tour la règle \ding{174} et conclure sur sa composition (en acides aminés). Quand uucun fait restant ne peut activer une règle, le raisonnement prend fin.
+    Lorsque le moteur d'inférence traite le fait "aspartate aminotransférase" la règle \ding{172} est activée et  conclue que le fait est une protéine. Cette conséquence va permettre d'activer à son tour la règle \ding{174} et conclure sur sa composition (en acides aminés). Quand aucun fait restant ne peut activer une règle, le raisonnement prend fin.
     
     Il est également possible, par la méthode du chaînage arrière, de partir des conclusions pour revenir aux prémisses. Ces méthodes de chaînage sont mises en œuvre à travers de moteurs d'inférence.
     
@@ -831,7 +824,7 @@
     Dans le domaine de la biologie, et plus précisément dans le contexte de l’annotation fonctionnelle des gènes ou protéines, il existe plusieurs ressources qui utilisent des systèmes à base de règles. Ils vont être présentés dans cette section : \texttt{UniRule}/\texttt{HAMAP}, "\texttt{Genome Properties}" et "\texttt{IMG terms}". D’autres méthodes utilisent des modèles métaboliques.
     
     \subsection{UniRule}
-    Afin de mimer l'expertise humaine sur l'annotation de plusieurs millions de protéines, le consortium \texttt{UniProt} a mis en place un outil à base de règles appelé \texttt{UniRule} \cite{unirule2015,bridge2010unirule}. Il s'agit d'une base de règles unifiant les règles provenant de \texttt{\gsl{HAMAP}}, \texttt{\gsl{PIR}} et \texttt{RuleBase} . \texttt{UniRule} est utilisée conjointement avec le système \acrfull{SAAS} \cite{kretschmann2001automatic,uniprot2015}  qui génère des règles d’une manière automatique en utilisant les annotations expertisées de Swiss-Prot comme contrôle (voir Figure~\cref{fig:unirule}).
+    Afin de mimer l'expertise humaine sur l'annotation de plusieurs millions de protéines, le consortium \texttt{UniProt} a mis en place un outil à base de règles appelé \texttt{UniRule} \cite{unirule2015,bridge2010unirule}. Il s'agit d'une base de règles unifiant les règles provenant de \texttt{\gls{HAMAP}}, \texttt{\gls{PIR}} et \texttt{RuleBase} . \texttt{UniRule} est utilisée conjointement avec le système \gls{SAAS} \cite{kretschmann2001automatic,uniprot2015}  qui génère des règles d’une manière automatique en utilisant les annotations expertisées de Swiss-Prot comme contrôle (voir Figure~\cref{fig:unirule}).
     
     \begin{shadedfigure}[H]
         \centering
@@ -840,7 +833,7 @@
         \label{fig:unirule}
     \end{shadedfigure}
 
-    Les règles \acrshort{PIR} sont de deux types. Celles qui annotent des sites protéiques comme des sites catalytiques d’enzymes (\acrfull{PIRSR} \cite{vasudevan2011structure}) et celles qui réalisent des annotations textuelles comme la description des fonctions moléculaires (\acrfull{PIRNR}).
+    Les règles \gls{PIR} sont de deux types. Celles qui annotent des sites protéiques comme des sites catalytiques d’enzymes (\gls{PIRSR} \cite{vasudevan2011structure}) et celles qui réalisent des annotations textuelles comme la description des fonctions moléculaires (\gls{PIRNR}).
     
     \gls{HAMAP} est un système automatique de classification et d'annotation des séquences protéiques. Il est maintenu par le groupe \texttt{Swiss-Prot} . \gls{HAMAP} se base sur des profiles de séquences protéiques et des règles d'annotation fonctionnelle validées par des experts du domaine. Le système classifie automatiquement les séquences dans une des familles à partir des profiles en utilisant l’homologie de séquence. La syntaxe des règles  \gls{HAMAP} permet une grande expressivité et utilise le vocabulaire contrôlé d'\texttt{UniProt} et les termes \gls{GO} (présentée dans \url{http://hamap.expasy.org/unirule/unirule.html}). Tout comme les règles provenant de \gls{PIR}, \gls{HAMAP} peut effectuer des choix d'annotations selon la composition en acides aminé de la séquence protéique ce qui permet, par exemple, de déclarer des résidus clefs pour la fonction à transférer. Ces systèmes à base de règles sont un des moyens de stopper la propagation des erreurs d'annotations dans les ressources publiques \cite{schnoes2009annotation,devos2001intrinsic,bell2013can,gilks2002modeling}. Les annotations réalisées par \gls{HAMAP} sont très variées et concernent de nombreux champs tels que: le nom du gène, les fonctions biologiques (les transporteurs, les activités catalytiques, etc.), la localisation intracellulaire, les interactions protéines-protéines (voir \cref{fig:regle_unirule}).
     
