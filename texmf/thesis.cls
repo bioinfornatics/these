@@ -396,6 +396,8 @@
         
         \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50]
             
+            {\small NNT: \@nationalthesisnumber} \\
+            
             \begin{center}
                 {\huge \textcolor{psviolet}{THÈSE DE DOCTORAT}}\\
                 {\huge \textcolor{psviolet}{DE L'UNIVERSITÉ PARIS SACLAY}}\\
@@ -424,27 +426,26 @@
     %            \vspace{\baselineskip}
     %        \end{flushright}
             
-            
-            \begin{center}
-                {\large Numéro national de thèse: \@nationalthesisnumber}\\
-                \vspace{\baselineskip}
-            \end{center}
+%            \begin{center}
+%                {\large Numéro national de thèse: \@nationalthesisnumber}\\
+%                \vspace{\baselineskip}
+%            \end{center}
             
             \begin{flushleft}
                 {\large \textbf{Thèse présentée et soutenue à \@location~le \@date}}
                 \vspace{\baselineskip}
                 \vspace{\baselineskip}
                 \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
-                	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{DR (CNRS)} \\
-                	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{CR (CEA)} \\
+                	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{Directeur de Recherche (CNRS)} \\
+                	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{Chercheur (CEA)} \\
                 	                                                        &                         &\\
                 	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
-                	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{..... (......)} \\
-                	\footnotesize{Rapporteurs} :                            & .......                 & \footnotesize{..... (......)} \\
-                                                                            & .......                 & \footnotesize{..... (......)} \\
-                    \footnotesize{Examinateurs} :                           & .......                 & \footnotesize{..... (......)} \\
-                                                                            & .......                 & \footnotesize{..... (......)} \\
-                	\footnotesize{Invités} :                                & .......                 & \footnotesize{..... (......)} \\
+                	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{} \\
+                	\footnotesize{Rapporteurs} :                            & Mme. Anne Siegel        & \footnotesize{Directeur de Recherche (CNRS)} \\
+                                                                            & M. Marco Pagni          & \footnotesize{Chercheur (Vital-IT)} \\
+                    \footnotesize{Examinateurs} :                           & M. Olivier Lespinet     & \footnotesize{ Professeur (Université Paris-Sud)} \\
+                                                                            & Mme. Valérie de Crecy   & \footnotesize{Professeur (Université de Floride)} \\
+                	\footnotesize{Invité} :                                 & M. Antoine Danchin      & \footnotesize{Professeur extraordinaire (ICAN)} \\
                 \end{tabular}
             \end{flushleft}
         \end{mdframed}
