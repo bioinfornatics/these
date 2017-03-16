@@ -394,7 +394,7 @@
         %\end{textblock}
         %\vspace{0.2cm}
         
-        \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=50]
+        \begin{mdframed}[linecolor=psviolet, linewidth=2pt, innerleftmargin=10, innerrightmargin=30, innertopmargin=10, innerbottommargin=40]
             
             {\small NNT: \@nationalthesisnumber} \\
             
@@ -445,13 +445,13 @@
                                                                             & M. Marco Pagni          & \footnotesize{Chercheur (Vital-IT)} \\
                     \footnotesize{Examinateurs} :                           & M. Olivier Lespinet     & \footnotesize{ Professeur (Université Paris-Sud)} \\
                                                                             & Mme. Valérie de Crecy   & \footnotesize{Professeur (Université de Floride)} \\
+                                                                            & M. Alain Viari          & \footnotesize{Directeur de Recherche (INRIA)} \\
                 	\footnotesize{Invité} :                                 & M. Antoine Danchin      & \footnotesize{Professeur extraordinaire (ICAN)} \\
                 \end{tabular}
             \end{flushleft}
         \end{mdframed}
         \clearpage
         \restoregeometry
-        
     \end{SingleSpace}
 	\fi
 }
@@ -624,13 +624,13 @@
 }
 
 \titlecontents{section}[0.5cm]
-{\addvspace{1em}}
+{\addvspace{0.5em}}
 {\coloredBox}
 {}
 {}
 
 \titlecontents{subsection}[2.5cm]
-{\addvspace{0.5em}}
+{\addvspace{0.3em}}
 {\contentslabel{1cm}~}
 {}
 {\hfill\contentspage}
