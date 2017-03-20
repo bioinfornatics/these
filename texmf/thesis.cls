@@ -435,18 +435,18 @@
                 {\large \textbf{Thèse présentée et soutenue à \@location~le \@date}}
                 \vspace{\baselineskip}
                 \vspace{\baselineskip}
-                \begin{tabular}{p{5cm} p{5cm} p{5.4cm} }
-                	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector   & \footnotesize{Directeur de Recherche (CNRS)} \\
-                	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector & \footnotesize{Chercheur (CEA)} \\
-                	                                                        &                         &\\
-                	\footnotesize\textbf{\underline{Composition du jury :}} &                         &\\
-                	\footnotesize{Président du jury} :                      & .......                 & \footnotesize{} \\
-                	\footnotesize{Rapporteurs} :                            & Mme. Anne Siegel        & \footnotesize{Directeur de Recherche (CNRS)} \\
-                                                                            & M. Marco Pagni          & \footnotesize{Chercheur (Vital-IT)} \\
-                    \footnotesize{Examinateurs} :                           & M. Olivier Lespinet     & \footnotesize{ Professeur (Université Paris-Sud)} \\
-                                                                            & Mme. Valérie de Crecy   & \footnotesize{Professeur (Université de Floride)} \\
-                                                                            & M. Alain Viari          & \footnotesize{Directeur de Recherche (INRIA)} \\
-                	\footnotesize{Invité} :                                 & M. Antoine Danchin      & \footnotesize{Professeur extraordinaire (ICAN)} \\
+                \begin{tabular}{p{3.5cm} p{5.5cm} p{5.4cm} }
+                	\footnotesize\bfseries{Directrice de thèse} :           & Mme. \@thesisdirector         & \footnotesize{Directeur de Recherche (CNRS)} \\
+                	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector       & \footnotesize{Chercheur (CEA)} \\
+                	                                                        &                               &\\
+                	\footnotesize\textbf{\underline{Composition du jury :}} &                               &\\
+                	\footnotesize{Président du jury} :                      & .......                       & \footnotesize{} \\
+                	\footnotesize{Rapporteurs} :                            & Mme. Anne Siegel              & \footnotesize{Directeur de Recherche (CNRS)} \\
+                                                                            & M. Marco Pagni                & \footnotesize{Chercheur (Vital-IT)} \\
+                    \footnotesize{Examinateurs} :                           & M. Olivier Lespinet           & \footnotesize{ Professeur (Université Paris-Sud)} \\
+                                                                            & Mme. Valérie de Crecy-Lagard  & \footnotesize{Professeur (Université de Floride)} \\
+                                                                            & M. Alain Viari                & \footnotesize{Directeur de Recherche (INRIA)} \\
+                	\footnotesize{Invité} :                                 & M. Antoine Danchin            & \footnotesize{Professeur extraordinaire (ICAN)} \\
                 \end{tabular}
             \end{flushleft}
         \end{mdframed}
@@ -484,12 +484,6 @@
 
 \newrobustcmd{\icon}[1]{\includegraphics[height=2cm]{#1}}
 
-\defbibheading{subbibliography}{
-    \clearpage    
-    \section*{\icon{img/references.png}\hspace{1cm}\handwritingFont{Références}} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
-    \markright{\itshape #1}
-}
-
 \makepagestyle{thesisStyle}
 \makeheadfootruleprefix{thesisStyle}{}{\color{MidnightBlue}}
 \makefootrule{thesisStyle}{\textwidth}{\normalrulethickness}{\footruleskip}
@@ -516,8 +510,9 @@
             };
             \node[anchor=east,xshift=0.95\paperwidth] {
             	\begin{tcolorbox}[colframe=MidnightBlue, colback=MidnightBlue,opacityframe=0.65, opacityback=0.65,arc=20pt,left=5em,width=\paperwidth]
+                \typeout{##1}
             		\ifnum\value{chapter}>0
-            		  \normalfont\Huge\bfseries\color{white}\Romanbar{\thechapter}~##1
+            		    \normalfont\Huge\bfseries\color{white}\Romanbar{\thechapter}~##1
             		\else
             		  \normalfont\Huge\bfseries\color{white}##1
             		\fi
@@ -619,9 +614,7 @@
 }
 {}
 {}
-{
-    %\color{MidnightBlue}\large\textsc\bfseries\;\titlerule\;\large\textsc\bfseries Page \thecontentspage
-}
+{}
 
 \titlecontents{section}[0.5cm]
 {\addvspace{0.5em}}
@@ -709,9 +702,23 @@
 \addbibresource{references.bib}
 
 \defbibheading{subbibliography}{
-	\clearpage    
+	\cleardoublepage    
 	\section*{\icon{img/books.jpg}\hspace{1cm}\referenceFont{\textcolor{MidnightBlue}{Références}}} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
 	\markright{\itshape #1}
+}
+
+\defbibheading{bibliography}{
+    \cleardoublepage
+    \setcounter{chapter}{0}
+    \chapter*{\referenceFont{\textcolor{white}{Références}}} %#1 <-- écrit Bibliographie, donc écriture en dure de Références
+    \markboth{\itshape #1}{\itshape #1}
+    \addcontentsline{toc}{chapter}{\color{MidnightBlue}\large\textsc\bfseries{Références}}
+
+}
+
+\DefineBibliographyStrings{french}{%
+    bibliography    = {Bibliographie},
+    references      = {Références},
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

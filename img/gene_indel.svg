@@ -14,7 +14,7 @@
    viewBox="0 0 127.82877 160"
    version="1.1"
    id="svg35848"
-   inkscape:version="0.92.0 r"
+   inkscape:version="0.92.1 r"
    sodipodi:docname="gene_indel.svg">
   <defs
      id="defs35842">
@@ -206,16 +206,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.0000002"
-     inkscape:cx="94.203428"
-     inkscape:cy="487.39209"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="140.16664"
+     inkscape:cy="236.98744"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="867"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -973,7 +973,7 @@
          id="tspan40221"
          x="19.915337"
          y="260.73102"
-         style="stroke-width:0.15528755px">sous fonctionalisation</tspan></text>
+         style="stroke-width:0.15528755px">sous fonctionnalisation</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.48460078px;line-height:3.8821888px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15528755px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -995,7 +995,7 @@
          id="tspan40229"
          x="93.256317"
          y="260.53995"
-         style="stroke-width:0.15528755px">perte de fonctionalité</tspan></text>
+         style="stroke-width:0.15528755px">perte de fonctionnalité</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:6.61458302px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
