@@ -440,11 +440,10 @@
                 	\footnotesize\bfseries{Co-directeur de thèse} :         & M.   \@thesiscodirector       & \footnotesize{Chercheur (CEA)} \\
                 	                                                        &                               &\\
                 	\footnotesize\textbf{\underline{Composition du jury :}} &                               &\\
-                	\footnotesize{Président du jury} :                      & .......                       & \footnotesize{} \\
+                	\footnotesize{Président du jury} :                      & M. Olivier Lespinet           & \footnotesize{ Professeur (Université Paris-Sud)} \\
                 	\footnotesize{Rapporteurs} :                            & Mme. Anne Siegel              & \footnotesize{Directeur de Recherche (CNRS)} \\
                                                                             & M. Marco Pagni                & \footnotesize{Chercheur (Vital-IT)} \\
-                    \footnotesize{Examinateurs} :                           & M. Olivier Lespinet           & \footnotesize{ Professeur (Université Paris-Sud)} \\
-                                                                            & Mme. Valérie de Crecy-Lagard  & \footnotesize{Professeur (Université de Floride)} \\
+                    \footnotesize{Examinateurs} :                           & Mme. Valérie de Crecy-Lagard  & \footnotesize{Professeur (Université de Floride)} \\
                                                                             & M. Alain Viari                & \footnotesize{Directeur de Recherche (INRIA)} \\
                 	\footnotesize{Invité} :                                 & M. Antoine Danchin            & \footnotesize{Professeur extraordinaire (ICAN)} \\
                 \end{tabular}
